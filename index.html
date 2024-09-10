@@ -1,66 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cnliux</title>
+    <title>TVBox 下载</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .container {
-            width: 80%;
+            width: 85%;
             margin: auto;
             overflow: hidden;
         }
         header {
-            background: #50b3a2;
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+            background: linear-gradient(to right, #37405f, #5c67f2); /* 添加渐变背景 */
+            padding: 30px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 增加阴影效果 */
+            border-bottom: 2px dashed #dcdcdc; /* 增加浅灰色虚线边框 */
         }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
+        header h1 {
             margin: 0;
+            color: #ffffff; /* 增加颜色对比 */
+            font-size: 24px;
         }
-        header nav {
-            float: right;
-            margin-top: 10px;
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
         }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
+        header nav ul li {
+            padding: 0 15px;
         }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
+        header nav ul li a {
+            text-decoration: none;
+            color: #ffffff; /* 增加颜色对比 */
+            transition: color 0.3s ease;
+        }
+        header nav ul li a:hover {
+            color: #f5f5f5;
         }
         .banner {
             text-align: center;
-            background: #50b3a2;
+            background: url('tvbox-banner.jpg') no-repeat center center;
+            background-size: cover;
             color: white;
-            padding: 10px;
-            font-size: 40px;
+            padding: 100px 0;
+        }
+        .banner h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .main-col, .sidebar {
+            padding: 20px;
+            margin-top: 0; /* 删除了margin-top */
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .main-col {
             float: left;
@@ -69,64 +74,149 @@
         .sidebar {
             float: right;
             width: 30%;
-            background: #ffffff;
-            padding: 15px;
-            min-height: 400px;
         }
-        .main-col, .sidebar {
+        .project-title, .project h3 {
+            margin: 0;
+            padding-bottom: 10px;
+            color: #37405f; /* 统一的颜色 */
+            font-size: 24px; /* 统一的字体大小 */
+        }
+        .project {
+            margin-bottom: 20px;
             padding: 15px;
+            background: #ffffff;
+            border: 2px dashed #dcdcdc; /* 浅灰色虚线边框 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 阴影效果 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .project p {
+            margin: 0;
+            color: #666;
+        }
+        .download-button {
+            display: inline-block;
+            background-color: #5c67f2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .download-button:hover {
+            background-color: #37405f;
+        }
+        .data-source-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px; /* 增加列表顶部间距 */
+        }
+        .data-source-list li {
+            background: #e9e9e9;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .data-source-list li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .data-source-list li a:hover {
+            background-color: #dcdcdc;
         }
         footer {
-            background: #50b3a2;
+            background: #37405f;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            header h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            header nav ul {
+                justify-content: center;
+            }
+            header nav ul li {
+                padding: 0 10px;
+            }
+            .main-col, .sidebar {
+                float: none;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">cnliux</span> Personal Homepage</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="banner">
-        <div class="container">
-            <h1>Welcome to My Personal Homepage</h1>
-        </div>
-    </section>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TVBox 下载
+  </title>
+  <header>
+    <div class="container">
+      <h1>TVBox 下载
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">首页</a>
+          </li>
+          <li>
+            <a href="about.html">关于TVBox</a>
+          </li>
+          <li>
+            <a href="contact.html">联系方式</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
     <section class="main-col">
-        <div class="container">
-            <article id="main-col">
-                <h1>Latest Projects</h1>
-                <p>This is where I'll showcase my latest projects and work.</p>
-            </article>
-        </div>
+      <div class="project">
+        <h2 class="project-title">最新版本
+        </h2>
+        <img src="tvbox-image.jpg" alt="TVBox 应用截图"/>
+        <h3 class="project-title">TVBox 1.0
+        </h3>
+        <p>TVBox是一款开源的电视盒子应用，支持多种直播源，提供流畅的观看体验。
+        </p>
+        <a href="download.html" class="download-button">立即下载</a>
+        <ul class="data-source-list">
+          <li>
+            <a href="source1.html">数据源1</a>
+          </li>
+          <li>
+            <a href="source2.html">数据源2</a>
+          </li>
+          <li>
+            <a href="source3.html">数据源3</a>
+          </li>
+          <!-- 更多数据源 -->
+        </ul>
+      </div>
     </section>
-
-    <aside class="sidebar">
-        <div class="container">
-            <h3>About Me</h3>
-            <p>I'm a passionate developer with a focus on web technologies. I enjoy creating clean and efficient code.</p>
-        </div>
-    </aside>
-
-    <footer>
-        <p>cnliux © 2024</p>
-    </footer>
+  </div>
+  <footer>
+    <p>© 2024 TVBox Team. All rights reserved.
+    </p>
+  </footer>
 </body>
 </html>
