@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cnliux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .banner {
+            text-align: center;
+            background: #50b3a2;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+        }
+        .main-col {
+            float: left;
+            width: 70%;
+        }
+        .sidebar {
+            float: right;
+            width: 30%;
+            background: #ffffff;
+            padding: 15px;
+            min-height: 400px;
+        }
+        .main-col, .sidebar {
+            padding: 15px;
+        }
+        footer {
+            background: #50b3a2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">cnliux</span> Personal Homepage</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+            <h1>Welcome to My Personal Homepage</h1>
+        </div>
+    </section>
+
+    <section class="main-col">
+        <div class="container">
+            <article id="main-col">
+                <h1>Latest Projects</h1>
+                <p>This is where I'll showcase my latest projects and work.</p>
+            </article>
+        </div>
+    </section>
+
+    <aside class="sidebar">
+        <div class="container">
+            <h3>About Me</h3>
+            <p>I'm a passionate developer with a focus on web technologies. I enjoy creating clean and efficient code.</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p>cnliux © 2024</p>
+    </footer>
+</body>
+</html>
