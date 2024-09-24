@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TXT转M3U转换器</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"  rel="stylesheet">
 <style>
     .container {
         background-color: #fff;
@@ -18,6 +19,21 @@
         font-size: 14px;
         color: #333;
     }
+    pre {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-left: 3px solid #f39c12;
+        color: #333;
+        page-break-inside: avoid;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+    }
 </style>
 </head>
 <body>
@@ -28,13 +44,18 @@
     </div>
     <div class="url-display" id="urlDisplay">当前URL: <span id="currentUrl"></span></div>
     <button id="convertBtn" class="btn btn-success">转换为M3U</button>
+    <div id="result" class="mt-4">
+        <h3>转换结果:</h3>
+        <pre id="resultText"></pre>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const convertBtn = document.getElementById('convertBtn');
         const txtUrlInput = document.getElementById('txtUrlInput');
         const urlDisplay = document.getElementById('currentUrl');
+        const resultText = document.getElementById('resultText');
         const urlParams = new URLSearchParams(window.location.search);
         const txtUrl = urlParams.get('txturl');
 
@@ -72,15 +93,17 @@
                         m3uContent += `#EXTINF:-1,${title}\n${url}\n`;
                     }
                 });
-                downloadM3U(m3uContent, 'txt转换.m3u');
+                downloadM3U(m3uContent, 'playlist.m3u');
+                resultText.textContent = m3uContent; // 显示转换结果
             })
             .catch(error => {
                 console.error('获取TXT文件时出现问题:', error);
+                resultText.textContent = '转换失败: ' + error.message;
             });
     }
 
     function downloadM3U(content, filename) {
-        const blob = new Blob([content], { type: 'text/plain' });
+        const blob = new Blob([content], { type: 'application/x-mpegURL' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
