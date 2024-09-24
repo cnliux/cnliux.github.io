@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TXT转M3U转换器</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .url-display {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 class="mb-4">TXT转M3U转换器</h2>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="txtUrlInput" placeholder="输入TXT文件URL">
+    </div>
+    <div class="url-display" id="urlDisplay">当前URL: <span id="currentUrl"></span></div>
+    <button id="convertBtn" class="btn btn-success">转换为M3U</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const convertBtn = document.getElementById('convertBtn');
+        const txtUrlInput = document.getElementById('txtUrlInput');
+        const urlDisplay = document.getElementById('currentUrl');
+        const urlParams = new URLSearchParams(window.location.search);
+        const txtUrl = urlParams.get('txturl');
+
+        convertBtn.addEventListener('click', function() {
+            convertToM3U(txtUrlInput.value);
+            urlDisplay.textContent = txtUrlInput.value; // 显示当前输入的URL
+        });
+
+        if (txtUrl) {
+            txtUrlInput.value = txtUrl;
+            urlDisplay.textContent = txtUrl; // 显示通过URL参数获取的URL
+            convertToM3U(txtUrl);
+        }
+    });
+
+    function convertToM3U(txtUrl) {
+        if (!txtUrl) {
+            alert('请输入有效的TXT文件URL');
+            return;
+        }
+
+        fetch(txtUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应异常');
+                }
+                return response.text();
+            })
+            .then(txtContent => {
+                const lines = txtContent.split('\n').map(line => line.trim()).filter(line => line);
+                let m3uContent = '#EXTM3U\n';
+                lines.forEach(line => {
+                    const [title, url] = line.split(',').map(item => item.trim());
+                    if (title && url) {
+                        m3uContent += `#EXTINF:-1,${title}\n${url}\n`;
+                    }
+                });
+                downloadM3U(m3uContent, 'cnliux.m3u');
+            })
+            .catch(error => {
+                console.error('获取TXT文件时出现问题:', error);
+            });
+    }
+
+    function downloadM3U(content, filename) {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    }
+</script>
+</body>
+</html>
