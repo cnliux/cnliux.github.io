@@ -14418,8 +14418,7 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 哈哈一笑 烦恼全消,http://huanqiuzhibo.cn/manifest/douyu.php?id=1377142
 🐠斗鱼-陪看🐠,#genre#
 ░░░「 橙記 最人气港剧间 」░░░, http://huanqiuzhibo.cn/manifest/douyu.php?id=4549169
-✨美兮✨不可能 我二弟天下无敌✨, http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
-金庸武侠、古装神剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
+忘记一个人是先忘记样子还是先忘记声音？, http://huanqiuzhibo.cn/manifest/douyu.php?id=6621
 粤语电影⭐周星驰 林正英 经典喜剧 白话, http://huanqiuzhibo.cn/manifest/douyu.php?id=6566671
 ⭐曾小贤⭐胡一菲⭐第三季⭐, http://huanqiuzhibo.cn/manifest/douyu.php?id=6566658
 ✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时, http://huanqiuzhibo.cn/manifest/douyu.php?id=5062195
@@ -14428,9 +14427,9 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 【话事人】粤语【周星驰】【林正英】, http://huanqiuzhibo.cn/manifest/douyu.php?id=5033502
 【邵氏影院】经典武侠 动作 老电影你懂的, http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
 今天咱们吃一顿好的，持续更新.., http://huanqiuzhibo.cn/manifest/douyu.php?id=961386
+傲娇的超级赛亚人的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=4373285
 【表妹】国产青春 动作 喜剧轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=5423
 【花卷陪看】豆瓣高评分电影, http://huanqiuzhibo.cn/manifest/douyu.php?id=52787
-傲娇的超级赛亚人的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=4373285
 [怀旧剧场] 剧经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=7119207
 【影视剧】总有一部你喜欢的经典影视, http://huanqiuzhibo.cn/manifest/douyu.php?id=11774356
 【静静】经典电影 MV 周星驰 林正英, http://huanqiuzhibo.cn/manifest/douyu.php?id=5668371
@@ -14442,13 +14441,13 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 一生titus的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065569
 用户6056099521的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065793
 illit礼的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065549
+用户8092785756的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065570
 🐠斗鱼-综合🐠,#genre#
 全网最嚣张吃法 隔着屏幕流口水, http://huanqiuzhibo.cn/manifest/douyu.php?id=9116745
-【RM-点播】点播！模式-24H欢乐不断, http://huanqiuzhibo.cn/manifest/douyu.php?id=131977
 【粤语电影】吴孟达 达叔 周星驰 经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=1226741
 妈妈都喜欢看的粤语剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=10338873
-【小宇】经典永不过时~~~, http://huanqiuzhibo.cn/manifest/douyu.php?id=54945
 港剧:最最最经典怀旧的电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
+【小宇】经典永不过时~~~, http://huanqiuzhibo.cn/manifest/douyu.php?id=54945
 【西关大院】粤语学习, http://huanqiuzhibo.cn/manifest/douyu.php?id=11878141
 译制国语影片荟萃, http://huanqiuzhibo.cn/manifest/douyu.php?id=2436390
 【金庸武侠】致敬经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=9285904
@@ -14460,58 +14459,54 @@ illit礼的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065549
 bestthings丶放假的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752532
 用户77392678的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9573929
 用户3174886540的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065769
-全球最新户外露营24小时轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=12324068
-舌尖上的印度丨下饭必备丨点点关注不迷路！, http://huanqiuzhibo.cn/manifest/douyu.php?id=5895598
 越南小哥的丛林生活, http://huanqiuzhibo.cn/manifest/douyu.php?id=10675329
+舌尖上的印度丨下饭必备丨点点关注不迷路！, http://huanqiuzhibo.cn/manifest/douyu.php?id=5895598
 做道“酸菜黑鱼”，鲜嫩味美, http://huanqiuzhibo.cn/manifest/douyu.php?id=9622309
-吃鱼【下饭】影视, http://huanqiuzhibo.cn/manifest/douyu.php?id=12306163
+全球最新户外露营24小时轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=12324068
 吃饭点到了, http://huanqiuzhibo.cn/manifest/douyu.php?id=11283504
 米奇de日常, http://huanqiuzhibo.cn/manifest/douyu.php?id=7393896
 潘姥姥美食的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9738641
 林大仙开箱试吃, http://huanqiuzhibo.cn/manifest/douyu.php?id=841725
 Mrs腊月小九, http://huanqiuzhibo.cn/manifest/douyu.php?id=9529988
-雨中独自露营| 雷暴和大雨, http://huanqiuzhibo.cn/manifest/douyu.php?id=11993738
 帕鲁的世界, http://huanqiuzhibo.cn/manifest/douyu.php?id=7027040
+雨中独自露营| 雷暴和大雨, http://huanqiuzhibo.cn/manifest/douyu.php?id=11993738
 浙江遂昌美食——炒黄未馃, http://huanqiuzhibo.cn/manifest/douyu.php?id=8161564
 用户698850303的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9791981
-小庄导演阿, http://huanqiuzhibo.cn/manifest/douyu.php?id=12101556
 大庆在农村的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9477316
-珊瑚宫心海人美心善o.O, http://huanqiuzhibo.cn/manifest/douyu.php?id=12034061
+【RM-点播】点播！模式-24H欢乐不断, http://huanqiuzhibo.cn/manifest/douyu.php?id=131977
 没有不敢吃的，一个吃货的表白, http://huanqiuzhibo.cn/manifest/douyu.php?id=8659544
 今晚吃鸡啊, http://huanqiuzhibo.cn/manifest/douyu.php?id=2892694
 🐠斗鱼-喜剧🐠,#genre#
-非常757 去吃饭啦, http://huanqiuzhibo.cn/manifest/douyu.php?id=11967227
 【蓝翔】弹幕天团、下饭神剧[请勿刷屏], http://huanqiuzhibo.cn/manifest/douyu.php?id=5908256
+✨美兮✨不可能 我二弟天下无敌✨, http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
 【蓝翔】60帧原画电影 华语喜剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=276200
 【贝爷影厅】欧美 科幻 动作 经典 电影, http://huanqiuzhibo.cn/manifest/douyu.php?id=252802
-【幽默、笑场】喜剧电影专场, http://huanqiuzhibo.cn/manifest/douyu.php?id=428402
-【贝爷MAX厅】60帧电影 科幻 动作, http://huanqiuzhibo.cn/manifest/douyu.php?id=4332
 【谢耳朵】科学天才们的搞笑日常, http://huanqiuzhibo.cn/manifest/douyu.php?id=6668627
-【林正英】僵尸 女鬼 弹幕 护体, http://huanqiuzhibo.cn/manifest/douyu.php?id=218859
 经典港剧情景剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=9548850
-【香港赌片】喜剧、黑帮、动作、武侠、经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=315457
+【林正英】僵尸 女鬼 弹幕 护体, http://huanqiuzhibo.cn/manifest/douyu.php?id=218859
 ❄️❤️胡一菲❤❄️问就是停电了, http://huanqiuzhibo.cn/manifest/douyu.php?id=6863367
+【香港赌片】喜剧、黑帮、动作、武侠、经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=315457
 正常开播，欢迎欢迎, http://huanqiuzhibo.cn/manifest/douyu.php?id=319576
 【刀刀de食堂】美食家 电子榨菜 点播, http://huanqiuzhibo.cn/manifest/douyu.php?id=6733133
 (小毅）林正英，鬼片，喜剧，经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=6906628
-刘星：像超人一样自由自在天空自由飞翔, http://huanqiuzhibo.cn/manifest/douyu.php?id=11827530
 金庸经典播放，点关注不迷路, http://huanqiuzhibo.cn/manifest/douyu.php?id=12128227
+刘星：像超人一样自由自在天空自由飞翔, http://huanqiuzhibo.cn/manifest/douyu.php?id=11827530
 【1.5】陆三金，完整版，未删减，补拍, http://huanqiuzhibo.cn/manifest/douyu.php?id=527502
 经典老剧轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=12015111
 【PDD影院】一起see那些年的经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=1274132
 曾小贤第一集你看不看, http://huanqiuzhibo.cn/manifest/douyu.php?id=11720507
-致敬岁月经典 分享欢乐感动, http://huanqiuzhibo.cn/manifest/douyu.php?id=11756388
 [经典]张窟窿在三国武力值如何？, http://huanqiuzhibo.cn/manifest/douyu.php?id=12124964
 顺风为主 其他情喜影剧集锦为辅 随机连播, http://huanqiuzhibo.cn/manifest/douyu.php?id=6369954
-【下饭剧】【喜剧】东北那疙瘩一家人的生活, http://huanqiuzhibo.cn/manifest/douyu.php?id=11751004
 【吐槽】吐槽一下，快乐一天, http://huanqiuzhibo.cn/manifest/douyu.php?id=9236042
+阳江小凤仙的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12216014
 韩式搞怪（路人成为C位中心）, http://huanqiuzhibo.cn/manifest/douyu.php?id=9392610
 老K追剧 影视精彩不断ss, http://huanqiuzhibo.cn/manifest/douyu.php?id=12326403
+【贝爷影厅】小众电影 欧美 日韩 二号厅, http://huanqiuzhibo.cn/manifest/douyu.php?id=36337
 🐠斗鱼-动作🐠,#genre#
-【神 剧】的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=3439096
+金庸武侠、古装神剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
 元芳到底看不看, http://huanqiuzhibo.cn/manifest/douyu.php?id=6027991
+【神 剧】的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=3439096
 【神 剧】, http://huanqiuzhibo.cn/manifest/douyu.php?id=5875025
-天撅星送江, http://huanqiuzhibo.cn/manifest/douyu.php?id=8997387
 【成龙】给我一把板凳，我可以打10个！, http://huanqiuzhibo.cn/manifest/douyu.php?id=3379942
 【步惊云】金鳞岂是池中物，一遇风云便化龙, http://huanqiuzhibo.cn/manifest/douyu.php?id=9290755
 【嘎子】我不偷狗了！, http://huanqiuzhibo.cn/manifest/douyu.php?id=8366759
@@ -14532,7 +14527,9 @@ Mrs腊月小九, http://huanqiuzhibo.cn/manifest/douyu.php?id=9529988
 【百晓生】经典武侠解说, http://huanqiuzhibo.cn/manifest/douyu.php?id=9649681
 守约罒的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11597921
 【隋唐】与君共饮盏中酒，几人哀伤几人愁, http://huanqiuzhibo.cn/manifest/douyu.php?id=7552568
+烨枫影视直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12325366
 🐠斗鱼-剧情🐠,#genre#
+【蓝翔】经典电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
 【超清2】热门港剧天地, http://huanqiuzhibo.cn/manifest/douyu.php?id=5522351
 【超清1】经典港剧天地, http://huanqiuzhibo.cn/manifest/douyu.php?id=4290711
 原版配乐⭐许三多 迷茫必看⭐, http://huanqiuzhibo.cn/manifest/douyu.php?id=10348728
@@ -14548,24 +14545,23 @@ Mrs腊月小九, http://huanqiuzhibo.cn/manifest/douyu.php?id=9529988
 感谢大家的支持 7495810, http://huanqiuzhibo.cn/manifest/douyu.php?id=7495810
 【雍正康熙】帝王故事连连看, http://huanqiuzhibo.cn/manifest/douyu.php?id=4808115
 【怀旧】姜子牙，孙悟空打妖怪的故事, http://huanqiuzhibo.cn/manifest/douyu.php?id=6861249
+【古董】我们鉴的不是器物，而是人心, http://huanqiuzhibo.cn/manifest/douyu.php?id=9650783
 Angela小兔990, http://huanqiuzhibo.cn/manifest/douyu.php?id=9617766
 新主播第一天 8765855, http://huanqiuzhibo.cn/manifest/douyu.php?id=8765855
-【古董】我们鉴的不是器物，而是人心, http://huanqiuzhibo.cn/manifest/douyu.php?id=9650783
 【饭店】我们把装蒜当美学来修炼的, http://huanqiuzhibo.cn/manifest/douyu.php?id=9650782
 快乐经典电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=11812398
 【严守一】太传统不好，太饭桶更不好, http://huanqiuzhibo.cn/manifest/douyu.php?id=8507023
-烨枫影视直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12325366
 🐠斗鱼-科幻🐠,#genre#
 【经典巨制】欧美大片, http://huanqiuzhibo.cn/manifest/douyu.php?id=2793084
 【漫威】漫威主线剧情 最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=6140589
-【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒, http://huanqiuzhibo.cn/manifest/douyu.php?id=8814650
 【小白影院】60帧 蓝光影院, http://huanqiuzhibo.cn/manifest/douyu.php?id=322360
+【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒, http://huanqiuzhibo.cn/manifest/douyu.php?id=8814650
 漫威宇宙主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=11673725
 科幻大放映, http://huanqiuzhibo.cn/manifest/douyu.php?id=10183347
 【随意时间】漫威主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=12098568
 【变种人】除掉任何阻碍我们的人, http://huanqiuzhibo.cn/manifest/douyu.php?id=9651304
-王者小趴菜只会坑, http://huanqiuzhibo.cn/manifest/douyu.php?id=12095114
 【粤语】看的不是电影【是回忆】求关注, http://huanqiuzhibo.cn/manifest/douyu.php?id=7919720
+王者小趴菜只会坑, http://huanqiuzhibo.cn/manifest/douyu.php?id=12095114
 
 虎牙直播,#genre#
 
@@ -15072,4 +15068,4 @@ Angela小兔990, http://huanqiuzhibo.cn/manifest/douyu.php?id=9617766
 剧集_武林外传,https://cfyy.cc/cdn/hy/21059598.flv
 剧集_地下交通站,https://cfyy.cc/cdn/hy/11342433.flv
 剧集_邻里一家亲,https://cfyy.cc/cdn/hy/11342426.flv
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-19 02:30:10
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-19 11:16:26
