@@ -12854,193 +12854,188 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 斗鱼直播,#genre#
 
 🐠斗鱼直播🐠,#genre#
-【美食】舌尖上的火锅，美食不可辜负,http://huanqiuzhibo.cn/manifest/douyu.php?id=9650849
-【美食】孤独的美食家,http://huanqiuzhibo.cn/manifest/douyu.php?id=260322
-【歌曲】MV点歌台,http://huanqiuzhibo.cn/manifest/douyu.php?id=3186217
-音乐MV点播欣赏,http://huanqiuzhibo.cn/manifest/douyu.php?id=3870925
-❤️下饭神剧❤️,http://huanqiuzhibo.cn/manifest/douyu.php?id=3700024
-最爱贾萌萌,http://huanqiuzhibo.cn/manifest/douyu.php?id=7253343
-林正英僵尸片小姐姐陪看,http://huanqiuzhibo.cn/manifest/douyu.php?id=12176174
-鼎香楼的故事,http://huanqiuzhibo.cn/manifest/douyu.php?id=299854
-贾队长搞笑抗战情景剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=6997954
-港台 科幻 喜剧 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=434971
-60帧极致蓝光刀刀陪看,http://huanqiuzhibo.cn/manifest/douyu.php?id=747764
-【周星驰】星爷 华语 成龙 电影 神乐,http://huanqiuzhibo.cn/manifest/douyu.php?id=122402
-【神乐】华语 经典 电影 沈腾 周星驰,http://huanqiuzhibo.cn/manifest/douyu.php?id=85894
-【贝贝】AI补帧 军旅 历史 喜剧 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=431460
-【倍速播放】快乐会加倍！,http://huanqiuzhibo.cn/manifest/douyu.php?id=4105989
-【刘德华】庆祝华仔出道40周年,http://huanqiuzhibo.cn/manifest/douyu.php?id=2516864
-❤️奶虫❤️恐怖 丧尸 鬼片 灾难科幻,http://huanqiuzhibo.cn/manifest/douyu.php?id=263824
-【恐怖电影】 僵尸 丧尸 灾难片,http://huanqiuzhibo.cn/manifest/douyu.php?id=310926
-童年阴影鬼片恐怖惊悚,http://huanqiuzhibo.cn/manifest/douyu.php?id=2935323
-⭐修复版⭐国配经典⭐,http://huanqiuzhibo.cn/manifest/douyu.php?id=10084875
-【豆瓣高分】史上最佳影片大放送,http://huanqiuzhibo.cn/manifest/douyu.php?id=8770422
-【笑场】喜剧电影专场,http://huanqiuzhibo.cn/manifest/douyu.php?id=9292492
-✨神乐✨欧美 电影 科幻 动作 经典喜剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=20415
-【小鬼点播】动作 喜剧 经典 华语,http://huanqiuzhibo.cn/manifest/douyu.php?id=3928
-【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://huanqiuzhibo.cn/manifest/douyu.php?id=74374
-❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影, http://huanqiuzhibo.cn/manifest/douyu.php?id=96577
-【小宇60帧】陪看主播,http://huanqiuzhibo.cn/manifest/douyu.php?id=323876
-【Liz陪看】 经典高分影视,http://huanqiuzhibo.cn/manifest/douyu.php?id=7254536
-星爷 经典 喜剧 科幻 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=508118
-全网最清晰林正英僵尸道长,http://huanqiuzhibo.cn/manifest/douyu.php?id=7356023
-❤电影院❤ 喜剧悬疑文艺科幻灾难动作爱情, http://huanqiuzhibo.cn/manifest/douyu.php?id=12192607
-60帧【周星驰】李连杰 林正英 成龙,http://huanqiuzhibo.cn/manifest/douyu.php?id=12143022
-【静静】经典电影 MV 周星驰 林正英,http://huanqiuzhibo.cn/manifest/douyu.php?id=8009547
-【米尼影院】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7642724
-一个只播恐怖片的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12068394
-【恐怖】经典 恐怖 鬼怪 剧场,http://huanqiuzhibo.cn/manifest/douyu.php?id=1165374
-哈哈一笑 烦恼全消,http://huanqiuzhibo.cn/manifest/douyu.php?id=1377142
+【美食】舌尖上的火锅，美食不可辜负,https://live.iill.top/douyu/9650849
+【美食】孤独的美食家,https://live.iill.top/douyu/260322
+【歌曲】MV点歌台,https://live.iill.top/douyu/3186217
+音乐MV点播欣赏,https://live.iill.top/douyu/3870925
+❤️下饭神剧❤️,https://live.iill.top/douyu/3700024
+最爱贾萌萌,https://live.iill.top/douyu/7253343
+林正英僵尸片小姐姐陪看,https://live.iill.top/douyu/12176174
+鼎香楼的故事,https://live.iill.top/douyu/299854
+贾队长搞笑抗战情景剧,https://live.iill.top/douyu/6997954
+港台 科幻 喜剧 动作,https://live.iill.top/douyu/434971
+60帧极致蓝光刀刀陪看,https://live.iill.top/douyu/747764
+【周星驰】星爷 华语 成龙 电影 神乐,https://live.iill.top/douyu/122402
+【神乐】华语 经典 电影 沈腾 周星驰,https://live.iill.top/douyu/85894
+【贝贝】AI补帧 军旅 历史 喜剧 动作,https://live.iill.top/douyu/431460
+【倍速播放】快乐会加倍！,https://live.iill.top/douyu/4105989
+【刘德华】庆祝华仔出道40周年,https://live.iill.top/douyu/2516864
+❤️奶虫❤️恐怖 丧尸 鬼片 灾难科幻,https://live.iill.top/douyu/263824
+【恐怖电影】 僵尸 丧尸 灾难片,https://live.iill.top/douyu/310926
+童年阴影鬼片恐怖惊悚,https://live.iill.top/douyu/2935323
+⭐修复版⭐国配经典⭐,https://live.iill.top/douyu/10084875
+【豆瓣高分】史上最佳影片大放送,https://live.iill.top/douyu/8770422
+【笑场】喜剧电影专场,https://live.iill.top/douyu/9292492
+✨神乐✨欧美 电影 科幻 动作 经典喜剧,https://live.iill.top/douyu/20415
+【小鬼点播】动作 喜剧 经典 华语,https://live.iill.top/douyu/3928
+【冰冰冰冰】恐怖 经典 喜剧 和你一起,https://live.iill.top/douyu/74374
+❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影, https://live.iill.top/douyu/96577
+【小宇60帧】陪看主播,https://live.iill.top/douyu/323876
+【Liz陪看】 经典高分影视,https://live.iill.top/douyu/7254536
+星爷 经典 喜剧 科幻 动作,https://live.iill.top/douyu/508118
+全网最清晰林正英僵尸道长,https://live.iill.top/douyu/7356023
+❤电影院❤ 喜剧悬疑文艺科幻灾难动作爱情, https://live.iill.top/douyu/12192607
+60帧【周星驰】李连杰 林正英 成龙,https://live.iill.top/douyu/12143022
+【静静】经典电影 MV 周星驰 林正英,https://live.iill.top/douyu/8009547
+【米尼影院】经典电视剧,https://live.iill.top/douyu/7642724
+一个只播恐怖片的直播间,https://live.iill.top/douyu/12068394
+【恐怖】经典 恐怖 鬼怪 剧场,https://live.iill.top/douyu/1165374
+哈哈一笑 烦恼全消,https://live.iill.top/douyu/1377142
 🐠斗鱼-陪看🐠,#genre#
-░░░「 橙記 最人气港剧间 」░░░, http://huanqiuzhibo.cn/manifest/douyu.php?id=4549169
-✨美兮✨不可能 我二弟天下无敌✨, http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
-忘记一个人是先忘记样子还是先忘记声音？, http://huanqiuzhibo.cn/manifest/douyu.php?id=6621
-金庸武侠、古装神剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
-粤语电影⭐周星驰 林正英 经典喜剧 白话, http://huanqiuzhibo.cn/manifest/douyu.php?id=6566671
-⭐曾小贤⭐胡一菲⭐第三季⭐, http://huanqiuzhibo.cn/manifest/douyu.php?id=6566658
-✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时, http://huanqiuzhibo.cn/manifest/douyu.php?id=5062195
-❤️女团社❤️最新舞蹈MV音乐演唱会舞台, http://huanqiuzhibo.cn/manifest/douyu.php?id=11327316
-国强四阿哥, http://huanqiuzhibo.cn/manifest/douyu.php?id=4944033
-【话事人】粤语【周星驰】【林正英】, http://huanqiuzhibo.cn/manifest/douyu.php?id=5033502
-【邵氏影院】经典武侠 动作 老电影你懂的, http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
-今天咱们吃一顿好的，持续更新.., http://huanqiuzhibo.cn/manifest/douyu.php?id=961386
-【花卷陪看】豆瓣高评分电影, http://huanqiuzhibo.cn/manifest/douyu.php?id=52787
-傲娇的超级赛亚人的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=4373285
-【表妹】国产青春 动作 喜剧轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=5423
-[怀旧剧场] 剧经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=7119207
-【静静】经典电影 MV 周星驰 林正英, http://huanqiuzhibo.cn/manifest/douyu.php?id=5668371
-【西游】由爱故生怨，怨恨纠缠, http://huanqiuzhibo.cn/manifest/douyu.php?id=10198644
-4K❤影视剧❤武侠探案悬疑谍战动漫古装, http://huanqiuzhibo.cn/manifest/douyu.php?id=12191214
-【久久】林正英 僵尸 女鬼 弹幕 护体, http://huanqiuzhibo.cn/manifest/douyu.php?id=8371123
-【电影天堂】优秀电影展播, http://huanqiuzhibo.cn/manifest/douyu.php?id=3811092
-❤️演唱会❤️最强专场流行音乐经典华语, http://huanqiuzhibo.cn/manifest/douyu.php?id=11880223
-我在斗鱼看漫画, http://huanqiuzhibo.cn/manifest/douyu.php?id=6432827
-测试号勿扰~~~, http://huanqiuzhibo.cn/manifest/douyu.php?id=5841922
-紫薯星星的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9446945
+░░░「 橙記 最人气港剧间 」░░░, https://live.iill.top/douyu/4549169
+忘记一个人是先忘记样子还是先忘记声音？, https://live.iill.top/douyu/6621
+粤语电影⭐周星驰 林正英 经典喜剧 白话, https://live.iill.top/douyu/6566671
+⭐曾小贤⭐胡一菲⭐第三季⭐, https://live.iill.top/douyu/6566658
+✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时, https://live.iill.top/douyu/5062195
+❤️女团社❤️最新舞蹈MV音乐演唱会舞台, https://live.iill.top/douyu/11327316
+国强四阿哥, https://live.iill.top/douyu/4944033
+【话事人】粤语【周星驰】【林正英】, https://live.iill.top/douyu/5033502
+【邵氏影院】经典武侠 动作 老电影你懂的, https://live.iill.top/douyu/4246519
+今天咱们吃一顿好的，持续更新.., https://live.iill.top/douyu/961386
+【花卷陪看】豆瓣高评分电影, https://live.iill.top/douyu/52787
+【表妹】国产青春 动作 喜剧轮播, https://live.iill.top/douyu/5423
+傲娇的超级赛亚人的直播间, https://live.iill.top/douyu/4373285
+[怀旧剧场] 剧经典, https://live.iill.top/douyu/7119207
+【静静】经典电影 MV 周星驰 林正英, https://live.iill.top/douyu/5668371
+【西游】由爱故生怨，怨恨纠缠, https://live.iill.top/douyu/10198644
+4K❤影视剧❤武侠探案悬疑谍战动漫古装, https://live.iill.top/douyu/12191214
+【久久】林正英 僵尸 女鬼 弹幕 护体, https://live.iill.top/douyu/8371123
+❤️演唱会❤️最强专场流行音乐经典华语, https://live.iill.top/douyu/11880223
+我在斗鱼看漫画, https://live.iill.top/douyu/6432827
+测试号勿扰~~~, https://live.iill.top/douyu/5841922
+紫薯星星的直播间, https://live.iill.top/douyu/9446945
+金豆0523的直播间, https://live.iill.top/douyu/11512742
+AAPLEDOG的直播间, https://live.iill.top/douyu/5133586
+罗先生699的直播间, https://live.iill.top/douyu/12065805
+今日份的直播, https://live.iill.top/douyu/7312744
 🐠斗鱼-综合🐠,#genre#
-全网最嚣张吃法 隔着屏幕流口水, http://huanqiuzhibo.cn/manifest/douyu.php?id=9116745
-港剧:最最最经典怀旧的电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
-【RM-点播】点播！模式-24H欢乐不断, http://huanqiuzhibo.cn/manifest/douyu.php?id=131977
-【粤语电影】吴孟达 达叔 周星驰 经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=1226741
-妈妈都喜欢看的粤语剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=10338873
-元芳你怎么看 12293988, http://huanqiuzhibo.cn/manifest/douyu.php?id=12293988
-【小宇】经典永不过时~~~, http://huanqiuzhibo.cn/manifest/douyu.php?id=54945
-【西关大院】粤语学习, http://huanqiuzhibo.cn/manifest/douyu.php?id=11878141
-译制国语影片荟萃, http://huanqiuzhibo.cn/manifest/douyu.php?id=2436390
-【金庸武侠】致敬经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=9285904
-老高与小茉今天填坑了吗~, http://huanqiuzhibo.cn/manifest/douyu.php?id=12139546
-静静给你糖的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752454
-陳2189639的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=8647514
-叮咚 您小兔叽到货了请签收！！~, http://huanqiuzhibo.cn/manifest/douyu.php?id=7266829
-bestthings丶放假的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752532
-用户0453201926的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752973
-用户77392678的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9573929
-我只喜欢团团呀的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752416
-boushit的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12025441
-Aan2619742的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11753064
-阿亮很神奇的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752921
-用户4158070243的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752458
-电影 恐怖 动作, http://huanqiuzhibo.cn/manifest/douyu.php?id=12244672
-用户8440489197的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=11752511
-zhou一米阳光的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065765
-划水主播！, http://huanqiuzhibo.cn/manifest/douyu.php?id=5251148
-在回忆中寻找的直播间1732, http://huanqiuzhibo.cn/manifest/douyu.php?id=12065601
-越南小哥的丛林生活, http://huanqiuzhibo.cn/manifest/douyu.php?id=10675329
-舌尖上的印度丨下饭必备丨点点关注不迷路！, http://huanqiuzhibo.cn/manifest/douyu.php?id=5895598
-吃鱼【下饭】影视, http://huanqiuzhibo.cn/manifest/douyu.php?id=12306163
-做道“酸菜黑鱼”，鲜嫩味美, http://huanqiuzhibo.cn/manifest/douyu.php?id=9622309
-全球最新户外露营24小时轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=12324068
-浙江遂昌美食——炒黄未馃, http://huanqiuzhibo.cn/manifest/douyu.php?id=8161564
-吃饭点到了, http://huanqiuzhibo.cn/manifest/douyu.php?id=11283504
-潘姥姥美食的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=9738641
-米奇de日常, http://huanqiuzhibo.cn/manifest/douyu.php?id=7393896
-帕鲁的世界, http://huanqiuzhibo.cn/manifest/douyu.php?id=7027040
-林大仙开箱试吃, http://huanqiuzhibo.cn/manifest/douyu.php?id=841725
+全网最嚣张吃法 隔着屏幕流口水, https://live.iill.top/douyu/9116745
+【RM-点播】点播！模式-24H欢乐不断, https://live.iill.top/douyu/131977
+【粤语电影】吴孟达 达叔 周星驰 经典, https://live.iill.top/douyu/1226741
+妈妈都喜欢看的粤语剧, https://live.iill.top/douyu/10338873
+港剧:最最最经典怀旧的电视剧, https://live.iill.top/douyu/5061550
+【西关大院】粤语学习, https://live.iill.top/douyu/11878141
+译制国语影片荟萃, https://live.iill.top/douyu/2436390
+【金庸武侠】致敬经典, https://live.iill.top/douyu/9285904
+老高与小茉今天填坑了吗~, https://live.iill.top/douyu/12139546
+静静给你糖的直播间, https://live.iill.top/douyu/11752454
+陳2189639的直播间, https://live.iill.top/douyu/8647514
+叮咚 您小兔叽到货了请签收！！~, https://live.iill.top/douyu/7266829
+bestthings丶放假的直播间, https://live.iill.top/douyu/11752532
+用户0453201926的直播间, https://live.iill.top/douyu/11752973
+用户77392678的直播间, https://live.iill.top/douyu/9573929
+我只喜欢团团呀的直播间, https://live.iill.top/douyu/11752416
+boushit的直播间, https://live.iill.top/douyu/12025441
+Aan2619742的直播间, https://live.iill.top/douyu/11753064
+阿亮很神奇的直播间, https://live.iill.top/douyu/11752921
+用户4158070243的直播间, https://live.iill.top/douyu/11752458
+用户8440489197的直播间, https://live.iill.top/douyu/11752511
+电影 恐怖 动作, https://live.iill.top/douyu/12244672
+zhou一米阳光的直播间, https://live.iill.top/douyu/12065765
+划水主播！, https://live.iill.top/douyu/5251148
+在回忆中寻找的直播间1732, https://live.iill.top/douyu/12065601
+越南小哥的丛林生活, https://live.iill.top/douyu/10675329
+做道“酸菜黑鱼”，鲜嫩味美, https://live.iill.top/douyu/9622309
+舌尖上的印度丨下饭必备丨点点关注不迷路！, https://live.iill.top/douyu/5895598
+全球最新户外露营24小时轮播, https://live.iill.top/douyu/12324068
+吃饭点到了, https://live.iill.top/douyu/11283504
+潘姥姥美食的直播间, https://live.iill.top/douyu/9738641
+米奇de日常, https://live.iill.top/douyu/7393896
+林大仙开箱试吃, https://live.iill.top/douyu/841725
+Mrs腊月小九, https://live.iill.top/douyu/9529988
+雨中独自露营| 雷暴和大雨, https://live.iill.top/douyu/11993738
+帕鲁的世界, https://live.iill.top/douyu/7027040
+浙江遂昌美食——炒黄未馃, https://live.iill.top/douyu/8161564
+大庆在农村的直播间, https://live.iill.top/douyu/9477316
 🐠斗鱼-喜剧🐠,#genre#
-【幽默、笑场】喜剧电影专场, http://huanqiuzhibo.cn/manifest/douyu.php?id=428402
-【贝爷影厅】欧美 科幻 动作 经典 电影, http://huanqiuzhibo.cn/manifest/douyu.php?id=252802
-【贝爷MAX厅】60帧电影 科幻 动作, http://huanqiuzhibo.cn/manifest/douyu.php?id=4332
-【蓝翔】弹幕天团、下饭神剧[请勿刷屏], http://huanqiuzhibo.cn/manifest/douyu.php?id=5908256
-【蓝翔】60帧原画电影 华语喜剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=276200
-【贝爷影厅】小众电影 欧美 日韩 二号厅, http://huanqiuzhibo.cn/manifest/douyu.php?id=36337
-【谢耳朵】科学天才们的搞笑日常, http://huanqiuzhibo.cn/manifest/douyu.php?id=6668627
-【林正英】僵尸 女鬼 弹幕 护体, http://huanqiuzhibo.cn/manifest/douyu.php?id=218859
-【香港赌片】喜剧、黑帮、动作、武侠、经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=315457
-❄️❤️胡一菲❤❄️问就是停电了, http://huanqiuzhibo.cn/manifest/douyu.php?id=6863367
-正常开播，欢迎欢迎, http://huanqiuzhibo.cn/manifest/douyu.php?id=319576
-经典港剧情景剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=9548850
-【刀刀de食堂】美食家 电子榨菜 点播, http://huanqiuzhibo.cn/manifest/douyu.php?id=6733133
-(小毅）林正英，鬼片，喜剧，经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=6906628
-刘星：像超人一样自由自在天空自由飞翔, http://huanqiuzhibo.cn/manifest/douyu.php?id=11827530
-【1.5】陆三金，完整版，未删减，补拍, http://huanqiuzhibo.cn/manifest/douyu.php?id=527502
-经典老剧轮播, http://huanqiuzhibo.cn/manifest/douyu.php?id=12015111
-【PDD影院】一起see那些年的经典, http://huanqiuzhibo.cn/manifest/douyu.php?id=1274132
-曾小贤第一集你看不看, http://huanqiuzhibo.cn/manifest/douyu.php?id=11720507
-致敬岁月经典 分享欢乐感动, http://huanqiuzhibo.cn/manifest/douyu.php?id=11756388
-[经典]张窟窿在三国武力值如何？, http://huanqiuzhibo.cn/manifest/douyu.php?id=12124964
-顺风为主 其他情喜影剧集锦为辅 随机连播, http://huanqiuzhibo.cn/manifest/douyu.php?id=6369954
-【吐槽】吐槽一下，快乐一天, http://huanqiuzhibo.cn/manifest/douyu.php?id=9236042
-韩式搞怪（路人成为C位中心）, http://huanqiuzhibo.cn/manifest/douyu.php?id=9392610
+✨美兮✨不可能 我二弟天下无敌✨, https://live.iill.top/douyu/2838296
+【蓝翔】弹幕天团、下饭神剧[请勿刷屏], https://live.iill.top/douyu/5908256
+【蓝翔】60帧原画电影 华语喜剧, https://live.iill.top/douyu/276200
+【贝爷MAX厅】60帧电影 科幻 动作, https://live.iill.top/douyu/4332
+【谢耳朵】科学天才们的搞笑日常, https://live.iill.top/douyu/6668627
+【林正英】僵尸 女鬼 弹幕 护体, https://live.iill.top/douyu/218859
+❄️❤️胡一菲❤❄️问就是停电了, https://live.iill.top/douyu/6863367
+【香港赌片】喜剧、黑帮、动作、武侠、经典, https://live.iill.top/douyu/315457
+经典港剧情景剧, https://live.iill.top/douyu/9548850
+(小毅）林正英，鬼片，喜剧，经典, https://live.iill.top/douyu/6906628
+刘星：像超人一样自由自在天空自由飞翔, https://live.iill.top/douyu/11827530
+【1.5】陆三金，完整版，未删减，补拍, https://live.iill.top/douyu/527502
+经典老剧轮播, https://live.iill.top/douyu/12015111
+【PDD影院】一起see那些年的经典, https://live.iill.top/douyu/1274132
+曾小贤第一集你看不看, https://live.iill.top/douyu/11720507
+[经典]张窟窿在三国武力值如何？, https://live.iill.top/douyu/12124964
+顺风为主 其他情喜影剧集锦为辅 随机连播, https://live.iill.top/douyu/6369954
+【吐槽】吐槽一下，快乐一天, https://live.iill.top/douyu/9236042
+韩式搞怪（路人成为C位中心）, https://live.iill.top/douyu/9392610
+正常开播，欢迎欢迎, https://live.iill.top/douyu/319576
 🐠斗鱼-动作🐠,#genre#
-元芳到底看不看, http://huanqiuzhibo.cn/manifest/douyu.php?id=6027991
-【神 剧】的直播间, http://huanqiuzhibo.cn/manifest/douyu.php?id=3439096
-【神 剧】, http://huanqiuzhibo.cn/manifest/douyu.php?id=5875025
-天撅星送江, http://huanqiuzhibo.cn/manifest/douyu.php?id=8997387
-【成龙】给我一把板凳，我可以打10个！, http://huanqiuzhibo.cn/manifest/douyu.php?id=3379942
-【步惊云】金鳞岂是池中物，一遇风云便化龙, http://huanqiuzhibo.cn/manifest/douyu.php?id=9290755
-【嘎子】我不偷狗了！, http://huanqiuzhibo.cn/manifest/douyu.php?id=8366759
+金庸武侠、古装神剧, https://live.iill.top/douyu/338759
+元芳到底看不看, https://live.iill.top/douyu/6027991
+【神 剧】的直播间, https://live.iill.top/douyu/3439096
+【神 剧】, https://live.iill.top/douyu/5875025
+天撅星送江, https://live.iill.top/douyu/8997387
+【成龙】给我一把板凳，我可以打10个！, https://live.iill.top/douyu/3379942
+【步惊云】金鳞岂是池中物，一遇风云便化龙, https://live.iill.top/douyu/9290755
+【嘎子】我不偷狗了！, https://live.iill.top/douyu/8366759
 🐠斗鱼-古装🐠,#genre#
-家有诤子  不败其家, http://huanqiuzhibo.cn/manifest/douyu.php?id=6911044
-【超清3】人气港剧天地, http://huanqiuzhibo.cn/manifest/douyu.php?id=5261342
-♥ 港剧 动漫 美剧❤️, http://huanqiuzhibo.cn/manifest/douyu.php?id=6581531
-《武侠剧》, http://huanqiuzhibo.cn/manifest/douyu.php?id=7655471
-一起陪伴我们成长的神剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=1006179
-【大秦】秦人不暇自哀，而后人哀之, http://huanqiuzhibo.cn/manifest/douyu.php?id=1584198
-传位于李德全, http://huanqiuzhibo.cn/manifest/douyu.php?id=12130861
-(球球）画质修复桃源结义, http://huanqiuzhibo.cn/manifest/douyu.php?id=12180551
-不可能！我二弟天下无敌！, http://huanqiuzhibo.cn/manifest/douyu.php?id=10906963
-桃花影落飞神剑，碧海潮生按玉箫。, http://huanqiuzhibo.cn/manifest/douyu.php?id=12170696
-【默鱼】一起追经典大片, http://huanqiuzhibo.cn/manifest/douyu.php?id=11922242
-经典 怀旧, http://huanqiuzhibo.cn/manifest/douyu.php?id=35199
-听听123456789, http://huanqiuzhibo.cn/manifest/douyu.php?id=7039598
-【百晓生】经典武侠解说, http://huanqiuzhibo.cn/manifest/douyu.php?id=9649681
-【隋唐】与君共饮盏中酒，几人哀伤几人愁, http://huanqiuzhibo.cn/manifest/douyu.php?id=7552568
+家有诤子  不败其家, https://live.iill.top/douyu/6911044
+♥ 港剧 动漫 美剧❤️, https://live.iill.top/douyu/6581531
+《武侠剧》, https://live.iill.top/douyu/7655471
+一起陪伴我们成长的神剧, https://live.iill.top/douyu/1006179
+【大秦】秦人不暇自哀，而后人哀之, https://live.iill.top/douyu/1584198
+传位于李德全, https://live.iill.top/douyu/12130861
+(球球）画质修复桃源结义, https://live.iill.top/douyu/12180551
+不可能！我二弟天下无敌！, https://live.iill.top/douyu/10906963
+桃花影落飞神剑，碧海潮生按玉箫。, https://live.iill.top/douyu/12170696
+【默鱼】一起追经典大片, https://live.iill.top/douyu/11922242
+经典 怀旧, https://live.iill.top/douyu/35199
+听听123456789, https://live.iill.top/douyu/7039598
+【百晓生】经典武侠解说, https://live.iill.top/douyu/9649681
+【隋唐】与君共饮盏中酒，几人哀伤几人愁, https://live.iill.top/douyu/7552568
+【超清3】人气港剧天地, https://live.iill.top/douyu/5261342
 🐠斗鱼-剧情🐠,#genre#
-【蓝翔】经典电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
-【超清2】热门港剧天地, http://huanqiuzhibo.cn/manifest/douyu.php?id=5522351
-【超清1】经典港剧天地, http://huanqiuzhibo.cn/manifest/douyu.php?id=4290711
-原版配乐⭐许三多 迷茫必看⭐, http://huanqiuzhibo.cn/manifest/douyu.php?id=10348728
-范闲：第二部什么时候出？, http://huanqiuzhibo.cn/manifest/douyu.php?id=7812810
-【电视剧】本直播间由天使点播提供技术支持, http://huanqiuzhibo.cn/manifest/douyu.php?id=7623292
-【六小龄童】你挑着担，我牵着马, http://huanqiuzhibo.cn/manifest/douyu.php?id=8953746
-【刘华强】你这呱保熟吗, http://huanqiuzhibo.cn/manifest/douyu.php?id=2726977
-经典  海景房, http://huanqiuzhibo.cn/manifest/douyu.php?id=8543072
-新治愈篇美食家 点餐美食, http://huanqiuzhibo.cn/manifest/douyu.php?id=953193
-【樊胜美】天下无不散宴席除了你自己, http://huanqiuzhibo.cn/manifest/douyu.php?id=3756989
-【屠龙】凛冬将至，夜王之争, http://huanqiuzhibo.cn/manifest/douyu.php?id=8945323
-❤️新老三国❤️鼎之轻重，何以问呼？, http://huanqiuzhibo.cn/manifest/douyu.php?id=12253936
-感谢大家的支持 7495810, http://huanqiuzhibo.cn/manifest/douyu.php?id=7495810
-【怀旧】姜子牙，孙悟空打妖怪的故事, http://huanqiuzhibo.cn/manifest/douyu.php?id=6861249
-【雍正康熙】帝王故事连连看, http://huanqiuzhibo.cn/manifest/douyu.php?id=4808115
-国强四王爷, http://huanqiuzhibo.cn/manifest/douyu.php?id=7246624
-Angela小兔990, http://huanqiuzhibo.cn/manifest/douyu.php?id=9617766
-【古董】我们鉴的不是器物，而是人心, http://huanqiuzhibo.cn/manifest/douyu.php?id=9650783
-快乐经典电视剧, http://huanqiuzhibo.cn/manifest/douyu.php?id=11812398
-【饭店】我们把装蒜当美学来修炼的, http://huanqiuzhibo.cn/manifest/douyu.php?id=9650782
-【严守一】太传统不好，太饭桶更不好, http://huanqiuzhibo.cn/manifest/douyu.php?id=8507023
+【蓝翔】经典电视剧, https://live.iill.top/douyu/7459925
+原版配乐⭐许三多 迷茫必看⭐, https://live.iill.top/douyu/10348728
+范闲：第二部什么时候出？, https://live.iill.top/douyu/7812810
+【电视剧】本直播间由天使点播提供技术支持, https://live.iill.top/douyu/7623292
+【六小龄童】你挑着担，我牵着马, https://live.iill.top/douyu/8953746
+【刘华强】你这呱保熟吗, https://live.iill.top/douyu/2726977
+新治愈篇美食家 点餐美食, https://live.iill.top/douyu/953193
+【樊胜美】天下无不散宴席除了你自己, https://live.iill.top/douyu/3756989
+【屠龙】凛冬将至，夜王之争, https://live.iill.top/douyu/8945323
+❤️新老三国❤️鼎之轻重，何以问呼？, https://live.iill.top/douyu/12253936
+感谢大家的支持 7495810, https://live.iill.top/douyu/7495810
+【雍正康熙】帝王故事连连看, https://live.iill.top/douyu/4808115
+【怀旧】姜子牙，孙悟空打妖怪的故事, https://live.iill.top/douyu/6861249
+Angela小兔990, https://live.iill.top/douyu/9617766
+【古董】我们鉴的不是器物，而是人心, https://live.iill.top/douyu/9650783
+快乐经典电视剧, https://live.iill.top/douyu/11812398
+【饭店】我们把装蒜当美学来修炼的, https://live.iill.top/douyu/9650782
+【严守一】太传统不好，太饭桶更不好, https://live.iill.top/douyu/8507023
+【超清2】热门港剧天地, https://live.iill.top/douyu/5522351
+【超清1】经典港剧天地, https://live.iill.top/douyu/4290711
 🐠斗鱼-科幻🐠,#genre#
-【漫威】漫威主线剧情 最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=6140589
-【小白影院】60帧 蓝光影院, http://huanqiuzhibo.cn/manifest/douyu.php?id=322360
-【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒, http://huanqiuzhibo.cn/manifest/douyu.php?id=8814650
-漫威宇宙主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=11673725
-科幻大放映, http://huanqiuzhibo.cn/manifest/douyu.php?id=10183347
-【随意时间】漫威主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=12098568
-【变种人】除掉任何阻碍我们的人, http://huanqiuzhibo.cn/manifest/douyu.php?id=9651304
+【漫威】漫威主线剧情 最佳观影顺序, https://live.iill.top/douyu/6140589
+【小白影院】60帧 蓝光影院, https://live.iill.top/douyu/322360
+【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒, https://live.iill.top/douyu/8814650
+漫威宇宙主线剧情最佳观影顺序, https://live.iill.top/douyu/11673725
+科幻大放映, https://live.iill.top/douyu/10183347
+【何度哇】漫威主线剧情最佳观影顺序, https://live.iill.top/douyu/12098568
+【变种人】除掉任何阻碍我们的人, https://live.iill.top/douyu/9651304
 【
-无心】漫威主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=3449517
-【鲸鹿】漫威主线剧情最佳观影顺序, http://huanqiuzhibo.cn/manifest/douyu.php?id=12095114
-【粤语】看的不是电影【是回忆】求关注, http://huanqiuzhibo.cn/manifest/douyu.php?id=7919720
-【经典巨制】欧美大片, http://huanqiuzhibo.cn/manifest/douyu.php?id=2793084
+无心】漫威主线剧情最佳观影顺序, https://live.iill.top/douyu/3449517
+【鲸鹿】漫威主线剧情最佳观影顺序, https://live.iill.top/douyu/12095114
+【粤语】看的不是电影【是回忆】求关注, https://live.iill.top/douyu/7919720
 
 虎牙直播,#genre#
 
@@ -13547,4 +13542,4 @@ Angela小兔990, http://huanqiuzhibo.cn/manifest/douyu.php?id=9617766
 剧集_武林外传,https://cfyy.cc/cdn/hy/21059598.flv
 剧集_地下交通站,https://cfyy.cc/cdn/hy/11342433.flv
 剧集_邻里一家亲,https://cfyy.cc/cdn/hy/11342426.flv
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-22 02:30:08
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-22 08:22:19
