@@ -23858,59 +23858,29 @@ HITFM劲曲调频,https://fanmingming.com/fm?id=662
 
 港澳台,#genre#
 
-28 AI 智慧賽馬,http://aktv.top/AKTV/live/aktv/28ai/AKTV.m3u8
-Channel 5 HD,http://aktv.top/AKTV/live/aktv/channel5hd/AKTV.m3u8
-Channel 8 HD,http://aktv.top/AKTV/live/aktv/channel8hd/AKTV.m3u8
-Channel U HD,http://aktv.top/AKTV/live/aktv/channeluhd/AKTV.m3u8
-myTV SUPER 18台,http://aktv.top/AKTV/live/aktv/mytvsuper18/AKTV.m3u8
-PopC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
-ROCK Action,http://aktv.top/AKTV/live/aktv/rockaction/AKTV.m3u8
-TVB Plus,http://aktv.top/AKTV/live/aktv/tvbplus/AKTV.m3u8
-TVBS,http://aktv.top/AKTV/live/aktv/tvbs/AKTV.m3u8
-TVBS-新聞台,http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
-tvN,http://aktv.top/AKTV/live/aktv/tvn/AKTV.m3u8
-中天亞洲台,http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
-中天新聞台,http://aktv.top/AKTV/live/aktv/null-8/AKTV.m3u8
-中視,http://aktv.top/AKTV/live/aktv/null-10/AKTV.m3u8
-千禧經典台,http://aktv.top/AKTV/live/aktv/null-15/AKTV.m3u8
-娛樂新聞台(HK),http://aktv.top/AKTV/live/aktv/hk/AKTV.m3u8
-寰宇新聞台,http://aktv.top/AKTV/live/aktv/null-9/AKTV.m3u8
-日本全天新聞,http://aktv.top/AKTV/live/aktv/null-13/AKTV.m3u8
-明珠剧集台(北美),http://aktv.top/AKTV/live/aktv/null-19/AKTV.m3u8
-明珠台,http://aktv.top/AKTV/live/aktv/null-2/AKTV.m3u8
-無線新聞台,http://aktv.top/AKTV/live/aktv/null-1/AKTV.m3u8
-美亞電影台(HK),http://aktv.top/AKTV/live/aktv/hk-1/AKTV.m3u8
-翡翠剧集台(北美),http://aktv.top/AKTV/live/aktv/null-18/AKTV.m3u8
-翡翠台,http://aktv.top/AKTV/live/aktv/null/AKTV.m3u8
-翡翠综合台(北美),http://aktv.top/AKTV/live/aktv/null-17/AKTV.m3u8
-華視,http://aktv.top/AKTV/live/aktv/null-11/AKTV.m3u8
-靖天電影台,http://aktv.top/AKTV/live/aktv/null-6/AKTV.m3u8
-鳳凰中文,http://aktv.top/AKTV/live/aktv/null-3/AKTV.m3u8
-鳳凰資訊,http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8
-鳳凰香港,http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8
-黃金翡翠台,http://aktv.top/AKTV/live/aktv/null-21/AKTV.m3u8
-龍華日韓台,http://aktv.top/AKTV/live/aktv/null-22/AKTV.m3u8
-龍華經典台,http://aktv.top/AKTV/live/aktv/null-7/AKTV.m3u8
-龍華電影台,http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8
-viutv 99,http://aktv.top/AKTV/live/aktv2/viutv99/AKTV.m3u8
-viutv6 96,http://aktv.top/AKTV/live/aktv2/viutv696/AKTV.m3u8
-无线新闻台(北美),http://aktv.top/AKTV/live/aktv2/null-1/AKTV.m3u8
-Animax-HK,http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
-C+台,http://aktv.top/AKTV/live/aktv3/c/AKTV.m3u8
-DW,http://aktv.top/AKTV/live/aktv3/dw/AKTV.m3u8
-France 24,http://aktv.top/AKTV/live/aktv3/france24/AKTV.m3u8
-KIX,http://aktv.top/AKTV/live/aktv3/kix/AKTV.m3u8
-Love Nature HD,http://aktv.top/AKTV/live/aktv3/lovenaturehd/AKTV.m3u8
-NHK World-Japan,http://aktv.top/AKTV/live/aktv3/nhkworldjapan/AKTV.m3u8
-Nick Jr,http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
-Nickelodeon,http://aktv.top/AKTV/live/aktv3/nickelodeon/AKTV.m3u8
-ROCK Action,http://aktv.top/AKTV/live/aktv3/rockaction/AKTV.m3u8
-Thrill,http://aktv.top/AKTV/live/aktv3/thrill/AKTV.m3u8
-ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
-亞洲新聞台,http://aktv.top/AKTV/live/aktv3/null-3/AKTV.m3u8
-東方衛視國際頻道,http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8
-無線衛星新聞台,http://aktv.top/AKTV/live/aktv3/null-2/AKTV.m3u8
-
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:7
+#EXT-X-DISCONTINUITY-SEQUENCE:0
+#EXT-X-TARGETDURATION:4
+#EXT-X-INDEPENDENT-SEGMENTS
+#EXTINF:8.333333,
+/web/error_video/02/output1.ts
+#EXTINF:8.333333,
+/web/error_video/02/output2.ts
+#EXTINF:8.333333,
+/web/error_video/02/output3.ts
+#EXTINF:8.333333,
+/web/error_video/02/output4.ts
+#EXTINF:16.666667,
+/web/error_video/02/output5.ts
+#EXTINF:8.333333,
+/web/error_video/02/output6.ts
+#EXTINF:8.333333,
+/web/error_video/02/output7.ts
+#EXTINF:8.333333,
+/web/error_video/02/output8.ts
+# cURL Error: Failed to connect to 127.0.0.1 port 1234: Connection refused
 斗鱼直播,#genre#
 
 🐠斗鱼直播🐠,#genre#
@@ -24029,24 +23999,18 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 ░░░「 橙記 最人气港剧间 」░░░,http://diyp.zxxoo.work/douyu/4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://huanqiuzhibo.cn/manifest/douyu.php?id=4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://120.77.28.4:8648/douyu.php?id=4549169
-【蓝翔】经典电视剧,http://diyp.zxxoo.work/douyu/7459925
-【蓝翔】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
-【蓝翔】经典电视剧,http://120.77.28.4:8648/douyu.php?id=7459925
-金庸武侠、古装神剧,http://diyp.zxxoo.work/douyu/338759
-金庸武侠、古装神剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
-金庸武侠、古装神剧,http://120.77.28.4:8648/douyu.php?id=338759
 粤语电影⭐周星驰 林正英 经典喜剧 白话,http://diyp.zxxoo.work/douyu/6566671
 粤语电影⭐周星驰 林正英 经典喜剧 白话,http://huanqiuzhibo.cn/manifest/douyu.php?id=6566671
 粤语电影⭐周星驰 林正英 经典喜剧 白话,http://120.77.28.4:8648/douyu.php?id=6566671
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://diyp.zxxoo.work/douyu/6566658
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://huanqiuzhibo.cn/manifest/douyu.php?id=6566658
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://120.77.28.4:8648/douyu.php?id=6566658
-✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://diyp.zxxoo.work/douyu/5062195
-✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://huanqiuzhibo.cn/manifest/douyu.php?id=5062195
-✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://120.77.28.4:8648/douyu.php?id=5062195
-双倍-我是蒲蚂蚱 我黑化了,http://diyp.zxxoo.work/douyu/6621
-双倍-我是蒲蚂蚱 我黑化了,http://huanqiuzhibo.cn/manifest/douyu.php?id=6621
-双倍-我是蒲蚂蚱 我黑化了,http://120.77.28.4:8648/douyu.php?id=6621
+金庸武侠、古装神剧,http://diyp.zxxoo.work/douyu/338759
+金庸武侠、古装神剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
+金庸武侠、古装神剧,http://120.77.28.4:8648/douyu.php?id=338759
+看号调整，超值养号！！,http://diyp.zxxoo.work/douyu/11095663
+看号调整，超值养号！！,http://huanqiuzhibo.cn/manifest/douyu.php?id=11095663
+看号调整，超值养号！！,http://120.77.28.4:8648/douyu.php?id=11095663
 呜呜呜呜我被孤立了,http://diyp.zxxoo.work/douyu/6215178
 呜呜呜呜我被孤立了,http://huanqiuzhibo.cn/manifest/douyu.php?id=6215178
 呜呜呜呜我被孤立了,http://120.77.28.4:8648/douyu.php?id=6215178
@@ -24056,33 +24020,30 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 国强四阿哥,http://diyp.zxxoo.work/douyu/4944033
 国强四阿哥,http://huanqiuzhibo.cn/manifest/douyu.php?id=4944033
 国强四阿哥,http://120.77.28.4:8648/douyu.php?id=4944033
-【邵氏影院】经典武侠 动作 老电影你懂的,http://diyp.zxxoo.work/douyu/4246519
-【邵氏影院】经典武侠 动作 老电影你懂的,http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
-【邵氏影院】经典武侠 动作 老电影你懂的,http://120.77.28.4:8648/douyu.php?id=4246519
 【话事人】粤语【周星驰】【林正英】,http://diyp.zxxoo.work/douyu/5033502
 【话事人】粤语【周星驰】【林正英】,http://huanqiuzhibo.cn/manifest/douyu.php?id=5033502
 【话事人】粤语【周星驰】【林正英】,http://120.77.28.4:8648/douyu.php?id=5033502
+【邵氏影院】经典武侠 动作 老电影你懂的,http://diyp.zxxoo.work/douyu/4246519
+【邵氏影院】经典武侠 动作 老电影你懂的,http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
+【邵氏影院】经典武侠 动作 老电影你懂的,http://120.77.28.4:8648/douyu.php?id=4246519
 今天咱们吃一顿好的，持续更新..,http://diyp.zxxoo.work/douyu/961386
 今天咱们吃一顿好的，持续更新..,http://huanqiuzhibo.cn/manifest/douyu.php?id=961386
 今天咱们吃一顿好的，持续更新..,http://120.77.28.4:8648/douyu.php?id=961386
 【花卷陪看】豆瓣高评分电影,http://diyp.zxxoo.work/douyu/52787
 【花卷陪看】豆瓣高评分电影,http://huanqiuzhibo.cn/manifest/douyu.php?id=52787
 【花卷陪看】豆瓣高评分电影,http://120.77.28.4:8648/douyu.php?id=52787
-［豆腐集团］粤语港剧,http://diyp.zxxoo.work/douyu/6478650
-［豆腐集团］粤语港剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=6478650
-［豆腐集团］粤语港剧,http://120.77.28.4:8648/douyu.php?id=6478650
 傲娇的超级赛亚人的直播间,http://diyp.zxxoo.work/douyu/4373285
 傲娇的超级赛亚人的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=4373285
 傲娇的超级赛亚人的直播间,http://120.77.28.4:8648/douyu.php?id=4373285
 【静静】经典电影 MV 周星驰 林正英,http://diyp.zxxoo.work/douyu/5668371
 【静静】经典电影 MV 周星驰 林正英,http://huanqiuzhibo.cn/manifest/douyu.php?id=5668371
 【静静】经典电影 MV 周星驰 林正英,http://120.77.28.4:8648/douyu.php?id=5668371
+【影视剧】总有一部你喜欢的经典影视,http://diyp.zxxoo.work/douyu/11774356
+【影视剧】总有一部你喜欢的经典影视,http://huanqiuzhibo.cn/manifest/douyu.php?id=11774356
+【影视剧】总有一部你喜欢的经典影视,http://120.77.28.4:8648/douyu.php?id=11774356
 4K❤影视剧❤武侠探案悬疑谍战动漫古装,http://diyp.zxxoo.work/douyu/12191214
 4K❤影视剧❤武侠探案悬疑谍战动漫古装,http://huanqiuzhibo.cn/manifest/douyu.php?id=12191214
 4K❤影视剧❤武侠探案悬疑谍战动漫古装,http://120.77.28.4:8648/douyu.php?id=12191214
-【久久】林正英 僵尸 女鬼 弹幕 护体,http://diyp.zxxoo.work/douyu/8371123
-【久久】林正英 僵尸 女鬼 弹幕 护体,http://huanqiuzhibo.cn/manifest/douyu.php?id=8371123
-【久久】林正英 僵尸 女鬼 弹幕 护体,http://120.77.28.4:8648/douyu.php?id=8371123
 【电影天堂】优秀电影展播,http://diyp.zxxoo.work/douyu/3811092
 【电影天堂】优秀电影展播,http://huanqiuzhibo.cn/manifest/douyu.php?id=3811092
 【电影天堂】优秀电影展播,http://120.77.28.4:8648/douyu.php?id=3811092
@@ -24095,25 +24056,25 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 测试号勿扰~~~,http://diyp.zxxoo.work/douyu/5841922
 测试号勿扰~~~,http://huanqiuzhibo.cn/manifest/douyu.php?id=5841922
 测试号勿扰~~~,http://120.77.28.4:8648/douyu.php?id=5841922
-今日份的直播,http://diyp.zxxoo.work/douyu/7312744
-今日份的直播,http://huanqiuzhibo.cn/manifest/douyu.php?id=7312744
-今日份的直播,http://120.77.28.4:8648/douyu.php?id=7312744
 罗先生699的直播间,http://diyp.zxxoo.work/douyu/12065805
 罗先生699的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12065805
 罗先生699的直播间,http://120.77.28.4:8648/douyu.php?id=12065805
-金豆0523的直播间,http://diyp.zxxoo.work/douyu/11512742
-金豆0523的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=11512742
-金豆0523的直播间,http://120.77.28.4:8648/douyu.php?id=11512742
+今日份的直播,http://diyp.zxxoo.work/douyu/7312744
+今日份的直播,http://huanqiuzhibo.cn/manifest/douyu.php?id=7312744
+今日份的直播,http://120.77.28.4:8648/douyu.php?id=7312744
 用户17767773的直播间3960,http://diyp.zxxoo.work/douyu/12065615
 用户17767773的直播间3960,http://huanqiuzhibo.cn/manifest/douyu.php?id=12065615
 用户17767773的直播间3960,http://120.77.28.4:8648/douyu.php?id=12065615
+金豆0523的直播间,http://diyp.zxxoo.work/douyu/11512742
+金豆0523的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=11512742
+金豆0523的直播间,http://120.77.28.4:8648/douyu.php?id=11512742
+紫薯星星的直播间,http://diyp.zxxoo.work/douyu/9446945
+紫薯星星的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9446945
+紫薯星星的直播间,http://120.77.28.4:8648/douyu.php?id=9446945
 🐠斗鱼-综合🐠,#genre#
 全网最嚣张吃法 隔着屏幕流口水,http://diyp.zxxoo.work/douyu/9116745
 全网最嚣张吃法 隔着屏幕流口水,http://huanqiuzhibo.cn/manifest/douyu.php?id=9116745
 全网最嚣张吃法 隔着屏幕流口水,http://120.77.28.4:8648/douyu.php?id=9116745
-【神乐】周杰伦华语 女团Tara AOA,http://diyp.zxxoo.work/douyu/6557037
-【神乐】周杰伦华语 女团Tara AOA,http://huanqiuzhibo.cn/manifest/douyu.php?id=6557037
-【神乐】周杰伦华语 女团Tara AOA,http://120.77.28.4:8648/douyu.php?id=6557037
 【RM-点播】点播！模式-24H欢乐不断,http://diyp.zxxoo.work/douyu/131977
 【RM-点播】点播！模式-24H欢乐不断,http://huanqiuzhibo.cn/manifest/douyu.php?id=131977
 【RM-点播】点播！模式-24H欢乐不断,http://120.77.28.4:8648/douyu.php?id=131977
@@ -24123,15 +24084,12 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 妈妈都喜欢看的粤语剧,http://diyp.zxxoo.work/douyu/10338873
 妈妈都喜欢看的粤语剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=10338873
 妈妈都喜欢看的粤语剧,http://120.77.28.4:8648/douyu.php?id=10338873
-港剧:最最最经典怀旧的电视剧,http://diyp.zxxoo.work/douyu/5061550
-港剧:最最最经典怀旧的电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
-港剧:最最最经典怀旧的电视剧,http://120.77.28.4:8648/douyu.php?id=5061550
 【西关大院】粤语学习,http://diyp.zxxoo.work/douyu/11878141
 【西关大院】粤语学习,http://huanqiuzhibo.cn/manifest/douyu.php?id=11878141
 【西关大院】粤语学习,http://120.77.28.4:8648/douyu.php?id=11878141
-养老院☞总会有你可能喜欢的节目吧,http://diyp.zxxoo.work/douyu/2073
-养老院☞总会有你可能喜欢的节目吧,http://huanqiuzhibo.cn/manifest/douyu.php?id=2073
-养老院☞总会有你可能喜欢的节目吧,http://120.77.28.4:8648/douyu.php?id=2073
+港剧:最最最经典怀旧的电视剧,http://diyp.zxxoo.work/douyu/5061550
+港剧:最最最经典怀旧的电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
+港剧:最最最经典怀旧的电视剧,http://120.77.28.4:8648/douyu.php?id=5061550
 译制国语影片荟萃,http://diyp.zxxoo.work/douyu/2436390
 译制国语影片荟萃,http://huanqiuzhibo.cn/manifest/douyu.php?id=2436390
 译制国语影片荟萃,http://120.77.28.4:8648/douyu.php?id=2436390
@@ -24144,9 +24102,6 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 电影 恐怖 动作,http://diyp.zxxoo.work/douyu/12244672
 电影 恐怖 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=12244672
 电影 恐怖 动作,http://120.77.28.4:8648/douyu.php?id=12244672
-全球最新户外露营24小时轮播,http://diyp.zxxoo.work/douyu/12324068
-全球最新户外露营24小时轮播,http://huanqiuzhibo.cn/manifest/douyu.php?id=12324068
-全球最新户外露营24小时轮播,http://120.77.28.4:8648/douyu.php?id=12324068
 越南小哥的丛林生活,http://diyp.zxxoo.work/douyu/10675329
 越南小哥的丛林生活,http://huanqiuzhibo.cn/manifest/douyu.php?id=10675329
 越南小哥的丛林生活,http://120.77.28.4:8648/douyu.php?id=10675329
@@ -24156,48 +24111,54 @@ zhou一米阳光的直播间,http://120.77.28.4:8648/douyu.php?id=12065765
 划水主播！,http://diyp.zxxoo.work/douyu/5251148
 划水主播！,http://huanqiuzhibo.cn/manifest/douyu.php?id=5251148
 划水主播！,http://120.77.28.4:8648/douyu.php?id=5251148
-舌尖上的印度丨下饭必备丨点点关注不迷路！,http://diyp.zxxoo.work/douyu/5895598
-舌尖上的印度丨下饭必备丨点点关注不迷路！,http://huanqiuzhibo.cn/manifest/douyu.php?id=5895598
-舌尖上的印度丨下饭必备丨点点关注不迷路！,http://120.77.28.4:8648/douyu.php?id=5895598
 在回忆中寻找的直播间1732,http://diyp.zxxoo.work/douyu/12065601
 在回忆中寻找的直播间1732,http://huanqiuzhibo.cn/manifest/douyu.php?id=12065601
 在回忆中寻找的直播间1732,http://120.77.28.4:8648/douyu.php?id=12065601
 做道“酸菜黑鱼”，鲜嫩味美,http://diyp.zxxoo.work/douyu/9622309
 做道“酸菜黑鱼”，鲜嫩味美,http://huanqiuzhibo.cn/manifest/douyu.php?id=9622309
 做道“酸菜黑鱼”，鲜嫩味美,http://120.77.28.4:8648/douyu.php?id=9622309
-顺其自然飞的直播间,http://diyp.zxxoo.work/douyu/12334108
-顺其自然飞的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12334108
-顺其自然飞的直播间,http://120.77.28.4:8648/douyu.php?id=12334108
+舌尖上的印度丨下饭必备丨点点关注不迷路！,http://diyp.zxxoo.work/douyu/5895598
+舌尖上的印度丨下饭必备丨点点关注不迷路！,http://huanqiuzhibo.cn/manifest/douyu.php?id=5895598
+舌尖上的印度丨下饭必备丨点点关注不迷路！,http://120.77.28.4:8648/douyu.php?id=5895598
 吃饭点到了,http://diyp.zxxoo.work/douyu/11283504
 吃饭点到了,http://huanqiuzhibo.cn/manifest/douyu.php?id=11283504
 吃饭点到了,http://120.77.28.4:8648/douyu.php?id=11283504
-随便看看，标题凑字数,http://diyp.zxxoo.work/douyu/8971159
-随便看看，标题凑字数,http://huanqiuzhibo.cn/manifest/douyu.php?id=8971159
-随便看看，标题凑字数,http://120.77.28.4:8648/douyu.php?id=8971159
-失眠的时候听听下雨的声音吧,http://diyp.zxxoo.work/douyu/7481383
-失眠的时候听听下雨的声音吧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7481383
-失眠的时候听听下雨的声音吧,http://120.77.28.4:8648/douyu.php?id=7481383
+顺其自然飞的直播间,http://diyp.zxxoo.work/douyu/12334108
+顺其自然飞的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12334108
+顺其自然飞的直播间,http://120.77.28.4:8648/douyu.php?id=12334108
 8257039的直播间,http://diyp.zxxoo.work/douyu/8257039
 8257039的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=8257039
 8257039的直播间,http://120.77.28.4:8648/douyu.php?id=8257039
-米奇de日常,http://diyp.zxxoo.work/douyu/7393896
-米奇de日常,http://huanqiuzhibo.cn/manifest/douyu.php?id=7393896
-米奇de日常,http://120.77.28.4:8648/douyu.php?id=7393896
 Mrs腊月小九,http://diyp.zxxoo.work/douyu/9529988
 Mrs腊月小九,http://huanqiuzhibo.cn/manifest/douyu.php?id=9529988
 Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
+失眠的时候听听下雨的声音吧,http://diyp.zxxoo.work/douyu/7481383
+失眠的时候听听下雨的声音吧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7481383
+失眠的时候听听下雨的声音吧,http://120.77.28.4:8648/douyu.php?id=7481383
+随便看看，标题凑字数,http://diyp.zxxoo.work/douyu/8971159
+随便看看，标题凑字数,http://huanqiuzhibo.cn/manifest/douyu.php?id=8971159
+随便看看，标题凑字数,http://120.77.28.4:8648/douyu.php?id=8971159
+米奇de日常,http://diyp.zxxoo.work/douyu/7393896
+米奇de日常,http://huanqiuzhibo.cn/manifest/douyu.php?id=7393896
+米奇de日常,http://120.77.28.4:8648/douyu.php?id=7393896
 林大仙开箱试吃,http://diyp.zxxoo.work/douyu/841725
 林大仙开箱试吃,http://huanqiuzhibo.cn/manifest/douyu.php?id=841725
 林大仙开箱试吃,http://120.77.28.4:8648/douyu.php?id=841725
+让我看看打野的强度,http://diyp.zxxoo.work/douyu/6434190
+让我看看打野的强度,http://huanqiuzhibo.cn/manifest/douyu.php?id=6434190
+让我看看打野的强度,http://120.77.28.4:8648/douyu.php?id=6434190
+欣欣宝直播间,http://diyp.zxxoo.work/douyu/11455493
+欣欣宝直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=11455493
+欣欣宝直播间,http://120.77.28.4:8648/douyu.php?id=11455493
 潘姥姥美食的直播间,http://diyp.zxxoo.work/douyu/9738641
 潘姥姥美食的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9738641
 潘姥姥美食的直播间,http://120.77.28.4:8648/douyu.php?id=9738641
+用户698850303的直播间,http://diyp.zxxoo.work/douyu/9791981
+用户698850303的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9791981
+用户698850303的直播间,http://120.77.28.4:8648/douyu.php?id=9791981
 浙江遂昌美食——炒黄未馃,http://diyp.zxxoo.work/douyu/8161564
 浙江遂昌美食——炒黄未馃,http://huanqiuzhibo.cn/manifest/douyu.php?id=8161564
 浙江遂昌美食——炒黄未馃,http://120.77.28.4:8648/douyu.php?id=8161564
-失踪人口回归 2041014,http://diyp.zxxoo.work/douyu/2041014
-失踪人口回归 2041014,http://huanqiuzhibo.cn/manifest/douyu.php?id=2041014
-失踪人口回归 2041014,http://120.77.28.4:8648/douyu.php?id=2041014
 花姐的直播间 4058285,http://diyp.zxxoo.work/douyu/4058285
 花姐的直播间 4058285,http://huanqiuzhibo.cn/manifest/douyu.php?id=4058285
 花姐的直播间 4058285,http://120.77.28.4:8648/douyu.php?id=4058285
@@ -24210,18 +24171,21 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 喵喵喵的猫酱酱的直播间,http://diyp.zxxoo.work/douyu/11179077
 喵喵喵的猫酱酱的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=11179077
 喵喵喵的猫酱酱的直播间,http://120.77.28.4:8648/douyu.php?id=11179077
-用户698850303的直播间,http://diyp.zxxoo.work/douyu/9791981
-用户698850303的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9791981
-用户698850303的直播间,http://120.77.28.4:8648/douyu.php?id=9791981
-让我看看打野的强度,http://diyp.zxxoo.work/douyu/6434190
-让我看看打野的强度,http://huanqiuzhibo.cn/manifest/douyu.php?id=6434190
-让我看看打野的强度,http://120.77.28.4:8648/douyu.php?id=6434190
+失踪人口回归 2041014,http://diyp.zxxoo.work/douyu/2041014
+失踪人口回归 2041014,http://huanqiuzhibo.cn/manifest/douyu.php?id=2041014
+失踪人口回归 2041014,http://120.77.28.4:8648/douyu.php?id=2041014
 帕鲁的世界,http://diyp.zxxoo.work/douyu/7027040
 帕鲁的世界,http://huanqiuzhibo.cn/manifest/douyu.php?id=7027040
 帕鲁的世界,http://120.77.28.4:8648/douyu.php?id=7027040
 【叶尘】N分钟带你看完大片,http://diyp.zxxoo.work/douyu/9252442
 【叶尘】N分钟带你看完大片,http://huanqiuzhibo.cn/manifest/douyu.php?id=9252442
 【叶尘】N分钟带你看完大片,http://120.77.28.4:8648/douyu.php?id=9252442
+大庆在农村的直播间,http://diyp.zxxoo.work/douyu/9477316
+大庆在农村的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9477316
+大庆在农村的直播间,http://120.77.28.4:8648/douyu.php?id=9477316
+没有不敢吃的，一个吃货的表白,http://diyp.zxxoo.work/douyu/8659544
+没有不敢吃的，一个吃货的表白,http://huanqiuzhibo.cn/manifest/douyu.php?id=8659544
+没有不敢吃的，一个吃货的表白,http://120.77.28.4:8648/douyu.php?id=8659544
 🐠斗鱼-喜剧🐠,#genre#
 ✨美兮✨不可能 我二弟天下无敌✨,http://diyp.zxxoo.work/douyu/2838296
 ✨美兮✨不可能 我二弟天下无敌✨,http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
@@ -24244,9 +24208,6 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 经典港剧情景剧,http://diyp.zxxoo.work/douyu/9548850
 经典港剧情景剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=9548850
 经典港剧情景剧,http://120.77.28.4:8648/douyu.php?id=9548850
-【谢耳朵】科学天才们的搞笑日常,http://diyp.zxxoo.work/douyu/6668627
-【谢耳朵】科学天才们的搞笑日常,http://huanqiuzhibo.cn/manifest/douyu.php?id=6668627
-【谢耳朵】科学天才们的搞笑日常,http://120.77.28.4:8648/douyu.php?id=6668627
 【林正英】僵尸 女鬼 弹幕 护体,http://diyp.zxxoo.work/douyu/218859
 【林正英】僵尸 女鬼 弹幕 护体,http://huanqiuzhibo.cn/manifest/douyu.php?id=218859
 【林正英】僵尸 女鬼 弹幕 护体,http://120.77.28.4:8648/douyu.php?id=218859
@@ -24283,12 +24244,21 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 经典老剧轮播,http://diyp.zxxoo.work/douyu/12015111
 经典老剧轮播,http://huanqiuzhibo.cn/manifest/douyu.php?id=12015111
 经典老剧轮播,http://120.77.28.4:8648/douyu.php?id=12015111
+致敬岁月经典 分享欢乐感动,http://diyp.zxxoo.work/douyu/11756388
+致敬岁月经典 分享欢乐感动,http://huanqiuzhibo.cn/manifest/douyu.php?id=11756388
+致敬岁月经典 分享欢乐感动,http://120.77.28.4:8648/douyu.php?id=11756388
 [经典]张窟窿在三国武力值如何？,http://diyp.zxxoo.work/douyu/12124964
 [经典]张窟窿在三国武力值如何？,http://huanqiuzhibo.cn/manifest/douyu.php?id=12124964
 [经典]张窟窿在三国武力值如何？,http://120.77.28.4:8648/douyu.php?id=12124964
+曾小贤第一集你看不看,http://diyp.zxxoo.work/douyu/11720507
+曾小贤第一集你看不看,http://huanqiuzhibo.cn/manifest/douyu.php?id=11720507
+曾小贤第一集你看不看,http://120.77.28.4:8648/douyu.php?id=11720507
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://diyp.zxxoo.work/douyu/6369954
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://huanqiuzhibo.cn/manifest/douyu.php?id=6369954
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://120.77.28.4:8648/douyu.php?id=6369954
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://diyp.zxxoo.work/douyu/11751004
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://huanqiuzhibo.cn/manifest/douyu.php?id=11751004
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://120.77.28.4:8648/douyu.php?id=11751004
 【吐槽】吐槽一下，快乐一天,http://diyp.zxxoo.work/douyu/9236042
 【吐槽】吐槽一下，快乐一天,http://huanqiuzhibo.cn/manifest/douyu.php?id=9236042
 【吐槽】吐槽一下，快乐一天,http://120.77.28.4:8648/douyu.php?id=9236042
@@ -24314,6 +24284,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【神 剧】,http://diyp.zxxoo.work/douyu/5875025
 【神 剧】,http://huanqiuzhibo.cn/manifest/douyu.php?id=5875025
 【神 剧】,http://120.77.28.4:8648/douyu.php?id=5875025
+天撅星送江,http://diyp.zxxoo.work/douyu/8997387
+天撅星送江,http://huanqiuzhibo.cn/manifest/douyu.php?id=8997387
+天撅星送江,http://120.77.28.4:8648/douyu.php?id=8997387
 【成龙】给我一把板凳，我可以打10个！,http://diyp.zxxoo.work/douyu/3379942
 【成龙】给我一把板凳，我可以打10个！,http://huanqiuzhibo.cn/manifest/douyu.php?id=3379942
 【成龙】给我一把板凳，我可以打10个！,http://120.77.28.4:8648/douyu.php?id=3379942
@@ -24323,9 +24296,6 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【嘎子】我不偷狗了！,http://diyp.zxxoo.work/douyu/8366759
 【嘎子】我不偷狗了！,http://huanqiuzhibo.cn/manifest/douyu.php?id=8366759
 【嘎子】我不偷狗了！,http://120.77.28.4:8648/douyu.php?id=8366759
-看看老电影 585642,http://diyp.zxxoo.work/douyu/585642
-看看老电影 585642,http://huanqiuzhibo.cn/manifest/douyu.php?id=585642
-看看老电影 585642,http://120.77.28.4:8648/douyu.php?id=585642
 🐠斗鱼-古装🐠,#genre#
 家有诤子  不败其家,http://diyp.zxxoo.work/douyu/6911044
 家有诤子  不败其家,http://huanqiuzhibo.cn/manifest/douyu.php?id=6911044
@@ -24345,12 +24315,12 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 美丽的孔雀公主,http://diyp.zxxoo.work/douyu/3113309
 美丽的孔雀公主,http://huanqiuzhibo.cn/manifest/douyu.php?id=3113309
 美丽的孔雀公主,http://120.77.28.4:8648/douyu.php?id=3113309
-(球球）画质修复桃源结义,http://diyp.zxxoo.work/douyu/12180551
-(球球）画质修复桃源结义,http://huanqiuzhibo.cn/manifest/douyu.php?id=12180551
-(球球）画质修复桃源结义,http://120.77.28.4:8648/douyu.php?id=12180551
 传位于李德全,http://diyp.zxxoo.work/douyu/12130861
 传位于李德全,http://huanqiuzhibo.cn/manifest/douyu.php?id=12130861
 传位于李德全,http://120.77.28.4:8648/douyu.php?id=12130861
+(球球）画质修复桃源结义,http://diyp.zxxoo.work/douyu/12180551
+(球球）画质修复桃源结义,http://huanqiuzhibo.cn/manifest/douyu.php?id=12180551
+(球球）画质修复桃源结义,http://120.77.28.4:8648/douyu.php?id=12180551
 不可能！我二弟天下无敌！,http://diyp.zxxoo.work/douyu/10906963
 不可能！我二弟天下无敌！,http://huanqiuzhibo.cn/manifest/douyu.php?id=10906963
 不可能！我二弟天下无敌！,http://120.77.28.4:8648/douyu.php?id=10906963
@@ -24378,6 +24348,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://diyp.zxxoo.work/douyu/7552568
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://huanqiuzhibo.cn/manifest/douyu.php?id=7552568
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://120.77.28.4:8648/douyu.php?id=7552568
+厉害了 我的哥哥.....,http://diyp.zxxoo.work/douyu/7218278
+厉害了 我的哥哥.....,http://huanqiuzhibo.cn/manifest/douyu.php?id=7218278
+厉害了 我的哥哥.....,http://120.77.28.4:8648/douyu.php?id=7218278
 🐠斗鱼-剧情🐠,#genre#
 【纪晓岚】莫说百无一用是书生,http://diyp.zxxoo.work/douyu/9071554
 【纪晓岚】莫说百无一用是书生,http://huanqiuzhibo.cn/manifest/douyu.php?id=9071554
@@ -24397,15 +24370,15 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【电视剧】本直播间由天使点播提供技术支持,http://diyp.zxxoo.work/douyu/7623292
 【电视剧】本直播间由天使点播提供技术支持,http://huanqiuzhibo.cn/manifest/douyu.php?id=7623292
 【电视剧】本直播间由天使点播提供技术支持,http://120.77.28.4:8648/douyu.php?id=7623292
-【六小龄童】你挑着担，我牵着马,http://diyp.zxxoo.work/douyu/8953746
-【六小龄童】你挑着担，我牵着马,http://huanqiuzhibo.cn/manifest/douyu.php?id=8953746
-【六小龄童】你挑着担，我牵着马,http://120.77.28.4:8648/douyu.php?id=8953746
 【刘华强】你这呱保熟吗,http://diyp.zxxoo.work/douyu/2726977
 【刘华强】你这呱保熟吗,http://huanqiuzhibo.cn/manifest/douyu.php?id=2726977
 【刘华强】你这呱保熟吗,http://120.77.28.4:8648/douyu.php?id=2726977
 经典  海景房,http://diyp.zxxoo.work/douyu/8543072
 经典  海景房,http://huanqiuzhibo.cn/manifest/douyu.php?id=8543072
 经典  海景房,http://120.77.28.4:8648/douyu.php?id=8543072
+【六小龄童】你挑着担，我牵着马,http://diyp.zxxoo.work/douyu/8953746
+【六小龄童】你挑着担，我牵着马,http://huanqiuzhibo.cn/manifest/douyu.php?id=8953746
+【六小龄童】你挑着担，我牵着马,http://120.77.28.4:8648/douyu.php?id=8953746
 新治愈篇美食家 点餐美食,http://diyp.zxxoo.work/douyu/953193
 新治愈篇美食家 点餐美食,http://huanqiuzhibo.cn/manifest/douyu.php?id=953193
 新治愈篇美食家 点餐美食,http://120.77.28.4:8648/douyu.php?id=953193
@@ -24427,9 +24400,6 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 国强四王爷,http://diyp.zxxoo.work/douyu/7246624
 国强四王爷,http://huanqiuzhibo.cn/manifest/douyu.php?id=7246624
 国强四王爷,http://120.77.28.4:8648/douyu.php?id=7246624
-Angela小兔990,http://diyp.zxxoo.work/douyu/9617766
-Angela小兔990,http://huanqiuzhibo.cn/manifest/douyu.php?id=9617766
-Angela小兔990,http://120.77.28.4:8648/douyu.php?id=9617766
 【古董】我们鉴的不是器物，而是人心,http://diyp.zxxoo.work/douyu/9650783
 【古董】我们鉴的不是器物，而是人心,http://huanqiuzhibo.cn/manifest/douyu.php?id=9650783
 【古董】我们鉴的不是器物，而是人心,http://120.77.28.4:8648/douyu.php?id=9650783
@@ -24439,6 +24409,9 @@ Angela小兔990,http://120.77.28.4:8648/douyu.php?id=9617766
 【严守一】太传统不好，太饭桶更不好,http://diyp.zxxoo.work/douyu/8507023
 【严守一】太传统不好，太饭桶更不好,http://huanqiuzhibo.cn/manifest/douyu.php?id=8507023
 【严守一】太传统不好，太饭桶更不好,http://120.77.28.4:8648/douyu.php?id=8507023
+谦变万华直播间,http://diyp.zxxoo.work/douyu/12330744
+谦变万华直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12330744
+谦变万华直播间,http://120.77.28.4:8648/douyu.php?id=12330744
 🐠斗鱼-科幻🐠,#genre#
 【经典巨制】欧美大片,http://diyp.zxxoo.work/douyu/2793084
 【经典巨制】欧美大片,http://huanqiuzhibo.cn/manifest/douyu.php?id=2793084
@@ -24462,4 +24435,4 @@ Angela小兔990,http://120.77.28.4:8648/douyu.php?id=9617766
 【何度哇】漫威主线剧情最佳观影顺序,http://huanqiuzhibo.cn/manifest/douyu.php?id=12098568
 【何度哇】漫威主线剧情最佳观影顺序,http://120.77.28.4:8648/douyu.php?id=12098568
 
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-30 00:30:21
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-11-30 06:30:10
