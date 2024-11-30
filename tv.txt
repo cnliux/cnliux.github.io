@@ -1,5 +1,169 @@
 ipv6范明明,#genre#
 
+CCTV1,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=
+CCTV2,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000317/index.m3u8?IASHttpSessionId=
+CCTV3,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000359/index.m3u8?IASHttpSessionId=
+CCTV4,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000320/index.m3u8?IASHttpSessionId=
+CCTV5,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000360/index.m3u8?IASHttpSessionId=
+CCTV5+,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000316/index.m3u8?IASHttpSessionId=
+CCTV6,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000361/index.m3u8?IASHttpSessionId=
+CCTV7,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000318/index.m3u8?IASHttpSessionId=
+CCTV8,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000362/index.m3u8?IASHttpSessionId=
+CCTV9,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000319/index.m3u8?IASHttpSessionId=
+CCTV10,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000321/index.m3u8?IASHttpSessionId=
+CCTV11,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000344/index.m3u8?IASHttpSessionId=
+CCTV12,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000322/index.m3u8?IASHttpSessionId=
+CCTV13,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000345/index.m3u8?IASHttpSessionId=
+CCTV14,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000323/index.m3u8?IASHttpSessionId=
+CCTV15,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000346/index.m3u8?IASHttpSessionId=
+CCTV16,http://[2409:8087:74d9:21::6]:80/270000001128/9900000016/index.m3u8
+CCTV17,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000303/index.m3u8?IASHttpSessionId=
+CCTV4K,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=
+CCTV4欧洲,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000350/index.m3u8?IASHttpSessionId=
+CCTV4美洲,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000351/index.m3u8?IASHttpSessionId=
+CHC动作电影,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002030/index.m3u8?IASHttpSessionId=
+CHC家庭影院,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002028/index.m3u8?IASHttpSessionId=
+CHC影迷电影,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002029/index.m3u8?IASHttpSessionId=
+CGTN,https://0472.org/hls/cgtn.m3u8
+CGTN纪录,https://0472.org/hls/cgtnd.m3u8
+CGTN俄语,https://0472.org/hls/cgtne.m3u8
+CGTN法语,https://0472.org/hls/cgtnf.m3u8
+CGTN西语,https://0472.org/hls/cgtnx.m3u8
+CGTN阿语,https://0472.org/hls/cgtna.m3u8
+
+北京卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000302/index.m3u8?IASHttpSessionId=
+湖南卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000324/index.m3u8?IASHttpSessionId=
+东方卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000309/index.m3u8?IASHttpSessionId=
+四川卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000348/index.m3u8?IASHttpSessionId=
+天津卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000327/index.m3u8?IASHttpSessionId=
+安徽卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000328/index.m3u8?IASHttpSessionId=
+山东卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000301/index.m3u8?IASHttpSessionId=
+深圳卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000308/index.m3u8?IASHttpSessionId=
+广东卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000307/index.m3u8?IASHttpSessionId=
+广西卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000368/index.m3u8?IASHttpSessionId=
+江苏卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000304/index.m3u8?IASHttpSessionId=
+江西卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000335/index.m3u8?IASHttpSessionId=
+河北卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000330/index.m3u8?IASHttpSessionId=
+河南卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000358/index.m3u8?IASHttpSessionId=
+浙江卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000305/index.m3u8?IASHttpSessionId=
+海南卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000347/index.m3u8?IASHttpSessionId=
+湖北卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000325/index.m3u8?IASHttpSessionId=
+山西卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000032/index.m3u8?IASHttpSessionId=
+东南卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000310/index.m3u8?IASHttpSessionId=
+贵州卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000329/index.m3u8?IASHttpSessionId=
+辽宁卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000326/index.m3u8?IASHttpSessionId=
+重庆卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000341/index.m3u8?IASHttpSessionId=
+黑龙江卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000306/index.m3u8?IASHttpSessionId=
+内蒙古卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000040/index.m3u8?IASHttpSessionId=
+宁夏卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000043/index.m3u8?IASHttpSessionId=
+陕西卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000029/index.m3u8?IASHttpSessionId=
+吉林卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000363/index.m3u8?IASHttpSessionId=
+甘肃卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000349/index.m3u8?IASHttpSessionId=
+云南卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000367/index.m3u8?IASHttpSessionId=
+三沙卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000078/index.m3u8?IASHttpSessionId=
+青海卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000366/index.m3u8?IASHttpSessionId=
+新疆卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000044/index.m3u8?IASHttpSessionId=
+西藏卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000045/index.m3u8?IASHttpSessionId=
+陕西农林卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000072/index.m3u8?IASHttpSessionId=
+兵团卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000071/index.m3u8?IASHttpSessionId=
+延边卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000668/index.m3u8?IASHttpSessionId=
+安多卫视,http://[2409:8087:74d9:21::6]:80/270000001128/9900000064/index.m3u8
+厦门卫视,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000075/index.m3u8?IASHttpSessionId=
+康巴卫视,http://[2409:8087:74d9:21::6]:80/270000001128/9900000066/index.m3u8
+大湾区卫视,http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000002000011619/index.m3u8
+中国教育1台,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000076/index.m3u8?IASHttpSessionId=
+中国教育2台,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000077/index.m3u8?IASHttpSessionId=
+中国教育4台,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000666/index.m3u8?IASHttpSessionId=
+
+山东教育,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000331/index.m3u8?IASHttpSessionId=
+上海纪实人文,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000333/index.m3u8?IASHttpSessionId=
+纪实科教,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000332/index.m3u8?IASHttpSessionId=
+劲爆体育,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002026/index.m3u8?IASHttpSessionId=
+全纪实,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002016/index.m3u8?IASHttpSessionId=
+欢笑剧场,http://[2409:8087:74d9:21::6]:80/000000001000PLTV/88888888/224/3221226203/index.m3u8
+都市剧场,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002022/index.m3u8?IASHttpSessionId=
+生活时尚,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002019/index.m3u8?IASHttpSessionId=
+金色学堂,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002018/index.m3u8?IASHttpSessionId=
+魅力足球,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002021/index.m3u8?IASHttpSessionId=
+卡酷动画,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000661/index.m3u8?IASHttpSessionId=
+金鹰卡通,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002027/index.m3u8?IASHttpSessionId=
+金鹰纪实,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000334/index.m3u8?IASHttpSessionId=
+快乐垂钓,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000648/index.m3u8?IASHttpSessionId=
+茶,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000649/index.m3u8?IASHttpSessionId=
+先锋乒羽,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000650/index.m3u8?IASHttpSessionId=
+文物宝库,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000658/index.m3u8?IASHttpSessionId=
+梨园,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000656/index.m3u8?IASHttpSessionId=
+武术世界,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000657/index.m3u8?IASHttpSessionId=
+中国交通,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000073/index.m3u8?IASHttpSessionId=
+中华特产,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000642/index.m3u8?IASHttpSessionId=
+书画,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000651/index.m3u8?IASHttpSessionId=
+四海钓鱼,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000640/index.m3u8?IASHttpSessionId=
+财富天下,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000607/index.m3u8?IASHttpSessionId=
+环球旅游,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000643/index.m3u8?IASHttpSessionId=
+车迷,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000645/index.m3u8?IASHttpSessionId=
+游戏风云,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002024/index.m3u8?IASHttpSessionId=
+动漫秀场,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002000/index.m3u8?IASHttpSessionId=
+嘉佳卡通,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000074/index.m3u8?IASHttpSessionId=
+优优宝贝,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000641/index.m3u8?IASHttpSessionId=
+哒啵赛事,http://[2409:8087:74d9:21::6]:80/270000001128/9900000097/index.m3u8
+哒啵电竞,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000003000000066/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000003000000066&IASHttpSessionId=OTT19019320240419154124000281
+优漫卡通,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000049/index.m3u8?IASHttpSessionId=
+哈哈炫动,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000050/index.m3u8?IASHttpSessionId=
+黑莓动画,http://[2409:8087:74d9:21::6]:80/270000001128/9900000096/index.m3u8
+黑莓电影,http://[2409:8087:74d9:21::6]:80/270000001128/9900000095/index.m3u8
+求索纪录,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000004000000010/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000010&IASHttpSessionId=OTT19019320240419154124000281
+求索生活,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000004000000008/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000008&IASHttpSessionId=OTT19019320240419154124000281
+求索动物,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000004000000009/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000009&IASHttpSessionId=OTT19019320240419154124000281
+求索科学,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000004000000011/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000011&IASHttpSessionId=OTT19019320240419154124000281
+睛彩竞技,http://[2409:8087:74d9:21::6]:80/270000001128/9900000119/index.m3u8
+睛彩篮球,http://[2409:8087:74d9:21::6]:80/270000001128/9900000118/index.m3u8
+睛彩青少,http://[2409:8087:74d9:21::6]:80/270000001128/9900000120/index.m3u8
+newtv超级体育,http://[2409:8087:74d9:21::6]:80/270000001128/9900000020/index.m3u8
+newtv超级电影,http://[2409:8087:74d9:21::6]:80/270000001128/9900000021/index.m3u8
+newtv超级电视剧,http://[2409:8087:74d9:21::6]:80/270000001128/9900000022/index.m3u8
+newtv东北热剧,http://[2409:8087:74d9:21::6]:80/270000001128/9900000092/index.m3u8
+newtv海外剧场,http://[2409:8087:74d9:21::6]:80/270000001128/9900000115/index.m3u8
+newtv中国功夫,http://[2409:8087:74d9:21::6]:80/270000001128/9900000101/index.m3u8
+newtv军旅剧场,http://[2409:8087:74d9:21::6]:80/270000001128/9900000107/index.m3u8
+newtv惊悚悬疑,http://[2409:8087:74d9:21::6]:80/270000001128/9900000113/index.m3u8
+newtv潮妈辣婆,http://[2409:8087:74d9:21::6]:80/270000001128/9900000099/index.m3u8
+newtv精品体育,http://[2409:8087:74d9:21::6]:80/270000001128/9900000102/index.m3u8
+newtv精品纪录,http://[2409:8087:74d9:21::6]:80/270000001128/9900000109/index.m3u8
+newtv家庭剧场,http://[2409:8087:74d9:21::6]:80/270000001128/9900000108/index.m3u8
+newtv精品大剧,http://[2409:8087:74d9:21::6]:80/270000001128/9900000100/index.m3u8
+newtv军事评论,http://[2409:8087:74d9:21::6]:80/270000001128/9900000110/index.m3u8
+newtv明星大片,http://[2409:8087:74d9:21::6]:80/270000001128/9900000116/index.m3u8
+newtv欢乐剧场,http://[2409:8087:74d9:21::6]:80/270000001128/9900000091/index.m3u8
+newtv精品萌宠,http://[2409:8087:74d9:21::6]:80/270000001128/9900000122/index.m3u8
+newtv超级综艺,http://[2409:8087:74d9:21::6]:80/270000001128/9900000019/index.m3u8
+newtv金牌综艺,http://[2409:8087:74d9:21::6]:80/270000001128/9900000112/index.m3u8
+newtv炫舞未来,http://[2409:8087:74d9:21::6]:80/270000001128/9900000098/index.m3u8
+
+上海新闻综合,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000005/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000005&IASHttpSessionId=OTT19019320240419154124000281
+上海都市,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000012/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000012&IASHttpSessionId=OTT19019320240419154124000281
+上海外语,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000001/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000001&IASHttpSessionId=OTT19019320240419154124000281
+七彩戏剧,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000010/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000010&IASHttpSessionId=OTT19019320240419154124000281
+五星体育,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000007/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000007&IASHttpSessionId=OTT19019320240419154124000281
+东方影视,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000013/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000013&IASHttpSessionId=OTT19019320240419154124000281
+东方财经,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002025/index.m3u8?IASHttpSessionId=
+法治天地,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002010/index.m3u8?IASHttpSessionId=
+第一财经,http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000004/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000004&IASHttpSessionId=OTT19019320240419154124000281
+
+内蒙古综合,https://livestream-bt.nmtv.cn/nmtv/2316general.m3u8?txSecret=b4373417a82ed64e52b0982a66da8df2&txTime=771E8800
+内蒙古经济生活,https://livestream-bt.nmtv.cn/nmtv/2317general.m3u8?txSecret=112b2c4c872de52b0f37aff6ead63ef0&txTime=771E8800
+内蒙古少儿,https://livestream-bt.nmtv.cn/nmtv/2318general.m3u8?txSecret=a2c948908728a0733cecbe1fadea23dc&txTime=771E8800
+内蒙古文体娱乐,https://livestream-bt.nmtv.cn/nmtv/2319general.m3u8?txSecret=c7b5c515d2bb6df442492d54955329a3&txTime=771E8800
+内蒙古农牧,https://livestream-bt.nmtv.cn/nmtv/2320general.m3u8?txSecret=4d368a175afa19737a9f5be10af24fe2&txTime=771E8800
+内蒙古蒙语卫视,https://livestream-bt.nmtv.cn/nmtv/2315general.m3u8?txSecret=4971666599ef9411629213c9a300bf66&txTime=771EF880
+内蒙古蒙语文化,https://livestream-bt.nmtv.cn/nmtv/2321general.m3u8?txSecret=d9d0fd7a252ef56b515c46a2e21830f4&txTime=771E8800
+呼和浩特新闻综合,https://livestream-bt.nmtv.cn/nmtv/2331general.m3u8?txSecret=4d7342ca5cd74480526ab6d292247aff&txTime=771E8800
+包头新闻综合,https://livestream-bt.nmtv.cn/nmtv/2358general.m3u8?txSecret=98390a77c143a68f0fd64bfe6e181dcb&txTime=771E8800
+鄂尔多斯新闻综合,https://livestream-bt.nmtv.cn/nmtv/2349general.m3u8?txSecret=e44477052aba305cadeea45aaf1c674a&txTime=771E8800
+巴彦淖尔新闻综合,https://livestream-bt.nmtv.cn/nmtv/2348general.m3u8?txSecret=6a4ddce077e41b976fe33619fbef2b30&txTime=771E8800
+赤峰新闻综合,https://livestream-bt.nmtv.cn/nmtv/2351general.m3u8?txSecret=8857087aeec2cec44d178a18550fdb8a&txTime=771E8800
+乌兰察布新闻综合,https://livestream-bt.nmtv.cn/nmtv/2354general.m3u8?txSecret=cf5f71d0000862b18f5813607b3dfd5b&txTime=771E8800
+
+
 ipv6央视1,#genre#
 
 CCTV1,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226016/index.m3u8#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010011/1.m3u8?$LR•IPV6『线路10』#http://[2409:8087:74d9:21::6]:80/270000001128/9900000001/index.m3u8#http://[2409:8087:74d9:21::9]/270000001128/index.m3u8?cmcc_cid=9900000001#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226016/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8$LR•IPV6『线路62』#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000010000030810/1.m3u8$LR•IPV6『线路33』#http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226733/index.m3u8#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000010000030810/1.m3u8$LR•IPV6『线路38』#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010144/1.m3u8#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226016/index.m3u8$LR•IPV6『线路19』#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8$LR•IPV6『线路17』#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8$LR•IPV6『线路29』#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221226016/2.m3u8$LR•IPV6『线路33』#http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226733/index.m3u8$LR•IPV6『线路37』#http://[2409:8087:74d9:21::6]:80/270000001128/9900000001/index.m3u8$LR•IPV6『线路43』#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000002226/$LR•IPV6『线路32』#http://[2409:8087:74d9:21::6]:80/270000001322/69900158041111100000002133/index.m3u8#http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226559/index.m3u8$LR•IPV6『线路12』#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8$LR•IPV6『线路8』#http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226559/index.m3u8#http://[2409:8087:74d9:21::6]:80/270000001128/9900000001/index.m3u8$LR•IPV6『线路31』#http://[2409:8087:1a0a:df::4031]:80/wh7f454c46tw705163907_345094122/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8$LR•IPV6『线路53』#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8#http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226670/index.m3u8$LR•IPV6『线路50』#http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=#http://[2409:8087:74d9:21::6]/270000001322/69900158041111100000002133/index.m3u8#http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8$LR•IPV6『线路16』#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000002226/$订阅源|IPv6#http://[2409:8087:5e00:24::10]:6060/200000001898/460000089800010144/$LR•IPV6『线路29』#http://[2409:8087:74d9:21::6]/270000001128/9900000001/index.m3u8$LR•IPV6『线路49』#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8#http://[2409:8087:5e00:24::10]:6060/200000001898/460000089800010144/$LR•IPV6『线路34』#http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8#http://[2409:8087:74d9:21::6]:80/000000001000PLTV/88888888/224/3221226733/index.m3u8#http://[2409:8087:74f0:22::4]:6610/270000001128/9900000501/index.m3u8?channel-id=newtv&livemode=4&Contentid=9900000501$LR•IPV6『线路57』#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221226016/2.m3u8$LR•IPV6『线路28』#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8?#http://[2409:8087:74d9:21::4]/270000001128/index.m3u8?cmcc_cid=9900000001#http://[2409:8087:5e00:24::11]:6060/200000001898/460000089800010144/#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010144/#http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000005000265001/1.m3u8#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000001000004953/1.m3u8$LR•IPV6『线路35』#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010144/index.m3u8$LR•IPV6『线路15』#http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000002226/1.m3u8#http://[2409:8087:74d9:21::6]/270000001322/69900158041111100000002133/index.m3u8$LR•IPV6『线路59』#http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226733/index.m3u8$订阅源|IPv6#http://[2409:8087:1a0a:df::4031]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221226016/2.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226559/index.m3u8#http://[2409:8087:74d9:21::6]:80/270000001322/69900158041111100000002133/index.m3u8$LR•IPV6『线路4』#http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000021973/1.m3u8$LR•IPV6『线路51』#http://[2409:8087:1a0a:df::4031]:80/wh7f454c46tw705163907_345094122/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8?icpid=88888888&RTS=1713967534&from=4&hms_devid=1143&online=1713967534&vqe=3$LR•IPV6『线路40』#http://[2409:8087:74f0:22::4]:6610/270000001128/9900000501/index.m3u8?channel-id=newtv&livemode=4&Contentid=9900000501#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226016/index.m3u8$LR•IPV6『线路26』#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010011/1.m3u8$LR•IPV6『线路27』#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226016/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226559/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226419/index.m3u8#http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8#http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226670/index.m3u8#http://[2409:8087:74d9:21::6]:80/000000001000PLTV/88888888/224/3221226733/index.m3u8$LR•IPV6『线路5』#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/1.m3u8?icpid=88888888&from=1&hms_devid=1012&vqe=3$LR•IPV6『线路54』#http://[2409:8087:1a0a:df::4031]:80/wh7f454c46tw705163907_345094122/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226016/index.m3u8$LR•IPV6『线路30』#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010011/1.m3u8#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8$LR•IPV6『线路41』#http://[2409:8087:1a0a:df::4031]:80/wh7f454c46tw705163907_345094122/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8?icpid=88888888&RTS=1713967534&from=4&hms_devid=1143&online=1713967534&vqe=3#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226559/index.m3u8$LR•IPV6『线路22』#http://[2409:8087:74d9:21::6]/270000001128/9900000001/index.m3u8#http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8$LR•IPV6『线路52』#http://[2409:8087:74f0:22::4]:6410/270000001128/9900000001/index.m3u8?channel-id=newtv&livemode=4&Contentid=9900000017$LR•IPV6『线路45』#http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=$LR•IPV6『线路60』#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226016/index.m3u8$LR•IPV6『线路56』#http://[2409:8087:74f0:22::4]:6410/270000001128/9900000001/index.m3u8?channel-id=newtv&livemode=4&Contentid=9900000017#http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8?$LR•IPV6『线路11』#http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226559/index.m3u8$LR•IPV6『线路21』#http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000001000004953/1.m3u8#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010144/$LR•IPV6『线路31』#http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010144/$LR•IPV6『线路36』#http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8#http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226419/index.m3u8$LR•IPV6『线路9』#http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=$LR•IPV6『线路6』#http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=$LR•IPV6『线路7』
@@ -25960,59 +26124,6 @@ HITFM劲曲调频,https://fanmingming.com/fm?id=662
 
 港澳台,#genre#
 
-28 AI 智慧賽馬,http://aktv.top/AKTV/live/aktv/28ai/AKTV.m3u8
-Channel 5 HD,http://aktv.top/AKTV/live/aktv/channel5hd/AKTV.m3u8
-Channel 8 HD,http://aktv.top/AKTV/live/aktv/channel8hd/AKTV.m3u8
-Channel U HD,http://aktv.top/AKTV/live/aktv/channeluhd/AKTV.m3u8
-myTV SUPER 18台,http://aktv.top/AKTV/live/aktv/mytvsuper18/AKTV.m3u8
-PopC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
-ROCK Action,http://aktv.top/AKTV/live/aktv/rockaction/AKTV.m3u8
-TVB Plus,http://aktv.top/AKTV/live/aktv/tvbplus/AKTV.m3u8
-TVBS,http://aktv.top/AKTV/live/aktv/tvbs/AKTV.m3u8
-TVBS-新聞台,http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
-tvN,http://aktv.top/AKTV/live/aktv/tvn/AKTV.m3u8
-中天亞洲台,http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
-中天新聞台,http://aktv.top/AKTV/live/aktv/null-8/AKTV.m3u8
-中視,http://aktv.top/AKTV/live/aktv/null-10/AKTV.m3u8
-千禧經典台,http://aktv.top/AKTV/live/aktv/null-15/AKTV.m3u8
-娛樂新聞台(HK),http://aktv.top/AKTV/live/aktv/hk/AKTV.m3u8
-寰宇新聞台,http://aktv.top/AKTV/live/aktv/null-9/AKTV.m3u8
-日本全天新聞,http://aktv.top/AKTV/live/aktv/null-13/AKTV.m3u8
-明珠剧集台(北美),http://aktv.top/AKTV/live/aktv/null-19/AKTV.m3u8
-明珠台,http://aktv.top/AKTV/live/aktv/null-2/AKTV.m3u8
-無線新聞台,http://aktv.top/AKTV/live/aktv/null-1/AKTV.m3u8
-美亞電影台(HK),http://aktv.top/AKTV/live/aktv/hk-1/AKTV.m3u8
-翡翠剧集台(北美),http://aktv.top/AKTV/live/aktv/null-18/AKTV.m3u8
-翡翠台,http://aktv.top/AKTV/live/aktv/null/AKTV.m3u8
-翡翠综合台(北美),http://aktv.top/AKTV/live/aktv/null-17/AKTV.m3u8
-華視,http://aktv.top/AKTV/live/aktv/null-11/AKTV.m3u8
-靖天電影台,http://aktv.top/AKTV/live/aktv/null-6/AKTV.m3u8
-鳳凰中文,http://aktv.top/AKTV/live/aktv/null-3/AKTV.m3u8
-鳳凰資訊,http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8
-鳳凰香港,http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8
-黃金翡翠台,http://aktv.top/AKTV/live/aktv/null-21/AKTV.m3u8
-龍華日韓台,http://aktv.top/AKTV/live/aktv/null-22/AKTV.m3u8
-龍華經典台,http://aktv.top/AKTV/live/aktv/null-7/AKTV.m3u8
-龍華電影台,http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8
-viutv 99,http://aktv.top/AKTV/live/aktv2/viutv99/AKTV.m3u8
-viutv6 96,http://aktv.top/AKTV/live/aktv2/viutv696/AKTV.m3u8
-无线新闻台(北美),http://aktv.top/AKTV/live/aktv2/null-1/AKTV.m3u8
-Animax-HK,http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
-C+台,http://aktv.top/AKTV/live/aktv3/c/AKTV.m3u8
-DW,http://aktv.top/AKTV/live/aktv3/dw/AKTV.m3u8
-France 24,http://aktv.top/AKTV/live/aktv3/france24/AKTV.m3u8
-KIX,http://aktv.top/AKTV/live/aktv3/kix/AKTV.m3u8
-Love Nature HD,http://aktv.top/AKTV/live/aktv3/lovenaturehd/AKTV.m3u8
-NHK World-Japan,http://aktv.top/AKTV/live/aktv3/nhkworldjapan/AKTV.m3u8
-Nick Jr,http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
-Nickelodeon,http://aktv.top/AKTV/live/aktv3/nickelodeon/AKTV.m3u8
-ROCK Action,http://aktv.top/AKTV/live/aktv3/rockaction/AKTV.m3u8
-Thrill,http://aktv.top/AKTV/live/aktv3/thrill/AKTV.m3u8
-ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
-亞洲新聞台,http://aktv.top/AKTV/live/aktv3/null-3/AKTV.m3u8
-東方衛視國際頻道,http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8
-無線衛星新聞台,http://aktv.top/AKTV/live/aktv3/null-2/AKTV.m3u8
-
 斗鱼直播,#genre#
 
 🐠斗鱼直播🐠,#genre#
@@ -26131,9 +26242,6 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 ░░░「 橙記 最人气港剧间 」░░░,http://diyp.zxxoo.work/douyu/4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://huanqiuzhibo.cn/manifest/douyu.php?id=4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://120.77.28.4:8648/douyu.php?id=4549169
-【蓝翔】经典电视剧,http://diyp.zxxoo.work/douyu/7459925
-【蓝翔】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
-【蓝翔】经典电视剧,http://120.77.28.4:8648/douyu.php?id=7459925
 金庸武侠、古装神剧,http://diyp.zxxoo.work/douyu/338759
 金庸武侠、古装神剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
 金庸武侠、古装神剧,http://120.77.28.4:8648/douyu.php?id=338759
@@ -26146,30 +26254,24 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 ✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://diyp.zxxoo.work/douyu/5062195
 ✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://huanqiuzhibo.cn/manifest/douyu.php?id=5062195
 ✨庆帝✨云淡风轻正闲处，鲜衣怒马少年时,http://120.77.28.4:8648/douyu.php?id=5062195
-钻粉5倍-我是蒲蚂蚱 我黑化了,http://diyp.zxxoo.work/douyu/6621
-钻粉5倍-我是蒲蚂蚱 我黑化了,http://huanqiuzhibo.cn/manifest/douyu.php?id=6621
-钻粉5倍-我是蒲蚂蚱 我黑化了,http://120.77.28.4:8648/douyu.php?id=6621
 呜呜呜呜我被孤立了,http://diyp.zxxoo.work/douyu/6215178
 呜呜呜呜我被孤立了,http://huanqiuzhibo.cn/manifest/douyu.php?id=6215178
 呜呜呜呜我被孤立了,http://120.77.28.4:8648/douyu.php?id=6215178
-国强四阿哥,http://diyp.zxxoo.work/douyu/4944033
-国强四阿哥,http://huanqiuzhibo.cn/manifest/douyu.php?id=4944033
-国强四阿哥,http://120.77.28.4:8648/douyu.php?id=4944033
 ❤️女团社❤️最新舞蹈MV音乐演唱会舞台,http://diyp.zxxoo.work/douyu/11327316
 ❤️女团社❤️最新舞蹈MV音乐演唱会舞台,http://huanqiuzhibo.cn/manifest/douyu.php?id=11327316
 ❤️女团社❤️最新舞蹈MV音乐演唱会舞台,http://120.77.28.4:8648/douyu.php?id=11327316
-【邵氏影院】经典武侠 动作 老电影你懂的,http://diyp.zxxoo.work/douyu/4246519
-【邵氏影院】经典武侠 动作 老电影你懂的,http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
-【邵氏影院】经典武侠 动作 老电影你懂的,http://120.77.28.4:8648/douyu.php?id=4246519
+国强四阿哥,http://diyp.zxxoo.work/douyu/4944033
+国强四阿哥,http://huanqiuzhibo.cn/manifest/douyu.php?id=4944033
+国强四阿哥,http://120.77.28.4:8648/douyu.php?id=4944033
 【话事人】粤语【周星驰】【林正英】,http://diyp.zxxoo.work/douyu/5033502
 【话事人】粤语【周星驰】【林正英】,http://huanqiuzhibo.cn/manifest/douyu.php?id=5033502
 【话事人】粤语【周星驰】【林正英】,http://120.77.28.4:8648/douyu.php?id=5033502
+【邵氏影院】经典武侠 动作 老电影你懂的,http://diyp.zxxoo.work/douyu/4246519
+【邵氏影院】经典武侠 动作 老电影你懂的,http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
+【邵氏影院】经典武侠 动作 老电影你懂的,http://120.77.28.4:8648/douyu.php?id=4246519
 今天咱们吃一顿好的，持续更新..,http://diyp.zxxoo.work/douyu/961386
 今天咱们吃一顿好的，持续更新..,http://huanqiuzhibo.cn/manifest/douyu.php?id=961386
 今天咱们吃一顿好的，持续更新..,http://120.77.28.4:8648/douyu.php?id=961386
-［豆腐集团］粤语港剧,http://diyp.zxxoo.work/douyu/6478650
-［豆腐集团］粤语港剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=6478650
-［豆腐集团］粤语港剧,http://120.77.28.4:8648/douyu.php?id=6478650
 【花卷陪看】豆瓣高评分电影,http://diyp.zxxoo.work/douyu/52787
 【花卷陪看】豆瓣高评分电影,http://huanqiuzhibo.cn/manifest/douyu.php?id=52787
 【花卷陪看】豆瓣高评分电影,http://120.77.28.4:8648/douyu.php?id=52787
@@ -26191,6 +26293,9 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 ❤️演唱会❤️最强专场流行音乐经典华语,http://diyp.zxxoo.work/douyu/11880223
 ❤️演唱会❤️最强专场流行音乐经典华语,http://huanqiuzhibo.cn/manifest/douyu.php?id=11880223
 ❤️演唱会❤️最强专场流行音乐经典华语,http://120.77.28.4:8648/douyu.php?id=11880223
+[Hi欣影厅]精彩影片点播放映厅,http://diyp.zxxoo.work/douyu/11996166
+[Hi欣影厅]精彩影片点播放映厅,http://huanqiuzhibo.cn/manifest/douyu.php?id=11996166
+[Hi欣影厅]精彩影片点播放映厅,http://120.77.28.4:8648/douyu.php?id=11996166
 我在斗鱼看星爷,http://diyp.zxxoo.work/douyu/6432827
 我在斗鱼看星爷,http://huanqiuzhibo.cn/manifest/douyu.php?id=6432827
 我在斗鱼看星爷,http://120.77.28.4:8648/douyu.php?id=6432827
@@ -26203,6 +26308,18 @@ illit礼的直播间,http://120.77.28.4:8648/douyu.php?id=12065549
 用户6056099521的直播间,http://diyp.zxxoo.work/douyu/12065793
 用户6056099521的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12065793
 用户6056099521的直播间,http://120.77.28.4:8648/douyu.php?id=12065793
+看看这是哪里,http://diyp.zxxoo.work/douyu/5804577
+看看这是哪里,http://huanqiuzhibo.cn/manifest/douyu.php?id=5804577
+看看这是哪里,http://120.77.28.4:8648/douyu.php?id=5804577
+用户8092785756的直播间,http://diyp.zxxoo.work/douyu/12065570
+用户8092785756的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12065570
+用户8092785756的直播间,http://120.77.28.4:8648/douyu.php?id=12065570
+欢乐猴群纪录片,http://diyp.zxxoo.work/douyu/7921708
+欢乐猴群纪录片,http://huanqiuzhibo.cn/manifest/douyu.php?id=7921708
+欢乐猴群纪录片,http://120.77.28.4:8648/douyu.php?id=7921708
+RylynnRyan._.^^,http://diyp.zxxoo.work/douyu/11558214
+RylynnRyan._.^^,http://huanqiuzhibo.cn/manifest/douyu.php?id=11558214
+RylynnRyan._.^^,http://120.77.28.4:8648/douyu.php?id=11558214
 🐠斗鱼-综合🐠,#genre#
 全网最嚣张吃法 隔着屏幕流口水,http://diyp.zxxoo.work/douyu/9116745
 全网最嚣张吃法 隔着屏幕流口水,http://huanqiuzhibo.cn/manifest/douyu.php?id=9116745
@@ -26210,24 +26327,18 @@ illit礼的直播间,http://120.77.28.4:8648/douyu.php?id=12065549
 【粤语电影】吴孟达 达叔 周星驰 经典,http://diyp.zxxoo.work/douyu/1226741
 【粤语电影】吴孟达 达叔 周星驰 经典,http://huanqiuzhibo.cn/manifest/douyu.php?id=1226741
 【粤语电影】吴孟达 达叔 周星驰 经典,http://120.77.28.4:8648/douyu.php?id=1226741
-【神乐】周杰伦华语 女团Tara AOA,http://diyp.zxxoo.work/douyu/6557037
-【神乐】周杰伦华语 女团Tara AOA,http://huanqiuzhibo.cn/manifest/douyu.php?id=6557037
-【神乐】周杰伦华语 女团Tara AOA,http://120.77.28.4:8648/douyu.php?id=6557037
 【RM-点播】点播！模式-24H欢乐不断,http://diyp.zxxoo.work/douyu/131977
 【RM-点播】点播！模式-24H欢乐不断,http://huanqiuzhibo.cn/manifest/douyu.php?id=131977
 【RM-点播】点播！模式-24H欢乐不断,http://120.77.28.4:8648/douyu.php?id=131977
 妈妈都喜欢看的粤语剧,http://diyp.zxxoo.work/douyu/10338873
 妈妈都喜欢看的粤语剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=10338873
 妈妈都喜欢看的粤语剧,http://120.77.28.4:8648/douyu.php?id=10338873
-港剧:最最最经典怀旧的电视剧,http://diyp.zxxoo.work/douyu/5061550
-港剧:最最最经典怀旧的电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
-港剧:最最最经典怀旧的电视剧,http://120.77.28.4:8648/douyu.php?id=5061550
 【西关大院】粤语学习,http://diyp.zxxoo.work/douyu/11878141
 【西关大院】粤语学习,http://huanqiuzhibo.cn/manifest/douyu.php?id=11878141
 【西关大院】粤语学习,http://120.77.28.4:8648/douyu.php?id=11878141
-养老院☞总会有你可能喜欢的节目吧,http://diyp.zxxoo.work/douyu/2073
-养老院☞总会有你可能喜欢的节目吧,http://huanqiuzhibo.cn/manifest/douyu.php?id=2073
-养老院☞总会有你可能喜欢的节目吧,http://120.77.28.4:8648/douyu.php?id=2073
+港剧:最最最经典怀旧的电视剧,http://diyp.zxxoo.work/douyu/5061550
+港剧:最最最经典怀旧的电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=5061550
+港剧:最最最经典怀旧的电视剧,http://120.77.28.4:8648/douyu.php?id=5061550
 译制国语影片荟萃,http://diyp.zxxoo.work/douyu/2436390
 译制国语影片荟萃,http://huanqiuzhibo.cn/manifest/douyu.php?id=2436390
 译制国语影片荟萃,http://120.77.28.4:8648/douyu.php?id=2436390
@@ -26282,21 +26393,27 @@ bestthings丶放假的直播间,http://120.77.28.4:8648/douyu.php?id=11752532
 做道“酸菜黑鱼”，鲜嫩味美,http://diyp.zxxoo.work/douyu/9622309
 做道“酸菜黑鱼”，鲜嫩味美,http://huanqiuzhibo.cn/manifest/douyu.php?id=9622309
 做道“酸菜黑鱼”，鲜嫩味美,http://120.77.28.4:8648/douyu.php?id=9622309
-顺其自然飞的直播间,http://diyp.zxxoo.work/douyu/12334108
-顺其自然飞的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12334108
-顺其自然飞的直播间,http://120.77.28.4:8648/douyu.php?id=12334108
 吃饭点到了,http://diyp.zxxoo.work/douyu/11283504
 吃饭点到了,http://huanqiuzhibo.cn/manifest/douyu.php?id=11283504
 吃饭点到了,http://120.77.28.4:8648/douyu.php?id=11283504
-随便看看，标题凑字数,http://diyp.zxxoo.work/douyu/8971159
-随便看看，标题凑字数,http://huanqiuzhibo.cn/manifest/douyu.php?id=8971159
-随便看看，标题凑字数,http://120.77.28.4:8648/douyu.php?id=8971159
+顺其自然飞的直播间,http://diyp.zxxoo.work/douyu/12334108
+顺其自然飞的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12334108
+顺其自然飞的直播间,http://120.77.28.4:8648/douyu.php?id=12334108
 8257039的直播间,http://diyp.zxxoo.work/douyu/8257039
 8257039的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=8257039
 8257039的直播间,http://120.77.28.4:8648/douyu.php?id=8257039
+一只小雀巢,http://diyp.zxxoo.work/douyu/12283941
+一只小雀巢,http://huanqiuzhibo.cn/manifest/douyu.php?id=12283941
+一只小雀巢,http://120.77.28.4:8648/douyu.php?id=12283941
+随便看看，标题凑字数,http://diyp.zxxoo.work/douyu/8971159
+随便看看，标题凑字数,http://huanqiuzhibo.cn/manifest/douyu.php?id=8971159
+随便看看，标题凑字数,http://120.77.28.4:8648/douyu.php?id=8971159
 失眠的时候听听下雨的声音吧,http://diyp.zxxoo.work/douyu/7481383
 失眠的时候听听下雨的声音吧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7481383
 失眠的时候听听下雨的声音吧,http://120.77.28.4:8648/douyu.php?id=7481383
+欣欣宝直播间,http://diyp.zxxoo.work/douyu/11455493
+欣欣宝直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=11455493
+欣欣宝直播间,http://120.77.28.4:8648/douyu.php?id=11455493
 米奇de日常,http://diyp.zxxoo.work/douyu/7393896
 米奇de日常,http://huanqiuzhibo.cn/manifest/douyu.php?id=7393896
 米奇de日常,http://120.77.28.4:8648/douyu.php?id=7393896
@@ -26306,22 +26423,22 @@ bestthings丶放假的直播间,http://120.77.28.4:8648/douyu.php?id=11752532
 Mrs腊月小九,http://diyp.zxxoo.work/douyu/9529988
 Mrs腊月小九,http://huanqiuzhibo.cn/manifest/douyu.php?id=9529988
 Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
-潘姥姥美食的直播间,http://diyp.zxxoo.work/douyu/9738641
-潘姥姥美食的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9738641
-潘姥姥美食的直播间,http://120.77.28.4:8648/douyu.php?id=9738641
-让我看看打野的强度,http://diyp.zxxoo.work/douyu/6434190
-让我看看打野的强度,http://huanqiuzhibo.cn/manifest/douyu.php?id=6434190
-让我看看打野的强度,http://120.77.28.4:8648/douyu.php?id=6434190
 浙江遂昌美食——炒黄未馃,http://diyp.zxxoo.work/douyu/8161564
 浙江遂昌美食——炒黄未馃,http://huanqiuzhibo.cn/manifest/douyu.php?id=8161564
 浙江遂昌美食——炒黄未馃,http://120.77.28.4:8648/douyu.php?id=8161564
+潘姥姥美食的直播间,http://diyp.zxxoo.work/douyu/9738641
+潘姥姥美食的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=9738641
+潘姥姥美食的直播间,http://120.77.28.4:8648/douyu.php?id=9738641
+失踪人口回归 2041014,http://diyp.zxxoo.work/douyu/2041014
+失踪人口回归 2041014,http://huanqiuzhibo.cn/manifest/douyu.php?id=2041014
+失踪人口回归 2041014,http://120.77.28.4:8648/douyu.php?id=2041014
 花姐的直播间 4058285,http://diyp.zxxoo.work/douyu/4058285
 花姐的直播间 4058285,http://huanqiuzhibo.cn/manifest/douyu.php?id=4058285
 花姐的直播间 4058285,http://120.77.28.4:8648/douyu.php?id=4058285
 🐠斗鱼-喜剧🐠,#genre#
-✨美兮✨不可能 我二弟天下无敌✨,http://diyp.zxxoo.work/douyu/2838296
-✨美兮✨不可能 我二弟天下无敌✨,http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
-✨美兮✨不可能 我二弟天下无敌✨,http://120.77.28.4:8648/douyu.php?id=2838296
+非常757 恭喜龙宝百万总榜啦～,http://diyp.zxxoo.work/douyu/11967227
+非常757 恭喜龙宝百万总榜啦～,http://huanqiuzhibo.cn/manifest/douyu.php?id=11967227
+非常757 恭喜龙宝百万总榜啦～,http://120.77.28.4:8648/douyu.php?id=11967227
 【幽默、笑场】喜剧电影专场,http://diyp.zxxoo.work/douyu/428402
 【幽默、笑场】喜剧电影专场,http://huanqiuzhibo.cn/manifest/douyu.php?id=428402
 【幽默、笑场】喜剧电影专场,http://120.77.28.4:8648/douyu.php?id=428402
@@ -26337,6 +26454,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【贝爷MAX厅】60帧电影 科幻 动作,http://diyp.zxxoo.work/douyu/4332
 【贝爷MAX厅】60帧电影 科幻 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=4332
 【贝爷MAX厅】60帧电影 科幻 动作,http://120.77.28.4:8648/douyu.php?id=4332
+✨美兮✨不可能 我二弟天下无敌✨,http://diyp.zxxoo.work/douyu/2838296
+✨美兮✨不可能 我二弟天下无敌✨,http://huanqiuzhibo.cn/manifest/douyu.php?id=2838296
+✨美兮✨不可能 我二弟天下无敌✨,http://120.77.28.4:8648/douyu.php?id=2838296
 【贝爷影厅】小众电影 欧美 日韩 二号厅,http://diyp.zxxoo.work/douyu/36337
 【贝爷影厅】小众电影 欧美 日韩 二号厅,http://huanqiuzhibo.cn/manifest/douyu.php?id=36337
 【贝爷影厅】小众电影 欧美 日韩 二号厅,http://120.77.28.4:8648/douyu.php?id=36337
@@ -26349,6 +26469,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【林正英】僵尸 女鬼 弹幕 护体,http://diyp.zxxoo.work/douyu/218859
 【林正英】僵尸 女鬼 弹幕 护体,http://huanqiuzhibo.cn/manifest/douyu.php?id=218859
 【林正英】僵尸 女鬼 弹幕 护体,http://120.77.28.4:8648/douyu.php?id=218859
+[怀旧剧场] 剧经典,http://diyp.zxxoo.work/douyu/7119207
+[怀旧剧场] 剧经典,http://huanqiuzhibo.cn/manifest/douyu.php?id=7119207
+[怀旧剧场] 剧经典,http://120.77.28.4:8648/douyu.php?id=7119207
 【香港赌片】喜剧、黑帮、动作、武侠、经典,http://diyp.zxxoo.work/douyu/315457
 【香港赌片】喜剧、黑帮、动作、武侠、经典,http://huanqiuzhibo.cn/manifest/douyu.php?id=315457
 【香港赌片】喜剧、黑帮、动作、武侠、经典,http://120.77.28.4:8648/douyu.php?id=315457
@@ -26364,9 +26487,6 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 (小毅）林正英，鬼片，喜剧，经典,http://diyp.zxxoo.work/douyu/6906628
 (小毅）林正英，鬼片，喜剧，经典,http://huanqiuzhibo.cn/manifest/douyu.php?id=6906628
 (小毅）林正英，鬼片，喜剧，经典,http://120.77.28.4:8648/douyu.php?id=6906628
-刘星：像超人一样自由自在天空自由飞翔,http://diyp.zxxoo.work/douyu/11827530
-刘星：像超人一样自由自在天空自由飞翔,http://huanqiuzhibo.cn/manifest/douyu.php?id=11827530
-刘星：像超人一样自由自在天空自由飞翔,http://120.77.28.4:8648/douyu.php?id=11827530
 金庸经典播放，点关注不迷路,http://diyp.zxxoo.work/douyu/12128227
 金庸经典播放，点关注不迷路,http://huanqiuzhibo.cn/manifest/douyu.php?id=12128227
 金庸经典播放，点关注不迷路,http://120.77.28.4:8648/douyu.php?id=12128227
@@ -26388,6 +26508,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://diyp.zxxoo.work/douyu/6369954
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://huanqiuzhibo.cn/manifest/douyu.php?id=6369954
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://120.77.28.4:8648/douyu.php?id=6369954
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://diyp.zxxoo.work/douyu/11751004
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://huanqiuzhibo.cn/manifest/douyu.php?id=11751004
+【下饭剧】【喜剧】东北那疙瘩一家人的生活,http://120.77.28.4:8648/douyu.php?id=11751004
 【吐槽】吐槽一下，快乐一天,http://diyp.zxxoo.work/douyu/9236042
 【吐槽】吐槽一下，快乐一天,http://huanqiuzhibo.cn/manifest/douyu.php?id=9236042
 【吐槽】吐槽一下，快乐一天,http://120.77.28.4:8648/douyu.php?id=9236042
@@ -26400,19 +26523,10 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 正常开播，欢迎欢迎 708526,http://diyp.zxxoo.work/douyu/708526
 正常开播，欢迎欢迎 708526,http://huanqiuzhibo.cn/manifest/douyu.php?id=708526
 正常开播，欢迎欢迎 708526,http://120.77.28.4:8648/douyu.php?id=708526
-你来也就是兄弟，多关注哦,http://diyp.zxxoo.work/douyu/1600769
-你来也就是兄弟，多关注哦,http://huanqiuzhibo.cn/manifest/douyu.php?id=1600769
-你来也就是兄弟，多关注哦,http://120.77.28.4:8648/douyu.php?id=1600769
-[怀旧剧场] 剧经典,http://diyp.zxxoo.work/douyu/7119207
-[怀旧剧场] 剧经典,http://huanqiuzhibo.cn/manifest/douyu.php?id=7119207
-[怀旧剧场] 剧经典,http://120.77.28.4:8648/douyu.php?id=7119207
 🐠斗鱼-动作🐠,#genre#
 【神 剧】的直播间,http://diyp.zxxoo.work/douyu/3439096
 【神 剧】的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=3439096
 【神 剧】的直播间,http://120.77.28.4:8648/douyu.php?id=3439096
-元芳到底看不看,http://diyp.zxxoo.work/douyu/6027991
-元芳到底看不看,http://huanqiuzhibo.cn/manifest/douyu.php?id=6027991
-元芳到底看不看,http://120.77.28.4:8648/douyu.php?id=6027991
 【神 剧】,http://diyp.zxxoo.work/douyu/5875025
 【神 剧】,http://huanqiuzhibo.cn/manifest/douyu.php?id=5875025
 【神 剧】,http://120.77.28.4:8648/douyu.php?id=5875025
@@ -26431,6 +26545,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 11.27龙哥《粤语版》,http://diyp.zxxoo.work/douyu/742565
 11.27龙哥《粤语版》,http://huanqiuzhibo.cn/manifest/douyu.php?id=742565
 11.27龙哥《粤语版》,http://120.77.28.4:8648/douyu.php?id=742565
+元芳到底看不看,http://diyp.zxxoo.work/douyu/6027991
+元芳到底看不看,http://huanqiuzhibo.cn/manifest/douyu.php?id=6027991
+元芳到底看不看,http://120.77.28.4:8648/douyu.php?id=6027991
 🐠斗鱼-古装🐠,#genre#
 家有诤子  不败其家,http://diyp.zxxoo.work/douyu/6911044
 家有诤子  不败其家,http://huanqiuzhibo.cn/manifest/douyu.php?id=6911044
@@ -26441,6 +26558,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 ♥ 港剧 动漫 美剧❤️,http://diyp.zxxoo.work/douyu/6581531
 ♥ 港剧 动漫 美剧❤️,http://huanqiuzhibo.cn/manifest/douyu.php?id=6581531
 ♥ 港剧 动漫 美剧❤️,http://120.77.28.4:8648/douyu.php?id=6581531
+《武侠剧》,http://diyp.zxxoo.work/douyu/7655471
+《武侠剧》,http://huanqiuzhibo.cn/manifest/douyu.php?id=7655471
+《武侠剧》,http://120.77.28.4:8648/douyu.php?id=7655471
 一起陪伴我们成长的神剧,http://diyp.zxxoo.work/douyu/1006179
 一起陪伴我们成长的神剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=1006179
 一起陪伴我们成长的神剧,http://120.77.28.4:8648/douyu.php?id=1006179
@@ -26480,10 +26600,10 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://diyp.zxxoo.work/douyu/7552568
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://huanqiuzhibo.cn/manifest/douyu.php?id=7552568
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://120.77.28.4:8648/douyu.php?id=7552568
-《武侠剧》,http://diyp.zxxoo.work/douyu/7655471
-《武侠剧》,http://huanqiuzhibo.cn/manifest/douyu.php?id=7655471
-《武侠剧》,http://120.77.28.4:8648/douyu.php?id=7655471
 🐠斗鱼-剧情🐠,#genre#
+【蓝翔】经典电视剧,http://diyp.zxxoo.work/douyu/7459925
+【蓝翔】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
+【蓝翔】经典电视剧,http://120.77.28.4:8648/douyu.php?id=7459925
 【纪晓岚】莫说百无一用是书生,http://diyp.zxxoo.work/douyu/9071554
 【纪晓岚】莫说百无一用是书生,http://huanqiuzhibo.cn/manifest/douyu.php?id=9071554
 【纪晓岚】莫说百无一用是书生,http://120.77.28.4:8648/douyu.php?id=9071554
@@ -26502,12 +26622,12 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【电视剧】本直播间由天使点播提供技术支持,http://diyp.zxxoo.work/douyu/7623292
 【电视剧】本直播间由天使点播提供技术支持,http://huanqiuzhibo.cn/manifest/douyu.php?id=7623292
 【电视剧】本直播间由天使点播提供技术支持,http://120.77.28.4:8648/douyu.php?id=7623292
-【六小龄童】你挑着担，我牵着马,http://diyp.zxxoo.work/douyu/8953746
-【六小龄童】你挑着担，我牵着马,http://huanqiuzhibo.cn/manifest/douyu.php?id=8953746
-【六小龄童】你挑着担，我牵着马,http://120.77.28.4:8648/douyu.php?id=8953746
 【刘华强】你这呱保熟吗,http://diyp.zxxoo.work/douyu/2726977
 【刘华强】你这呱保熟吗,http://huanqiuzhibo.cn/manifest/douyu.php?id=2726977
 【刘华强】你这呱保熟吗,http://120.77.28.4:8648/douyu.php?id=2726977
+【六小龄童】你挑着担，我牵着马,http://diyp.zxxoo.work/douyu/8953746
+【六小龄童】你挑着担，我牵着马,http://huanqiuzhibo.cn/manifest/douyu.php?id=8953746
+【六小龄童】你挑着担，我牵着马,http://120.77.28.4:8648/douyu.php?id=8953746
 经典  海景房,http://diyp.zxxoo.work/douyu/8543072
 经典  海景房,http://huanqiuzhibo.cn/manifest/douyu.php?id=8543072
 经典  海景房,http://120.77.28.4:8648/douyu.php?id=8543072
@@ -26529,9 +26649,6 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【雍正康熙】帝王故事连连看,http://diyp.zxxoo.work/douyu/4808115
 【雍正康熙】帝王故事连连看,http://huanqiuzhibo.cn/manifest/douyu.php?id=4808115
 【雍正康熙】帝王故事连连看,http://120.77.28.4:8648/douyu.php?id=4808115
-国强四王爷,http://diyp.zxxoo.work/douyu/7246624
-国强四王爷,http://huanqiuzhibo.cn/manifest/douyu.php?id=7246624
-国强四王爷,http://120.77.28.4:8648/douyu.php?id=7246624
 【古董】我们鉴的不是器物，而是人心,http://diyp.zxxoo.work/douyu/9650783
 【古董】我们鉴的不是器物，而是人心,http://huanqiuzhibo.cn/manifest/douyu.php?id=9650783
 【古董】我们鉴的不是器物，而是人心,http://120.77.28.4:8648/douyu.php?id=9650783
@@ -26544,6 +26661,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 新主播第一天 8765855,http://diyp.zxxoo.work/douyu/8765855
 新主播第一天 8765855,http://huanqiuzhibo.cn/manifest/douyu.php?id=8765855
 新主播第一天 8765855,http://120.77.28.4:8648/douyu.php?id=8765855
+谦变万华直播间,http://diyp.zxxoo.work/douyu/12330744
+谦变万华直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12330744
+谦变万华直播间,http://120.77.28.4:8648/douyu.php?id=12330744
 🐠斗鱼-科幻🐠,#genre#
 【经典巨制】欧美大片,http://diyp.zxxoo.work/douyu/2793084
 【经典巨制】欧美大片,http://huanqiuzhibo.cn/manifest/douyu.php?id=2793084
@@ -26554,6 +26674,9 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒,http://diyp.zxxoo.work/douyu/8814650
 【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒,http://huanqiuzhibo.cn/manifest/douyu.php?id=8814650
 【霍格沃茨】伟大引起嫉妒，嫉妒导致怨毒,http://120.77.28.4:8648/douyu.php?id=8814650
+科幻大放映,http://diyp.zxxoo.work/douyu/10183347
+科幻大放映,http://huanqiuzhibo.cn/manifest/douyu.php?id=10183347
+科幻大放映,http://120.77.28.4:8648/douyu.php?id=10183347
 【变种人】除掉任何阻碍我们的人,http://diyp.zxxoo.work/douyu/9651304
 【变种人】除掉任何阻碍我们的人,http://huanqiuzhibo.cn/manifest/douyu.php?id=9651304
 【变种人】除掉任何阻碍我们的人,http://120.77.28.4:8648/douyu.php?id=9651304
@@ -26561,4 +26684,4 @@ Mrs腊月小九,http://120.77.28.4:8648/douyu.php?id=9529988
 【粤语】看的不是电影【是回忆】求关注,http://huanqiuzhibo.cn/manifest/douyu.php?id=7919720
 【粤语】看的不是电影【是回忆】求关注,http://120.77.28.4:8648/douyu.php?id=7919720
 
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-12-01 00:30:44
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-12-01 06:30:11
