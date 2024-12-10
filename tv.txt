@@ -41542,9 +41542,6 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 【倍速播放】快乐会加倍！,http://huanqiuzhibo.cn/manifest/douyu.php?id=4105989
 【倍速播放】快乐会加倍！,http://live.iill.top/douyu.php?id=4105989
 【倍速播放】快乐会加倍！,http://120.77.28.4:8648/douyu.php?id=4105989
-【刘德华】庆祝华仔出道40周年,http://huanqiuzhibo.cn/manifest/douyu.php?id=2516864
-【刘德华】庆祝华仔出道40周年,http://live.iill.top/douyu.php?id=2516864
-【刘德华】庆祝华仔出道40周年,http://120.77.28.4:8648/douyu.php?id=2516864
 ❤️奶虫❤️恐怖 丧尸 鬼片 灾难科幻,http://huanqiuzhibo.cn/manifest/douyu.php?id=263824
 ❤️奶虫❤️恐怖 丧尸 鬼片 灾难科幻,http://live.iill.top/douyu.php?id=263824
 ❤️奶虫❤️恐怖 丧尸 鬼片 灾难科幻,http://120.77.28.4:8648/douyu.php?id=263824
@@ -41560,27 +41557,12 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 【豆瓣高分】史上最佳影片大放送,http://huanqiuzhibo.cn/manifest/douyu.php?id=8770422
 【豆瓣高分】史上最佳影片大放送,http://live.iill.top/douyu.php?id=8770422
 【豆瓣高分】史上最佳影片大放送,http://120.77.28.4:8648/douyu.php?id=8770422
-【笑场】喜剧电影专场,http://huanqiuzhibo.cn/manifest/douyu.php?id=9292492
-【笑场】喜剧电影专场,http://live.iill.top/douyu.php?id=9292492
-【笑场】喜剧电影专场,http://120.77.28.4:8648/douyu.php?id=9292492
 ✨神乐✨欧美 电影 科幻 动作 经典喜剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=20415
 ✨神乐✨欧美 电影 科幻 动作 经典喜剧,http://live.iill.top/douyu.php?id=20415
 ✨神乐✨欧美 电影 科幻 动作 经典喜剧,http://120.77.28.4:8648/douyu.php?id=20415
-【小鬼点播】动作 喜剧 经典 华语,http://huanqiuzhibo.cn/manifest/douyu.php?id=3928
-【小鬼点播】动作 喜剧 经典 华语,http://live.iill.top/douyu.php?id=3928
-【小鬼点播】动作 喜剧 经典 华语,http://120.77.28.4:8648/douyu.php?id=3928
-【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://huanqiuzhibo.cn/manifest/douyu.php?id=74374
-【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://live.iill.top/douyu.php?id=74374
-【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://120.77.28.4:8648/douyu.php?id=74374
-❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://huanqiuzhibo.cn/manifest/douyu.php?id=96577
-❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://live.iill.top/douyu.php?id=96577
-❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://120.77.28.4:8648/douyu.php?id=96577
 【小宇60帧】陪看主播,http://huanqiuzhibo.cn/manifest/douyu.php?id=323876
 【小宇60帧】陪看主播,http://live.iill.top/douyu.php?id=323876
 【小宇60帧】陪看主播,http://120.77.28.4:8648/douyu.php?id=323876
-【Liz陪看】 经典高分影视,http://huanqiuzhibo.cn/manifest/douyu.php?id=7254536
-【Liz陪看】 经典高分影视,http://live.iill.top/douyu.php?id=7254536
-【Liz陪看】 经典高分影视,http://120.77.28.4:8648/douyu.php?id=7254536
 星爷 经典 喜剧 科幻 动作,http://huanqiuzhibo.cn/manifest/douyu.php?id=508118
 星爷 经典 喜剧 科幻 动作,http://live.iill.top/douyu.php?id=508118
 星爷 经典 喜剧 科幻 动作,http://120.77.28.4:8648/douyu.php?id=508118
@@ -41599,9 +41581,6 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 【米尼影院】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7642724
 【米尼影院】经典电视剧,http://live.iill.top/douyu.php?id=7642724
 【米尼影院】经典电视剧,http://120.77.28.4:8648/douyu.php?id=7642724
-一个只播恐怖片的直播间,http://huanqiuzhibo.cn/manifest/douyu.php?id=12068394
-一个只播恐怖片的直播间,http://live.iill.top/douyu.php?id=12068394
-一个只播恐怖片的直播间,http://120.77.28.4:8648/douyu.php?id=12068394
 【恐怖】经典 恐怖 鬼怪 剧场,http://huanqiuzhibo.cn/manifest/douyu.php?id=1165374
 【恐怖】经典 恐怖 鬼怪 剧场,http://live.iill.top/douyu.php?id=1165374
 【恐怖】经典 恐怖 鬼怪 剧场,http://120.77.28.4:8648/douyu.php?id=1165374
@@ -41612,12 +41591,18 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 ░░░「 橙記 最人气港剧间 」░░░,http://huanqiuzhibo.cn/manifest/douyu.php?id=4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://live.iill.top/douyu.php?id=4549169
 ░░░「 橙記 最人气港剧间 」░░░,http://120.77.28.4:8648/douyu.php?id=4549169
+❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://huanqiuzhibo.cn/manifest/douyu.php?id=96577
+❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://live.iill.top/douyu.php?id=96577
+❤️小U❤️丧尸 鬼片 恐怖 惊悚 电影,http://120.77.28.4:8648/douyu.php?id=96577
 【蓝翔】经典电视剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=7459925
 【蓝翔】经典电视剧,http://live.iill.top/douyu.php?id=7459925
 【蓝翔】经典电视剧,http://120.77.28.4:8648/douyu.php?id=7459925
 金庸武侠、古装神剧,http://huanqiuzhibo.cn/manifest/douyu.php?id=338759
 金庸武侠、古装神剧,http://live.iill.top/douyu.php?id=338759
 金庸武侠、古装神剧,http://120.77.28.4:8648/douyu.php?id=338759
+【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://huanqiuzhibo.cn/manifest/douyu.php?id=74374
+【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://live.iill.top/douyu.php?id=74374
+【冰冰冰冰】恐怖 经典 喜剧 和你一起,http://120.77.28.4:8648/douyu.php?id=74374
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://huanqiuzhibo.cn/manifest/douyu.php?id=6566658
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://live.iill.top/douyu.php?id=6566658
 ⭐曾小贤⭐胡一菲⭐第三季⭐,http://120.77.28.4:8648/douyu.php?id=6566658
@@ -41633,6 +41618,9 @@ ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
 白银双倍-你当温柔 且有力量,http://huanqiuzhibo.cn/manifest/douyu.php?id=6621
 白银双倍-你当温柔 且有力量,http://live.iill.top/douyu.php?id=6621
 白银双倍-你当温柔 且有力量,http://120.77.28.4:8648/douyu.php?id=6621
+【小鬼点播】动作 喜剧 经典 华语,http://huanqiuzhibo.cn/manifest/douyu.php?id=3928
+【小鬼点播】动作 喜剧 经典 华语,http://live.iill.top/douyu.php?id=3928
+【小鬼点播】动作 喜剧 经典 华语,http://120.77.28.4:8648/douyu.php?id=3928
 【邵氏影院】经典武侠 动作 老电影你懂的,http://huanqiuzhibo.cn/manifest/douyu.php?id=4246519
 【邵氏影院】经典武侠 动作 老电影你懂的,http://live.iill.top/douyu.php?id=4246519
 【邵氏影院】经典武侠 动作 老电影你懂的,http://120.77.28.4:8648/douyu.php?id=4246519
@@ -42063,4 +42051,4 @@ Angela小兔990,http://120.77.28.4:8648/douyu.php?id=9617766
 【粤语】看的不是电影【是回忆】求关注,http://live.iill.top/douyu.php?id=7919720
 【粤语】看的不是电影【是回忆】求关注,http://120.77.28.4:8648/douyu.php?id=7919720
 
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-12-10 20:16:40
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2024-12-10 20:42:07
