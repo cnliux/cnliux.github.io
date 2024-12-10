@@ -1,9 +1,5 @@
-每天6个半小时更新
-自用资源切勿打扰！
 
-
-
-抄袭很多资源，自用勿扰。
+自用资源切勿传播！
 https://fastly.jsdelivr.net/gh/yoursmile66/TVBox@main/XC.json
 live.iill.top/douyu.php?id=6140589
 http://mmitv.top/test/douyu.php?id=3186217
