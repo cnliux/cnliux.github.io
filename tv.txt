@@ -1,3 +1,92 @@
+央视频,#genre#
+
+cctv1-高码,http://http://13.251.121.250:35455/gaoma/cctv1.m3u8
+cctv2-高码,http://http://13.251.121.250:35455/gaoma/cctv2.m3u8
+cctv3-高码,http://http://13.251.121.250:35455/gaoma/cctv3.m3u8
+cctv4-高码,http://http://13.251.121.250:35455/gaoma/cctv4.m3u8
+cctv5-高码,http://http://13.251.121.250:35455/gaoma/cctv5.m3u8
+cctv5p-高码,http://http://13.251.121.250:35455/gaoma/cctv5p.m3u8
+cctv7-高码,http://http://13.251.121.250:35455/gaoma/cctv7.m3u8
+cctv8-高码,http://http://13.251.121.250:35455/gaoma/cctv8.m3u8
+cctv9-高码,http://http://13.251.121.250:35455/gaoma/cctv9.m3u8
+cctv10-高码,http://http://13.251.121.250:35455/gaoma/cctv10.m3u8
+cctv11-高码,http://http://13.251.121.250:35455/gaoma/cctv11.m3u8
+cctv12-高码,http://http://13.251.121.250:35455/gaoma/cctv12.m3u8
+cctv13-高码,http://http://13.251.121.250:35455/gaoma/cctv13.m3u8
+cctv14-高码,http://http://13.251.121.250:35455/gaoma/cctv14.m3u8
+cctv15-高码,http://http://13.251.121.250:35455/gaoma/cctv15.m3u8
+cctv16-高码,http://http://13.251.121.250:35455/gaoma/cctv16.m3u8
+cctv164k_-高码,http://http://13.251.121.250:35455/gaoma/cctv4k16_10m.m3u8
+cctv164k-高码,http://http://13.251.121.250:35455/gaoma/cctv4k16.m3u8
+cctv17-高码,http://http://13.251.121.250:35455/gaoma/cctv17.m3u8
+cgtndoc-高码,http://http://13.251.121.250:35455/gaoma/cgtndoc.m3u8
+cgtnen-高码,http://http://13.251.121.250:35455/gaoma/cgtnen.m3u8
+cgtnfr-高码,http://http://13.251.121.250:35455/gaoma/cgtnfr.m3u8
+cgtnru-高码,http://http://13.251.121.250:35455/gaoma/cgtnru.m3u8
+cgtnsp-高码,http://http://13.251.121.250:35455/gaoma/cgtnsp.m3u8
+cctv4k_高码,http://http://13.251.121.250:35455/gaoma/cctv4k_10m.m3u8
+cctv4k-高码,http://http://13.251.121.250:35455/gaoma/cctv4k.m3u8
+cctv8k_-高码,http://http://13.251.121.250:35455/gaoma/cctv8k_36m.m3u8
+cctv8k_-高码,http://http://13.251.121.250:35455/gaoma/cctv8k_120m.m3u8
+
+cctv1-高码,http://http://112.18.54.52:35455/gaoma/cctv1.m3u8
+cctv2-高码,http://http://112.18.54.52:35455/gaoma/cctv2.m3u8
+cctv3-高码,http://http://112.18.54.52:35455/gaoma/cctv3.m3u8
+cctv4-高码,http://http://112.18.54.52:35455/gaoma/cctv4.m3u8
+cctv5-高码,http://http://112.18.54.52:35455/gaoma/cctv5.m3u8
+cctv5p-高码,http://http://112.18.54.52:35455/gaoma/cctv5p.m3u8
+cctv7-高码,http://http://112.18.54.52:35455/gaoma/cctv7.m3u8
+cctv8-高码,http://http://112.18.54.52:35455/gaoma/cctv8.m3u8
+cctv9-高码,http://http://112.18.54.52:35455/gaoma/cctv9.m3u8
+cctv10-高码,http://http://112.18.54.52:35455/gaoma/cctv10.m3u8
+cctv11-高码,http://http://112.18.54.52:35455/gaoma/cctv11.m3u8
+cctv12-高码,http://http://112.18.54.52:35455/gaoma/cctv12.m3u8
+cctv13-高码,http://http://112.18.54.52:35455/gaoma/cctv13.m3u8
+cctv14-高码,http://http://112.18.54.52:35455/gaoma/cctv14.m3u8
+cctv15-高码,http://http://112.18.54.52:35455/gaoma/cctv15.m3u8
+cctv16-高码,http://http://112.18.54.52:35455/gaoma/cctv16.m3u8
+cctv164k_-高码,http://http://112.18.54.52:35455/gaoma/cctv4k16_10m.m3u8
+cctv164k-高码,http://http://112.18.54.52:35455/gaoma/cctv4k16.m3u8
+cctv17-高码,http://http://112.18.54.52:35455/gaoma/cctv17.m3u8
+cgtndoc-高码,http://http://112.18.54.52:35455/gaoma/cgtndoc.m3u8
+cgtnen-高码,http://http://112.18.54.52:35455/gaoma/cgtnen.m3u8
+cgtnfr-高码,http://http://112.18.54.52:35455/gaoma/cgtnfr.m3u8
+cgtnru-高码,http://http://112.18.54.52:35455/gaoma/cgtnru.m3u8
+cgtnsp-高码,http://http://112.18.54.52:35455/gaoma/cgtnsp.m3u8
+cctv4k_高码,http://http://112.18.54.52:35455/gaoma/cctv4k_10m.m3u8
+cctv4k-高码,http://http://112.18.54.52:35455/gaoma/cctv4k.m3u8
+cctv8k_-高码,http://http://112.18.54.52:35455/gaoma/cctv8k_36m.m3u8
+cctv8k_-高码,http://http://112.18.54.52:35455/gaoma/cctv8k_120m.m3u8
+
+cctv1-高码,http://b.zgjok.com:35455/gaoma/cctv1.m3u8
+cctv2-高码,http://b.zgjok.com:35455/gaoma/cctv2.m3u8
+cctv3-高码,http://b.zgjok.com:35455/gaoma/cctv3.m3u8
+cctv4-高码,http://b.zgjok.com:35455/gaoma/cctv4.m3u8
+cctv5-高码,http://b.zgjok.com:35455/gaoma/cctv5.m3u8
+cctv5p-高码,http://b.zgjok.com:35455/gaoma/cctv5p.m3u8
+cctv7-高码,http://b.zgjok.com:35455/gaoma/cctv7.m3u8
+cctv8-高码,http://b.zgjok.com:35455/gaoma/cctv8.m3u8
+cctv9-高码,http://b.zgjok.com:35455/gaoma/cctv9.m3u8
+cctv10-高码,http://b.zgjok.com:35455/gaoma/cctv10.m3u8
+cctv11-高码,http://b.zgjok.com:35455/gaoma/cctv11.m3u8
+cctv12-高码,http://b.zgjok.com:35455/gaoma/cctv12.m3u8
+cctv13-高码,http://b.zgjok.com:35455/gaoma/cctv13.m3u8
+cctv14-高码,http://b.zgjok.com:35455/gaoma/cctv14.m3u8
+cctv15-高码,http://b.zgjok.com:35455/gaoma/cctv15.m3u8
+cctv16-高码,http://b.zgjok.com:35455/gaoma/cctv16.m3u8
+cctv164k_-高码,http://b.zgjok.com:35455/gaoma/cctv4k16_10m.m3u8
+cctv164k-高码,http://b.zgjok.com:35455/gaoma/cctv4k16.m3u8
+cctv17-高码,http://b.zgjok.com:35455/gaoma/cctv17.m3u8
+cgtndoc-高码,http://b.zgjok.com:35455/gaoma/cgtndoc.m3u8
+cgtnen-高码,http://b.zgjok.com:35455/gaoma/cgtnen.m3u8
+cgtnfr-高码,http://b.zgjok.com:35455/gaoma/cgtnfr.m3u8
+cgtnru-高码,http://b.zgjok.com:35455/gaoma/cgtnru.m3u8
+cgtnsp-高码,http://b.zgjok.com:35455/gaoma/cgtnsp.m3u8
+cctv4k_高码,http://b.zgjok.com:35455/gaoma/cctv4k_10m.m3u8
+cctv4k-高码,http://b.zgjok.com:35455/gaoma/cctv4k.m3u8
+cctv8k_-高码,http://b.zgjok.com:35455/gaoma/cctv8k_36m.m3u8
+cctv8k_-高码,http://b.zgjok.com:35455/gaoma/cctv8k_120m.m3u8
+
 虎牙直播,#genre#
 
 🐯虎牙【已修复】,#genre#
@@ -845,4 +934,4 @@ Angela小兔990,http://120.77.28.4:8648/douyu.php?id=9617766
 [ 天天娱乐 ],http://huanqiuzhibo.cn/manifest/douyu.php?id=5692901
 [ 天天娱乐 ],http://120.77.28.4:8648/douyu.php?id=5692901
 
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-01-20 20:03:20
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-01-20 20:30:14
