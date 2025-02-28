@@ -2,23 +2,21 @@ name: Auto Delete Old Workflow Runs
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # 每周日凌晨执行
+    - cron: '0 0 * * 0'
+# Run monthly, at 00:00 on the 1st day of month.
   workflow_dispatch:
-
+    
 jobs:
-  cleanup:
+  del_runs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
-
+      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Delete old runs
+      - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          retain_days: 14
+          token: ${{ secrets.WORK_TOKEN }}
+          repository: cnliux/cnliux.github.io
+          retain_days: 0
           keep_minimum_runs: 1
