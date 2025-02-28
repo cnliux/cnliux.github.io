@@ -1,0 +1,23 @@
+name: Clean Workflow Runs
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # 每周日凌晨3点执行
+  workflow_dispatch:     # 支持手动触发
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub CLI
+        run: |
+          sudo apt-get install -y jq   # 安装 jq（JSON 处理器）
+          gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete workflow runs
+        run: |
+          gh api -X GET "/repos/${{ github.repository }}/actions/runs?per_page=300" \
+          | jq '.workflow_runs[] | .id' \
+          | xargs -I{} sh -c 'echo {} && gh api --silent -X DELETE /repos/${{ github.repository }}/actions/runs/{}'
