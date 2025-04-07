@@ -1,118 +1,1881 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TXT转M3U转换器</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"  rel="stylesheet">
-<style>
-    .container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-    .url-display {
-        margin-top: 15px;
-        font-size: 14px;
-        color: #333;
-    }
-    pre {
-        background-color: #f8f9fa;
-        border: 1px solid #ddd;
-        border-left: 3px solid #f39c12;
-        color: #333;
-        page-break-inside: avoid;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 1.6em;
-        max-width: 100%;
-        overflow: auto;
-        padding: 1em 1.5em;
-        display: block;
-        word-wrap: break-word;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多功能频道列表转换工具</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --warning-color: #fbbc05;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --bg-color: #ffffff;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --primary-color: #8ab4f8;
+            --secondary-color: #81c995;
+            --danger-color: #f28b82;
+            --warning-color: #fde293;
+            --light-color: #202124;
+            --dark-color: #e8eaed;
+            --text-color: #e8eaed;
+            --text-muted: #9aa0a6;
+            --bg-color: #202124;
+            --border-color: #5f6368;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .mt-10 {
+            margin-top: 10px;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: var(--text-color);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-check-input {
+            margin-right: 8px;
+        }
+
+        .drop-area {
+            border: 2px dashed var(--border-color);
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .drop-area.highlight {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.05);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .table th {
+            background-color: rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .dark-mode .table th {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .channel-logo {
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 50%;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-success {
+            background-color: var(--secondary-color);
+        }
+
+        .status-error {
+            background-color: var(--danger-color);
+        }
+
+        .status-warning {
+            background-color: var(--warning-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 6px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            cursor: move;
+        }
+
+        .chip.dragging {
+            opacity: 0.5;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .settings-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: var(--bg-color);
+            box-shadow: -2px 0 10px var(--shadow-color);
+            padding: 20px;
+            transition: right 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .settings-panel.open {
+            right: 0;
+        }
+
+        .settings-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .settings-overlay.open {
+            display: block;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            z-index: 1100;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background-color: var(--secondary-color);
+        }
+
+        .toast.error {
+            background-color: var(--danger-color);
+        }
+
+        .toast.warning {
+            background-color: var(--warning-color);
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .settings-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .table th, .table td {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            .tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h2 class="mb-4">TXT转M3U转换器</h2>
-    <div class="mb-3">
-        <input type="text" class="form-control" id="txtUrlInput" placeholder="输入TXT文件URL">
-    </div>
-    <div class="url-display" id="urlDisplay">当前URL: <span id="currentUrl"></span></div>
-    <button id="convertBtn" class="btn btn-success">转换为M3U</button>
-    <div id="result" class="mt-4">
-        <h3>转换结果:</h3>
-        <pre id="resultText"></pre>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const convertBtn = document.getElementById('convertBtn');
-        const txtUrlInput = document.getElementById('txtUrlInput');
-        const urlDisplay = document.getElementById('currentUrl');
-        const resultText = document.getElementById('resultText');
-        const urlParams = new URLSearchParams(window.location.search);
-        const txtUrl = urlParams.get('txturl');
+    <div class="container">
+        <h1>多功能频道列表转换工具</h1>
+        <p class="text-muted">支持M3U、TXT、CSV、JSON等多种格式的频道列表转换</p>
 
-        convertBtn.addEventListener('click', function() {
-            convertToM3U(txtUrlInput.value);
-            urlDisplay.textContent = txtUrlInput.value; // 显示当前输入的URL
+        <div class="flex flex-between mb-20">
+            <div>
+                <button id="darkModeToggle" class="btn btn-secondary">暗黑模式</button>
+            </div>
+            <div>
+                <button id="settingsBtn" class="btn btn-secondary">设置</button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="converter">转换工具</div>
+            <div class="tab" data-tab="analytics">数据分析</div>
+            <div class="tab" data-tab="history">历史记录</div>
+        </div>
+
+        <div id="converter" class="tab-content active">
+            <div class="card">
+                <h3>文件输入</h3>
+                <div id="dropArea" class="drop-area">
+                    <p>拖放文件到此处或</p>
+                    <button id="selectFilesBtn" class="btn btn-primary">选择文件</button>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                </div>
+                <div id="fileList" class="mt-20">
+                    <p class="text-muted">没有选择文件</p>
+                </div>
+                <div class="form-check mt-10">
+                    <input type="checkbox" id="deduplicate" class="form-check-input" checked>
+                    <label for="deduplicate" class="form-check-label">自动去重</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>频道列表</h3>
+                <div class="form-group">
+                    <input type="text" id="channelSearch" class="form-control" placeholder="搜索频道...">
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>URL</th>
+                                <th>Logo</th>
+                                <th>分组</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="channelList">
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">没有频道数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex flex-between mt-10">
+                    <button id="deleteSelectedBtn" class="btn btn-danger">删除选中</button>
+                    <button id="testAllBtn" class="btn btn-warning">测试所有URL</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>输出设置</h3>
+                <div class="form-group">
+                    <label for="outputFormat" class="form-label">输出格式</label>
+                    <select id="outputFormat" class="form-control">
+                        <option value="m3u">M3U</option>
+                        <option value="txt">TXT</option>
+                        <option value="csv">CSV</option>
+                        <option value="json">JSON</option>
+                        <option value="excel">Excel</option>
+                        <option value="xml">XML</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fieldOrder" class="form-label">字段顺序</label>
+                    <select id="fieldOrder" class="form-control">
+                        <option value="default">默认 (名称, URL, Logo, 分组)</option>
+                        <option value="groupFirst">分组优先 (分组, 名称, URL, Logo)</option>
+                        <option value="urlFirst">URL优先 (URL, 名称, Logo, 分组)</option>
+                        <option value="logoFirst">Logo优先 (Logo, 名称, URL, 分组)</option>
+                        <option value="custom">自定义顺序</option>
+                    </select>
+                </div>
+                <div id="customOrderContainer" class="hidden mt-10">
+                    <label class="form-label">选择并拖动字段排序</label>
+                    <div id="customOrderFields"></div>
+                    <div class="mt-10">
+                        <label class="form-label">可用字段</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-name" name="fields" value="name" class="form-check-input" checked>
+                            <label for="field-name" class="form-check-label">名称</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-url" name="fields" value="url" class="form-check-input" checked>
+                            <label for="field-url" class="form-check-label">URL</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-logo" name="fields" value="logo" class="form-check-input" checked>
+                            <label for="field-logo" class="form-check-label">Logo</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-group" name="fields" value="group" class="form-check-input" checked>
+                            <label for="field-group" class="form-check-label">分组</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>输出结果</h3>
+                <textarea id="outputText" class="form-control" rows="10" placeholder="转换结果将显示在这里..."></textarea>
+                <div class="flex flex-between mt-10">
+                    <button id="copyBtn" class="btn btn-secondary">复制到剪贴板</button>
+                    <div>
+                        <button id="clearBtn" class="btn btn-danger">清空</button>
+                        <button id="convertBtn" class="btn btn-primary">转换</button>
+                        <button id="downloadBtn" class="btn btn-secondary">下载</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="analytics" class="tab-content">
+            <div class="card">
+                <h3>频道统计</h3>
+                <div class="flex flex-between">
+                    <div>
+                        <p class="text-muted">总频道数</p>
+                        <h2 id="totalChannels">0</h2>
+                    </div>
+                    <div>
+                        <p class="text-muted">分组数量</p>
+                        <h2 id="groupCount">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>分组分布</h3>
+                <canvas id="groupChart"></canvas>
+            </div>
+        </div>
+
+        <div id="history" class="tab-content">
+            <div class="card">
+                <h3>转换历史</h3>
+                <div id="historyList">
+                    <p class="text-muted text-center">没有历史记录</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsPanel" class="settings-panel">
+        <h3>设置</h3>
+        <div class="form-group">
+            <label for="themePref" class="form-label">主题偏好</label>
+            <select id="themePref" class="form-control">
+                <option value="auto">跟随系统</option>
+                <option value="light">浅色模式</option>
+                <option value="dark">暗黑模式</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="saveHistory" class="form-check-input" checked>
+            <label for="saveHistory" class="form-check-label">保存历史记录</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="autoConvert" class="form-check-input">
+            <label for="autoConvert" class="form-check-label">自动转换</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="showNotifications" class="form-check-input" checked>
+            <label for="showNotifications" class="form-check-label">显示通知</label>
+        </div>
+        <div class="form-group">
+            <label for="recommendCount" class="form-label">推荐频道数量</label>
+            <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
+        </div>
+        <div class="mt-20">
+            <button id="clearAllHistory" class="btn btn-danger">清除所有历史记录</button>
+        </div>
+        <div class="mt-20">
+            <button id="closeSettings" class="btn btn-primary">关闭设置</button>
+        </div>
+    </div>
+
+    <div id="settingsOverlay" class="settings-overlay"></div>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // 全局变量
+        let channels = [];
+        let currentFiles = [];
+        let history = [];
+        let settings = {
+            theme: 'auto',
+            saveHistory: true,
+            autoConvert: false,
+            showNotifications: true,
+            recommendCount: 3
+        };
+
+        // DOM元素
+        const elements = {
+            dropArea: document.getElementById('dropArea'),
+            fileInput: document.getElementById('fileInput'),
+            selectFilesBtn: document.getElementById('selectFilesBtn'),
+            fileList: document.getElementById('fileList'),
+            outputFormat: document.getElementById('outputFormat'),
+            fieldOrder: document.getElementById('fieldOrder'),
+            customOrderContainer: document.getElementById('customOrderContainer'),
+            customOrderFields: document.getElementById('customOrderFields'),
+            outputText: document.getElementById('outputText'),
+            copyBtn: document.getElementById('copyBtn'),
+            downloadBtn: document.getElementById('downloadBtn'),
+            convertBtn: document.getElementById('convertBtn'),
+            clearBtn: document.getElementById('clearBtn'),
+            channelSearch: document.getElementById('channelSearch'),
+            channelList: document.getElementById('channelList'),
+            deleteSelectedBtn: document.getElementById('deleteSelectedBtn'),
+            testAllBtn: document.getElementById('testAllBtn'),
+            totalChannels: document.getElementById('totalChannels'),
+            groupCount: document.getElementById('groupCount'),
+            groupChart: document.getElementById('groupChart'),
+            historyList: document.getElementById('historyList'),
+            darkModeToggle: document.getElementById('darkModeToggle'),
+            settingsBtn: document.getElementById('settingsBtn'),
+            settingsPanel: document.getElementById('settingsPanel'),
+            settingsOverlay: document.getElementById('settingsOverlay'),
+            closeSettings: document.getElementById('closeSettings'),
+            themePref: document.getElementById('themePref'),
+            saveHistory: document.getElementById('saveHistory'),
+            autoConvert: document.getElementById('autoConvert'),
+            showNotifications: document.getElementById('showNotifications'),
+            recommendCount: document.getElementById('recommendCount'),
+            clearAllHistory: document.getElementById('clearAllHistory'),
+            toast: document.getElementById('toast'),
+            tabs: document.querySelectorAll('.tab'),
+            tabContents: document.querySelectorAll('.tab-content'),
+            deduplicate: document.getElementById('deduplicate')
+        };
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 加载设置
+            loadSettings();
+            
+            // 加载历史记录
+            loadHistory();
+            
+            // 初始化图表
+            initChart();
+            
+            // 事件监听器
+            setupEventListeners();
+            
+            // 检查系统主题偏好
+            checkSystemTheme();
         });
 
-        if (txtUrl) {
-            txtUrlInput.value = txtUrl;
-            urlDisplay.textContent = txtUrl; // 显示通过URL参数获取的URL
-            convertToM3U(txtUrl);
+        // 加载设置
+        function loadSettings() {
+            const savedSettings = localStorage.getItem('channelConverterSettings');
+            if (savedSettings) {
+                settings = JSON.parse(savedSettings);
+                
+                // 更新UI
+                elements.themePref.value = settings.theme;
+                elements.saveHistory.checked = settings.saveHistory;
+                elements.autoConvert.checked = settings.autoConvert;
+                elements.showNotifications.checked = settings.showNotifications;
+                elements.recommendCount.value = settings.recommendCount;
+                
+                // 应用主题
+                applyTheme();
+            }
         }
-    });
 
-    function convertToM3U(txtUrl) {
-        if (!txtUrl) {
-            alert('请输入有效的TXT文件URL');
-            return;
+        // 保存设置
+        function saveSettings() {
+            settings.theme = elements.themePref.value;
+            settings.saveHistory = elements.saveHistory.checked;
+            settings.autoConvert = elements.autoConvert.checked;
+            settings.showNotifications = elements.showNotifications.checked;
+            settings.recommendCount = parseInt(elements.recommendCount.value);
+            
+            localStorage.setItem('channelConverterSettings', JSON.stringify(settings));
+            
+            // 应用主题
+            applyTheme();
+            
+            showToast('设置已保存', 'success');
         }
 
-        fetch(txtUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应异常');
-                }
-                return response.text();
-            })
-            .then(txtContent => {
-                const lines = txtContent.split('\n').map(line => line.trim()).filter(line => line);
-                let m3uContent = '#EXTM3U\n';
-                lines.forEach(line => {
-                    const [title, url] = line.split(',').map(item => item.trim());
-                    if (title && url) {
-                        m3uContent += `#EXTINF:-1,${title}\n${url}\n`;
-                    }
+        // 检查系统主题偏好
+        function checkSystemTheme() {
+            if (settings.theme === 'auto') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.body.classList.toggle('dark-mode', prefersDark);
+                elements.darkModeToggle.checked = prefersDark;
+            }
+        }
+
+        // 应用主题
+        function applyTheme() {
+            if (settings.theme === 'auto') {
+                checkSystemTheme();
+            } else {
+                document.body.classList.toggle('dark-mode', settings.theme === 'dark');
+                elements.darkModeToggle.checked = settings.theme === 'dark';
+            }
+        }
+
+        // 加载历史记录
+        function loadHistory() {
+            if (!settings.saveHistory) return;
+            
+            const savedHistory = localStorage.getItem('channelConverterHistory');
+            if (savedHistory) {
+                history = JSON.parse(savedHistory);
+                renderHistory();
+            }
+        }
+
+        // 保存历史记录
+        function saveHistory() {
+            if (!settings.saveHistory) return;
+            
+            // 只保留最近10条记录
+            if (history.length > 10) {
+                history = history.slice(history.length - 10);
+            }
+            
+            localStorage.setItem('channelConverterHistory', JSON.stringify(history));
+        }
+
+        // 添加历史记录
+        function addHistoryRecord(data, format) {
+            if (!settings.saveHistory) return;
+            
+            const timestamp = new Date().toISOString();
+            history.push({ timestamp, data, format });
+            saveHistory();
+            renderHistory();
+        }
+
+        // 清除历史记录
+        function clearHistory() {
+            history = [];
+            localStorage.removeItem('channelConverterHistory');
+            renderHistory();
+            showToast('历史记录已清除', 'success');
+        }
+
+        // 渲染历史记录
+        function renderHistory() {
+            elements.historyList.innerHTML = '';
+            
+            if (history.length === 0) {
+                elements.historyList.innerHTML = '<p class="text-muted text-center">没有历史记录</p>';
+                return;
+            }
+            
+            // 按时间倒序排列
+            const sortedHistory = [...history].reverse();
+            
+            sortedHistory.forEach((record, index) => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                
+                const date = new Date(record.timestamp);
+                const timeString = date.toLocaleString();
+                
+                const formatBadge = document.createElement('span');
+                formatBadge.className = 'badge';
+                formatBadge.textContent = record.format.toUpperCase();
+                
+                const timeSpan = document.createElement('span');
+                timeSpan.className = 'text-muted';
+                timeSpan.textContent = timeString;
+                
+                const previewText = document.createElement('p');
+                previewText.className = 'text-muted';
+                previewText.textContent = record.data.substring(0, 100) + (record.data.length > 100 ? '...' : '');
+                
+                historyItem.appendChild(formatBadge);
+                historyItem.appendChild(document.createTextNode(' '));
+                historyItem.appendChild(timeSpan);
+                historyItem.appendChild(previewText);
+                
+                historyItem.addEventListener('click', () => {
+                    elements.outputText.value = record.data;
+                    showToast('历史记录已加载', 'success');
                 });
-                downloadM3U(m3uContent, 'playlist.m3u');
-                resultText.textContent = m3uContent; // 显示转换结果
-            })
-            .catch(error => {
-                console.error('获取TXT文件时出现问题:', error);
-                resultText.textContent = '转换失败: ' + error.message;
+                
+                elements.historyList.appendChild(historyItem);
             });
+        }
+
+        // 初始化图表
+        function initChart() {
+            // 留空，将在更新数据时初始化
+        }
+
+        // 更新图表
+        function updateChart() {
+            // 按组标题统计
+            const groupCounts = {};
+            channels.forEach(channel => {
+                const group = channel.group || '未分组';
+                groupCounts[group] = (groupCounts[group] || 0) + 1;
+            });
+            
+            const groups = Object.keys(groupCounts);
+            const counts = Object.values(groupCounts);
+            
+            // 更新统计数字
+            elements.totalChannels.textContent = channels.length;
+            elements.groupCount.textContent = groups.length;
+            
+            // 更新图表
+            const ctx = elements.groupChart.getContext('2d');
+            
+            // 如果已有图表实例，先销毁
+            if (elements.groupChart.chart) {
+                elements.groupChart.chart.destroy();
+            }
+            
+            elements.groupChart.chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: groups,
+                    datasets: [{
+                        label: '频道数量',
+                        data: counts,
+                        backgroundColor: groups.map((_, i) => {
+                            const hue = (i * 30) % 360;
+                            return `hsl(${hue}, 70%, 60%)`;
+                        }),
+                        borderColor: groups.map((_, i) => {
+                            const hue = (i * 30) % 360;
+                            return `hsl(${hue}, 70%, 40%)`;
+                        }),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // 设置事件监听器
+        function setupEventListeners() {
+            // 拖放区域事件
+            elements.dropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                elements.dropArea.classList.add('highlight');
+            });
+            
+            elements.dropArea.addEventListener('dragleave', () => {
+                elements.dropArea.classList.remove('highlight');
+            });
+            
+            elements.dropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                elements.dropArea.classList.remove('highlight');
+                
+                if (e.dataTransfer.files.length > 0) {
+                    handleFiles(e.dataTransfer.files);
+                }
+            });
+            
+            // 选择文件按钮
+            elements.selectFilesBtn.addEventListener('click', () => {
+                elements.fileInput.click();
+            });
+            
+            elements.fileInput.addEventListener('change', () => {
+                if (elements.fileInput.files.length > 0) {
+                    handleFiles(elements.fileInput.files);
+                }
+            });
+            
+            // 字段顺序选择
+            elements.fieldOrder.addEventListener('change', () => {
+                if (elements.fieldOrder.value === 'custom') {
+                    elements.customOrderContainer.classList.remove('hidden');
+                    renderCustomOrderFields();
+                } else {
+                    elements.customOrderContainer.classList.add('hidden');
+                }
+            });
+            
+            // 复制按钮
+            elements.copyBtn.addEventListener('click', copyToClipboard);
+            
+            // 下载按钮
+            elements.downloadBtn.addEventListener('click', downloadResult);
+            
+            // 转换按钮
+            elements.convertBtn.addEventListener('click', convertChannels);
+            
+            // 清空按钮
+            elements.clearBtn.addEventListener('click', () => {
+                elements.outputText.value = '';
+                channels = [];
+                currentFiles = [];
+                elements.fileList.innerHTML = '';
+                renderChannelList();
+                updateChart();
+                showToast('已清空', 'success');
+            });
+            
+            // 频道搜索
+            elements.channelSearch.addEventListener('input', renderChannelList);
+            
+            // 删除选中按钮
+            elements.deleteSelectedBtn.addEventListener('click', deleteSelectedChannels);
+            
+            // 测试所有URL按钮
+            elements.testAllBtn.addEventListener('click', testAllUrls);
+            
+            // 标签页切换
+            elements.tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+            });
+            
+            // 暗黑模式切换
+            elements.darkModeToggle.addEventListener('change', () => {
+                document.body.classList.toggle('dark-mode', elements.darkModeToggle.checked);
+                settings.theme = elements.darkModeToggle.checked ? 'dark' : 'light';
+                saveSettings();
+            });
+            
+            // 设置按钮
+            elements.settingsBtn.addEventListener('click', () => {
+                elements.settingsPanel.classList.add('open');
+                elements.settingsOverlay.classList.add('open');
+            });
+            
+            // 关闭设置
+            elements.closeSettings.addEventListener('click', () => {
+                elements.settingsPanel.classList.remove('open');
+                elements.settingsOverlay.classList.remove('open');
+            });
+            
+            elements.settingsOverlay.addEventListener('click', () => {
+                elements.settingsPanel.classList.remove('open');
+                elements.settingsOverlay.classList.remove('open');
+            });
+            
+            // 设置表单
+            elements.themePref.addEventListener('change', saveSettings);
+            elements.saveHistory.addEventListener('change', saveSettings);
+            elements.autoConvert.addEventListener('change', saveSettings);
+            elements.showNotifications.addEventListener('change', saveSettings);
+            elements.recommendCount.addEventListener('change', saveSettings);
+            
+            // 清除历史记录
+            elements.clearAllHistory.addEventListener('click', clearHistory);
+        }
+
+        // 切换标签页
+        function switchTab(tabId) {
+            // 更新标签页状态
+            elements.tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-tab') === tabId);
+            });
+            
+            // 更新内容区域
+            elements.tabContents.forEach(content => {
+                content.classList.toggle('active', content.id === tabId);
+            });
+            
+            // 如果切换到分析标签页，更新图表
+            if (tabId === 'analytics') {
+                updateChart();
+            }
+        }
+
+        // 处理文件
+        function handleFiles(files) {
+            currentFiles = Array.from(files);
+            renderFileList();
+            
+            if (settings.autoConvert) {
+                parseAllFiles();
+            }
+        }
+
+        // 渲染文件列表
+        function renderFileList() {
+            elements.fileList.innerHTML = '';
+            
+            if (currentFiles.length === 0) {
+                elements.fileList.innerHTML = '<p class="text-muted">没有选择文件</p>';
+                return;
+            }
+            
+            const list = document.createElement('ul');
+            
+            currentFiles.forEach((file, index) => {
+                const item = document.createElement('li');
+                item.className = 'flex flex-between';
+                
+                const fileInfo = document.createElement('div');
+                fileInfo.textContent = `${file.name} (${formatFileSize(file.size)})`;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'btn btn-danger';
+                removeBtn.textContent = '移除';
+                removeBtn.addEventListener('click', () => {
+                    currentFiles.splice(index, 1);
+                    renderFileList();
+                });
+                
+                item.appendChild(fileInfo);
+                item.appendChild(removeBtn);
+                list.appendChild(item);
+            });
+            
+            elements.fileList.appendChild(list);
+            
+            if (!settings.autoConvert) {
+                const parseBtn = document.createElement('button');
+                parseBtn.className = 'btn btn-secondary mt-10';
+                parseBtn.textContent = '解析文件';
+                parseBtn.addEventListener('click', parseAllFiles);
+                elements.fileList.appendChild(parseBtn);
+            }
+        }
+
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // 解析所有文件
+        function parseAllFiles() {
+            if (currentFiles.length === 0) {
+                showToast('没有选择文件', 'warning');
+                return;
+            }
+            
+            showToast('开始解析文件...', 'success');
+            
+            let parsedChannels = [];
+            let filesProcessed = 0;
+            
+            currentFiles.forEach(file => {
+                const reader = new FileReader();
+                
+                reader.onload = (e) => {
+                    const content = e.target.result;
+                    const extension = file.name.split('.').pop().toLowerCase();
+                    
+                    try {
+                        const fileChannels = parseFileContent(content, extension);
+                        parsedChannels = parsedChannels.concat(fileChannels);
+                        filesProcessed++;
+                        
+                        if (filesProcessed === currentFiles.length) {
+                            // 所有文件处理完成
+                            channels = elements.deduplicate.checked ? deduplicateChannels(parsedChannels) : parsedChannels;
+                            renderChannelList();
+                            
+                            if (settings.autoConvert) {
+                                convertChannels();
+                            }
+                            
+                            showToast(`成功解析 ${filesProcessed} 个文件，共 ${channels.length} 个频道`, 'success');
+                        }
+                    } catch (error) {
+                        filesProcessed++;
+                        showToast(`解析文件 ${file.name} 时出错: ${error.message}`, 'error');
+                    }
+                };
+                
+                reader.onerror = () => {
+                    filesProcessed++;
+                    showToast(`读取文件 ${file.name} 时出错`, 'error');
+                };
+                
+                reader.readAsText(file);
+            });
+        }
+
+        // 解析文件内容
+        function parseFileContent(content, extension) {
+            switch (extension) {
+                case 'm3u':
+                case 'm3u8':
+                    return parseM3U(content);
+                case 'txt':
+                    return parseTXT(content);
+                case 'csv':
+                    return parseCSV(content);
+                case 'json':
+                    return parseJSON(content);
+                default:
+                    throw new Error('不支持的文件格式');
+            }
+        }
+
+        // 解析M3U文件
+        function parseM3U(content) {
+            const lines = content.split('\n');
+            const channels = [];
+            let currentChannel = {};
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                if (line.startsWith('#EXTINF:')) {
+                    // 解析EXTINF行
+                    const extinf = line.substring(8);
+                    const commaIndex = extinf.indexOf(',');
+                    const params = extinf.substring(0, commaIndex);
+                    const name = extinf.substring(commaIndex + 1).trim();
+                    
+                    currentChannel = {
+                        name: name,
+                        url: '',
+                        logo: '',
+                        group: ''
+                    };
+                    
+                    // 解析参数
+                    const paramRegex = /([a-z-]+)="([^"]*)"/g;
+                    let match;
+                    while ((match = paramRegex.exec(params)) !== null) {
+                        const key = match
+                        [1]; const value = match[2];
+
+                                if (key === 'tvg-logo') {
+                        currentChannel.logo = value;
+                    } else if (key === 'group-title') {
+                        currentChannel.group = value;
+                    }
+                }
+            } else if (line && !line.startsWith('#') && currentChannel.name) {
+                // 这是URL行
+                currentChannel.url = line.trim();
+                channels.push(currentChannel);
+                currentChannel = {};
+            }
+        }
+        
+        return channels;
     }
 
-    function downloadM3U(content, filename) {
-        const blob = new Blob([content], { type: 'application/x-mpegURL' });
+    // 解析TXT文件
+    function parseTXT(content) {
+        const lines = content.split('\n');
+        const channels = [];
+        
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed) continue;
+            
+            // 支持格式: 名称,URL
+            // 或: 名称,URL,Logo,分组
+            const parts = trimmed.split(',');
+            
+            if (parts.length >= 2) {
+                const channel = {
+                    name: parts[0].trim(),
+                    url: parts[1].trim(),
+                    logo: parts[2] ? parts[2].trim() : '',
+                    group: parts[3] ? parts[3].trim() : ''
+                };
+                channels.push(channel);
+            }
+        }
+        
+        return channels;
+    }
+
+    // 解析CSV文件
+    function parseCSV(content) {
+        try {
+            const workbook = XLSX.read(content, { type: 'string' });
+            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+            
+            return jsonData.map(row => ({
+                name: row['名称'] || row['name'] || row['Name'] || '',
+                url: row['URL'] || row['url'] || row['Url'] || '',
+                logo: row['Logo'] || row['logo'] || '',
+                group: row['分组'] || row['group'] || row['Group'] || ''
+            }));
+        } catch (error) {
+            // 如果XLSX解析失败，尝试用普通CSV解析
+            const lines = content.split('\n');
+            const channels = [];
+            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+            
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',');
+                if (values.length < 2) continue;
+                
+                const channel = {};
+                for (let j = 0; j < headers.length; j++) {
+                    if (headers[j] === 'name' || headers[j] === '名称') {
+                        channel.name = values[j] ? values[j].trim() : '';
+                    } else if (headers[j] === 'url') {
+                        channel.url = values[j] ? values[j].trim() : '';
+                    } else if (headers[j] === 'logo') {
+                        channel.logo = values[j] ? values[j].trim() : '';
+                    } else if (headers[j] === 'group' || headers[j] === '分组') {
+                        channel.group = values[j] ? values[j].trim() : '';
+                    }
+                }
+                
+                if (channel.name && channel.url) {
+                    channels.push(channel);
+                }
+            }
+            
+            return channels;
+        }
+    }
+
+    // 解析JSON文件
+    function parseJSON(content) {
+        try {
+            const data = JSON.parse(content);
+            
+            if (Array.isArray(data)) {
+                return data.map(item => ({
+                    name: item.name || item.Name || item.title || '',
+                    url: item.url || item.Url || item.link || '',
+                    logo: item.logo || item.Logo || item.image || '',
+                    group: item.group || item.Group || item.category || ''
+                }));
+            } else {
+                // 尝试解析为对象格式
+                const channels = [];
+                for (const group in data) {
+                    if (Array.isArray(data[group])) {
+                        data[group].forEach(channel => {
+                            channels.push({
+                                name: channel.name || channel.Name || channel.title || '',
+                                url: channel.url || channel.Url || channel.link || '',
+                                logo: channel.logo || channel.Logo || channel.image || '',
+                                group: group
+                            });
+                        });
+                    }
+                }
+                return channels;
+            }
+        } catch (error) {
+            throw new Error('无效的JSON格式');
+        }
+    }
+
+    // 去重频道
+    function deduplicateChannels(channels) {
+        const unique = [];
+        const urlMap = {};
+        
+        for (const channel of channels) {
+            if (!urlMap[channel.url]) {
+                urlMap[channel.url] = true;
+                unique.push(channel);
+            }
+        }
+        
+        return unique;
+    }
+
+    // 渲染频道列表
+    function renderChannelList() {
+        elements.channelList.innerHTML = '';
+        
+        if (channels.length === 0) {
+            elements.channelList.innerHTML = `
+                <tr>
+                    <td colspan="6" class="text-center text-muted">没有频道数据</td>
+                </tr>
+            `;
+            return;
+        }
+        
+        const searchTerm = elements.channelSearch.value.toLowerCase();
+        const filteredChannels = searchTerm 
+            ? channels.filter(c => 
+                c.name.toLowerCase().includes(searchTerm) || 
+                c.url.toLowerCase().includes(searchTerm) ||
+                (c.group && c.group.toLowerCase().includes(searchTerm)))
+            : channels;
+        
+        if (filteredChannels.length === 0) {
+            elements.channelList.innerHTML = `
+                <tr>
+                    <td colspan="6" class="text-center text-muted">没有匹配的频道</td>
+                </tr>
+            `;
+            return;
+        }
+        
+        filteredChannels.forEach((channel, index) => {
+            const row = document.createElement('tr');
+            
+            // 名称列
+            const nameCell = document.createElement('td');
+            const nameCheckbox = document.createElement('input');
+            nameCheckbox.type = 'checkbox';
+            nameCheckbox.className = 'form-check-input';
+            nameCheckbox.dataset.index = index;
+            nameCell.appendChild(nameCheckbox);
+            nameCell.appendChild(document.createTextNode(' ' + channel.name));
+            row.appendChild(nameCell);
+            
+            // URL列
+            const urlCell = document.createElement('td');
+            const urlLink = document.createElement('a');
+            urlLink.href = channel.url;
+            urlLink.textContent = channel.url;
+            urlLink.target = '_blank';
+            urlCell.appendChild(urlLink);
+            row.appendChild(urlCell);
+            
+            // Logo列
+            const logoCell = document.createElement('td');
+            if (channel.logo) {
+                const logoImg = document.createElement('img');
+                logoImg.src = channel.logo;
+                logoImg.className = 'channel-logo';
+                logoImg.alt = channel.name + ' logo';
+                logoImg.onerror = () => {
+                    logoImg.style.display = 'none';
+                };
+                logoCell.appendChild(logoImg);
+            }
+            row.appendChild(logoCell);
+            
+            // 分组列
+            const groupCell = document.createElement('td');
+            groupCell.textContent = channel.group || '未分组';
+            row.appendChild(groupCell);
+            
+            // 状态列
+            const statusCell = document.createElement('td');
+            if (channel.status === 'success') {
+                statusCell.innerHTML = '<span class="status-indicator status-success"></span>可用';
+            } else if (channel.status === 'error') {
+                statusCell.innerHTML = '<span class="status-indicator status-error"></span>不可用';
+            } else {
+                statusCell.innerHTML = '<span class="status-indicator status-warning"></span>未测试';
+            }
+            row.appendChild(statusCell);
+            
+            // 操作列
+            const actionCell = document.createElement('td');
+            
+            const testBtn = document.createElement('button');
+            testBtn.className = 'btn btn-secondary btn-sm';
+            testBtn.textContent = '测试';
+            testBtn.addEventListener('click', () => testUrl(index));
+            actionCell.appendChild(testBtn);
+            
+            actionCell.appendChild(document.createTextNode(' '));
+            
+            const editBtn = document.createElement('button');
+            editBtn.className = 'btn btn-secondary btn-sm';
+            editBtn.textContent = '编辑';
+            editBtn.addEventListener('click', () => editChannel(index));
+            actionCell.appendChild(editBtn);
+            
+            actionCell.appendChild(document.createTextNode(' '));
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'btn btn-danger btn-sm';
+            deleteBtn.textContent = '删除';
+            deleteBtn.addEventListener('click', () => deleteChannel(index));
+            actionCell.appendChild(deleteBtn);
+            
+            row.appendChild(actionCell);
+            
+            elements.channelList.appendChild(row);
+        });
+    }
+
+    // 测试URL
+    function testUrl(index) {
+        const channel = channels[index];
+        if (!channel || !channel.url) return;
+        
+        // 标记为测试中
+        channel.status = 'testing';
+        renderChannelList();
+        
+        // 使用CORS代理绕过跨域限制
+        const proxyUrl = `https://cors-anywhere.herokuapp.com/${channel.url}`;
+        
+        fetch(proxyUrl, {
+            method: 'HEAD',
+            mode: 'cors',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => {
+            channel.status = response.ok ? 'success' : 'error';
+            showToast(`${channel.name} ${response.ok ? '可用' : '不可用'}`, response.ok ? 'success' : 'error');
+        })
+        .catch(() => {
+            channel.status = 'error';
+            showToast(`${channel.name} 不可用`, 'error');
+        })
+        .finally(() => {
+            renderChannelList();
+        });
+    }
+
+    // 测试所有URL
+    function testAllUrls() {
+        if (channels.length === 0) {
+            showToast('没有频道可测试', 'warning');
+            return;
+        }
+        
+        showToast('开始测试所有URL...', 'success');
+        
+        let testedCount = 0;
+        const total = channels.length;
+        
+        channels.forEach((channel, index) => {
+            setTimeout(() => {
+                testUrl(index);
+                testedCount++;
+                
+                if (testedCount === total) {
+                    showToast('所有URL测试完成', 'success');
+                }
+            }, index * 1000); // 间隔1秒，避免请求过于频繁
+        });
+    }
+
+    // 编辑频道
+    function editChannel(index) {
+        const channel = channels[index];
+        if (!channel) return;
+        
+        // 创建一个简单的模态对话框
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = '1000';
+        
+        const modalContent = document.createElement('div');
+        modalContent.className = 'modal-content';
+        modalContent.style.backgroundColor = 'var(--bg-color)';
+        modalContent.style.padding = '20px';
+        modalContent.style.borderRadius = '5px';
+        modalContent.style.width = '80%';
+        modalContent.style.maxWidth = '500px';
+        
+        modalContent.innerHTML = `
+            <h3>编辑频道</h3>
+            <div class="form-group">
+                <label for="edit-name" class="form-label">名称</label>
+                <input type="text" id="edit-name" class="form-control" value="${channel.name}">
+            </div>
+            <div class="form-group">
+                <label for="edit-url" class="form-label">URL</label>
+                <input type="text" id="edit-url" class="form-control" value="${channel.url}">
+            </div>
+            <div class="form-group">
+                <label for="edit-logo" class="form-label">Logo URL</label>
+                <input type="text" id="edit-logo" class="form-control" value="${channel.logo || ''}">
+            </div>
+            <div class="form-group">
+                <label for="edit-group" class="form-label">分组</label>
+                <input type="text" id="edit-group" class="form-control" value="${channel.group || ''}">
+            </div>
+            <div class="flex flex-between mt-20">
+                <button id="cancel-edit" class="btn btn-danger">取消</button>
+                <button id="save-edit" class="btn btn-primary">保存</button>
+            </div>
+        `;
+        
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+        
+        // 保存编辑
+        document.getElementById('save-edit').addEventListener('click', () => {
+            channels[index] = {
+                name: document.getElementById('edit-name').value.trim(),
+                url: document.getElementById('edit-url').value.trim(),
+                logo: document.getElementById('edit-logo').value.trim(),
+                group: document.getElementById('edit-group').value.trim(),
+                status: channel.status
+            };
+            
+            document.body.removeChild(modal);
+            renderChannelList();
+            showToast('频道已更新', 'success');
+        });
+        
+        // 取消编辑
+        document.getElementById('cancel-edit').addEventListener('click', () => {
+            document.body.removeChild(modal);
+        });
+        
+        // 点击外部关闭
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
+    }
+
+    // 删除频道
+    function deleteChannel(index) {
+        if (confirm('确定要删除这个频道吗？')) {
+            channels.splice(index, 1);
+            renderChannelList();
+            updateChart();
+            showToast('频道已删除', 'success');
+        }
+    }
+
+    // 删除选中频道
+    function deleteSelectedChannels() {
+        const checkboxes = document.querySelectorAll('#channelList input[type="checkbox"]:checked');
+        if (checkboxes.length === 0) {
+            showToast('没有选中任何频道', 'warning');
+            return;
+        }
+        
+        if (confirm(`确定要删除选中的 ${checkboxes.length} 个频道吗？`)) {
+            // 从后往前删除，避免索引问题
+            const indices = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
+            
+            indices.forEach(index => {
+                channels.splice(index, 1);
+            });
+            
+            renderChannelList();
+            updateChart();
+            showToast(`已删除 ${indices.length} 个频道`, 'success');
+        }
+    }
+
+    // 渲染自定义顺序字段
+    function renderCustomOrderFields() {
+        elements.customOrderFields.innerHTML = '';
+        
+        const fields = ['name', 'url', 'logo', 'group'];
+        
+        fields.forEach(field => {
+            const chip = document.createElement('span');
+            chip.className = 'chip';
+            chip.textContent = {
+                'name': '名称',
+                'url': 'URL',
+                'logo': 'Logo',
+                'group': '分组'
+            }[field];
+            chip.dataset.field = field;
+            chip.draggable = true;
+            
+            chip.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', field);
+                chip.classList.add('dragging');
+            });
+            
+            chip.addEventListener('dragend', () => {
+                chip.classList.remove('dragging');
+            });
+            
+            elements.customOrderFields.appendChild(chip);
+        });
+        
+        // 设置拖放区域
+        elements.customOrderFields.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const dragging = document.querySelector('.chip.dragging');
+            const afterElement = getDragAfterElement(elements.customOrderFields, e.clientY);
+            
+            if (afterElement == null) {
+                elements.customOrderFields.appendChild(dragging);
+            } else {
+                elements.customOrderFields.insertBefore(dragging, afterElement);
+            }
+        });
+    }
+
+    // 获取拖放后的元素
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll('.chip:not(.dragging)')];
+        
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    // 转换频道
+    function convertChannels() {
+        if (channels.length === 0) {
+            showToast('没有频道数据', 'warning');
+            return;
+        }
+        
+        const format = elements.outputFormat.value;
+        let result;
+        
+        switch (format) {
+            case 'm3u':
+                result = convertToM3U();
+                break;
+            case 'txt':
+                result = convertToTXT();
+                break;
+            case 'csv':
+                result = convertToCSV();
+                break;
+            case 'json':
+                result = convertToJSON();
+                break;
+            case 'excel':
+                convertToExcel();
+                return;
+            case 'xml':
+                result = convertToXML();
+                break;
+            default:
+                result = '不支持的输出格式';
+        }
+        
+        elements.outputText.value = result;
+        addHistoryRecord(result, format);
+        showToast('转换完成', 'success');
+    }
+
+    // 转换为M3U格式
+    function convertToM3U() {
+        let m3u = '#EXTM3U\n';
+        
+        channels.forEach(channel => {
+            m3u += `#EXTINF:-1`;
+            
+            if (channel.logo) {
+                m3u += ` tvg-logo="${channel.logo}"`;
+            }
+            
+            if (channel.group) {
+                m3u += ` group-title="${channel.group}"`;
+            }
+            
+            m3u += `,${channel.name}\n`;
+            m3u += `${channel.url}\n`;
+        });
+        
+        return m3u;
+    }
+
+    // 转换为TXT格式
+    function convertToTXT() {
+        return channels.map(channel => {
+            const fields = [];
+            
+            if (elements.fieldOrder.value === 'custom') {
+                const fieldOrder = Array.from(elements.customOrderFields.querySelectorAll('.chip'))
+                    .map(chip => chip.dataset.field);
+                
+                fieldOrder.forEach(field => {
+                    if (channel[field]) {
+                        fields.push(channel[field]);
+                    }
+                });
+            } else {
+                // 默认顺序
+                fields.push(channel.name, channel.url);
+                if (channel.logo) fields.push(channel.logo);
+                if (channel.group) fields.push(channel.group);
+            }
+            
+            return fields.join(',');
+        }).join('\n');
+    }
+
+    // 转换为CSV格式
+    function convertToCSV() {
+        const headers = ['名称', 'URL', 'Logo', '分组'];
+        const rows = channels.map(channel => [
+            channel.name,
+            channel.url,
+            channel.logo || '',
+            channel.group || ''
+        ]);
+        
+        return [headers.join(',')].concat(rows.map(row => row.join(','))).join('\n');
+    }
+
+    // 转换为JSON格式
+    function convertToJSON() {
+        return JSON.stringify(channels, null, 2);
+    }
+
+    // 转换为Excel格式
+    function convertToExcel() {
+        const worksheet = XLSX.utils.json_to_sheet(channels.map(channel => ({
+            '名称': channel.name,
+            'URL': channel.url,
+            'Logo': channel.logo || '',
+            '分组': channel.group || ''
+        })));
+        
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, '频道列表');
+        
+        XLSX.writeFile(workbook, '频道列表.xlsx');
+        showToast('Excel文件已生成', 'success');
+    }
+
+    // 转换为XML格式
+    function convertToXML() {
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<channels>\n';
+        
+        channels.forEach(channel => {
+            xml += '  <channel>\n';
+            xml += `    <name>${escapeXml(channel.name)}</name>\n`;
+            xml += `    <url>${escapeXml(channel.url)}</url>\n`;
+            if (channel.logo) {
+                xml += `    <logo>${escapeXml(channel.logo)}</logo>\n`;
+            }
+            if (channel.group) {
+                xml += `    <group>${escapeXml(channel.group)}</group>\n`;
+            }
+            xml += '  </channel>\n';
+        });
+        
+        xml += '</channels>';
+        return xml;
+    }
+
+    // 转义XML特殊字符
+    function escapeXml(unsafe) {
+        return unsafe.replace(/[<>&'"]/g, c => {
+            switch (c) {
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '&': return '&amp;';
+                case '\'': return '&apos;';
+                case '"': return '&quot;';
+                default: return c;
+            }
+        });
+    }
+
+    // 复制到剪贴板
+    function copyToClipboard() {
+        if (!elements.outputText.value) {
+            showToast('没有内容可复制', 'warning');
+            return;
+        }
+        
+        elements.outputText.select();
+        document.execCommand('copy');
+        
+        // 取消选中
+        window.getSelection().removeAllRanges();
+        
+        showToast('已复制到剪贴板', 'success');
+    }
+
+    // 下载结果
+    function downloadResult() {
+        if (!elements.outputText.value) {
+            showToast('没有内容可下载', 'warning');
+            return;
+        }
+        
+        const format = elements.outputFormat.value;
+        let mimeType, extension;
+        
+        switch (format) {
+            case 'm3u':
+                mimeType = 'audio/x-mpegurl';
+                extension = 'm3u';
+                break;
+            case 'txt':
+                mimeType = 'text/plain';
+                extension = 'txt';
+                break;
+            case 'csv':
+                mimeType = 'text/csv';
+                extension = 'csv';
+                break;
+            case 'json':
+                mimeType = 'application/json';
+                extension = 'json';
+                break;
+            case 'xml':
+                mimeType = 'application/xml';
+                extension = 'xml';
+                break;
+            default:
+                mimeType = 'text/plain';
+                extension = 'txt';
+        }
+        
+        const blob = new Blob([elements.outputText.value], { type: mimeType });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = filename;
+        a.download = `频道列表.${extension}`;
         document.body.appendChild(a);
         a.click();
-        a.remove();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
+        
+        showToast('文件已下载', 'success');
+    }
+
+    // 显示通知
+    function showToast(message, type) {
+        if (!settings.showNotifications) return;
+        
+        const toast = elements.toast;
+        toast.textContent = message;
+        toast.className = 'toast';
+        
+        // 添加类型类
+        if (type) {
+            toast.classList.add(type);
+        }
+        
+        // 显示
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 10);
+        
+        // 3秒后隐藏
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
     }
 </script>
-</body>
-</html>
+</body> 
+</html> 
+
+
