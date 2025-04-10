@@ -1,291 +1,462 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的常用软件下载</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <title>IPTV & TVBox - 电视直播解决方案</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        :root {
+            --primary-color: #37405f;
+            --secondary-color: #5c67f2;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
         .container {
-            width: 85%;
-            margin: auto;
-            overflow: hidden;
-            display: flex;      
-            flex-wrap: wrap;
-            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
+
         header {
-            background: linear-gradient(to right, #37405f, #5c67f2);
-            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
             margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom: 2px dashed #dcdcdc;
         }
+
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        header h1 {
-            margin: 0;
-            color: #ffffff;
-            font-size: 24px;
-        }
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        header nav ul li {
-            padding: 0 15px;
-        }
-        header nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            transition: color 0.3s ease;
-        }
-        header nav ul li a:hover {
-            color: #f5f5f5;
-        }
-        .banner {
-            text-align: center;
-            background: url('tvbox-banner.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 100px 0;
-        }
-        .banner h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .main-col, .sidebar {
-            padding: 20px;
-            background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #37405f;
-        }
-        .main-col {
-            flex: 2;
-        }
-        .sidebar {
-            flex: 1;
-        }
-        .project-title, .project h3 {
-            margin: 0;
-            padding-bottom: 10px;
-            color: #37405f;
-            font-size: 24px;
-        }
-        .project {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #ffffff;
-            border: 2px dashed #37405f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        .project p {
-            margin: 0;
-            color: #666;
-        }
-        .download-button {
-            display: inline-block;
-            background-color: #5c67f2;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 10px;
-            background: linear-gradient(to bottom, #5c67f2 0%, #37405f 100%);
-            border: 1px solid #333;
-        }
-        .download-button:hover {
-            background-color: #37405f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .data-source-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-        }
-        .data-source-list li {
-            background: #e9e9e9;
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .data-source-list li a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-        }
-        .data-source-list li a:hover {
-            background-color: #dcdcdc;
-        }
-        footer {
-            background: #37405f;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-        }
-        footer p {
-            margin: 0;
-        }
-        footer .social-icons {
-            margin-top: 10px;
-        }
-        footer .social-icons a {
-            color: white;
-            margin: 0 5px;
-            font-size: 24px;
-        }
-        footer .social-icons a:hover {
-            color: #5c67f2;
-        }
-        @media (max-width: 768px) {
-            .main-col, .sidebar {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
-        .copy-button {
-            display: inline-block;
-            background-color: #5c67f2;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 10px;
-            background: linear-gradient(to bottom, #5c67f2 0%, #37405f 100%);
-            border: 1px solid #333;
-            cursor: pointer; /* 添加鼠标指针样式 */
+            flex-wrap: wrap;
         }
 
-        .copy-button:hover {
-            background-color: #37405f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .download-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .source-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .source-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .source-list li:last-child {
+            border-bottom: none;
+        }
+
+        .copy-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: var(--border-radius);
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Banner */
+        .banner {
+            background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+            height: 300px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            border: none;
+            color: white;
+        }
+
+        .banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Notice */
+        .notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .notice-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 5px;
+        }
+
+        /* Tool Card */
+        .tool-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            background: var(--secondary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        .tool-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .tool-info p {
+            color: #666;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-<header>
+    <header>
+        <div class="container">
+            <h1>IPTV & TVBox 电视直播解决方案</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="https://www.juwanhezi.com/more/live"><i class="fas fa-tv"></i> 直播源</a></li>
+                    <li><a href="./m3u"><i class="fas fa-info-circle"></i> 频道管理器</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>我常用的一些软件下载</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="https://www.juwanhezi.com/more/live">订阅直播源</a></li>
-                <li><a href="https://github.com/o0HalfLife0o/TVBoxOSC/releases">关于TVBox</a></li>
-                <li><a href="contact.html">联系方式</a></li>
-            </ul>
-        </nav>
+        <div class="banner">
+            <div class="banner-content">
+                <h2>高清电视直播，尽在掌握</h2>
+                <p>提供最新、最稳定的IPTV和TVBox解决方案，让您随时随地观看全球电视节目</p>
+            </div>
+        </div>
+
+        <div class="notice">
+            <div class="notice-title"><i class="fas fa-exclamation-triangle"></i> 重要提示</div>
+            <p>本站提供的所有内容仅供学习和研究使用，请勿用于商业用途。如有版权问题，请及时联系删除。</p>
+        </div>
+
+        <div class="main-content">
+            <div class="content">
+                <div class="card">
+                    <h2>FongMi TV版本</h2>
+                    <p>一款功能强大的电视直播应用，支持多种数据源和高清画质。</p>
+                    <div class="download-links">
+                        <a href="https://raw.kkgithub.com/FongMi/Release/okjack/apk/release/leanback-arm64_v8a.apk" class="download-btn"><i class="fas fa-download"></i> 官方下载</a>
+                        <a href="https://ghfast.top/https://raw.githubusercontent.com/FongMi/Release/okjack/apk/release/leanback-arm64_v8a.apk" class="download-btn"><i class="fas fa-cloud-download-alt"></i> 镜像下载</a>
+                        <a href="https://github.com/FongMi/Release/raw/refs/heads/okjack/apk/release/leanback-arm64_v8a.apk" class="download-btn"><i class="fas fa-code-branch"></i> GitHub下载</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>FongMi手机版</h2>
+                    <p>为手机用户设计的轻量级电视直播应用，支持多种设备和系统。</p>
+                    <div class="download-links">
+                        <a href="https://raw.kkgithub.com/FongMi/Release/okjack/apk/release/mobile-python-arm64_v8a.apk" class="download-btn"><i class="fas fa-download"></i> 官方下载</a>
+                        <a href="https://ghfast.top/https://raw.githubusercontent.com/FongMi/Release/okjack/apk/release/mobile-python-arm64_v8a.apk" class="download-btn"><i class="fas fa-cloud-download-alt"></i> 镜像下载</a>
+                        <a href="https://github.com/FongMi/Release/raw/refs/heads/okjack/apk/release/mobile-python-arm64_v8a.apk" class="download-btn"><i class="fas fa-code-branch"></i> GitHub下载</a>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h3>多功能频道列表转换工具</h3>
+                        <p>帮助您轻松转换和管理频道列表，支持多种格式输出。</p>
+                        <a href="https://cnliux.github.io/m3u/" class="download-btn"><i class="fas fa-external-link-alt"></i> 访问工具</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>TVBox订阅源</h2>
+                    <p>一键复制TVBox订阅源，轻松获取最新直播频道列表。</p>
+                    <ul class="source-list">
+                        <li>
+                            <span>TVBox订阅源1</span>
+                            <button class="copy-btn" onclick="copyToClipboard('https://cnliux.github.io/1')">复制</button>
+                        </li>
+                        <li>
+                            <span>TXT直播订阅</span>
+                            <button class="copy-btn" onclick="copyToClipboard('https://cnliux.github.io/tv.txt')">复制</button>
+                        </li>
+                        <li>
+                            <span>TVBox订阅镜像1</span>
+                            <button class="copy-btn" onclick="copyToClipboard('https://fastly.jsdelivr.net/gh/cnliux/cnliux.github.io@main/1')">复制</button>
+                        </li>
+                        <li>
+                            <span>TXT直播订阅镜像1</span>
+                            <button class="copy-btn" onclick="copyToClipboard('https://fastly.jsdelivr.net/gh/cnliux/cnliux.github.io@main/tv.txt')">复制</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card">
+                    <h3>关于TVBox</h3>
+                    <p>TVBox是一款开源的电视直播应用，支持多种数据源和插件扩展。</p>
+                    <p>最新版本：v2.2.5</p>
+                    <p>更新日期：2024-12-15</p>
+                </div>
+
+                <div class="card">
+                    <h3>推荐软件</h3>
+                    <ul class="source-list">
+                        <li><a href="https://github.com/aiyakuaile/easy_tv_live/releases"><i class="fas fa-external-link-alt"></i> 极简TV</a></li>
+                        <li><a href="https://github.com/Hiram-Wong/ZyPlayer/releases/"><i class="fas fa-external-link-alt"></i> ZyPlayer</a></li>
+                        <li><a href="https://github.com/o0HalfLife0o/TVBoxOSC/releases"><i class="fas fa-external-link-alt"></i> TVBox发布页</a></li>
+                        <li><a href="http://xhztv.pro/"><i class="fas fa-external-link-alt"></i> TVBox工具箱</a></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>观看设备</h3>
+                    <p>Android手机/电视</p>
+                    <p>Windows电脑</p>
+                    <p>macOS设备</p>
+                    <p>智能电视</p>
+                </div>
+            </div>
+        </div>
     </div>
-</header>
-<div class="container">
-    <section class="main-col">
-        <div class="project">
-            <h2 class="project-title">FongMi TV版本</h2>
-        <p><a href="https://gitdl.cn/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-java-arm64_v8a.apk" class="download-button">立即下载</a> <a href="https://ghp.ci/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-java-arm64_v8a.apk" class="download-button">立即下载</a></p>
-        <p><a href="https://ghproxy.net/https://raw.githubusercontent.com/FongMi/Release/fongmi/apk/release/leanback-java-arm64_v8a.apk" class="download-button">立即下载</a> <a href="https://raw.kkgithub.com/FongMi/Release/fongmi/apk/release/leanback-java-arm64_v8a.apk" class="download-button">立即下载</a></p>
-        <h2 class="project-title">FongMi手机版</h2>
-        <p>FongMi是一款开源的手机应用</p>
-        <p><a href="https://cors.isteed.cc/github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a> <a href="https://gh.xiu2.us.kg/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a></p>
-        <p><a href="https://ghproxy.cn/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a> <a href="https://gh-proxy.ygxz.in/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a></p>
-            <ul class="data-source-list">
-              <li><a href="./m3u">多功能频道列表转换工具</a></li>
-              <li><a href="https://www.xn--sss604efuw.com/jm/">tvbox解密</a></li>
-              <button class="copy-button" onclick="copyToClipboard('https://cnliux.github.io/1')">tvbox订阅</button>
-              <button class="copy-button" onclick="copyToClipboard('https://cnliux.github.io/tv.txt')">TXT直播订阅</button>
-              <br>
-                            <button class="copy-button" onclick="copyToClipboard('https://fastly.jsdelivr.net/gh/cnliux/cnliux.github.io@main/1')">tvbox订阅镜像1</button>
-              <button class="copy-button" onclick="copyToClipboard('https://fastly.jsdelivr.net/gh/cnliux/cnliux.github.io@main/tv.txt')">TXT直播订阅镜像1</button>
-              </br>
-            </ul>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 IPTV & TVBox Team. All rights reserved.</p>
+            <p>本站提供的所有内容仅供学习和研究使用，请勿用于商业用途。</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </div>
         </div>
-        <div class="project">
-      <h3 class="project-title">我的电视tv版本 </h3>
-        <p>使用Android原生开发的电视直播软件</p>
-        <p><a href="https://cors.isteed.cc/github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a> <a href="https://gh.xiu2.us.kg/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a></p>
-        <p><a href="https://ghproxy.cn/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a> <a href="https://gh-proxy.ygxz.in/https://github.com/yaoxieyoulei/mytv-android/releases/download/tv2.2.5/mytv-android-tv-2.2.5-all-sdk21.apk" class="download-button">立即下载</a></p>
-    </div>
-    </section>
-    <aside class="sidebar">
-        <div class="project">
-            <h3 class="project-title">自我介绍</h3>
-            <p>此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负。</p>
-            <p>----------------</p>
-            <p>IPTV观看软件</p>
-            <p>----------------</p>
-            <p>APTV「多端」<br>
-               安卓系统<br>
-               OK影视「双端」<br>
-               天光云影「电视端」<br>
-               TiviMate「电视端」<br>
-               OTT「电视端」<br>
-               Televizo「手机端」<br>
-               Win系统<br>
-               PotPlayer「电脑端」<br>
-               QMPlay2「电脑端」<br>
-               ZyPlayer「电脑端」</p>
-        </div>
-        <div class="project">
-            <h3 class="project-title">相关软件</h3>
-            <ul class="data-source-list">
-                <li><a href="https://github.com/aiyakuaile/easy_tv_live/releases">极简TV [电脑,手机,电视三端观看IPTV]</a></li>
-                <li><a href="https://m3u.ibert.me/">iptv-sources</a></li>
-                <li><a href="https://github.com/Hiram-Wong/ZyPlayer/releases/">ZyPlayer</a></li>
-                <li><a href="https://github.com/o0HalfLife0o/TVBoxOSC/releases">TVBOX发布页</a></li>
-                <li><a href="http://xhztv.pro/">TVBOX工具箱</a></li>
-                <li><a href="https://sub.789.st/">转换工具</a></li>
-            </ul>
-        </div>
-    </aside>
-</div>
-<footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </footer>
+
     <script>
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('链接已复制到剪贴板：' + text);
-            }, function(err) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('链接已复制到剪贴板！');
+            }).catch(err => {
                 alert('复制失败，请手动复制。');
+                console.error('无法复制文本: ', err);
             });
         }
     </script>
-    <p>© 2024 TVBox Team. All rights reserved.</p>
-    <p>此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负.</p>
-</footer>
 </body>
 </html>
