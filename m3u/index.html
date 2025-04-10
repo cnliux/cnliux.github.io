@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="多功能频道列表转换工具，支持M3U、TXT、CSV、JSON等多种格式">
+    <title>多功能频道列表转换工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>多功能频道列表转换工具</h1>
+        <p class="text-muted">支持M3U、TXT、CSV、JSON等多种格式的频道列表转换</p>
+
+        <!-- 标签页 -->
+        <div class="tabs">
+            <div class="tab active" data-tab="converter">转换工具</div>
+            <div class="tab" data-tab="analytics">数据分析</div>
+            <div class="tab" data-tab="history">历史记录</div>
+            <div class="tab" id="settingsBtn" data-tab="settings">设置</div>
+        </div>
+
+        <!-- 转换工具 -->
+        <div id="converter" class="tab-content active">
+            <!-- 文件输入 -->
+            <div class="card">
+                <h3>文件输入</h3>
+                <div id="dropArea" class="drop-area">
+                    <p>拖放文件到此处或</p>
+                    <button id="selectFilesBtn" class="btn btn-primary">选择文件</button>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                </div>
+                <div id="fileList" class="mt-20">
+                    <p class="text-muted">没有选择文件</p>
+                </div>
+                <div class="form-group mt-10">
+                    <label for="textInput" class="form-label">或粘贴文本</label>
+                    <textarea id="textInput" class="form-control" rows="5" placeholder="粘贴频道列表文本..."></textarea>
+                </div>
+                <button id="parseTextBtn" class="btn btn-secondary mt-10">解析文本</button>
+                <div class="form-check mt-10">
+                    <input type="checkbox" id="deduplicate" class="form-check-input" checked>
+                    <label for="deduplicate" class="form-check-label">自动去重</label>
+                </div>
+            </div>
+
+            <!-- 频道列表 -->
+            <div class="card">
+                <h3>频道列表</h3>
+                <div class="form-group">
+                    <input type="text" id="channelSearch" class="form-control" placeholder="搜索频道...">
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>URL</th>
+                                <th>Logo</th>
+                                <th>分组</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="channelList">
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">没有频道数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex flex-between mt-10">
+                    <button id="deleteSelectedBtn" class="btn btn-danger">删除选中</button>
+                    <button id="testAllBtn" class="btn btn-warning">测试所有URL</button>
+                </div>
+            </div>
+
+            <!-- 输出设置 -->
+            <div class="card">
+                <h3>输出设置</h3>
+                <div class="form-group">
+                    <label for="outputFormat" class="form-label">输出格式</label>
+                    <select id="outputFormat" class="form-control">
+                        <option value="m3u">M3U</option>
+                        <option value="txt">TXT</option>
+                        <option value="csv">CSV</option>
+                        <option value="json">JSON</option>
+                        <option value="excel">Excel</option>
+                        <option value="xml">XML</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fieldOrder" class="form-label">字段顺序</label>
+                    <select id="fieldOrder" class="form-control">
+                        <option value="default">默认 (名称, URL, Logo, 分组)</option>
+                        <option value="groupFirst">分组优先 (分组, 名称, URL, Logo)</option>
+                        <option value="urlFirst">URL优先 (URL, 名称, Logo, 分组)</option>
+                        <option value="logoFirst">Logo优先 (Logo, 名称, URL, 分组)</option>
+                        <option value="custom">自定义顺序</option>
+                    </select>
+                </div>
+                <div id="customOrderContainer" class="hidden mt-10">
+                    <label class="form-label">选择并拖动字段排序</label>
+                    <div id="customOrderFields" class="sortable-fields"></div>
+                    <div class="mt-10">
+                        <label class="form-label">可用字段</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-name" name="fields" value="name" class="form-check-input" checked>
+                            <label for="field-name" class="form-check-label">名称</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-url" name="fields" value="url" class="form-check-input" checked>
+                            <label for="field-url" class="form-check-label">URL</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-logo" name="fields" value="logo" class="form-check-input" checked>
+                            <label for="field-logo" class="form-check-label">Logo</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="field-group" name="fields" value="group" class="form-check-input" checked>
+                            <label for="field-group" class="form-check-label">分组</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输出结果 -->
+            <div class="card">
+                <h3>输出结果</h3>
+                <textarea id="outputText" class="form-control" rows="10" placeholder="转换结果将显示在这里..."></textarea>
+                <div class="flex flex-between mt-10">
+                    <button id="copyBtn" class="btn btn-secondary">复制到剪贴板</button>
+                    <div>
+                        <button id="clearBtn" class="btn btn-danger">清空</button>
+                        <button id="convertBtn" class="btn btn-primary">转换</button>
+                        <button id="downloadBtn" class="btn btn-secondary">下载</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据分析 -->
+        <div id="analytics" class="tab-content">
+            <div class="card">
+                <h3>频道统计</h3>
+                <div class="flex flex-between">
+                    <div>
+                        <p class="text-muted">总频道数</p>
+                        <h2 id="totalChannels">0</h2>
+                    </div>
+                    <div>
+                        <p class="text-muted">分组数量</p>
+                        <h2 id="groupCount">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>分组分布</h3>
+                <canvas id="groupChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 历史记录 -->
+        <div id="history" class="tab-content">
+            <div class="card">
+                <h3>转换历史</h3>
+                <div id="historyList">
+                    <p class="text-muted text-center">没有历史记录</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 设置面板 -->
+    <div id="settingsPanel" class="settings-panel">
+        <h3>设置</h3>
+        <div class="form-group">
+            <label for="themePref" class="form-label">主题偏好</label>
+            <select id="themePref" class="form-control">
+                <option value="auto">跟随系统</option>
+                <option value="light">浅色模式</option>
+                <option value="dark">暗黑模式</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="saveHistory" class="form-check-input" checked>
+            <label for="saveHistory" class="form-check-label">保存历史记录</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="autoConvert" class="form-check-input">
+            <label for="autoConvert" class="form-check-label">自动转换</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="showNotifications" class="form-check-input" checked>
+            <label for="showNotifications" class="form-check-label">显示通知</label>
+        </div>
+        <div class="form-group">
+            <label for="recommendCount" class="form-label">推荐频道数量</label>
+            <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
+        </div>
+        <div class="mt-20">
+            <button id="clearAllHistory" class="btn btn-danger">清除所有历史记录</button>
+        </div>
+        <div class="mt-20">
+            <button id="closeSettings" class="btn btn-primary">关闭设置</button>
+        </div>
+    </div>
+
+    <div id="settingsOverlay" class="settings-overlay"></div>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- 引入模块 -->
+    <script src="js/core.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+        // 初始化应用
+        document.addEventListener('DOMContentLoaded', () => {
+            const converter = new ChannelConverter();
+            const ui = new UIHandler(converter);
+            const utils = new Utils();
+
+            // 初始化事件监听
+            ui.initEventListeners();
+
+            // 加载设置
+            converter.loadSettings();
+            ui.applySettings();
+
+            // 加载历史记录
+            converter.loadHistory();
+            ui.renderHistory();
+
+            // 初始化图表
+            ui.initChart();
+        });
+    </script>
+</body>
+</html>
