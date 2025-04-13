@@ -43,13 +43,16 @@ class ChannelConverter {
         const firstLine = content.split('\n')[0].trim();
         
         // 1. 检测M3U格式
-        if (firstLine.startsWith('#EXTM3U') || content.includes('#EXTINF')) {
+        if (content.includes('#EXTM3U') || content.includes('#EXTINF')) {
             return 'm3u';
         }
         
         // 2. 检测JSON格式
-        if (firstLine.startsWith('{') || firstLine.startsWith('[')) {
+        try {
+            JSON.parse(firstLine);
             return 'json';
+        } catch (e) {
+            // 非JSON格式，继续检测
         }
         
         // 3. 检测CSV格式（带标题行）
@@ -72,213 +75,139 @@ class ChannelConverter {
     }
 
     isValidUrl(url) {
-        return /^(http|https|rtmp|rtsp):\/\//i.test(url);
+        const urlRegex = /^(http|https|rtmp|rtsp):\/\/[^\s/$.?#].[^\s]*$/i;
+        return urlRegex.test(url);
+    }
+
+    // 清理和格式化内容
+    cleanAndFormatContent(content) {
+        // 1. 移除HTML标签
+        content = content.replace(/<url[^>]*>(.*?)<\/url>/g, '$1');
+        
+        // 2. 提取频道信息
+        const lines = content.split('\n');
+        const channels = [];
+        let currentGroup = '';
+        let isM3U = content.includes('#EXTINF');
+        
+        // 使用逐行解析M3U格式
+        if (isM3U) {
+            let i = 0;
+            while (i < lines.length) {
+                if (lines[i].trim().startsWith('#EXTINF:')) {
+                    const name = lines[i].split(',')[1].trim();
+                    const url = lines[i + 1]?.trim() || '';
+                    
+                    // 提取Logo和分组信息
+                    const logoMatch = lines[i].match(/tvg-logo="([^"]*)"/);
+                    const groupMatch = lines[i].match(/group-title="([^"]*)"/);
+                    
+                    const channel = {
+                        name: name,
+                        url: url.split('?')[0],
+                        logo: logoMatch ? logoMatch[1] : '',
+                        group: groupMatch ? groupMatch[1] : ''
+                    };
+                    
+                    if (this.isValidUrl(channel.url)) {
+                        channels.push(channel);
+                    }
+                    i += 2;
+                } else {
+                    i++;
+                }
+            }
+        } else {
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+                
+                // 处理分组标记
+                if (line.includes(',#genre#')) {
+                    currentGroup = line.split(',#genre#')[0].trim();
+                    continue;
+                }
+                
+                // 处理TXT/CSV格式
+                const parts = line.split(',').map(p => p.trim());
+                if (parts.length >= 2) {
+                    const channel = {
+                        name: parts[0],
+                        url: parts[1].split('?')[0],
+                        logo: parts.length > 2 ? parts[2] : '',
+                        group: currentGroup || (parts.length > 3 ? parts[3] : '')
+                    };
+                    
+                    // 验证URL
+                    if (this.isValidUrl(channel.url)) {
+                        channels.push(channel);
+                    }
+                }
+            }
+        }
+        
+        return channels;
     }
 
     // 各格式解析器 ====================================================
 
     parseM3U(content) {
-        const lines = content.split('\n');
-        const channels = [];
-        let currentChannel = {};
-        let currentGroup = '';
+        // 清理和格式化M3U内容
+        const cleanedChannels = this.cleanAndFormatContent(content);
         
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (!line) continue;
-            
-            // 支持自定义分组标记（兼容#genre#）
-            if (line.startsWith('#genre#')) {
-                currentGroup = line.substring(7).trim();
-                continue;
-            }
-            
-            if (line.startsWith('#EXTINF:')) {
-                // 解析EXTINF行
-                const extinf = line.substring(8);
-                const commaIndex = extinf.indexOf(',');
-                const params = commaIndex !== -1 ? extinf.substring(0, commaIndex) : extinf;
-                const name = commaIndex !== -1 ? extinf.substring(commaIndex + 1).trim() : '未知频道';
-                
-                currentChannel = {
-                    name: name,
-                    url: '',
-                    logo: '',
-                    group: currentGroup || ''
-                };
-                
-                // 解析参数
-                const paramRegex = /([a-z-]+)="([^"]*)"/g;
-                let match;
-                while ((match = paramRegex.exec(params)) !== null) {
-                    const key = match[1];
-                    const value = match[2];
-                    
-                    if (key === 'tvg-logo') {
-                        currentChannel.logo = value;
-                    } else if (key === 'group-title') {
-                        currentChannel.group = value || currentGroup;
-                    }
-                }
-            } else if (line && !line.startsWith('#') && currentChannel.name) {
-                // 这是URL行
-                currentChannel.url = line.trim();
-                if (this.isValidUrl(currentChannel.url)) {
-                    channels.push(currentChannel);
-                }
-                currentChannel = {};
-            }
-        }
-        
-        return channels;
+        // 进一步处理清理后的频道列表
+        return cleanedChannels.map(channel => {
+            return {
+                name: channel.name,
+                url: channel.url,
+                logo: channel.logo,
+                group: channel.group
+            };
+        });
     }
 
     parseTXT(content) {
-        const lines = content.split('\n');
-        const channels = [];
-        let currentGroup = '';
-        let lineNumber = 0;
+        // 清理和格式化TXT内容
+        const cleanedChannels = this.cleanAndFormatContent(content);
         
-        for (const line of lines) {
-            lineNumber++;
-            const trimmed = line.trim();
-            if (!trimmed) continue;
-            
-            // 处理分组标记
-            if (trimmed.includes(',#genre#')) {
-                currentGroup = trimmed.split(',#genre#')[0].trim();
-                continue;
-            }
-            
-            // 跳过注释行（非M3U注释）
-            if (trimmed.startsWith('#') && !trimmed.startsWith('#EXT')) {
-                continue;
-            }
-            
-            // 处理频道行（支持多种分隔符）
-            const separator = line.includes('|') ? '|' : 
-                             line.includes('\t') ? '\t' : ',';
-            const parts = trimmed.split(separator).map(p => p.trim());
-            
-            if (parts.length >= 2) {
-                const channel = {
-                    name: parts[0],
-                    url: parts[1],
-                    logo: parts[2] || '',
-                    group: currentGroup || parts[3] || ''
-                };
-                
-                // 验证URL
-                if (this.isValidUrl(channel.url)) {
-                    channels.push(channel);
-                } else {
-                    console.warn(`第${lineNumber}行: 无效URL被跳过 - ${channel.url}`);
-                }
-            } else {
-                console.warn(`第${lineNumber}行: 格式不正确被跳过 - ${line}`);
-            }
-        }
-        
-        return channels;
-    }
-
-    parseCSV(content) {
-        try {
-            // 尝试使用XLSX库解析
-            const workbook = XLSX.read(content, { type: 'string' });
-            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-            const jsonData = XLSX.utils.sheet_to_json(firstSheet);
-            
-            return jsonData.map(row => ({
-                name: row['名称'] || row['name'] || row['Name'] || '',
-                url: row['URL'] || row['url'] || row['Url'] || '',
-                logo: row['Logo'] || row['logo'] || '',
-                group: row['分组'] || row['group'] || row['Group'] || ''
-            })).filter(channel => this.isValidUrl(channel.url));
-        } catch (error) {
-            // 如果XLSX解析失败，尝试用普通CSV解析
-            const lines = content.split('\n');
-            if (lines.length < 2) return [];
-            
-            const channels = [];
-            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-            
-            for (let i = 1; i < lines.length; i++) {
-                const values = lines[i].split(',');
-                if (values.length < 2) continue;
-                
-                const channel = {};
-                for (let j = 0; j < headers.length; j++) {
-                    if (headers[j] === 'name' || headers[j] === '名称') {
-                        channel.name = values[j] ? values[j].trim() : '';
-                    } else if (headers[j] === 'url') {
-                        channel.url = values[j] ? values[j].trim() : '';
-                    } else if (headers[j] === 'logo') {
-                        channel.logo = values[j] ? values[j].trim() : '';
-                    } else if (headers[j] === 'group' || headers[j] === '分组') {
-                        channel.group = values[j] ? values[j].trim() : '';
-                    }
-                }
-                
-                if (channel.name && this.isValidUrl(channel.url)) {
-                    channels.push(channel);
-                }
-            }
-            
-            return channels;
-        }
-    }
-
-    parseJSON(content) {
-        try {
-            const data = JSON.parse(content);
-            
-            if (Array.isArray(data)) {
-                return data.map(item => ({
-                    name: item.name || item.Name || item.title || '',
-                    url: item.url || item.Url || item.link || '',
-                    logo: item.logo || item.Logo || item.image || '',
-                    group: item.group || item.Group || item.category || ''
-                })).filter(channel => this.isValidUrl(channel.url));
-            } else {
-                // 尝试解析为对象格式
-                const channels = [];
-                for (const group in data) {
-                    if (Array.isArray(data[group])) {
-                        data[group].forEach(channel => {
-                            const validChannel = {
-                                name: channel.name || channel.Name || channel.title || '',
-                                url: channel.url || channel.Url || channel.link || '',
-                                logo: channel.logo || channel.Logo || channel.image || '',
-                                group: group
-                            };
-                            if (this.isValidUrl(validChannel.url)) {
-                                channels.push(validChannel);
-                            }
-                        });
-                    }
-                }
-                return channels;
-            }
-        } catch (error) {
-            throw new Error('无效的JSON格式: ' + error.message);
-        }
+        // 进一步处理清理后的频道列表
+        return cleanedChannels.map(channel => {
+            return {
+                name: channel.name,
+                url: channel.url,
+                logo: channel.logo,
+                group: channel.group
+            };
+        });
     }
 
     // 辅助方法 ========================================================
 
-    deduplicateChannels(channels) {
-        const urlMap = new Map();
-        const nameMap = new Map();
+    deduplicateChannels(channels, strategy = 'url') {
+        const seen = new Set();
+        let keyExtractor;
+        
+        switch (strategy) {
+            case 'name':
+                keyExtractor = channel => channel.name;
+                break;
+            case 'url':
+                keyExtractor = channel => channel.url;
+                break;
+            case 'combined':
+                keyExtractor = channel => `${channel.name}-${channel.url}`;
+                break;
+            default:
+                keyExtractor = channel => channel.url;
+        }
         
         return channels.filter(channel => {
-            // 同时检查URL和名称去重
-            if (!urlMap.has(channel.url) && !nameMap.has(channel.name)) {
-                urlMap.set(channel.url, true);
-                nameMap.set(channel.name, true);
-                return true;
+            const key = keyExtractor(channel);
+            if (seen.has(key)) {
+                return false;
             }
-            return false;
+            seen.add(key);
+            return true;
         });
     }
 
@@ -321,7 +250,7 @@ class ChannelConverter {
         return m3u;
     }
 
-    convertToTXT(fieldOrder = ['name', 'url', 'logo', 'group']) {
+    convertToTXT(fieldOrder = ['name', 'url']) {
         let output = '';
         const groupedChannels = this.groupChannels();
         
@@ -333,14 +262,18 @@ class ChannelConverter {
             
             // 添加频道
             groupedChannels[group].forEach(channel => {
-                let line = '';
+                const parts = [];
                 fieldOrder.forEach(field => {
-                    if (field === 'name') line += `${channel.name},`;
-                    if (field === 'url') line += `${channel.url},`;
-                    if (field === 'logo') line += `${channel.logo || ''},`;
-                    if (field === 'group') line += `${channel.group || ''},`;
+                    switch (field) {
+                        case 'name':
+                            parts.push(channel.name);
+                            break;
+                        case 'url':
+                            parts.push(channel.url);
+                            break;
+                    }
                 });
-                output += line.slice(0, -1) + '\n';
+                output += parts.join(',') + '\n';
             });
             
             // 分组间空行
@@ -351,29 +284,31 @@ class ChannelConverter {
     }
 
     convertToCSV(fieldOrder = ['name', 'url', 'logo', 'group']) {
-        const headers = fieldOrder.map(field => {
-            switch (field) {
-                case 'name': return '名称';
-                case 'url': return 'URL';
-                case 'logo': return 'Logo';
-                case 'group': return '分组';
-                default: return field;
-            }
-        });
+        const headers = {
+            'name': '名称',
+            'url': 'URL',
+            'logo': 'Logo',
+            'group': '分组'
+        };
         
-        const rows = this.channels.map(channel => {
+        // 构建CSV头
+        const csvHeaders = fieldOrder.map(field => headers[field]).join(',');
+        
+        // 构建CSV行
+        const csvRows = this.channels.map(channel => {
             return fieldOrder.map(field => {
                 switch (field) {
-                    case 'name': return channel.name;
-                    case 'url': return channel.url;
-                    case 'logo': return channel.logo || '';
-                    case 'group': return channel.group || '';
+                    case 'name': return `"${channel.name}"`;
+                    case 'url': return `"${channel.url}"`;
+                    case 'logo': return `"${channel.logo || ''}"`;
+                    case 'group': return `"${channel.group || ''}"`;
                     default: return '';
                 }
-            });
+            }).join(',');
         });
         
-        return [headers.join(',')].concat(rows.map(row => row.join(','))).join('\n');
+        // 返回完整的CSV内容
+        return [csvHeaders, ...csvRows].join('\n');
     }
 
     convertToJSON(fieldOrder = ['name', 'url', 'logo', 'group']) {
@@ -392,23 +327,29 @@ class ChannelConverter {
     }
 
     convertToExcel(fieldOrder = ['name', 'url', 'logo', 'group']) {
-        const data = this.channels.map(channel => {
-            const result = {};
-            fieldOrder.forEach(field => {
-                switch (field) {
-                    case 'name': result['名称'] = channel.name; break;
-                    case 'url': result['URL'] = channel.url; break;
-                    case 'logo': result['Logo'] = channel.logo || ''; break;
-                    case 'group': result['分组'] = channel.group || ''; break;
-                }
+        try {
+            const data = this.channels.map(channel => {
+                const result = {};
+                fieldOrder.forEach(field => {
+                    switch (field) {
+                        case 'name': result['名称'] = channel.name; break;
+                        case 'url': result['URL'] = channel.url; break;
+                        case 'logo': result['Logo'] = channel.logo || ''; break;
+                        case 'group': result['分组'] = channel.group || ''; break;
+                    }
+                });
+                return result;
             });
-            return result;
-        });
-        
-        const worksheet = XLSX.utils.json_to_sheet(data);
-        const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, '频道列表');
-        XLSX.writeFile(workbook, '频道列表.xlsx');
+            
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, '频道列表');
+            XLSX.writeFile(workbook, '频道列表.xlsx');
+            return true;
+        } catch (error) {
+            console.error('文件写入失败:', error);
+            return false;
+        }
     }
 
     convertToXML(fieldOrder = ['name', 'url', 'logo', 'group']) {
@@ -418,21 +359,22 @@ class ChannelConverter {
         this.channels.forEach(channel => {
             xml += '  <channel>\n';
             fieldOrder.forEach(field => {
+                const escapedValue = this.escapeXml(channel[field] || '');
                 switch (field) {
                     case 'name':
-                        xml += `    <name>${Utils.escapeXml(channel.name)}</name>\n`;
+                        xml += `    <name>${escapedValue}</name>\n`;
                         break;
                     case 'url':
-                        xml += `    <url>${Utils.escapeXml(channel.url)}</url>\n`;
+                        xml += `    <url>${escapedValue}</url>\n`;
                         break;
                     case 'logo':
                         if (channel.logo) {
-                            xml += `    <logo>${Utils.escapeXml(channel.logo)}</logo>\n`;
+                            xml += `    <logo>${escapedValue}</logo>\n`;
                         }
                         break;
                     case 'group':
                         if (channel.group) {
-                            xml += `    <group>${Utils.escapeXml(channel.group)}</group>\n`;
+                            xml += `    <group>${escapedValue}</group>\n`;
                         }
                         break;
                 }
@@ -442,6 +384,19 @@ class ChannelConverter {
         
         xml += '</channels>';
         return xml;
+    }
+
+    escapeXml(str) {
+        return str.replace(/[<>&'"]/g, match => {
+            switch (match) {
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '&': return '&amp;';
+                case '\'': return '&apos;';
+                case '"': return '&quot;';
+                default: return match;
+            }
+        });
     }
 
     // 设置和历史记录 ==================================================
@@ -467,6 +422,10 @@ class ChannelConverter {
 
     saveHistory() {
         if (!this.settings.saveHistory) return;
+        // 限制历史记录数量
+        if (this.history.length > 100) {
+            this.history = this.history.slice(-100);
+        }
         localStorage.setItem('channelConverterHistory', JSON.stringify(this.history));
     }
 
