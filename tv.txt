@@ -1,5 +1,4 @@
 IPV6,#genre#
-
 CCTV1,http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8
 CCTV2,http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8
 CCTV3,http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8
@@ -67,9 +66,7 @@ CGTN俄语,https://0472.org/hls/cgtne.m3u8
 CGTN法语,https://0472.org/hls/cgtnf.m3u8
 CGTN西语,https://0472.org/hls/cgtnx.m3u8
 CGTN阿语,https://0472.org/hls/cgtna.m3u8
-
 我筛选的,#genre#
-
 央视频道,#genre#
 CCTV1,http://182.91.124.60:9901/tsfile/live/0001_1.m3u8
 CCTV1,http://123.138.22.30:9901/tsfile/live/0001_1.m3u8
@@ -3840,9 +3837,7 @@ CNR神州之声,https://ngcdn006.cnr.cn/live/szzs/index.m3u8
 深圳飞扬971,https://satellitepull.cnr.cn/live/wxszfy971/playlist.m3u8
 贵州都市广播,https://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
 浙江浙江之声,http://ali-m-l.cztv.com/channels/lantian/fm88/128k.m3u8
-
 AKTV,#genre#
-
 28 AI 智慧賽馬,http://aktv-stream.m16tv.cfd/stream/aktv/28ai/AKTV.m3u8
 Channel 5 HD,http://aktv-stream.m16tv.cfd/stream/aktv/channel5hd/AKTV.m3u8
 Channel 8 HD,http://aktv-stream.m16tv.cfd/stream/aktv/channel8hd/AKTV.m3u8
@@ -3927,9 +3922,7 @@ Tennis Channel 2 US,http://aktv-stream.m16tv.cfd/stream/useradd1/tennischannel2u
 Tennis Channel US,http://aktv-stream.m16tv.cfd/stream/useradd1/tennischannelus/AKTV.m3u8
 US MTV LIVE,http://aktv-stream.m16tv.cfd/stream/useradd1/usmtvlive/AKTV.m3u8
 viuTV,http://aktv-stream.m16tv.cfd/stream/useradd1/viutv/AKTV.m3u8
-
 🐯虎牙直播🐯,#genre#
-
 🐯虎牙,#genre#
 电影_发哥,http://dns.yiandrive.com:15907/huya/11342387
 电影_成龙,http://dns.yiandrive.com:15907/huya/11342386
@@ -4747,9 +4740,7 @@ LOL动画剧情解说,http://dns.yiandrive.com:15907/huya/29982690
 御所田南通,http://dns.yiandrive.com:15907/huya/26355773
 越哥说电影2,http://dns.yiandrive.com:15907/huya/29982680
 昵称违规-jPhz6R8hIC,http://dns.yiandrive.com:15907/huya/11352918
-
 🐠斗鱼直播🐠,#genre#
-
 🐠斗鱼直播🐠,#genre#
 【美食】孤独的美食家,http://zzy789.xyz/douyu1.php?id=260322
 【歌曲】MV点歌台,http://zzy789.xyz/douyu1.php?id=3186217
@@ -4899,9 +4890,7 @@ Angela小兔990,http://zzy789.xyz/douyu1.php?id=9617766
 【饭店】我们把装蒜当美学来修炼的,http://zzy789.xyz/douyu1.php?id=9650782
 感谢大家的支持 7495810,http://zzy789.xyz/douyu1.php?id=7495810
 【严守一】太传统不好，太饭桶更不好,http://zzy789.xyz/douyu1.php?id=8507023
-
 内网,#genre#
-
 局域网,#genre#
 CCTV1,http://192.168.1.49:35455/gaoma/cctv1.m3u8
 cctv2,http://192.168.1.49:35455/gaoma/cctv2.m3u8
@@ -5034,5 +5023,4 @@ FASHIONONE,https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_d
 咪咕4k,http://192.168.1.49:35455/itv/3000000010000025380.m3u8?cdn=FifastbLive
 咪咕4k,http://192.168.1.49:35455/itv/3000000010000027691.m3u8?cdn=FifastbLive
 咪咕4k,http://192.168.1.49:35455/itv/3000000010000031669.m3u8?cdn=FifastbLive
-
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-14 14:45:57
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-14 15:02:42
