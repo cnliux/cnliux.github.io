@@ -38,7 +38,8 @@ class UIHandler {
             tabContents: document.querySelectorAll('.tab-content'),
             deduplicate: document.getElementById('deduplicate'),
             textInput: document.getElementById('textInput'),
-            parseTextBtn: document.getElementById('parseTextBtn')
+            parseTextBtn: document.getElementById('parseTextBtn'),
+            autoClearHistory: document.getElementById('autoClearHistory')
         };
     }
 
@@ -171,6 +172,11 @@ class UIHandler {
             this.core.saveSettings();
         });
 
+        this.elements.autoClearHistory.addEventListener('change', () => {
+            this.core.settings.autoClearHistory = this.elements.autoClearHistory.checked;
+            this.core.saveSettings();
+        });
+
         // 清除历史记录
         this.elements.clearAllHistory.addEventListener('click', () => {
             this.core.clearHistory();
@@ -194,6 +200,7 @@ class UIHandler {
         this.elements.autoConvert.checked = this.core.settings.autoConvert;
         this.elements.showNotifications.checked = this.core.settings.showNotifications;
         this.elements.recommendCount.value = this.core.settings.recommendCount;
+        this.elements.autoClearHistory.checked = this.core.settings.autoClearHistory;
         
         this.applyTheme();
     }
@@ -388,24 +395,34 @@ class UIHandler {
             return;
         }
 
-        // 添加全选复选框
+        // 创建表头
         const headerRow = document.createElement('tr');
+
+        // 全选列
         const selectAllCell = document.createElement('th');
+        selectAllCell.style.width = '30px';
         const selectAllCheckbox = document.createElement('input');
         selectAllCheckbox.type = 'checkbox';
         selectAllCheckbox.id = 'selectAll';
-        selectAllCheckbox.addEventListener('change', () => {
-            const checkboxes = document.querySelectorAll('#channelList input[type="checkbox"]');
+        selectAllCheckbox.addEventListener('change', (e) => {
+            const checkboxes = document.querySelectorAll('.channel-checkbox');
             checkboxes.forEach(cb => {
-                cb.checked = selectAllCheckbox.checked;
+                cb.checked = e.target.checked;
             });
         });
         selectAllCell.appendChild(selectAllCheckbox);
-        selectAllCell.appendChild(document.createTextNode(' 全选'));
         headerRow.appendChild(selectAllCell);
-        headerRow.innerHTML += '<th>名称</th><th>URL</th><th>Logo</th><th>分组</th><th>状态</th><th>操作</th>';
+
+        // 其他表头列
+        ['名称', 'URL', 'Logo', '分组', '状态', '操作'].forEach(text => {
+            const th = document.createElement('th');
+            th.textContent = text;
+            headerRow.appendChild(th);
+        });
+
         this.elements.channelList.appendChild(headerRow);
 
+        // 创建频道行
         filteredChannels.forEach((channel, index) => {
             const row = document.createElement('tr');
             
@@ -413,7 +430,7 @@ class UIHandler {
             const nameCell = document.createElement('td');
             const nameCheckbox = document.createElement('input');
             nameCheckbox.type = 'checkbox';
-            nameCheckbox.className = 'form-check-input';
+            nameCheckbox.className = 'form-check-input channel-checkbox'; // 添加统一类名
             nameCheckbox.dataset.index = index;
             nameCell.appendChild(nameCheckbox);
             

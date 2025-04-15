@@ -165,50 +165,56 @@
         </div>
 
         <!-- 历史记录 -->
-        <div id="history" class="tab-content">
-            <div class="card">
-                <h3>转换历史</h3>
-                <div id="historyList">
-                    <p class="text-muted text-center">没有历史记录</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 设置面板 -->
-    <div id="settingsPanel" class="settings-panel">
-        <h3>设置</h3>
-        <div class="form-group">
-            <label for="themePref" class="form-label">主题偏好</label>
-            <select id="themePref" class="form-control">
-                <option value="auto">跟随系统</option>
-                <option value="light">浅色模式</option>
-                <option value="dark">暗黑模式</option>
-            </select>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="saveHistory" class="form-check-input" checked>
-            <label for="saveHistory" class="form-check-label">保存历史记录</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="autoConvert" class="form-check-input">
-            <label for="autoConvert" class="form-check-label">自动转换</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="showNotifications" class="form-check-input" checked>
-            <label for="showNotifications" class="form-check-label">显示通知</label>
-        </div>
-        <div class="form-group">
-            <label for="recommendCount" class="form-label">推荐频道数量</label>
-            <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
-        </div>
-        <div class="mt-20">
+<div id="history" class="tab-content">
+    <div class="card">
+        <div class="flex flex-between">
+            <h3>转换历史</h3>
             <button id="clearAllHistory" class="btn btn-danger">清除所有历史记录</button>
         </div>
-        <div class="mt-20">
-            <button id="closeSettings" class="btn btn-primary">关闭设置</button>
+        <div id="historyList">
+            <p class="text-muted text-center">没有历史记录</p>
         </div>
     </div>
+</div>
+
+    <!-- 设置面板 -->
+<div id="settingsPanel" class="settings-panel">
+    <h3>设置</h3>
+    <div class="form-group">
+        <label for="themePref" class="form-label">主题偏好</label>
+        <select id="themePref" class="form-control">
+            <option value="auto">跟随系统</option>
+            <option value="light">浅色模式</option>
+            <option value="dark">暗黑模式</option>
+        </select>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="saveHistory" class="form-check-input" checked>
+        <label for="saveHistory" class="form-check-label">保存历史记录</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="autoConvert" class="form-check-input">
+        <label for="autoConvert" class="form-check-label">自动转换</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="showNotifications" class="form-check-input" checked>
+        <label for="showNotifications" class="form-check-label">显示通知</label>
+    </div>
+    <div class="form-group">
+        <label for="recommendCount" class="form-label">推荐频道数量</label>
+        <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="autoClearHistory" class="form-check-input">
+        <label for="autoClearHistory" class="form-check-label">自动清除历史记录</label>
+    </div>
+    <div class="mt-20">
+        <button id="clearAllHistoryBtn" class="btn btn-danger">清除所有历史记录</button>
+    </div>
+    <div class="mt-20">
+        <button id="closeSettings" class="btn btn-primary">关闭设置</button>
+    </div>
+</div>
 
     <div id="settingsOverlay" class="settings-overlay"></div>
 
