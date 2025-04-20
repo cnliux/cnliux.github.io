@@ -3860,7 +3860,7 @@ CNR经济之声,https://ngcdn002.cnr.cn/live/jjzs/index.m3u8
 深圳飞扬971,https://satellitepull.cnr.cn/live/wxszfy971/playlist.m3u8
 贵州都市广播,https://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
 浙江浙江之声,http://ali-m-l.cztv.com/channels/lantian/fm88/128k.m3u8
-央视地方,#genre#
+央视地方2,#genre#
 4K60PSDR-H264-AAC测试,https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/sdr4kvideo/index.m3u8
 4K60PHLG-HEVC-EAC3测试,https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/hlg4kvideo/index.m3u8
 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视",cctv1-高码,http://3501776.xyz:35455/gaoma/cctv1.m3u8
@@ -5053,4 +5053,4 @@ Angela小兔990,http://3501776.xyz:35455/douyu/9617766
 新主播第一天 8765855,http://3501776.xyz:35455/douyu/8765855
 感谢大家的支持 7495810,http://3501776.xyz:35455/douyu/7495810
 【严守一】太传统不好，太饭桶更不好,http://3501776.xyz:35455/douyu/8507023
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-21 06:30:06
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-21 06:30:49
