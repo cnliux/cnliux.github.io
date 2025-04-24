@@ -6393,14 +6393,6 @@ https://satellitepull.cnr.cn/live/wxszfy971/playlist.m3u8
 https://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
 #EXTINF:-1 tvg-name="浙江浙江之声" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/浙江浙江之声.png" group-title="在线广播",浙江浙江之声
 http://ali-m-l.cztv.com/channels/lantian/fm88/128k.m3u8
-#EXTINF:-1 tvg-name="Channel 5 HD" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/channel5hd.png" group-title="AKTV",Channel 5 HD
-http://aktv_stream.m16tv.cfd/stream/aktv1/channel5hd/AKTV.m3u8
-#EXTINF:-1 tvg-name="Channel 8 HD" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/channel8hd.png" group-title="AKTV",Channel 8 HD
-http://aktv_stream.m16tv.cfd/stream/aktv1/channel8hd/AKTV.m3u8
-#EXTINF:-1 tvg-name="Channel U HD" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/channeluhd.png" group-title="AKTV",Channel U HD
-http://aktv_stream.m16tv.cfd/stream/aktv1/channeluhd/AKTV.m3u8
-#EXTINF:-1 tvg-name="TVB Plus" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/tvbplus.png" group-title="AKTV",TVB Plus
-http://aktv_stream.m16tv.cfd/stream/aktv1/tvbplus/AKTV.m3u8
 #EXTINF:-1 tvg-name="Animax(HK)" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/animaxhk.png" group-title="AKTV",Animax(HK)
 http://aktv_stream.m16tv.cfd/stream/aktv2/animaxhk/AKTV.m3u8
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://fastly.jsdelivr.net/gh/fanmingming/live@main/tv/axn.png" group-title="AKTV",AXN

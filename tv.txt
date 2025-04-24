@@ -3210,10 +3210,6 @@ CNR中国之声,https://ngcdn001.cnr.cn/live/zgzs/index.m3u8
 贵州都市广播,https://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
 浙江浙江之声,http://ali-m-l.cztv.com/channels/lantian/fm88/128k.m3u8
 AKTV,#genre#
-Channel 5 HD,http://aktv_stream.m16tv.cfd/stream/aktv1/channel5hd/AKTV.m3u8
-Channel 8 HD,http://aktv_stream.m16tv.cfd/stream/aktv1/channel8hd/AKTV.m3u8
-Channel U HD,http://aktv_stream.m16tv.cfd/stream/aktv1/channeluhd/AKTV.m3u8
-TVB Plus,http://aktv_stream.m16tv.cfd/stream/aktv1/tvbplus/AKTV.m3u8
 Animax(HK),http://aktv_stream.m16tv.cfd/stream/aktv2/animaxhk/AKTV.m3u8
 AXN,http://aktv_stream.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8
 PopC,http://aktv_stream.m16tv.cfd/stream/aktv2/popc/AKTV.m3u8
@@ -4206,4 +4202,4 @@ Angela小兔990,http://3501776.xyz:35455/douyu/9617766
 新主播第一天 8765855,http://3501776.xyz:35455/douyu/8765855
 感谢大家的支持 7495810,http://3501776.xyz:35455/douyu/7495810
 【严守一】太传统不好，太饭桶更不好,http://3501776.xyz:35455/douyu/8507023
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-24 10:30:06
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-04-24 14:51:12
