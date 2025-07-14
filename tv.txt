@@ -2173,56 +2173,55 @@ CHC家庭影院,http://39.164.174.139:5000/nl.m3u8?id=CHCJTYYHD
 🏛经典剧场,#genre#
 雪中悍刀行,http://43.138.0.72:35455/yy/1382660835
 AKTV,#genre#
-Animax (HK),http://s1.m16tv.cfd/aktv/animaxhk/AKTV.m3u8
-AXN,http://s1.m16tv.cfd/aktv/axn/AKTV.m3u8
-Channel 5 HD,http://s1.m16tv.cfd/aktv/channel5hd/AKTV.m3u8
-Channel 8 HD,http://s1.m16tv.cfd/aktv/channel8hd/AKTV.m3u8
-Channel U HD,http://s1.m16tv.cfd/aktv/channeluhd/AKTV.m3u8
-Love Nature HD,http://s1.m16tv.cfd/aktv/lovenaturehd/AKTV.m3u8
-PopC,http://s1.m16tv.cfd/aktv/popc/AKTV.m3u8
-ROCK Action,http://s1.m16tv.cfd/aktv/rockaction/AKTV.m3u8
-TVB Plus,http://s1.m16tv.cfd/aktv/tvbplus/AKTV.m3u8
-tvN,http://s1.m16tv.cfd/aktv/tvn/AKTV.m3u8
-天映經典(1080),http://s1.m16tv.cfd/aktv/1080/AKTV.m3u8
-明珠剧集台(北美),http://s1.m16tv.cfd/aktv/CH-19/AKTV.m3u8
-明珠台,http://s1.m16tv.cfd/aktv/CH-2/AKTV.m3u8
-無線新聞台,http://s1.m16tv.cfd/aktv/CH-1/AKTV.m3u8
-美亞電影台(HK),http://s1.m16tv.cfd/aktv/hk/AKTV.m3u8
-翡翠剧集台(北美),http://s1.m16tv.cfd/aktv/CH-18/AKTV.m3u8
-翡翠台,http://s1.m16tv.cfd/aktv/CH-0/AKTV.m3u8
-翡翠综合台(北美),http://s1.m16tv.cfd/aktv/CH-17/AKTV.m3u8
-鳳凰衛視中文台,http://s1.m16tv.cfd/aktv/CH-3/AKTV.m3u8
-鳳凰衛視資訊台,http://s1.m16tv.cfd/aktv/CH-4/AKTV.m3u8
-鳳凰衛視香港台,http://s1.m16tv.cfd/aktv/CH-5/AKTV.m3u8
-黃金翡翠台,http://s1.m16tv.cfd/aktv/CH-6/AKTV.m3u8
-Sky Sports F1,http://s1.m16tv.cfd/aktv2/skysportsf1/AKTV.m3u8
-天映电影,http://s1.m16tv.cfd/aktv2/CH-3/AKTV.m3u8
-東森洋片,http://s1.m16tv.cfd/aktv2/CH-2/AKTV.m3u8
-東森電影,http://s1.m16tv.cfd/aktv2/CH-1/AKTV.m3u8
-緯來體育台,http://s1.m16tv.cfd/aktv2/CH-0/AKTV.m3u8
-CNA,http://s1.m16tv.cfd/aktv3/cna/AKTV.m3u8
-朝鲜恩情台,http://s1.m16tv.cfd/aktv3/CH-0/AKTV.m3u8
-Japan News 24H LIVE,http://s1.m16tv.cfd/aktvjp/japannews24hlive/AKTV.m3u8
-日テレNEWS LIVE,http://s1.m16tv.cfd/aktvjp/ntv/AKTV.m3u8
-8TV,http://s1.m16tv.cfd/astro/8tv/AKTV.m3u8
-Astro Football,http://s1.m16tv.cfd/astro/CH-0/AKTV.m3u8
-Astro Sport UHD,http://s1.m16tv.cfd/astro/astrosportuhd/AKTV.m3u8
-EuroSport 1,http://s1.m16tv.cfd/astro/eurosport1/AKTV.m3u8
-EuroSport 2,http://s1.m16tv.cfd/astro/eurosport2/AKTV.m3u8
-TNT SPORTS 1,http://s1.m16tv.cfd/astro/tntsports1/AKTV.m3u8
-TNT SPORTS 2,http://s1.m16tv.cfd/astro/tntsports2/AKTV.m3u8
-TNT SPORTS 3,http://s1.m16tv.cfd/astro/tntsports3/AKTV.m3u8
-中天亚洲台,http://s1.m16tv.cfd/astro/CH-1/AKTV.m3u8
-KLT-靖天國際台,http://s1.m16tv.cfd/taiwan/CH-3/AKTV.m3u8
-TVBS,http://s1.m16tv.cfd/taiwan/tvbs/AKTV.m3u8
-民視,http://s1.m16tv.cfd/taiwan/CH-1/AKTV.m3u8
-民視第一台,http://s1.m16tv.cfd/taiwan/CH-0/AKTV.m3u8
-龍華日韓台,http://s1.m16tv.cfd/taiwan/CH-5/AKTV.m3u8
-TVB 星河,http://s1.m16tv.cfd/taiwan2/tvb/AKTV.m3u8
-test01,http://s1.m16tv.cfd/test/test01/AKTV.m3u8
-TVBS新聞,http://s1.m16tv.cfd/tvbs/tvbs/AKTV.m3u8
-中天新闻台,http://s1.m16tv.cfd/zhongtian/CH-0/AKTV.m3u8
-東森新聞,http://s1.m16tv.cfd/zhongtian/CH-1/AKTV.m3u8
+Animax (HK),http://s1.an94tv.cfd/aktv/animaxhk/AKTV.m3u8
+AXN,http://s1.an94tv.cfd/aktv/axn/AKTV.m3u8
+Channel 5 HD,http://s1.an94tv.cfd/aktv/channel5hd/AKTV.m3u8
+Channel 8 HD,http://s1.an94tv.cfd/aktv/channel8hd/AKTV.m3u8
+Channel U HD,http://s1.an94tv.cfd/aktv/channeluhd/AKTV.m3u8
+Love Nature HD,http://s1.an94tv.cfd/aktv/lovenaturehd/AKTV.m3u8
+PopC,http://s1.an94tv.cfd/aktv/popc/AKTV.m3u8
+ROCK Action,http://s1.an94tv.cfd/aktv/rockaction/AKTV.m3u8
+TVB Plus,http://s1.an94tv.cfd/aktv/tvbplus/AKTV.m3u8
+tvN,http://s1.an94tv.cfd/aktv/tvn/AKTV.m3u8
+天映經典(1080),http://s1.an94tv.cfd/aktv/1080/AKTV.m3u8
+明珠剧集台(北美),http://s1.an94tv.cfd/aktv/CH-19/AKTV.m3u8
+明珠台,http://s1.an94tv.cfd/aktv/CH-2/AKTV.m3u8
+無線新聞台,http://s1.an94tv.cfd/aktv/CH-1/AKTV.m3u8
+美亞電影台(HK),http://s1.an94tv.cfd/aktv/hk/AKTV.m3u8
+翡翠剧集台(北美),http://s1.an94tv.cfd/aktv/CH-18/AKTV.m3u8
+翡翠台,http://s1.an94tv.cfd/aktv/CH-0/AKTV.m3u8
+翡翠综合台(北美),http://s1.an94tv.cfd/aktv/CH-17/AKTV.m3u8
+鳳凰衛視中文台,http://s1.an94tv.cfd/aktv/CH-3/AKTV.m3u8
+鳳凰衛視資訊台,http://s1.an94tv.cfd/aktv/CH-4/AKTV.m3u8
+鳳凰衛視香港台,http://s1.an94tv.cfd/aktv/CH-5/AKTV.m3u8
+黃金翡翠台,http://s1.an94tv.cfd/aktv/CH-6/AKTV.m3u8
+Sky Sports F1,http://s1.an94tv.cfd/aktv2/skysportsf1/AKTV.m3u8
+天映电影,http://s1.an94tv.cfd/aktv2/CH-3/AKTV.m3u8
+東森洋片,http://s1.an94tv.cfd/aktv2/CH-2/AKTV.m3u8
+好萊塢電影台,http://s1.an94tv.cfd/aktv2/CH-1/AKTV.m3u8
+緯來體育台,http://s1.an94tv.cfd/aktv2/CH-0/AKTV.m3u8
+CNA,http://s1.an94tv.cfd/aktv3/cna/AKTV.m3u8
+朝鲜恩情台,http://s1.an94tv.cfd/aktv3/CH-0/AKTV.m3u8
+Japan News 24H LIVE,http://s1.an94tv.cfd/aktvjp/japannews24hlive/AKTV.m3u8
+日テレNEWS LIVE,http://s1.an94tv.cfd/aktvjp/ntv/AKTV.m3u8
+8TV,http://s1.an94tv.cfd/astro/8tv/AKTV.m3u8
+Astro Football,http://s1.an94tv.cfd/astro/CH-0/AKTV.m3u8
+Astro Sport UHD,http://s1.an94tv.cfd/astro/astrosportuhd/AKTV.m3u8
+EuroSport 1,http://s1.an94tv.cfd/astro/eurosport1/AKTV.m3u8
+EuroSport 2,http://s1.an94tv.cfd/astro/eurosport2/AKTV.m3u8
+TNT SPORTS 1,http://s1.an94tv.cfd/astro/tntsports1/AKTV.m3u8
+TNT SPORTS 2,http://s1.an94tv.cfd/astro/tntsports2/AKTV.m3u8
+TNT SPORTS 3,http://s1.an94tv.cfd/astro/tntsports3/AKTV.m3u8
+中天亚洲台,http://s1.an94tv.cfd/astro/CH-1/AKTV.m3u8
+KLT-靖天國際台,http://s1.an94tv.cfd/taiwan/CH-3/AKTV.m3u8
+TVBS,http://s1.an94tv.cfd/taiwan/tvbs/AKTV.m3u8
+民視,http://s1.an94tv.cfd/taiwan/CH-1/AKTV.m3u8
+民視第一台,http://s1.an94tv.cfd/taiwan/CH-0/AKTV.m3u8
+龍華日韓台,http://s1.an94tv.cfd/taiwan/CH-5/AKTV.m3u8
+TVB 星河,http://s1.an94tv.cfd/taiwan2/tvb/AKTV.m3u8
+TVBS新聞,http://s1.an94tv.cfd/tvbs/tvbs/AKTV.m3u8
+中天新闻台,http://s1.an94tv.cfd/zhongtian/CH-0/AKTV.m3u8
+東森新聞,http://s1.an94tv.cfd/zhongtian/CH-1/AKTV.m3u8
 🐯虎牙直播🐯,#genre#
 🐯虎牙,#genre#
 电影_发哥,http://xiaoya.crccxw.top:35455/huya/11342387
@@ -3053,117 +3052,103 @@ LOL动画剧情解说,http://xiaoya.crccxw.top:35455/huya/29982690
 三国,http://xiaoya.crccxw.top:35455/douyu/7459925
 🐠斗鱼-陪看🐠,#genre#
 【神乐】人最重要是找到属于自己的世界,http://xiaoya.crccxw.top:35455/douyu/85894
-【贝贝】二营长你的意大利炮呢~开炮哈~,http://xiaoya.crccxw.top:35455/douyu/431460
-✨神乐✨人最重要是找到属于自己的世界,http://xiaoya.crccxw.top:35455/douyu/20415
-【神乐】祝愿大家前路繁花似锦~所愿皆可得,http://xiaoya.crccxw.top:35455/douyu/122402
-░░░「 橙記 弹幕看剧间 」░░░,http://xiaoya.crccxw.top:35455/douyu/4549169
 【经典剧场】经典武侠 动作 老剧你懂的,http://xiaoya.crccxw.top:35455/douyu/4246519
 林正英【久久】下饭电视剧,http://xiaoya.crccxw.top:35455/douyu/8371123
+【神乐】祝愿大家前路繁花似锦~所愿皆可得,http://xiaoya.crccxw.top:35455/douyu/122402
+【贝贝】今日4倍亲密度~来升牌子呗,http://xiaoya.crccxw.top:35455/douyu/431460
+✨神乐✨人最重要是找到属于自己的世界,http://xiaoya.crccxw.top:35455/douyu/20415
 ❤️怡宝❤️陪你重刷[经典热剧]],http://xiaoya.crccxw.top:35455/douyu/434971
+【女神金】沙发分你一半，一起来追剧！,http://xiaoya.crccxw.top:35455/douyu/747764
 【冰冰冰冰】平安顺遂~~~,http://xiaoya.crccxw.top:35455/douyu/74374
 【弹幕天团】新蓝翔,http://xiaoya.crccxw.top:35455/douyu/12210085
 经典神剧！！,http://xiaoya.crccxw.top:35455/douyu/508118
-【静静】经典影视剧 MV,http://xiaoya.crccxw.top:35455/douyu/5668371
-［豆腐集团］粤语港剧,http://xiaoya.crccxw.top:35455/douyu/6478650
-【铁甲人】一起see那些年的经典,http://xiaoya.crccxw.top:35455/douyu/1274132
 傲娇的超级赛亚人的直播间,http://xiaoya.crccxw.top:35455/douyu/4373285
+【铁甲人】一起see那些年的经典,http://xiaoya.crccxw.top:35455/douyu/1274132
 今天咱们吃一顿好的，持续更新..,http://xiaoya.crccxw.top:35455/douyu/961386
-❤️下饭神剧❤️,http://xiaoya.crccxw.top:35455/douyu/3700024
 熟悉的她来了,http://xiaoya.crccxw.top:35455/douyu/8231658
-全网最清晰林正英僵尸道长,http://xiaoya.crccxw.top:35455/douyu/7356023
+[弟邊爐][粤语][港剧]泼辣滴小弟弟,http://xiaoya.crccxw.top:35455/douyu/8912325
 【默鱼】陪你一起看剧～,http://xiaoya.crccxw.top:35455/douyu/11922242
-【西游】由爱故生怨，怨恨纠缠,http://xiaoya.crccxw.top:35455/douyu/10198644
+九叔【林正英】马小玲僵尸鬼片系列,http://xiaoya.crccxw.top:35455/douyu/7805562
 西安直播视频,http://xiaoya.crccxw.top:35455/douyu/5804577
-用户4604862423的直播间,http://xiaoya.crccxw.top:35455/douyu/12065801
-罗先生699的直播间,http://xiaoya.crccxw.top:35455/douyu/12065805
-古典流行的完美结合 视觉听觉的最高享受,http://xiaoya.crccxw.top:35455/douyu/6033135
-闹着玩，闲来无事,http://xiaoya.crccxw.top:35455/douyu/4231787
-欢乐猴群纪录片,http://xiaoya.crccxw.top:35455/douyu/7921708
-EMO的心，并不在一起,http://xiaoya.crccxw.top:35455/douyu/170426
+illit礼的直播间,http://xiaoya.crccxw.top:35455/douyu/12065549
+用户8092785756的直播间,http://xiaoya.crccxw.top:35455/douyu/12065570
+来个心软的神吧 捡了十年垃圾了,http://xiaoya.crccxw.top:35455/douyu/9352671
+有这样的你会好好吗,http://xiaoya.crccxw.top:35455/douyu/10730187
+一生titus的直播间,http://xiaoya.crccxw.top:35455/douyu/12065569
+用户6056099521的直播间,http://xiaoya.crccxw.top:35455/douyu/12065793
+盾牌的直播间,http://xiaoya.crccxw.top:35455/douyu/10424994
+舞蹈新主播~~~,http://xiaoya.crccxw.top:35455/douyu/11490031
+浩贤说电影的直播间,http://xiaoya.crccxw.top:35455/douyu/10535867
 欣赏戏曲的房间,http://xiaoya.crccxw.top:35455/douyu/12091975
-荒野大镖客⁠,http://xiaoya.crccxw.top:35455/douyu/5982597
-在线分享有趣的,http://xiaoya.crccxw.top:35455/douyu/1816353
-斗鱼下饭娱乐主播直播间,http://xiaoya.crccxw.top:35455/douyu/9387499
-【喜剧电影】最全搞笑喜剧，从这一刻开始,http://xiaoya.crccxw.top:35455/douyu/9824094
-车展，后院御姐的街拍美拍,http://xiaoya.crccxw.top:35455/douyu/5138817
-搞笑天堂岛,http://xiaoya.crccxw.top:35455/douyu/6916081
+黑屏偷看，你猜的到我在看什么嘛？,http://xiaoya.crccxw.top:35455/douyu/6341090
 陈瀚Siri今天也要加油！,http://xiaoya.crccxw.top:35455/douyu/759805
-不羡鸳鸯不羡仙啊,http://xiaoya.crccxw.top:35455/douyu/9262563
-2569874的直播间,http://xiaoya.crccxw.top:35455/douyu/2569874
+全网最清晰林正英僵尸道长,http://xiaoya.crccxw.top:35455/douyu/7356023
 🐠斗鱼-综合🐠,#genre#
-【RM-点播】点播！模式-24H欢乐不断,http://xiaoya.crccxw.top:35455/douyu/131977
 破案专场，为爱发电，多多支持,http://xiaoya.crccxw.top:35455/douyu/12534632
+【RM-点播】点播！模式-24H欢乐不断,http://xiaoya.crccxw.top:35455/douyu/131977
 【粤语电影】吴孟达 达叔 周星驰 经典,http://xiaoya.crccxw.top:35455/douyu/1226741
 港剧:国粤语自动切换！！,http://xiaoya.crccxw.top:35455/douyu/5061550
 燕双鹰の下饭专场：我赌你碗里没菜,http://xiaoya.crccxw.top:35455/douyu/11931032
 ❤️女团社❤️最新舞蹈MV音乐演唱会舞台,http://xiaoya.crccxw.top:35455/douyu/11327316
 全网最嚣张吃法 隔着屏幕流口水,http://xiaoya.crccxw.top:35455/douyu/9116745
-【西关大院】粤语学习,http://xiaoya.crccxw.top:35455/douyu/11878141
+【金庸武侠】致敬经典,http://xiaoya.crccxw.top:35455/douyu/9285904
 荒野庇护所系列,http://xiaoya.crccxw.top:35455/douyu/12124964
-划水主播！,http://xiaoya.crccxw.top:35455/douyu/5251148
-越南小哥的丛林生活,http://xiaoya.crccxw.top:35455/douyu/10675329
-在回忆中寻找的直播间1732,http://xiaoya.crccxw.top:35455/douyu/12065601
+舌尖上的印度丨下饭必备丨点点关注不迷路！,http://xiaoya.crccxw.top:35455/douyu/5895598
+用户3174886540的直播间,http://xiaoya.crccxw.top:35455/douyu/12065769
 做道“酸菜黑鱼”，鲜嫩味美,http://xiaoya.crccxw.top:35455/douyu/9622309
 浩哲爱吃肉,http://xiaoya.crccxw.top:35455/douyu/12586289
-失眠的时候听听下雨的声音吧,http://xiaoya.crccxw.top:35455/douyu/7481383
-用户698850303的直播间,http://xiaoya.crccxw.top:35455/douyu/9791981
-大庆在农村的直播间,http://xiaoya.crccxw.top:35455/douyu/9477316
-林大仙开箱试吃,http://xiaoya.crccxw.top:35455/douyu/841725
-预告资讯抢先看,http://xiaoya.crccxw.top:35455/douyu/10670244
-8257039的直播间,http://xiaoya.crccxw.top:35455/douyu/8257039
-花姐的直播间 4058285,http://xiaoya.crccxw.top:35455/douyu/4058285
-米奇de日常,http://xiaoya.crccxw.top:35455/douyu/7393896
 浙江遂昌美食——炒黄未馃,http://xiaoya.crccxw.top:35455/douyu/8161564
-潘姥姥美食的直播间,http://xiaoya.crccxw.top:35455/douyu/9738641
-失踪人口回归 2041014,http://xiaoya.crccxw.top:35455/douyu/2041014
-喵喵喵的猫酱酱的直播间,http://xiaoya.crccxw.top:35455/douyu/11179077
+大庆在农村的直播间,http://xiaoya.crccxw.top:35455/douyu/9477316
 Mrs腊月小九,http://xiaoya.crccxw.top:35455/douyu/9529988
-科幻梦工场,http://xiaoya.crccxw.top:35455/douyu/9608874
+林大仙开箱试吃,http://xiaoya.crccxw.top:35455/douyu/841725
+米奇de日常,http://xiaoya.crccxw.top:35455/douyu/7393896
+潘姥姥美食的直播间,http://xiaoya.crccxw.top:35455/douyu/9738641
+用户698850303的直播间,http://xiaoya.crccxw.top:35455/douyu/9791981
+帕鲁的世界,http://xiaoya.crccxw.top:35455/douyu/7027040
 今晚包夜速来,http://xiaoya.crccxw.top:35455/douyu/11622433
-今晚吃鸡啊,http://xiaoya.crccxw.top:35455/douyu/2892694
 张晓斌21602的直播间,http://xiaoya.crccxw.top:35455/douyu/4860588
 没有不敢吃的，一个吃货的表白,http://xiaoya.crccxw.top:35455/douyu/8659544
+今晚吃鸡啊,http://xiaoya.crccxw.top:35455/douyu/2892694
 🐠斗鱼-科幻🐠,#genre#
 【粤语】看的不是电影【是回忆】求关注,http://xiaoya.crccxw.top:35455/douyu/7919720
 🐠斗鱼-悬疑🐠,#genre#
 (小毅）林正英，鬼片，恐怖片，护体,http://xiaoya.crccxw.top:35455/douyu/6906628
 【奇光】林正英，僵尸，鬼片 24H,http://xiaoya.crccxw.top:35455/douyu/11849873
-【悍匪】技术学院,http://xiaoya.crccxw.top:35455/douyu/922564
-元芳，你怎么看？ 今日三倍亲密度,http://xiaoya.crccxw.top:35455/douyu/12442176
 胡八一 ：胖子促发剧情,http://xiaoya.crccxw.top:35455/douyu/5635000
+元芳，你怎么看？ 今日三倍亲密度,http://xiaoya.crccxw.top:35455/douyu/12442176
 ❤️【经典】 ❤️,http://xiaoya.crccxw.top:35455/douyu/6091425
+【猫猫】ッ超清、超经典,http://xiaoya.crccxw.top:35455/douyu/9242659
 狄仁杰：元芳你怎么看,http://xiaoya.crccxw.top:35455/douyu/12183882
-用户7046912698的直播间,http://xiaoya.crccxw.top:35455/douyu/12065802
 【刑侦】饿不饿，要不要下一碗面吃呀,http://xiaoya.crccxw.top:35455/douyu/138959
 脑洞短剧 玩的就是梗,http://xiaoya.crccxw.top:35455/douyu/10282256
-放空了一起待会吧,http://xiaoya.crccxw.top:35455/douyu/527076
-用户34145296833的直播间,http://xiaoya.crccxw.top:35455/douyu/11081842
-易说影视的直播间,http://xiaoya.crccxw.top:35455/douyu/10859591
+【恐怖电影】 林正英 僵尸 鬼片 经典,http://xiaoya.crccxw.top:35455/douyu/9275635
+【悍匪】技术学院,http://xiaoya.crccxw.top:35455/douyu/922564
 🐠斗鱼-喜剧🐠,#genre#
 奇光喜剧点播,http://xiaoya.crccxw.top:35455/douyu/8009547
-【弹幕天团】三丶国.,http://xiaoya.crccxw.top:35455/douyu/428402
 国内版成长的烦恼归来,http://xiaoya.crccxw.top:35455/douyu/11851549
 【蓝翔】弹幕天团,http://xiaoya.crccxw.top:35455/douyu/5908256
 正常开播，欢迎欢迎,http://xiaoya.crccxw.top:35455/douyu/319576
-金庸经典播放，点关注不迷路,http://xiaoya.crccxw.top:35455/douyu/12128227
-【贝爷】统治食物链顶端的男人~回来啦~！,http://xiaoya.crccxw.top:35455/douyu/4332
-【米尼影院】经典电视剧,http://xiaoya.crccxw.top:35455/douyu/7642724
 ❤️剧集❤️幸福欢乐地,http://xiaoya.crccxw.top:35455/douyu/1377142
+金庸经典播放，点关注不迷路,http://xiaoya.crccxw.top:35455/douyu/12128227
+【米尼影院】经典电视剧,http://xiaoya.crccxw.top:35455/douyu/7642724
 刘星：像超人一样自由自在天空自由飞翔,http://xiaoya.crccxw.top:35455/douyu/11827530
 经典老剧轮播,http://xiaoya.crccxw.top:35455/douyu/12015111
 顺风为主 其他情喜影剧集锦为辅 随机连播,http://xiaoya.crccxw.top:35455/douyu/6369954
+曾小贤第一集你看不看,http://xiaoya.crccxw.top:35455/douyu/11720507
+曾小贤你听不听第四季,http://xiaoya.crccxw.top:35455/douyu/9586235
+❤️曾小贤第二季的故事❤,http://xiaoya.crccxw.top:35455/douyu/920389
+❄️❤️胡一菲❤❄️问就是停电了,http://xiaoya.crccxw.top:35455/douyu/6863367
 【吐槽】吐槽一下，快乐一天,http://xiaoya.crccxw.top:35455/douyu/9236042
-【1.5】陆三金，完整版，未删减，补拍,http://xiaoya.crccxw.top:35455/douyu/527502
-你来也就是兄弟，多关注哦,http://xiaoya.crccxw.top:35455/douyu/1600769
-马大姐欢迎欢迎 708526,http://xiaoya.crccxw.top:35455/douyu/708526
+韩式搞怪（路人成为C位中心）,http://xiaoya.crccxw.top:35455/douyu/9392610
 🐠斗鱼-古装🐠,#genre#
 家有诤子  不败其家,http://xiaoya.crccxw.top:35455/douyu/6911044
+《武侠剧》,http://xiaoya.crccxw.top:35455/douyu/7655471
 【超清3】人气港剧天地,http://xiaoya.crccxw.top:35455/douyu/5261342
 美丽的孔雀公主,http://xiaoya.crccxw.top:35455/douyu/3113309
 【小贝壳】小闲闲 小年年（高帧率）,http://xiaoya.crccxw.top:35455/douyu/329876
-听听123456789,http://xiaoya.crccxw.top:35455/douyu/7039598
 【胡椒粉的胡歌】 你清高，你了不起！,http://xiaoya.crccxw.top:35455/douyu/5448413
 传位于李德全,http://xiaoya.crccxw.top:35455/douyu/12130861
+那些年追过的经典,http://xiaoya.crccxw.top:35455/douyu/9682185
 桃花影落飞神剑！,http://xiaoya.crccxw.top:35455/douyu/12143858
 不可能！我二弟天下无敌！,http://xiaoya.crccxw.top:35455/douyu/10906963
 【百晓生】经典武侠解说,http://xiaoya.crccxw.top:35455/douyu/9649681
@@ -3171,12 +3156,11 @@ Mrs腊月小九,http://xiaoya.crccxw.top:35455/douyu/9529988
 OPS测试,http://xiaoya.crccxw.top:35455/douyu/6054446
 【隋唐】与君共饮盏中酒，几人哀伤几人愁,http://xiaoya.crccxw.top:35455/douyu/7552568
 高手在民间来吧高能,http://xiaoya.crccxw.top:35455/douyu/11708460
-《武侠剧》,http://xiaoya.crccxw.top:35455/douyu/7655471
 🐠斗鱼-动作🐠,#genre#
-【动作】武侠 经典 古装,http://xiaoya.crccxw.top:35455/douyu/2793084
 【神 剧】的直播间,http://xiaoya.crccxw.top:35455/douyu/3439096
-元芳到底看不看,http://xiaoya.crccxw.top:35455/douyu/6027991
 【神 剧】,http://xiaoya.crccxw.top:35455/douyu/5875025
+元芳到底看不看,http://xiaoya.crccxw.top:35455/douyu/6027991
+【动作】武侠 经典 古装,http://xiaoya.crccxw.top:35455/douyu/2793084
 【李小龙】以无法为有法，以无限为有限,http://xiaoya.crccxw.top:35455/douyu/8721095
 🐠斗鱼-剧情🐠,#genre#
 【超清1】经典港剧天地,http://xiaoya.crccxw.top:35455/douyu/4290711
@@ -3189,6 +3173,8 @@ OPS测试,http://xiaoya.crccxw.top:35455/douyu/6054446
 【雍正康熙】帝王故事连连看,http://xiaoya.crccxw.top:35455/douyu/4808115
 【饭店】我们把装蒜当美学来修炼的,http://xiaoya.crccxw.top:35455/douyu/9650782
 Angela小兔990,http://xiaoya.crccxw.top:35455/douyu/9617766
+谦变万华直播间,http://xiaoya.crccxw.top:35455/douyu/12330744
+感谢大家的支持 7495810,http://xiaoya.crccxw.top:35455/douyu/7495810
 【严守一】太传统不好，太饭桶更不好,http://xiaoya.crccxw.top:35455/douyu/8507023
 【怡影吧】❤️经典剧集❤️,http://xiaoya.crccxw.top:35455/douyu/8507544
 内网,#genre#
@@ -3512,4 +3498,4 @@ BST-其他,#genre#
 咪咕视频_8M1080_咪视通-43,http://192.168.1.49:35455/itv/3000000010000025380.m3u8?cdn=FifastbLive
 咪咕视频_8M1080_咪视通-44,http://192.168.1.49:35455/itv/3000000010000027691.m3u8?cdn=FifastbLive
 咪咕视频_8M1080_咪视通-45,http://192.168.1.49:35455/itv/3000000010000031669.m3u8?cdn=FifastbLive
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-07-13 11:45:03
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-07-14 11:45:03
