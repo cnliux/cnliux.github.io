@@ -1,3 +1,15 @@
+IPV6,#genre#
+卫视频道,#genre#
+贵州卫视,http://1b6467f415.iok.la:9931/tsfile/live/1071_1.m3u8
+人间卫视,https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
+贵州卫视,http://1b6467f415.iok.la:9931/tsfile/live/1071_1.m3u8
+港·澳·台,#genre#
+TVBS亚洲,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
+ชอง BALLY SPORTS MIDWEST,http://38b891c9.rossteleccom.net/iptv/UAWZS54EW64RZB/19153/index.m3u8
+ชอง CBS SPORTS NETWORK,http://38b891c9.rossteleccom.net/iptv/UAWZS54EW64RZB/7324/index.m3u8
+ชอง CBS SPORTS NETWORK,http://0f3f161d.cbilant.com/iptv/DNKSGWXK47B9GH/7324/index.m3u8
+🏛经典剧场,#genre#
+成龙金喜善_美丽的神话,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_tma4gUowLvk9wM.mp4
 央视地方,#genre#
 央视频道,#genre#
 CCTV1,http://124.128.73.58:9901/tsfile/live/0001_1.m3u8
@@ -9726,4 +9738,4 @@ BST-其他,#genre#
 咪咕视频_8M1080_咪视通-43,http://192.168.1.49:35455/itv/3000000010000025380.m3u8?cdn=FifastbLive
 咪咕视频_8M1080_咪视通-44,http://192.168.1.49:35455/itv/3000000010000027691.m3u8?cdn=FifastbLive
 咪咕视频_8M1080_咪视通-45,http://192.168.1.49:35455/itv/3000000010000031669.m3u8?cdn=FifastbLive
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-07-15 22:01:02
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-07-15 22:01:55
