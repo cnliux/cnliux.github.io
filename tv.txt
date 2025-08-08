@@ -924,6 +924,7 @@ VIUTV1,http://s1.an94tv.cfd/aktv2/viutv1/AKTV.m3u8
 華視,http://s1.an94tv.cfd/aktv2/CH-3/AKTV.m3u8
 CNA,http://s1.an94tv.cfd/aktv3/cna/AKTV.m3u8
 RTHK32,http://s1.an94tv.cfd/aktv3/rthk32/AKTV.m3u8
+SuperSport Premier League,http://s1.an94tv.cfd/aktv3/supersportpremierleague/AKTV.m3u8
 朝鲜恩情台,http://s1.an94tv.cfd/aktv3/CH-0/AKTV.m3u8
 Japan News 24H LIVE,http://s1.an94tv.cfd/aktvjp/japannews24hlive/AKTV.m3u8
 日テレNEWS LIVE,http://s1.an94tv.cfd/aktvjp/ntv/AKTV.m3u8
@@ -1445,4 +1446,4 @@ Angela小兔990,http://xiaoya.crccxw.top:35455/douyu/9617766
 用户6628239081的直播间1151,http://xiaoya.crccxw.top:35455/douyu/12025410
 感谢大家的支持 7495810,http://xiaoya.crccxw.top:35455/douyu/7495810
 【严守一】太传统不好，太饭桶更不好,http://xiaoya.crccxw.top:35455/douyu/8507023
-#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-08-08 07:00:05
+#此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2025-08-08 09:00:03
