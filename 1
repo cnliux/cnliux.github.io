@@ -112,16 +112,55 @@
 {"name":"Quad9","url":"https://dns.quad9.net/dns-quer","ips":["9.9.9.9","149.112.112.112"]}
 ],
 "ads":["mozai.4gtv.tv"],
-"lives":[
-{"name":"在线聚合直播","type":0,"url":"https://cnliux.github.io/tv.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"},
-{"name":"IPTV","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/iptv.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"},
-{"name":"范明明","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u","playerType":2,"timeout":10},
-{"name":"电视Live","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&u=Gather","playerType":2,"ua":"okhttp/3.15","timeout":10},
-{"name":"江苏移动","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1744201662209/jjssyydd.txt","playerType":2,"timeout":10},
-{"name":"肥羊虎牙一起看","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/huyayqk.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"},
-{"name":"肥羊B站直播","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/bililive.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"},
-{"name":"肥羊斗鱼一起看","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/douyuyqk.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"},
-{"name":"肥羊YY轮播","type":0,"url":"http://127.0.0.1:9978/proxy?do=live&url=https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/yylunbo.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.0.1"}
+"lives": [
+  {
+      "name": "直播1|聚合直播",
+      "url": "https://example.com/live1.m3u8",
+      "type": 0,
+      "playerType": 1,
+      "ua": "okhttp/3.12.13",
+      "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  },
+  {
+    "name": "直播3|IPTV",
+    "url": "https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/iptv.m3u",
+    "type": 0,
+    "playerType": 1,
+    "ua": "okHttp/Mod-1.0.1",
+    "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  },
+  {
+      "name": "直播3|虎牙",
+      "url": "https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/huyayqk.m3u",
+      "type": 0,
+      "playerType": 1,
+      "ua": "okHttp/Mod-1.0.1",
+      "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  },
+  {
+      "name": "直播4|斗鱼",
+      "url": "https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/douyuyqk.m3u",
+      "type": 0,
+      "playerType": 1,
+      "ua": "okHttp/Mod-1.0.1",
+      "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  },
+  {
+      "name": "直播5|哔哩哔哩",
+      "url": "https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/bililive.m3u",
+      "type": 0,
+      "playerType": 1,
+      "ua": "okHttp/Mod-1.0.1",
+      "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  },
+  {
+      "name": "直播6|yy直播",
+      "url": "https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/yylunbo.m3u",
+      "type": 0,
+      "playerType": 1,
+      "ua": "okHttp/Mod-1.0.1",
+      "epg": "http://epg.51zmt.top:8000/cc.xml.gz?ch={name}&date={date}"
+  }
 ],
 "ijk":[{"group":"软解码","options":[{"category":4,"name":"opensles","value":"0"},
 {"category":4,"name":"overlay-format","value":"842225234"},
