@@ -6109,10 +6109,6 @@ http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010146/1.m3u8
 http://[2409:8087:1a01:df::4055]/TVOD/88888888/224/3221225901/main.m3u8
 #EXTINF:-1 tvg-name="黑莓动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑莓动画.png" group-title="IPV6专用",黑莓动画
 http://[2409:8087:1a01:df::4007]/TVOD/88888888/224/3221225529/main.m3u8
-#EXTINF:-1 tvg-name="<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="chrome=1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/DOCTYPEHTMLHTMLHEADMETACHARSETUTF8METAHTTPEQUIVXUACOMPATIBLECONTENTCHROME1.png" group-title="AKTV",<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="chrome=1
-IE=Edge"><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><link rel="shortcut icon" href=/favicon64.ico><link rel=bookmark href=/favicon.ico><title></title><script>var qimoClientId = {};</script><link href=/static/css/app.be60beb9952431ed9dc9c166d90ab89e.css rel=stylesheet></head><body><style>.prompt-head-div {
-#EXTINF:-1 tvg-name="-ms-scroll-snap-points-x: snapList(100%" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/MSSCROLLSNAPPOINTSXSNAPLIST100.png" group-title="AKTV",-ms-scroll-snap-points-x: snapList(100%
-200%, 300%, 400%, 500%);
 #EXTINF:-1 tvg-name="电影_发哥" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/电影_发哥.png" group-title="🐯虎牙",电影_发哥
 http://58.240.140.71:35455/huya/11342387
 #EXTINF:-1 tvg-name="电影_成龙" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/电影_成龙.png" group-title="🐯虎牙",电影_成龙
