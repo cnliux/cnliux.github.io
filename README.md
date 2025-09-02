@@ -2,4 +2,4 @@
 - ⚠️ ​使用风险​：本工具仅供学习和技术研究，使用者需自行承担所有风险，包括但不限于数据丢失、系统故障或兼容性问题。
 - ⚠️ ​无保证声明​：本工具不提供任何形式的明示或暗示保证，包括但不限于适销性、特定用途的适用性或不侵权保证。
 - ⚠️ ​责任限制​：对于因使用本工具而导致的任何直接、间接、附带或后果性损害，开发者不承担任何责任。
-![tv](https://socialify.git.ci/cnliux/tv/image?description=1&forks=1&language=1&name=1&owner=1&stargazers=1&theme=Light)
+![tv](https://socialify.git.ci/cnliux/cnliux.github.io/image?description=1&forks=1&language=1&name=1&owner=1&stargazers=1&theme=Light)
