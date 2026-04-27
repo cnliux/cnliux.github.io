@@ -350,4 +350,4 @@ var WP_Statistics_Tracker_Object = {"requestUrl":"http://192.168.1.49/index.php?
 var kratos = {"site":"http://192.168.1.49","directory":"https://cdn.jsdelivr.net/gh/seatonjiang/kratos@v4.3.2","alipay":"https://186317.xyz/wp-content/themes/kratos-4.3.2/assets/img/200.png","wechat":"https://186317.xyz/wp-content/themes/kratos-4.3.2/assets/img/200.png","repeat":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86","thanks":"\u611f\u8c22\u60a8\u7684\u652f\u6301","donate":"\u6253\u8d4f\u4f5c\u8005","scan":"\u626b\u7801\u652f\u4ed8"};
 var ajaxcomment = {"ajax_url":"http://192.168.1.49/wp-admin/admin-ajax.php","order":"asc","compost":"\u8bc4\u8bba\u6b63\u5728\u63d0\u4ea4\u4e2d","comsucc":"\u8bc4\u8bba\u63d0\u4ea4\u6210\u529f"};
 var smushLazyLoadOptions = {"autoResizingEnabled":false,"autoResizeOptions":{"precision":5,"skipAutoWidth":true}};
-# https://cnliux.github.io/ 此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2026-04-27 07:00:03
+# https://cnliux.github.io/ 此程序仅供学习参考，请勿用于非法用途，请勿传播，如有违反后果自负，最后更新时间：2026-04-28 07:00:03
