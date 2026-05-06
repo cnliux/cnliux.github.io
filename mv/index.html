@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title吕二哥>MV播放列表 -</title>
+    <title>吕二哥MV音乐精选</title>
     <style>
         * {
             margin: 0;
@@ -28,7 +28,6 @@
             transition: all 0.3s ease;
         }
 
-        /* 头部样式 */
         .header {
             text-align: center;
             margin-bottom: 28px;
@@ -49,7 +48,6 @@
             font-size: clamp(0.85rem, 3vw, 1rem);
         }
 
-        /* 统计卡片 */
         .stats-card {
             background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
             border-radius: 16px;
@@ -88,7 +86,6 @@
             font-weight: 500;
         }
 
-        /* 搜索框区域 */
         .search-section {
             margin-bottom: 24px;
         }
@@ -150,7 +147,6 @@
             color: #6c757d;
         }
 
-        /* ========== MV列表 - 虚拟滚动优化 ========== */
         .mv-list-container {
             max-height: calc(100vh - 250px);
             overflow-y: auto;
@@ -164,7 +160,6 @@
             gap: 10px;
         }
 
-        /* MV项样式 - 优化动画 */
         .mv-item {
             background: #f8f9fa;
             border-radius: 14px;
@@ -184,7 +179,6 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
         }
 
-        /* 编号样式 - 醒目 */
         .mv-number {
             min-width: 85px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -203,20 +197,15 @@
             box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
         }
 
-        /* 名称样式 - 醒目彩色 */
         .mv-name {
             flex: 1;
             font-size: 1rem;
             font-weight: 600;
             word-break: break-word;
             line-height: 1.4;
-            background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #1a1a2e;
         }
 
-        /* 歌手名样式 */
         .mv-artist {
             color: #667eea;
             font-weight: 500;
@@ -224,7 +213,6 @@
             font-size: 0.9rem;
         }
 
-        /* 播放图标 */
         .play-icon {
             opacity: 0;
             transition: opacity 0.2s;
@@ -238,7 +226,6 @@
             opacity: 1;
         }
 
-        /* 高亮搜索关键词 */
         .highlight {
             background: linear-gradient(120deg, #ffeaa7 0%, #ffd32a 100%);
             color: #1a1a2e;
@@ -248,7 +235,6 @@
             display: inline-block;
         }
 
-        /* ========== 横屏模式：每行6个 ========== */
         @media (orientation: landscape) {
             .mv-list-container {
                 overflow-y: visible;
@@ -301,7 +287,6 @@
             }
         }
 
-        /* 横屏小屏适配 */
         @media (orientation: landscape) and (max-width: 900px) {
             .mv-list {
                 gap: 10px;
@@ -322,7 +307,6 @@
             }
         }
 
-        /* 大屏横屏优化 */
         @media (orientation: landscape) and (min-width: 1400px) {
             .mv-list {
                 gap: 18px;
@@ -343,7 +327,6 @@
             }
         }
 
-        /* ========== 竖屏模式 ========== */
         @media (orientation: portrait) {
             .mv-list-container {
                 max-height: calc(100vh - 280px);
@@ -361,7 +344,6 @@
             }
         }
 
-        /* 滚动条美化 */
         .mv-list-container::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -381,7 +363,6 @@
             background: #5a67d8;
         }
 
-        /* 加载和空状态 */
         .empty-state, .loading, .error {
             text-align: center;
             padding: 60px 20px;
@@ -402,7 +383,6 @@
             border-radius: 16px;
         }
 
-        /* 响应式调整 */
         @media (max-width: 640px) {
             .container {
                 padding: 16px;
@@ -440,7 +420,6 @@
             <div class="subtitle">自动提取编号 | 高清音悦台</div>
         </div>
         
-        <!-- 统计卡片 -->
         <div class="stats-card">
             <div class="stats-info">
                 <span class="stat-badge" id="totalCount">📊 加载中...</span>
@@ -449,7 +428,6 @@
             <div class="search-info" id="searchInfo">💡 输入MV名称、歌手或编号搜索</div>
         </div>
         
-        <!-- 搜索框 -->
         <div class="search-section">
             <div class="search-box">
                 <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索MV名称、歌手或编号..." autocomplete="off">
@@ -458,7 +436,6 @@
             </div>
         </div>
         
-        <!-- MV列表容器（带滚动） -->
         <div class="mv-list-container" id="mvListContainer">
             <div id="mvList" class="mv-list">
                 <div class="loading">
@@ -472,27 +449,66 @@
     <script>
         // 配置
         const TXT_FILE_URL = 'https://cnliux.github.io/mv/list.txt';
-        const BATCH_SIZE = 100; // 批量渲染数量，优化大数据量
         
-        // 备用数据（大规模测试用）
+        // 智能解码函数 - 解决中文乱码问题
+        async function fetchAndDecode(url) {
+            const response = await fetch(url);
+            const buffer = await response.arrayBuffer();
+            
+            // 检测 BOM
+            const bytes = new Uint8Array(buffer);
+            
+            // UTF-8 BOM: EF BB BF
+            if (bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF) {
+                const decoder = new TextDecoder('utf-8');
+                return decoder.decode(buffer.slice(3));
+            }
+            
+            // 尝试多种编码
+            const encodings = ['utf-8', 'gbk', 'gb18030', 'gb2312', 'big5'];
+            
+            for (const encoding of encodings) {
+                try {
+                    const decoder = new TextDecoder(encoding);
+                    const text = decoder.decode(buffer);
+                    
+                    // 检查是否包含中文字符且没有乱码
+                    if (text.match(/[\u4e00-\u9fa5]/) && !text.includes('�')) {
+                        console.log(`✅ 使用 ${encoding} 编码解析成功`);
+                        return text;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+            
+            // 默认返回 UTF-8
+            const decoder = new TextDecoder('utf-8');
+            return decoder.decode(buffer);
+        }
+        
+        // 生成备用数据
         const generateFallbackData = () => {
             const data = [];
-            const singers = ['周杰伦', '陈奕迅', '林俊杰', '邓紫棋', '周深', '毛不易', '李荣浩', '薛之谦', '张靓颖', '王菲'];
-            const songs = ['晴天', '十年', '江南', '光年之外', '大鱼', '消愁', '模特', '演员', '画心', '匆匆那年'];
-            
-            for (let i = 1; i <= 500; i++) {
-                const singer = singers[i % singers.length];
-                const song = songs[i % songs.length];
-                data.push(`${String(i).padStart(5, '0')}.${singer}-${song}.mp4`);
-            }
-            return data;
+            const mvList = [
+                "00001.周杰伦-晴天.mp4",
+                "00002.陈奕迅-十年.mp4",
+                "00003.林俊杰-江南.mp4",
+                "00004.邓紫棋-光年之外.mp4",
+                "00005.周深-大鱼.mp4",
+                "00006.毛不易-消愁.mp4",
+                "00007.李荣浩-模特.mp4",
+                "00008.薛之谦-演员.mp4",
+                "00009.张靓颖-画心.mp4",
+                "00010.王菲-匆匆那年.mp4"
+            ];
+            return mvList;
         };
         
         let allMVList = [];
         let filteredMVList = [];
         let currentKeyword = '';
-        let renderTimeout = null;
-
+        
         // 解析文件名
         function parseMVFileName(filename) {
             // 匹配格式：数字.名称.扩展名
@@ -532,8 +548,8 @@
                 ext: ''
             };
         }
-
-        // 从TXT加载数据
+        
+        // 加载MV列表
         async function loadMVList() {
             const container = document.getElementById('mvList');
             container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>';
@@ -541,25 +557,19 @@
             try {
                 let rawList = [];
                 
-                const response = await fetch(TXT_FILE_URL, {
-                    cache: 'no-cache',
-                    headers: { 'Cache-Control': 'no-cache' }
-                });
+                // 使用智能解码获取文本
+                const text = await fetchAndDecode(TXT_FILE_URL);
+                console.log('原始文本前200字符:', text.substring(0, 200));
                 
-                if (response.ok) {
-                    const text = await response.text();
-                    rawList = text.split(/\r?\n/)
-                        .map(line => line.trim())
-                        .filter(line => line.length > 0 && !line.startsWith('#') && !line.startsWith('//'));
-                    
-                    if (rawList.length === 0) {
-                        throw new Error('文件中没有有效数据');
-                    }
-                    
-                    console.log(`✅ 成功加载 ${rawList.length} 个文件`);
-                } else {
-                    throw new Error(`HTTP ${response.status}`);
+                rawList = text.split(/\r?\n/)
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0 && !line.startsWith('#') && !line.startsWith('//'));
+                
+                if (rawList.length === 0) {
+                    throw new Error('文件中没有有效数据');
                 }
+                
+                console.log(`✅ 成功加载 ${rawList.length} 个文件`);
                 
                 // 解析数据
                 allMVList = rawList.map(filename => parseMVFileName(filename));
@@ -572,7 +582,7 @@
                 // 更新总数显示
                 document.getElementById('totalCount').innerHTML = `🎵 共 ${allMVList.length} 首MV`;
                 
-                // 分批渲染
+                // 渲染
                 renderMVListBatch(filteredMVList);
                 
             } catch (error) {
@@ -584,12 +594,12 @@
                 allMVList.sort((a, b) => parseInt(a.id) - parseInt(b.id));
                 filteredMVList = [...allMVList];
                 
-                document.getElementById('totalCount').innerHTML = `🎵 共 ${allMVList.length} 首MV (示例数据)`;
+                document.getElementById('totalCount').innerHTML = `🎵 共 ${allMVList.length} 首MV (演示数据)`;
                 renderMVListBatch(filteredMVList);
             }
         }
         
-        // 分批渲染（优化大数据量）
+        // 渲染MV列表
         function renderMVListBatch(mvList) {
             const container = document.getElementById('mvList');
             
@@ -604,46 +614,37 @@
                 return;
             }
             
-            // 显示加载中
-            container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>渲染中...</div></div>';
-            
-            // 使用 setTimeout 分批渲染，避免阻塞UI
-            setTimeout(() => {
-                const fragment = document.createDocumentFragment();
-                const tempDiv = document.createElement('div');
+            const itemsHtml = mvList.map((item, index) => {
+                let displayId = item.id;
+                let displayName = item.name;
+                let displayArtist = item.artist;
                 
-                const itemsHtml = mvList.map((item, index) => {
-                    let displayId = item.id;
-                    let displayName = item.name;
-                    let displayArtist = item.artist;
-                    
-                    if (currentKeyword) {
-                        displayId = highlightText(item.id, currentKeyword);
-                        displayName = highlightText(item.name, currentKeyword);
-                        if (displayArtist) {
-                            displayArtist = highlightText(displayArtist, currentKeyword);
-                        }
-                    } else {
-                        displayId = escapeHtml(item.id);
-                        displayName = escapeHtml(item.name);
-                        displayArtist = escapeHtml(item.artist);
+                if (currentKeyword) {
+                    displayId = highlightText(item.id, currentKeyword);
+                    displayName = highlightText(item.name, currentKeyword);
+                    if (displayArtist) {
+                        displayArtist = highlightText(displayArtist, currentKeyword);
                     }
-                    
-                    const artistHtml = displayArtist ? `<span class="mv-artist">- ${displayArtist}</span>` : '';
-                    
-                    return `
-                        <div class="mv-item" onclick="playMV('${escapeHtml(item.fullName)}', '${escapeHtml(item.id)}', '${escapeHtml(item.name)}', '${escapeHtml(item.artist)}')">
-                            <div class="mv-number">${displayId}</div>
-                            <div class="mv-name">${displayName}${artistHtml}</div>
-                            <div class="play-icon">▶️</div>
-                        </div>
-                    `;
-                }).join('');
+                } else {
+                    displayId = escapeHtml(item.id);
+                    displayName = escapeHtml(item.name);
+                    displayArtist = escapeHtml(item.artist);
+                }
                 
-                container.innerHTML = itemsHtml;
-                updateStats();
-                updateOrientationDisplay();
-            }, 50);
+                const artistHtml = displayArtist ? `<span class="mv-artist">- ${displayArtist}</span>` : '';
+                
+                return `
+                    <div class="mv-item" onclick="playMV('${escapeHtml(item.fullName)}', '${escapeHtml(item.id)}', '${escapeHtml(item.name)}', '${escapeHtml(item.artist)}')">
+                        <div class="mv-number">${displayId}</div>
+                        <div class="mv-name">${displayName}${artistHtml}</div>
+                        <div class="play-icon">▶️</div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = itemsHtml;
+            updateStats();
+            updateOrientationDisplay();
         }
         
         // 高亮文本
@@ -735,7 +736,7 @@
         function playMV(fullName, id, name, artist) {
             const displayArtist = artist ? ` - ${artist}` : '';
             alert(`🎬 播放MV\n\n📀 编号: ${id}\n🎤 歌曲: ${name}${displayArtist}\n📁 文件: ${fullName}`);
-            // 这里可以对接实际播放器
+            // 可对接实际播放器
         }
         
         function initOrientationListener() {
