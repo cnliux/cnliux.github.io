@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>吕二哥MV音乐精选</title>
+    <title>吕二哥MV音乐精选 - 热门优先 · 随机探索</title>
     <style>
         * {
             margin: 0;
@@ -98,6 +98,48 @@
             background: #eef2ff;
             padding: 4px 10px;
             border-radius: 30px;
+        }
+
+        .sort-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+            background: #f8fafc;
+            padding: 6px 12px;
+            border-radius: 40px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .sort-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+
+        .sort-btn.active {
+            background: linear-gradient(110deg, #4f7df3 0%, #a158e0 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .sort-btn.reset-rank {
+            background: #f1f5f9;
+            color: #475569;
         }
 
         .search-section {
@@ -217,6 +259,18 @@
                 flex-shrink: 0;
                 margin-left: 6px;
             }
+
+            .hot-badge {
+                background: #ff6b6b;
+                color: white;
+                border-radius: 20px;
+                padding: 2px 8px;
+                font-size: 0.6rem;
+                font-weight: bold;
+                margin-left: 6px;
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
 
         @media (orientation: landscape) {
@@ -239,6 +293,7 @@
                 transition: all 0.1s;
                 border: 1px solid #eef2ff;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                position: relative;
             }
 
             .mv-item:active {
@@ -279,6 +334,18 @@
                 margin-top: 10px;
                 opacity: 0.6;
                 font-size: 1.1rem;
+            }
+
+            .hot-badge {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                background: #ff6b6b;
+                color: white;
+                border-radius: 20px;
+                padding: 2px 6px;
+                font-size: 0.6rem;
+                font-weight: bold;
             }
         }
 
@@ -356,6 +423,10 @@
                 padding: 7px 12px;
                 font-size: 0.7rem;
             }
+            .sort-btn {
+                padding: 3px 8px;
+                font-size: 0.65rem;
+            }
         }
     </style>
 </head>
@@ -365,7 +436,7 @@
         <div class="header">
             <h1>🎵 吕二哥MV音乐精选</h1>
             <div class="subtitle">🎬 00001-01302 MV曲库 · 🎙️ 01302-01336 连载歌曲</div>
-            <div class="subtitle" style="font-size:0.6rem;">🌐 数据源: cnliux.github.io/mv/ </div>
+            <div class="subtitle" style="font-size:0.6rem;">🌐 数据源: 186317.xyz/mv/ | ⚡ 智能排序(热度+搜索+随机)</div>
         </div>
 
         <div class="stats-card">
@@ -374,6 +445,16 @@
                 <span class="orientation-badge" id="orientationDisplay">📱 竖屏模式</span>
             </div>
             <div class="search-info" id="searchInfo">💡 搜索歌名/歌手/编号</div>
+        </div>
+
+        <div class="sort-bar">
+            <div class="sort-buttons">
+                <button class="sort-btn" data-sort="default">📌 编号排序</button>
+                <button class="sort-btn active" data-sort="hot">🔥 热门优先(默认)</button>
+                <button class="sort-btn" data-sort="random">🎲 随机排序</button>
+                <button class="sort-btn reset-rank" id="resetRankBtn">🔄 重置点击记录</button>
+            </div>
+            <div style="font-size: 0.65rem; color:#5a6e8a;">⭐ 点击歌曲增加热度，随机模式每次刷新顺序</div>
         </div>
 
         <div class="search-section">
@@ -395,8 +476,152 @@
     </div>
 
     <script>
-        const TXT_FILE_URL = 'https://cnliux.github.io/mv/list.txt';
-
+        // ---------- 核心数据 ----------
+        const TXT_FILE_URL = 'https://186317.xyz/mv/list.txt';
+        let allMVList = [];           // 原始数据 { id, name, artist, fullName, ext, clickCount }
+        let filteredMVList = [];       // 当前过滤+排序后的列表
+        let currentKeyword = '';
+        let currentSortMode = 'hot';   // 默认改为 'hot' (热门优先)
+        
+        // 持久化点击次数 (localStorage)
+        const STORAGE_KEY = 'mv_click_counts_v2';
+        let clickMap = new Map();       // key: songKey (id+name+artist 组合保证唯一) 存储点击次数
+        
+        // 随机种子缓存: 为了保证同一轮随机排序内不变化，每次点击随机模式时生成一次随机顺序映射
+        let randomOrderCache = [];      // 存储当前随机模式下的id顺序 (按原始allMVList索引排序?)
+        
+        // ---------- 辅助函数 ----------
+        function getSongUniqueKey(item) {
+            return `${item.id}|${item.name}|${item.artist || ''}`;
+        }
+        
+        // 加载点击次数
+        function loadClickCounts() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    clickMap = new Map(Object.entries(parsed));
+                } else {
+                    clickMap = new Map();
+                }
+            } catch(e) { clickMap = new Map(); }
+        }
+        
+        // 保存点击次数
+        function saveClickCounts() {
+            try {
+                const obj = Object.fromEntries(clickMap);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+            } catch(e) {}
+        }
+        
+        // 增加点击次数
+        function incrementClickCount(item) {
+            const key = getSongUniqueKey(item);
+            const current = clickMap.get(key) || 0;
+            clickMap.set(key, current + 1);
+            saveClickCounts();
+            updateClickCountInAllList();
+        }
+        
+        // 将clickMap数据同步到allMVList
+        function updateClickCountInAllList() {
+            for (let mv of allMVList) {
+                const key = getSongUniqueKey(mv);
+                mv.clickCount = clickMap.get(key) || 0;
+            }
+        }
+        
+        // 重置所有点击记录
+        function resetAllClickCounts() {
+            clickMap.clear();
+            saveClickCounts();
+            updateClickCountInAllList();
+            applyFilterAndSort();
+        }
+        
+        // 计算搜索加权分数 (热门模式中使用)
+        function getSearchBoost(item, keyword) {
+            if (!keyword) return 0;
+            const lowerKw = keyword.toLowerCase();
+            let matchScore = 0;
+            if (item.id === lowerKw) matchScore = 1.2;
+            else if (item.name.toLowerCase() === lowerKw) matchScore = 1.0;
+            else if (item.name.toLowerCase().includes(lowerKw)) matchScore = 0.6;
+            else if (item.artist && item.artist.toLowerCase().includes(lowerKw)) matchScore = 0.5;
+            else if (item.fullName.toLowerCase().includes(lowerKw)) matchScore = 0.3;
+            else if (item.id.includes(lowerKw)) matchScore = 0.4;
+            else matchScore = 0;
+            return matchScore;
+        }
+        
+        // 热门得分算法 (点击次数 * (1 + 匹配因子*2) )
+        function getHotScore(item, keyword) {
+            const baseClicks = item.clickCount || 0;
+            let boost = 0;
+            if (keyword) {
+                boost = getSearchBoost(item, keyword);
+                const multiplier = 1 + (boost * 1.8);
+                return baseClicks * multiplier;
+            }
+            return baseClicks;
+        }
+        
+        // 生成新的随机顺序 (基于传入的列表，不改变原数组)
+        function shuffleArray(arr) {
+            const shuffled = [...arr];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
+        // 排序核心 (扩展支持随机)
+        function sortMVList(list, keyword, sortMode) {
+            if (sortMode === 'hot') {
+                return [...list].sort((a, b) => {
+                    const scoreA = getHotScore(a, keyword);
+                    const scoreB = getHotScore(b, keyword);
+                    if (scoreA !== scoreB) return scoreB - scoreA;
+                    return (parseInt(a.id) || 0) - (parseInt(b.id) || 0);
+                });
+            } else if (sortMode === 'random') {
+                // 随机排序: 基于当前列表的副本直接打乱顺序，保证每次重新调用都会生成全新随机序列(包括搜索过滤后的随机)
+                // 为了避免因重复调用造成顺序重置过于频繁但符合预期: 每次排序都重新shuffle
+                return shuffleArray(list);
+            } else {
+                // 默认编号排序
+                return [...list].sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
+            }
+        }
+        
+        // 全局应用过滤 + 排序并渲染
+        function applyFilterAndSort() {
+            let workingList = [...allMVList];
+            if (currentKeyword && currentKeyword.trim() !== '') {
+                const lowerKeyword = currentKeyword.toLowerCase().trim();
+                workingList = workingList.filter(item =>
+                    item.id.includes(lowerKeyword) ||
+                    item.name.toLowerCase().includes(lowerKeyword) ||
+                    (item.artist && item.artist.toLowerCase().includes(lowerKeyword)) ||
+                    item.fullName.toLowerCase().includes(lowerKeyword)
+                );
+            }
+            // 关键: 根据当前排序模式执行排序 (随机每次生成全新乱序)
+            filteredMVList = sortMVList(workingList, currentKeyword, currentSortMode);
+            renderMVList();
+        }
+        
+        // 重新随机(强制刷新随机顺序) 供随机模式使用，不改变其他
+        function reshuffleRandom() {
+            if (currentSortMode === 'random') {
+                applyFilterAndSort();
+            }
+        }
+        
+        // ----- 网络请求与解析 -----
         async function fetchAndDecode(url) {
             const response = await fetch(url);
             const buffer = await response.arrayBuffer();
@@ -423,37 +648,21 @@
             }
             return utf8Text;
         }
-
+        
         function parseMVFileName(filename) {
-            // 严格匹配：数字.内容.扩展名
             const match = filename.match(/^(\d+)\.(.+?)\.(mp4|mp3|mkv|webm|flv|mov|avi)$/i);
-            if (!match) {
-                return { valid: false };
-            }
+            if (!match) return { valid: false };
             const id = match[1];
             let namePart = match[2];
-            
-            // 过滤无效条目：只有编号没有歌曲名，或者歌曲名太短且无中文
-            if (!namePart || namePart.trim().length === 0) {
-                return { valid: false };
-            }
-            
-            // 检测是否是无效的纯编号（如 "00620" 这种只有数字没有任何文字的）
-            if (/^\d+$/.test(namePart.trim())) {
-                return { valid: false };
-            }
-            
+            if (!namePart || namePart.trim().length === 0) return { valid: false };
+            if (/^\d+$/.test(namePart.trim())) return { valid: false };
             let songName = namePart;
             let artist = '';
-            
-            // 尝试提取歌手名（通常格式：歌曲名-歌手 或 歌手-歌曲名）
             if (namePart.includes('-')) {
                 const parts = namePart.split('-');
                 if (parts.length >= 2) {
-                    // 智能判断：如果第一部分包含常见歌手特征或长度较短，作为歌手
                     artist = parts[0].trim();
                     songName = parts[1].trim();
-                    // 如果提取后歌名过短而歌手较长，则交换（处理"王杰-一场游戏一场梦"这种格式）
                     if (songName.length < 2 && artist.length > 2) {
                         let tmp = songName;
                         songName = artist;
@@ -465,30 +674,33 @@
                 artist = parts[0].trim();
                 songName = parts[1] ? parts[1].trim() : parts[0].trim();
             }
-            
-            // 清理多余字符
             songName = songName.replace(/\[.*?\]|\(.*?\)/g, '').trim();
             artist = artist.replace(/\[.*?\]|\(.*?\)/g, '').trim();
-            
-            // 最终有效性检查：歌名不能为空
-            if (!songName || songName.length === 0) {
-                return { valid: false };
-            }
-            
+            if (!songName || songName.length === 0) return { valid: false };
             return {
                 valid: true,
                 id: id,
                 name: songName,
                 artist: artist,
                 fullName: filename,
-                ext: match[3]
+                ext: match[3],
+                clickCount: 0
             };
         }
-
-        let allMVList = [];
-        let filteredMVList = [];
-        let currentKeyword = '';
-
+        
+        // 备用数据
+        function getFallbackList() {
+            const fallbackRaw = [
+                "00001.王杰-一场游戏一场梦.mp4", "00002.陈奕迅-十年.mp4", "00003.林俊杰-江南.mp4",
+                "00070.李建复-龙的传人.mp4", "00071.优客李林-少年游.mp4", "00072.张国荣-倩女幽魂.mp4",
+                "00077.苏小明-军港之夜.mp4", "00078.成龙-醉拳.mp4", "00079.李娜-好人一生平安.mp4",
+                "00123.周杰伦-晴天.mp4", "00456.邓丽君-甜蜜蜜.mp4", "00789.Beyond-海阔天空.mp4",
+                "00888.刘德华-冰雨.mp4", "00999.张雨生-大海.mp4"
+            ];
+            return fallbackRaw.map(filename => parseMVFileName(filename)).filter(item => item.valid);
+        }
+        
+        // ----- UI 渲染与高亮 -----
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/&/g, '&amp;')
@@ -497,112 +709,84 @@
                       .replace(/"/g, '&quot;')
                       .replace(/'/g, '&#39;');
         }
-
+        
         function escapeRegex(str) {
             return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
-
+        
         function highlightText(text, keyword) {
             if (!keyword || !text) return escapeHtml(text);
             const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
             return escapeHtml(text).replace(regex, '<span class="highlight">$1</span>');
         }
-
+        
         function renderMVList() {
             const container = document.getElementById('mvList');
-            if (!filteredMVList || filteredMVList.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">🎵</div>
-                        <div>暂无匹配的MV</div>
-                        <div style="font-size:0.75rem; margin-top:6px;">试试其他关键词吧</div>
-                    </div>
-                `;
+            if (!filteredMVList.length) {
+                container.innerHTML = `<div class="empty-state"><div class="icon">🎵</div><div>暂无匹配的MV</div><div style="font-size:0.75rem; margin-top:6px;">试试其他关键词吧</div></div>`;
                 updateStats();
                 return;
             }
-
+            
             let itemsHtml = '';
             for (let item of filteredMVList) {
-                let displayId = currentKeyword ? highlightText(item.id, currentKeyword) : escapeHtml(item.id);
-                let displayName = currentKeyword ? highlightText(item.name, currentKeyword) : escapeHtml(item.name);
-                let displayArtist = item.artist ? (currentKeyword ? highlightText(item.artist, currentKeyword) : escapeHtml(item.artist)) : '';
+                const displayId = currentKeyword ? highlightText(item.id, currentKeyword) : escapeHtml(item.id);
+                const displayName = currentKeyword ? highlightText(item.name, currentKeyword) : escapeHtml(item.name);
+                const displayArtist = item.artist ? (currentKeyword ? highlightText(item.artist, currentKeyword) : escapeHtml(item.artist)) : '';
                 const artistHtml = displayArtist ? `<span class="mv-artist">- ${displayArtist}</span>` : '';
-
+                const clickCount = item.clickCount || 0;
+                const hotBadge = clickCount > 0 ? `<span class="hot-badge">🔥 ${clickCount}</span>` : '';
+                
                 itemsHtml += `
-                    <div class="mv-item" data-fullname="${escapeHtml(item.fullName)}" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.name)}" data-artist="${escapeHtml(item.artist)}">
+                    <div class="mv-item" data-fullname="${escapeHtml(item.fullName)}" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.name)}" data-artist="${escapeHtml(item.artist)}" data-unique="${escapeHtml(getSongUniqueKey(item))}">
                         <div class="mv-number">${displayId}</div>
-                        <div class="mv-name">${displayName}${artistHtml}</div>
+                        <div class="mv-name">${displayName}${artistHtml}${hotBadge}</div>
                         <div class="play-icon">▶️</div>
                     </div>
                 `;
             }
             container.innerHTML = itemsHtml;
-
+            
             document.querySelectorAll('.mv-item').forEach(el => {
                 el.removeEventListener('click', mvClickHandler);
                 el.addEventListener('click', mvClickHandler);
             });
             updateStats();
         }
-
+        
         function mvClickHandler(e) {
             const target = e.currentTarget;
             const fullName = target.getAttribute('data-fullname') || '';
             const id = target.getAttribute('data-id') || '';
             const name = target.getAttribute('data-name') || '';
             const artist = target.getAttribute('data-artist') || '';
-            playMV(fullName, id, name, artist);
-        }
-
-        function playMV(fullName, id, name, artist) {
+            const mvItem = allMVList.find(item => item.fullName === fullName && item.id === id);
+            if (mvItem) {
+                incrementClickCount(mvItem);
+                // 点击后热度变更，如果当前是热门模式需要刷新排序；随机模式不改变随机顺序但保留热度显示，但也要刷新使热度数值更新
+                applyFilterAndSort();
+            }
             const artistText = artist ? ` - ${artist}` : '';
-            alert(`🎬 播放MV\n\n📀 编号: ${id}\n🎤 歌曲: ${name}${artistText}\n📁 文件: ${fullName}`);
+            alert(`🎬 播放MV\n\n📀 编号: ${id}\n🎤 歌曲: ${name}${artistText}\n📁 文件: ${fullName}\n👍 感谢支持，热度 +1`);
         }
-
-        let searchTimeout = null;
-        function searchMV(keyword) {
-            if (searchTimeout) clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                currentKeyword = keyword.trim();
-                if (currentKeyword === '') {
-                    filteredMVList = [...allMVList];
-                } else {
-                    const lowerKeyword = currentKeyword.toLowerCase();
-                    filteredMVList = allMVList.filter(item =>
-                        item.id.includes(lowerKeyword) ||
-                        item.name.toLowerCase().includes(lowerKeyword) ||
-                        (item.artist && item.artist.toLowerCase().includes(lowerKeyword)) ||
-                        item.fullName.toLowerCase().includes(lowerKeyword)
-                    );
-                }
-                renderMVList();
-            }, 200);
-        }
-
-        function resetSearch() {
-            document.getElementById('searchInput').value = '';
-            currentKeyword = '';
-            filteredMVList = [...allMVList];
-            renderMVList();
-        }
-
+        
         function updateStats() {
             const totalSpan = document.getElementById('totalCount');
-            totalSpan.innerHTML = `🎵 共 ${allMVList.length} 首MV`;
+            const totalClicks = Array.from(clickMap.values()).reduce((a,b)=>a+b,0);
+            totalSpan.innerHTML = `🎵 共 ${allMVList.length} 首MV | 🔥 总点击: ${totalClicks}`;
             const searchInfo = document.getElementById('searchInfo');
             if (currentKeyword && filteredMVList.length === 0) {
                 searchInfo.innerHTML = '😔 没有找到匹配的MV，试试其他关键词';
                 searchInfo.style.background = '#ffe6e6';
             } else if (currentKeyword) {
-                searchInfo.innerHTML = `🔍 找到 ${filteredMVList.length} 个相关MV (共 ${allMVList.length} 首)`;
+                searchInfo.innerHTML = `🔍 找到 ${filteredMVList.length} 个相关MV (共 ${allMVList.length} 首) | 排序: ${currentSortMode === 'hot' ? '🔥热门优先' : (currentSortMode === 'random' ? '🎲随机模式' : '📌编号')}`;
                 searchInfo.style.background = '#e0f2e6';
             } else {
-                searchInfo.innerHTML = '💡 输入MV名称、歌手名或编号进行搜索，支持模糊匹配';
+                searchInfo.innerHTML = `💡 输入MV名称、歌手名或编号搜索 | 当前排序: ${currentSortMode === 'hot' ? '热门优先(点击量)' : (currentSortMode === 'random' ? '随机排序(每次刷新)' : '编号排序')}`;
                 searchInfo.style.background = '#eef2ff';
             }
         }
-
+        
         function updateOrientationDisplay() {
             const isLandscape = window.matchMedia("(orientation: landscape)").matches;
             const display = document.getElementById('orientationDisplay');
@@ -616,21 +800,74 @@
                 display.style.color = '#495057';
             }
         }
-
-        function initOrientationListener() {
-            const handleResize = () => {
-                updateOrientationDisplay();
-                renderMVList();
-            };
-            window.addEventListener('resize', handleResize);
-            window.addEventListener('orientationchange', () => {
-                setTimeout(() => {
-                    updateOrientationDisplay();
-                    renderMVList();
-                }, 50);
-            });
+        
+        function resetSearch() {
+            document.getElementById('searchInput').value = '';
+            currentKeyword = '';
+            applyFilterAndSort();
         }
-
+        
+        function searchMV(keyword) {
+            currentKeyword = keyword.trim();
+            applyFilterAndSort();
+        }
+        
+        function setSortMode(mode) {
+            if (mode === currentSortMode) return;
+            currentSortMode = mode;
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                const btnMode = btn.getAttribute('data-sort');
+                if (btnMode === mode) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            // 切换排序后，重新应用排序（随机模式会立刻生成新的随机序列）
+            applyFilterAndSort();
+        }
+        
+        // 加载主数据
+        async function loadMVList() {
+            const container = document.getElementById('mvList');
+            container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>';
+            try {
+                const text = await fetchAndDecode(TXT_FILE_URL);
+                const rawList = text.split(/\r?\n/).map(line=>line.trim()).filter(line=>line.length && !line.startsWith('#') && !line.startsWith('//'));
+                if (rawList.length === 0) throw new Error('无数据');
+                let parsed = [];
+                for(let filename of rawList) {
+                    const item = parseMVFileName(filename);
+                    if(item.valid && item.id && item.name) parsed.push(item);
+                }
+                if(parsed.length === 0) throw new Error('解析无有效条目');
+                allMVList = parsed;
+            } catch(e) {
+                console.warn("使用备用数据", e);
+                allMVList = getFallbackList();
+            }
+            allMVList.sort((a,b)=>(parseInt(a.id)||0)-(parseInt(b.id)||0));
+            loadClickCounts();
+            updateClickCountInAllList();
+            // 默认热门模式，应用排序
+            applyFilterAndSort();
+            updateOrientationDisplay();
+        }
+        
+        function initSortButtons() {
+            const defaultBtn = document.querySelector('.sort-btn[data-sort="default"]');
+            const hotBtn = document.querySelector('.sort-btn[data-sort="hot"]');
+            const randomBtn = document.querySelector('.sort-btn[data-sort="random"]');
+            if(defaultBtn) defaultBtn.addEventListener('click', () => setSortMode('default'));
+            if(hotBtn) hotBtn.addEventListener('click', () => setSortMode('hot'));
+            if(randomBtn) randomBtn.addEventListener('click', () => setSortMode('random'));
+            const resetRankBtn = document.getElementById('resetRankBtn');
+            if(resetRankBtn) {
+                resetRankBtn.addEventListener('click', () => {
+                    if(confirm('重置所有MV的点击热度记录？数据将清空。')) {
+                        resetAllClickCounts();
+                    }
+                });
+            }
+        }
+        
         function initSearchEvents() {
             const searchBtn = document.getElementById('searchBtn');
             const resetBtn = document.getElementById('resetBtn');
@@ -638,55 +875,19 @@
             searchBtn.addEventListener('click', () => searchMV(searchInput.value));
             resetBtn.addEventListener('click', () => resetSearch());
             searchInput.addEventListener('input', (e) => searchMV(e.target.value));
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') searchMV(searchInput.value);
-            });
+            searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') searchMV(searchInput.value); });
         }
-
-        async function loadMVList() {
-            const container = document.getElementById('mvList');
-            container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>';
-            try {
-                const text = await fetchAndDecode(TXT_FILE_URL);
-                const rawList = text.split(/\r?\n/)
-                    .map(line => line.trim())
-                    .filter(line => line.length > 0 && !line.startsWith('#') && !line.startsWith('//'));
-
-                if (rawList.length === 0) throw new Error('文件中没有有效数据');
-
-                let parsed = [];
-                for (let filename of rawList) {
-                    const item = parseMVFileName(filename);
-                    if (item.valid && item.id && item.name) {
-                        parsed.push(item);
-                    }
-                }
-                
-                // 按编号排序
-                parsed.sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
-                allMVList = parsed;
-                filteredMVList = [...allMVList];
-                renderMVList();
-            } catch (error) {
-                console.warn('⚠️ 加载外部文件失败，使用备用数据:', error);
-                // 备用数据只包含有效条目
-                const fallbackRaw = [
-                    "00001.王杰-一场游戏一场梦.mp4", "00002.陈奕迅-十年.mp4", "00003.林俊杰-江南.mp4",
-                    "00070.李建复-龙的传人.mp4", "00071.优客李林-少年游.mp4", "00072.张国荣-倩女幽魂.mp4",
-                    "00077.苏小明-军港之夜.mp4", "00078.成龙-醉拳.mp4", "00079.李娜-好人一生平安.mp4"
-                ];
-                allMVList = fallbackRaw.map(filename => parseMVFileName(filename)).filter(item => item.valid);
-                allMVList.sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
-                filteredMVList = [...allMVList];
-                renderMVList();
-            }
-            updateOrientationDisplay();
+        
+        function initOrientationListener() {
+            window.addEventListener('resize', () => { updateOrientationDisplay(); renderMVList(); });
+            window.addEventListener('orientationchange', () => setTimeout(()=>{ updateOrientationDisplay(); renderMVList(); }, 50));
         }
-
+        
         async function init() {
             await loadMVList();
-            initOrientationListener();
+            initSortButtons();
             initSearchEvents();
+            initOrientationListener();
         }
         init();
     </script>
