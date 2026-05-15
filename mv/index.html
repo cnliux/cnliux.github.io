@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -475,32 +475,36 @@
         </div>
     </div>
 
+
     <script>
         // ---------- 核心数据 ----------
-        const TXT_FILE_URL = 'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt';
-        let allMVList = [];           // 原始数据 { id, name, artist, fullName, ext, clickCount }
-        let filteredMVList = [];       // 当前过滤+排序后的列表
-        let currentKeyword = '';
-        let currentSortMode = 'hot';   // 默认改为 'hot' (热门优先)
+        // 多备用数据源
+        var TXT_FILE_URLS = [
+            'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
+            'https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
+            'https://cdn.jsdelivr.net/gh/cnliux/cnliux.github.io@main/mv/list.txt'
+        ];
+        
+        var allMVList = [];           // 原始数据 { id, name, artist, fullName, ext, clickCount }
+        var filteredMVList = [];       // 当前过滤+排序后的列表
+        var currentKeyword = '';
+        var currentSortMode = 'hot';   // 默认改为 'hot' (热门优先)
         
         // 持久化点击次数 (localStorage)
-        const STORAGE_KEY = 'mv_click_counts_v2';
-        let clickMap = new Map();       // key: songKey (id+name+artist 组合保证唯一) 存储点击次数
-        
-        // 随机种子缓存: 为了保证同一轮随机排序内不变化，每次点击随机模式时生成一次随机顺序映射
-        let randomOrderCache = [];      // 存储当前随机模式下的id顺序 (按原始allMVList索引排序?)
+        var STORAGE_KEY = 'mv_click_counts_v2';
+        var clickMap = new Map();       // key: songKey (id+name+artist 组合保证唯一) 存储点击次数
         
         // ---------- 辅助函数 ----------
         function getSongUniqueKey(item) {
-            return `${item.id}|${item.name}|${item.artist || ''}`;
+            return item.id + '|' + item.name + '|' + (item.artist || '');
         }
         
         // 加载点击次数
         function loadClickCounts() {
             try {
-                const stored = localStorage.getItem(STORAGE_KEY);
+                var stored = localStorage.getItem(STORAGE_KEY);
                 if (stored) {
-                    const parsed = JSON.parse(stored);
+                    var parsed = JSON.parse(stored);
                     clickMap = new Map(Object.entries(parsed));
                 } else {
                     clickMap = new Map();
@@ -511,15 +515,15 @@
         // 保存点击次数
         function saveClickCounts() {
             try {
-                const obj = Object.fromEntries(clickMap);
+                var obj = Object.fromEntries(clickMap);
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
             } catch(e) {}
         }
         
         // 增加点击次数
         function incrementClickCount(item) {
-            const key = getSongUniqueKey(item);
-            const current = clickMap.get(key) || 0;
+            var key = getSongUniqueKey(item);
+            var current = clickMap.get(key) || 0;
             clickMap.set(key, current + 1);
             saveClickCounts();
             updateClickCountInAllList();
@@ -527,8 +531,9 @@
         
         // 将clickMap数据同步到allMVList
         function updateClickCountInAllList() {
-            for (let mv of allMVList) {
-                const key = getSongUniqueKey(mv);
+            for (var i = 0; i < allMVList.length; i++) {
+                var mv = allMVList[i];
+                var key = getSongUniqueKey(mv);
                 mv.clickCount = clickMap.get(key) || 0;
             }
         }
@@ -544,25 +549,25 @@
         // 计算搜索加权分数 (热门模式中使用)
         function getSearchBoost(item, keyword) {
             if (!keyword) return 0;
-            const lowerKw = keyword.toLowerCase();
-            let matchScore = 0;
+            var lowerKw = keyword.toLowerCase();
+            var matchScore = 0;
             if (item.id === lowerKw) matchScore = 1.2;
             else if (item.name.toLowerCase() === lowerKw) matchScore = 1.0;
-            else if (item.name.toLowerCase().includes(lowerKw)) matchScore = 0.6;
-            else if (item.artist && item.artist.toLowerCase().includes(lowerKw)) matchScore = 0.5;
-            else if (item.fullName.toLowerCase().includes(lowerKw)) matchScore = 0.3;
-            else if (item.id.includes(lowerKw)) matchScore = 0.4;
+            else if (item.name.toLowerCase().indexOf(lowerKw) !== -1) matchScore = 0.6;
+            else if (item.artist && item.artist.toLowerCase().indexOf(lowerKw) !== -1) matchScore = 0.5;
+            else if (item.fullName.toLowerCase().indexOf(lowerKw) !== -1) matchScore = 0.3;
+            else if (item.id.indexOf(lowerKw) !== -1) matchScore = 0.4;
             else matchScore = 0;
             return matchScore;
         }
         
         // 热门得分算法 (点击次数 * (1 + 匹配因子*2) )
         function getHotScore(item, keyword) {
-            const baseClicks = item.clickCount || 0;
-            let boost = 0;
+            var baseClicks = item.clickCount || 0;
+            var boost = 0;
             if (keyword) {
                 boost = getSearchBoost(item, keyword);
-                const multiplier = 1 + (boost * 1.8);
+                var multiplier = 1 + (boost * 1.8);
                 return baseClicks * multiplier;
             }
             return baseClicks;
@@ -570,10 +575,12 @@
         
         // 生成新的随机顺序 (基于传入的列表，不改变原数组)
         function shuffleArray(arr) {
-            const shuffled = [...arr];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            var shuffled = arr.slice();
+            for (var i = shuffled.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = shuffled[i];
+                shuffled[i] = shuffled[j];
+                shuffled[j] = temp;
             }
             return shuffled;
         }
@@ -581,98 +588,107 @@
         // 排序核心 (扩展支持随机)
         function sortMVList(list, keyword, sortMode) {
             if (sortMode === 'hot') {
-                return [...list].sort((a, b) => {
-                    const scoreA = getHotScore(a, keyword);
-                    const scoreB = getHotScore(b, keyword);
+                var sorted = list.slice();
+                sorted.sort(function(a, b) {
+                    var scoreA = getHotScore(a, keyword);
+                    var scoreB = getHotScore(b, keyword);
                     if (scoreA !== scoreB) return scoreB - scoreA;
                     return (parseInt(a.id) || 0) - (parseInt(b.id) || 0);
                 });
+                return sorted;
             } else if (sortMode === 'random') {
-                // 随机排序: 基于当前列表的副本直接打乱顺序，保证每次重新调用都会生成全新随机序列(包括搜索过滤后的随机)
-                // 为了避免因重复调用造成顺序重置过于频繁但符合预期: 每次排序都重新shuffle
+                // 随机排序: 基于当前列表的副本直接打乱顺序
                 return shuffleArray(list);
             } else {
                 // 默认编号排序
-                return [...list].sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
+                var sortedDefault = list.slice();
+                sortedDefault.sort(function(a, b) {
+                    return (parseInt(a.id) || 0) - (parseInt(b.id) || 0);
+                });
+                return sortedDefault;
             }
         }
         
         // 全局应用过滤 + 排序并渲染
         function applyFilterAndSort() {
-            let workingList = [...allMVList];
+            var workingList = allMVList.slice();
             if (currentKeyword && currentKeyword.trim() !== '') {
-                const lowerKeyword = currentKeyword.toLowerCase().trim();
-                workingList = workingList.filter(item =>
-                    item.id.includes(lowerKeyword) ||
-                    item.name.toLowerCase().includes(lowerKeyword) ||
-                    (item.artist && item.artist.toLowerCase().includes(lowerKeyword)) ||
-                    item.fullName.toLowerCase().includes(lowerKeyword)
-                );
+                var lowerKeyword = currentKeyword.toLowerCase().trim();
+                workingList = workingList.filter(function(item) {
+                    return item.id.indexOf(lowerKeyword) !== -1 ||
+                        item.name.toLowerCase().indexOf(lowerKeyword) !== -1 ||
+                        (item.artist && item.artist.toLowerCase().indexOf(lowerKeyword) !== -1) ||
+                        item.fullName.toLowerCase().indexOf(lowerKeyword) !== -1;
+                });
             }
-            // 关键: 根据当前排序模式执行排序 (随机每次生成全新乱序)
             filteredMVList = sortMVList(workingList, currentKeyword, currentSortMode);
             renderMVList();
         }
         
-        // 重新随机(强制刷新随机顺序) 供随机模式使用，不改变其他
-        function reshuffleRandom() {
-            if (currentSortMode === 'random') {
-                applyFilterAndSort();
+        // ----- 网络请求与解析 (强制 UTF-8 编码)-----
+        async function fetchWithUTF8(url) {
+            var response = await fetch(url);
+            var buffer = await response.arrayBuffer();
+            var bytes = new Uint8Array(buffer);
+            
+            // 检查并跳过 UTF-8 BOM (EF BB BF)
+            var startOffset = 0;
+            if (bytes.length >= 3 && bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF) {
+                startOffset = 3;
             }
+            
+            // 强制使用 UTF-8 解码
+            var decoder = new TextDecoder('utf-8');
+            var text = decoder.decode(buffer.slice(startOffset));
+            
+            return text;
         }
         
-        // ----- 网络请求与解析 -----
-        async function fetchAndDecode(url) {
-            const response = await fetch(url);
-            const buffer = await response.arrayBuffer();
-            const bytes = new Uint8Array(buffer);
-            if (bytes.length >= 3 && bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF) {
-                const decoder = new TextDecoder('utf-8');
-                return decoder.decode(buffer.slice(3));
-            }
-            const utf8Decoder = new TextDecoder('utf-8');
-            let utf8Text = utf8Decoder.decode(buffer);
-            if (utf8Text.includes('�') || (!utf8Text.match(/[\u4e00-\u9fa5]/) && utf8Text.length > 10)) {
+        async function fetchWithFallback(urls) {
+            for (var i = 0; i < urls.length; i++) {
+                var url = urls[i];
                 try {
-                    const gbkDecoder = new TextDecoder('gb18030');
-                    const gbkText = gbkDecoder.decode(buffer);
-                    if (gbkText.match(/[\u4e00-\u9fa5]/)) return gbkText;
-                } catch(e) {}
-                try {
-                    const big5Decoder = new TextDecoder('big5');
-                    const big5Text = big5Decoder.decode(buffer);
-                    if (big5Text.match(/[\u4e00-\u9fa5]/)) return big5Text;
-                } catch(e) {}
-            } else if (utf8Text.match(/[\u4e00-\u9fa5]/)) {
-                return utf8Text;
+                    var text = await fetchWithUTF8(url);
+                    // 检查是否包含中文（UTF-8 正常显示）
+                    if (text && (text.match(/[\u4e00-\u9fa5]/) || text.length > 100)) {
+                        return text;
+                    }
+                    // 如果返回的内容看起来不正常，尝试下一个源
+                    if (text.indexOf('<!DOCTYPE') !== -1 || text.indexOf('<html') !== -1) {
+                        continue;
+                    }
+                    return text;
+                } catch(e) {
+                    console.log('尝试 ' + url + ' 失败:', e);
+                }
             }
-            return utf8Text;
+            throw new Error('所有数据源都失败了');
         }
         
         function parseMVFileName(filename) {
-            const match = filename.match(/^(\d+)\.(.+?)\.(mp4|mp3|mkv|webm|flv|mov|avi)$/i);
+            var match = filename.match(/^(\d+)\.(.+?)\.(mp4|mp3|mkv|webm|flv|mov|avi)$/i);
             if (!match) return { valid: false };
-            const id = match[1];
-            let namePart = match[2];
+            var id = match[1];
+            var namePart = match[2];
             if (!namePart || namePart.trim().length === 0) return { valid: false };
             if (/^\d+$/.test(namePart.trim())) return { valid: false };
-            let songName = namePart;
-            let artist = '';
-            if (namePart.includes('-')) {
-                const parts = namePart.split('-');
+            var songName = namePart;
+            var artist = '';
+            if (namePart.indexOf('-') !== -1) {
+                var parts = namePart.split('-');
                 if (parts.length >= 2) {
                     artist = parts[0].trim();
                     songName = parts[1].trim();
                     if (songName.length < 2 && artist.length > 2) {
-                        let tmp = songName;
+                        var tmp = songName;
                         songName = artist;
                         artist = tmp;
                     }
                 }
-            } else if (namePart.includes('_')) {
-                const parts = namePart.split('_');
-                artist = parts[0].trim();
-                songName = parts[1] ? parts[1].trim() : parts[0].trim();
+            } else if (namePart.indexOf('_') !== -1) {
+                var parts2 = namePart.split('_');
+                artist = parts2[0].trim();
+                songName = parts2[1] ? parts2[1].trim() : parts2[0].trim();
             }
             songName = songName.replace(/\[.*?\]|\(.*?\)/g, '').trim();
             artist = artist.replace(/\[.*?\]|\(.*?\)/g, '').trim();
@@ -690,14 +706,19 @@
         
         // 备用数据
         function getFallbackList() {
-            const fallbackRaw = [
+            var fallbackRaw = [
                 "00001.王杰-一场游戏一场梦.mp4", "00002.陈奕迅-十年.mp4", "00003.林俊杰-江南.mp4",
                 "00070.李建复-龙的传人.mp4", "00071.优客李林-少年游.mp4", "00072.张国荣-倩女幽魂.mp4",
                 "00077.苏小明-军港之夜.mp4", "00078.成龙-醉拳.mp4", "00079.李娜-好人一生平安.mp4",
                 "00123.周杰伦-晴天.mp4", "00456.邓丽君-甜蜜蜜.mp4", "00789.Beyond-海阔天空.mp4",
                 "00888.刘德华-冰雨.mp4", "00999.张雨生-大海.mp4"
             ];
-            return fallbackRaw.map(filename => parseMVFileName(filename)).filter(item => item.valid);
+            var result = [];
+            for (var i = 0; i < fallbackRaw.length; i++) {
+                var item = parseMVFileName(fallbackRaw[i]);
+                if (item.valid) result.push(item);
+            }
+            return result;
         }
         
         // ----- UI 渲染与高亮 -----
@@ -716,80 +737,91 @@
         
         function highlightText(text, keyword) {
             if (!keyword || !text) return escapeHtml(text);
-            const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
+            var regex = new RegExp('(' + escapeRegex(keyword) + ')', 'gi');
             return escapeHtml(text).replace(regex, '<span class="highlight">$1</span>');
         }
         
         function renderMVList() {
-            const container = document.getElementById('mvList');
+            var container = document.getElementById('mvList');
             if (!filteredMVList.length) {
-                container.innerHTML = `<div class="empty-state"><div class="icon">🎵</div><div>暂无匹配的MV</div><div style="font-size:0.75rem; margin-top:6px;">试试其他关键词吧</div></div>`;
+                container.innerHTML = '<div class="empty-state"><div class="icon">🎵</div><div>暂无匹配的MV</div><div style="font-size:0.75rem; margin-top:6px;">试试其他关键词吧</div></div>';
                 updateStats();
                 return;
             }
             
-            let itemsHtml = '';
-            for (let item of filteredMVList) {
-                const displayId = currentKeyword ? highlightText(item.id, currentKeyword) : escapeHtml(item.id);
-                const displayName = currentKeyword ? highlightText(item.name, currentKeyword) : escapeHtml(item.name);
-                const displayArtist = item.artist ? (currentKeyword ? highlightText(item.artist, currentKeyword) : escapeHtml(item.artist)) : '';
-                const artistHtml = displayArtist ? `<span class="mv-artist">- ${displayArtist}</span>` : '';
-                const clickCount = item.clickCount || 0;
-                const hotBadge = clickCount > 0 ? `<span class="hot-badge">🔥 ${clickCount}</span>` : '';
+            var itemsHtml = '';
+            for (var i = 0; i < filteredMVList.length; i++) {
+                var item = filteredMVList[i];
+                var displayId = currentKeyword ? highlightText(item.id, currentKeyword) : escapeHtml(item.id);
+                var displayName = currentKeyword ? highlightText(item.name, currentKeyword) : escapeHtml(item.name);
+                var displayArtist = item.artist ? (currentKeyword ? highlightText(item.artist, currentKeyword) : escapeHtml(item.artist)) : '';
+                var artistHtml = displayArtist ? '<span class="mv-artist">- ' + displayArtist + '</span>' : '';
+                var clickCount = item.clickCount || 0;
+                var hotBadge = clickCount > 0 ? '<span class="hot-badge">🔥 ' + clickCount + '</span>' : '';
                 
-                itemsHtml += `
-                    <div class="mv-item" data-fullname="${escapeHtml(item.fullName)}" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.name)}" data-artist="${escapeHtml(item.artist)}" data-unique="${escapeHtml(getSongUniqueKey(item))}">
-                        <div class="mv-number">${displayId}</div>
-                        <div class="mv-name">${displayName}${artistHtml}${hotBadge}</div>
-                        <div class="play-icon">▶️</div>
-                    </div>
-                `;
+                itemsHtml += '<div class="mv-item" data-fullname="' + escapeHtml(item.fullName) + '" data-id="' + escapeHtml(item.id) + '" data-name="' + escapeHtml(item.name) + '" data-artist="' + escapeHtml(item.artist) + '" data-unique="' + escapeHtml(getSongUniqueKey(item)) + '">' +
+                    '<div class="mv-number">' + displayId + '</div>' +
+                    '<div class="mv-name">' + displayName + artistHtml + hotBadge + '</div>' +
+                    '<div class="play-icon">▶️</div>' +
+                    '</div>';
             }
             container.innerHTML = itemsHtml;
             
-            document.querySelectorAll('.mv-item').forEach(el => {
-                el.removeEventListener('click', mvClickHandler);
-                el.addEventListener('click', mvClickHandler);
-            });
+            // 绑定点击事件
+            var mvItems = document.querySelectorAll('.mv-item');
+            for (var j = 0; j < mvItems.length; j++) {
+                mvItems[j].addEventListener('click', mvClickHandler);
+            }
             updateStats();
         }
         
         function mvClickHandler(e) {
-            const target = e.currentTarget;
-            const fullName = target.getAttribute('data-fullname') || '';
-            const id = target.getAttribute('data-id') || '';
-            const name = target.getAttribute('data-name') || '';
-            const artist = target.getAttribute('data-artist') || '';
-            const mvItem = allMVList.find(item => item.fullName === fullName && item.id === id);
+            var target = e.currentTarget;
+            var fullName = target.getAttribute('data-fullname') || '';
+            var id = target.getAttribute('data-id') || '';
+            var name = target.getAttribute('data-name') || '';
+            var artist = target.getAttribute('data-artist') || '';
+            
+            // 查找 MV 对象
+            var mvItem = null;
+            for (var i = 0; i < allMVList.length; i++) {
+                if (allMVList[i].fullName === fullName && allMVList[i].id === id) {
+                    mvItem = allMVList[i];
+                    break;
+                }
+            }
             if (mvItem) {
                 incrementClickCount(mvItem);
-                // 点击后热度变更，如果当前是热门模式需要刷新排序；随机模式不改变随机顺序但保留热度显示，但也要刷新使热度数值更新
                 applyFilterAndSort();
             }
-            const artistText = artist ? ` - ${artist}` : '';
-            alert(`🎬 播放MV\n\n📀 编号: ${id}\n🎤 歌曲: ${name}${artistText}\n📁 文件: ${fullName}\n👍 感谢支持，热度 +1`);
+            var artistText = artist ? ' - ' + artist : '';
+            alert('🎬 播放MV\n\n📀 编号: ' + id + '\n🎤 歌曲: ' + name + artistText + '\n📁 文件: ' + fullName + '\n👍 感谢支持，热度 +1');
         }
         
         function updateStats() {
-            const totalSpan = document.getElementById('totalCount');
-            const totalClicks = Array.from(clickMap.values()).reduce((a,b)=>a+b,0);
-            totalSpan.innerHTML = `🎵 共 ${allMVList.length} 首MV | 🔥 总点击: ${totalClicks}`;
-            const searchInfo = document.getElementById('searchInfo');
+            var totalSpan = document.getElementById('totalCount');
+            var clickValues = Array.from(clickMap.values());
+            var totalClicks = 0;
+            for (var i = 0; i < clickValues.length; i++) {
+                totalClicks += clickValues[i];
+            }
+            totalSpan.innerHTML = '🎵 共 ' + allMVList.length + ' 首MV | 🔥 总点击: ' + totalClicks;
+            var searchInfo = document.getElementById('searchInfo');
             if (currentKeyword && filteredMVList.length === 0) {
                 searchInfo.innerHTML = '😔 没有找到匹配的MV，试试其他关键词';
                 searchInfo.style.background = '#ffe6e6';
             } else if (currentKeyword) {
-                searchInfo.innerHTML = `🔍 找到 ${filteredMVList.length} 个相关MV (共 ${allMVList.length} 首) | 排序: ${currentSortMode === 'hot' ? '🔥热门优先' : (currentSortMode === 'random' ? '🎲随机模式' : '📌编号')}`;
+                searchInfo.innerHTML = '🔍 找到 ' + filteredMVList.length + ' 个相关MV (共 ' + allMVList.length + ' 首) | 排序: ' + (currentSortMode === 'hot' ? '🔥热门优先' : (currentSortMode === 'random' ? '🎲随机模式' : '📌编号'));
                 searchInfo.style.background = '#e0f2e6';
             } else {
-                searchInfo.innerHTML = `💡 输入MV名称、歌手名或编号搜索 | 当前排序: ${currentSortMode === 'hot' ? '热门优先(点击量)' : (currentSortMode === 'random' ? '随机排序(每次刷新)' : '编号排序')}`;
+                searchInfo.innerHTML = '💡 输入MV名称、歌手名或编号搜索 | 当前排序: ' + (currentSortMode === 'hot' ? '热门优先(点击量)' : (currentSortMode === 'random' ? '随机排序(每次刷新)' : '编号排序'));
                 searchInfo.style.background = '#eef2ff';
             }
         }
         
         function updateOrientationDisplay() {
-            const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-            const display = document.getElementById('orientationDisplay');
+            var isLandscape = window.matchMedia("(orientation: landscape)").matches;
+            var display = document.getElementById('orientationDisplay');
             if (isLandscape) {
                 display.innerHTML = '🖥️ 横屏 · 多列网格';
                 display.style.background = '#d4edda';
@@ -815,53 +847,53 @@
         function setSortMode(mode) {
             if (mode === currentSortMode) return;
             currentSortMode = mode;
-            document.querySelectorAll('.sort-btn').forEach(btn => {
-                const btnMode = btn.getAttribute('data-sort');
+            var btns = document.querySelectorAll('.sort-btn');
+            for (var i = 0; i < btns.length; i++) {
+                var btn = btns[i];
+                var btnMode = btn.getAttribute('data-sort');
                 if (btnMode === mode) btn.classList.add('active');
                 else btn.classList.remove('active');
-            });
-            // 切换排序后，重新应用排序（随机模式会立刻生成新的随机序列）
+            }
             applyFilterAndSort();
         }
         
-        // 加载主数据
+        // 加载主数据 (强制 UTF-8)
         async function loadMVList() {
-            const container = document.getElementById('mvList');
+            var container = document.getElementById('mvList');
             container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>';
             try {
-                const text = await fetchAndDecode(TXT_FILE_URL);
-                const rawList = text.split(/\r?\n/).map(line=>line.trim()).filter(line=>line.length && !line.startsWith('#') && !line.startsWith('//'));
+                var text = await fetchWithFallback(TXT_FILE_URLS);
+                var rawList = text.split(/\r?\n/).map(function(line) { return line.trim(); }).filter(function(line) { return line.length && !line.startsWith('#') && !line.startsWith('//'); });
                 if (rawList.length === 0) throw new Error('无数据');
-                let parsed = [];
-                for(let filename of rawList) {
-                    const item = parseMVFileName(filename);
-                    if(item.valid && item.id && item.name) parsed.push(item);
+                var parsed = [];
+                for (var i = 0; i < rawList.length; i++) {
+                    var item = parseMVFileName(rawList[i]);
+                    if (item.valid && item.id && item.name) parsed.push(item);
                 }
-                if(parsed.length === 0) throw new Error('解析无有效条目');
+                if (parsed.length === 0) throw new Error('解析无有效条目');
                 allMVList = parsed;
             } catch(e) {
                 console.warn("使用备用数据", e);
                 allMVList = getFallbackList();
             }
-            allMVList.sort((a,b)=>(parseInt(a.id)||0)-(parseInt(b.id)||0));
+            allMVList.sort(function(a, b) { return (parseInt(a.id) || 0) - (parseInt(b.id) || 0); });
             loadClickCounts();
             updateClickCountInAllList();
-            // 默认热门模式，应用排序
             applyFilterAndSort();
             updateOrientationDisplay();
         }
         
         function initSortButtons() {
-            const defaultBtn = document.querySelector('.sort-btn[data-sort="default"]');
-            const hotBtn = document.querySelector('.sort-btn[data-sort="hot"]');
-            const randomBtn = document.querySelector('.sort-btn[data-sort="random"]');
-            if(defaultBtn) defaultBtn.addEventListener('click', () => setSortMode('default'));
-            if(hotBtn) hotBtn.addEventListener('click', () => setSortMode('hot'));
-            if(randomBtn) randomBtn.addEventListener('click', () => setSortMode('random'));
-            const resetRankBtn = document.getElementById('resetRankBtn');
-            if(resetRankBtn) {
-                resetRankBtn.addEventListener('click', () => {
-                    if(confirm('重置所有MV的点击热度记录？数据将清空。')) {
+            var defaultBtn = document.querySelector('.sort-btn[data-sort="default"]');
+            var hotBtn = document.querySelector('.sort-btn[data-sort="hot"]');
+            var randomBtn = document.querySelector('.sort-btn[data-sort="random"]');
+            if (defaultBtn) defaultBtn.addEventListener('click', function() { setSortMode('default'); });
+            if (hotBtn) hotBtn.addEventListener('click', function() { setSortMode('hot'); });
+            if (randomBtn) randomBtn.addEventListener('click', function() { setSortMode('random'); });
+            var resetRankBtn = document.getElementById('resetRankBtn');
+            if (resetRankBtn) {
+                resetRankBtn.addEventListener('click', function() {
+                    if (confirm('重置所有MV的点击热度记录？数据将清空。')) {
                         resetAllClickCounts();
                     }
                 });
@@ -869,18 +901,18 @@
         }
         
         function initSearchEvents() {
-            const searchBtn = document.getElementById('searchBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            const searchInput = document.getElementById('searchInput');
-            searchBtn.addEventListener('click', () => searchMV(searchInput.value));
-            resetBtn.addEventListener('click', () => resetSearch());
-            searchInput.addEventListener('input', (e) => searchMV(e.target.value));
-            searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') searchMV(searchInput.value); });
+            var searchBtn = document.getElementById('searchBtn');
+            var resetBtn = document.getElementById('resetBtn');
+            var searchInput = document.getElementById('searchInput');
+            searchBtn.addEventListener('click', function() { searchMV(searchInput.value); });
+            resetBtn.addEventListener('click', function() { resetSearch(); });
+            searchInput.addEventListener('input', function(e) { searchMV(e.target.value); });
+            searchInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') searchMV(searchInput.value); });
         }
         
         function initOrientationListener() {
-            window.addEventListener('resize', () => { updateOrientationDisplay(); renderMVList(); });
-            window.addEventListener('orientationchange', () => setTimeout(()=>{ updateOrientationDisplay(); renderMVList(); }, 50));
+            window.addEventListener('resize', function() { updateOrientationDisplay(); renderMVList(); });
+            window.addEventListener('orientationchange', function() { setTimeout(function() { updateOrientationDisplay(); renderMVList(); }, 50); });
         }
         
         async function init() {
@@ -889,8 +921,9 @@
             initSearchEvents();
             initOrientationListener();
         }
+        
         init();
+    </script>
 </body>
-        <script async src="https://186317.xyz/tj/stats.js"></script>
 
 </html>
