@@ -1,5 +1,5 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/cc.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
-#EXTINF:-1 tvg-name="2026-05-21 06:45:45" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/20260521064545.png" group-title="🕘️更新时间",2026-05-21 06:45:45
+#EXTINF:-1 tvg-name="2026-05-21 19:52:57" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/20260521195257.png" group-title="🕘️更新时间",2026-05-21 19:52:57
 http://81.69.15.31:8880/play/1.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV1.png" group-title="📺央视频道",CCTV1
 http://81.69.15.31:8880/play/1.m3u8
@@ -94,7 +94,7 @@ http://81.69.15.31:8880/play/494.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
 http://81.69.15.31:8880/play/601.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
-http://42.237.163.143:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+http://114.241.106.139:85/tsfile/live/23/1023_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
 http://114.241.106.76:85/tsfile/live/23/1023_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV6.png" group-title="📺央视频道",CCTV6
@@ -192,7 +192,7 @@ http://81.69.15.31:8880/play/546.m3u8
 #EXTINF:-1 tvg-name="CCTV11" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV11.png" group-title="📺央视频道",CCTV11
 http://81.69.15.31:8880/play/596.m3u8
 #EXTINF:-1 tvg-name="CCTV11" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV11.png" group-title="📺央视频道",CCTV11
-http://139.227.221.179:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
+http://114.241.106.76:85/tsfile/live/11/1011_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
 http://81.69.15.31:8880/play/22.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
@@ -268,9 +268,9 @@ http://81.69.15.31:8880/play/505.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
 http://81.69.15.31:8880/play/551.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
-https://www.zijincao.cc/iptv/qiha/ysp.php?id=cctv16
-#EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=cctv164k
+#EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
+https://www.zijincao.cc/iptv/qiha/ysp.php?id=cctv16
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
 http://221.205.59.64:9003/hls/17/index.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
@@ -286,25 +286,25 @@ http://81.69.15.31:8880/play/506.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
 http://81.69.15.31:8880/play/552.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
-http://221.205.59.64:9003/hls/18/index.m3u8
+http://36.158.75.239:8088/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
-http://120.198.84.146:9901/tsfile/live/1080_1.m3u8?key=txiptv&playlive=1&authid=0
+http://221.205.59.64:9003/hls/18/index.m3u8
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=cetv1
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-http://120.198.84.146:9901/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-http://120.238.94.82:9901/tsfile/live/1082_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 http://14.153.167.43:4022/rtp/239.77.1.222:5146
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 http://14.153.167.43:4022/rtp/239.77.0.200:5146
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-http://154.12.36.187:656/index.php?token=2025&id=cetv1
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 http://183.237.95.108:9901/tsfile/live/1102_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://154.12.36.187:656/index.php?token=2025&id=cetv1
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://120.198.84.146:9901/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 https://t.freetv.fun/live/cetv1-1.m3u8
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+https://t.freetv.fun/live/cetv1-2.m3u8
 #EXTINF:-1 tvg-name="CETV2" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV2.png" group-title="📺央视频道",CETV2
 http://154.12.36.187:656/index.php?token=2025&id=cetv2
 #EXTINF:-1 tvg-name="CETV2" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV2.png" group-title="📺央视频道",CETV2
@@ -326,11 +326,11 @@ http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227352/index.m3u8
 #EXTINF:-1 tvg-name="CETV3" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV3.png" group-title="📺央视频道",CETV3
 http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226226/index.m3u8
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
-http://154.12.36.187:656/index.php?token=2025&id=cetv4
+http://14.153.167.43:4022/rtp/239.253.43.40:5146
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 http://14.153.167.43:4022/rtp/239.253.43.114:5146
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
-http://14.153.167.43:4022/rtp/239.253.43.40:5146
+http://154.12.36.187:656/index.php?token=2025&id=cetv4
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 https://t.freetv.fun/live/cetv4.m3u8
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
@@ -342,9 +342,9 @@ https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227331/index.m3u8
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
-http://14.153.167.43:4022/rtp/239.253.43.27:5146
-#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
 http://14.153.167.43:4022/rtp/239.253.43.13:5146
+#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
+http://14.153.167.43:4022/rtp/239.253.43.27:5146
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
 http://w.yao87.com:4022/rtp/239.76.254.56:9000
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
@@ -356,9 +356,11 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225675/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226100/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
-http://14.153.167.43:4022/rtp/239.253.43.11:5146
+http://113.234.201.199:9003/hls/20/index.m3u8
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
 http://14.153.167.43:4022/rtp/239.253.43.21:5146
+#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
+http://14.153.167.43:4022/rtp/239.253.43.11:5146
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
 http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
@@ -369,8 +371,6 @@ http://w.yao87.com:4022/rtp/239.76.254.58:9000
 http://www.qfly9236.cn:8888/rtp/239.253.93.231:6409
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
 http://ott.mobaibox.com/PLTV/3/224/3221228683/index.m3u8
-#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226156/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
 http://120.198.84.146:9901/tsfile/live/1081_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
@@ -392,17 +392,17 @@ http://81.69.15.31:8880/play/582.m3u8
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://81.69.15.31:8880/play/584.m3u8
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://14.153.167.43:4022/rtp/239.253.43.26:5146
-#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://14.153.167.43:4022/rtp/239.253.43.16:5146
-#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://14.153.167.43:4022/rtp/239.253.43.28:5146
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://14.153.167.43:4022/rtp/239.253.43.15:5146
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
+http://14.153.167.43:4022/rtp/239.253.43.28:5146
+#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
+http://14.153.167.43:4022/rtp/239.253.43.26:5146
+#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://183.237.95.108:9901/tsfile/live/1070_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://183.237.95.108:9901/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&authid=0
+http://w.yao87.com:4022/rtp/239.76.254.50:9000
 #EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云剧场.png" group-title="💰央视付费频道",风云剧场
 http://81.69.15.31:8880/play/582.m3u8
 #EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云剧场.png" group-title="💰央视付费频道",风云剧场
@@ -440,8 +440,6 @@ http://14.153.167.43:4022/rtp/239.253.43.8:5146
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://14.153.167.43:4022/rtp/239.253.43.23:5146
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
-http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://w.yao87.com:4022/rtp/239.76.254.55:9000
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://www.qfly9236.cn:8888/rtp/239.253.92.249:6103
@@ -452,9 +450,9 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226104/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225699/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
-http://14.153.167.43:4022/rtp/239.253.43.22:5146
-#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
 http://14.153.167.43:4022/rtp/239.253.43.12:5146
+#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
+http://14.153.167.43:4022/rtp/239.253.43.22:5146
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
 http://w.yao87.com:4022/rtp/239.76.254.62:9000
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
@@ -466,9 +464,9 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225674/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 http://120.198.84.146:9901/tsfile/live/1086_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
-http://14.153.167.43:4022/rtp/239.253.43.20:5146
-#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 http://14.153.167.43:4022/rtp/239.253.43.14:5146
+#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
+http://14.153.167.43:4022/rtp/239.253.43.20:5146
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 http://183.237.95.108:9901/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
@@ -486,21 +484,19 @@ http://81.69.15.31:8880/play/581.m3u8
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://120.198.84.146:9901/tsfile/live/1099_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-http://14.153.167.43:4022/rtp/239.253.43.24:5146
+http://14.153.167.43:4022/rtp/239.253.43.7:5146
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://tonyk.56301232.xyz:3477/rtp/239.37.0.79:5540
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-http://14.153.167.43:4022/rtp/239.253.43.7:5146
+http://14.153.167.43:4022/rtp/239.253.43.24:5146
+#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
+http://183.237.95.108:9901/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://w.yao87.com:4022/rtp/239.76.254.57:9000
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://www.qfly9236.cn:8888/rtp/239.253.92.113:8066
-#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-https://gd202.tv1288.xyz/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&down=1
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
-http://14.153.167.43:4022/rtp/239.253.43.9:5146
-#EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
-http://14.153.167.43:4022/rtp/239.253.43.18:5146
+http://38.75.136.137:98/gslb/dsdqpub/bqkj.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
 http://w.yao87.com:4022/rtp/239.76.254.59:9000
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
@@ -542,9 +538,9 @@ http://81.69.15.31:8880/play/549.m3u8
 #EXTINF:-1 tvg-name="CCTV14" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV14.png" group-title="💰央视付费频道",CCTV14
 http://81.69.15.31:8880/play/599.m3u8
 #EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
-http://154.12.36.187:656/index.php?token=2025&id=zgtq
-#EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
 http://14.153.167.43:4022/rtp/239.77.1.2:5146
+#EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
+http://154.12.36.187:656/index.php?token=2025&id=zgtq
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://81.69.15.31:8880/play/51.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
@@ -558,9 +554,9 @@ http://81.69.15.31:8880/play/468.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://81.69.15.31:8880/play/606.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
-http://222.223.41.27:8888/hls/29/index.m3u8
+http://114.241.106.139:85/tsfile/live/28/1028_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
-http://114.241.106.76:85/tsfile/live/32/1032_1.m3u8?key=txiptv
+http://114.241.106.76:85/tsfile/live/28/1028_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://81.69.15.31:8880/play/113.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
@@ -574,9 +570,9 @@ http://81.69.15.31:8880/play/531.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://81.69.15.31:8880/play/611.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
-http://110.72.55.189:8181/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://114.241.106.76:85/tsfile/live/45/1045_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
+http://114.241.106.139:85/tsfile/live/45/1045_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="香港卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/香港卫视.png" group-title="📡卫视频道",香港卫视
 http://webcast.hkstv.tv/livestream/mutfysrq/playlist.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
@@ -588,13 +584,13 @@ http://81.69.15.31:8880/play/467.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://81.69.15.31:8880/play/605.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
-http://114.241.106.139:85/tsfile/live/27/1027_1.m3u8?key=txiptv
+http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://114.241.106.76:85/tsfile/live/27/1027_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
-http://60.212.134.243:85/tsfile/live/43/2018_1.m3u8?key=txiptv
+http://114.241.106.139:85/tsfile/live/27/1027_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江卫视.png" group-title="📡卫视频道",浙江卫视
-http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+http://60.187.247.136:85/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://81.69.15.31:8880/play/62.m3u8
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南卫视.png" group-title="📡卫视频道",湖南卫视
@@ -626,7 +622,7 @@ http://81.69.15.31:8880/play/603.m3u8
 #EXTINF:-1 tvg-name="北京卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京卫视.png" group-title="📡卫视频道",北京卫视
 http://81.69.15.31:8880/play/1501.m3u8
 #EXTINF:-1 tvg-name="北京卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京卫视.png" group-title="📡卫视频道",北京卫视
-http://222.223.41.27:8888/hls/31/index.m3u8
+http://36.158.75.239:8088/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖北卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖北卫视.png" group-title="📡卫视频道",湖北卫视
 http://81.69.15.31:8880/play/60.m3u8
 #EXTINF:-1 tvg-name="湖北卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖北卫视.png" group-title="📡卫视频道",湖北卫视
@@ -650,15 +646,15 @@ http://81.69.15.31:8880/play/553.m3u8
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
 http://81.69.15.31:8880/play/630.m3u8
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
+http://114.241.106.139:85/tsfile/live/35/1035_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
 http://114.241.106.76:85/tsfile/live/35/1035_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
 http://125.43.255.200:9901/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
-http://154.12.36.187:656/index.php?token=2025&id=hljws
+http://14.153.167.43:4022/rtp/239.77.0.124:5146
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
-http://183.129.255.66:8480/hls/47/index.m3u8
-#EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑龙江卫视.png" group-title="📡卫视频道",黑龙江卫视
-http://183.62.8.58:50085/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+http://14.153.167.43:4022/rtp/239.77.0.93:5146
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
 http://81.69.15.31:8880/play/47.m3u8
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
@@ -670,9 +666,9 @@ http://81.69.15.31:8880/play/525.m3u8
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
 http://81.69.15.31:8880/play/607.m3u8
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
-http://114.241.106.76:85/tsfile/live/29/1029_1.m3u8?key=txiptv
+http://60.212.134.243:85/tsfile/live/46/2021_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
-http://222.223.41.27:8888/hls/30/index.m3u8
+http://114.241.106.76:85/tsfile/live/29/1029_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/安徽卫视.png" group-title="📡卫视频道",安徽卫视
 http://114.241.106.139:85/tsfile/live/29/1029_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
@@ -686,11 +682,11 @@ http://81.69.15.31:8880/play/480.m3u8
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
 http://81.69.15.31:8880/play/619.m3u8
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
+http://36.158.75.239:8088/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
 http://114.241.106.76:85/tsfile/live/42/1042_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
 http://114.241.106.139:85/tsfile/live/42/1042_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重庆卫视.png" group-title="📡卫视频道",重庆卫视
-http://222.223.41.27:8888/hls/43/index.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方卫视.png" group-title="📡卫视频道",东方卫视
 http://81.69.15.31:8880/play/39.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方卫视.png" group-title="📡卫视频道",东方卫视
@@ -706,7 +702,7 @@ http://81.69.15.31:8880/play/510.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方卫视.png" group-title="📡卫视频道",东方卫视
 http://114.241.106.76:85/tsfile/live/41/1041_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方卫视.png" group-title="📡卫视频道",东方卫视
-http://114.241.106.139:85/tsfile/live/41/1041_1.m3u8?key=txiptv
+http://36.158.75.239:8088/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东南卫视.png" group-title="📡卫视频道",东南卫视
 http://81.69.15.31:8880/play/37.m3u8
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东南卫视.png" group-title="📡卫视频道",东南卫视
@@ -722,7 +718,7 @@ http://81.69.15.31:8880/play/568.m3u8
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东南卫视.png" group-title="📡卫视频道",东南卫视
 http://81.69.15.31:8880/play/620.m3u8
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东南卫视.png" group-title="📡卫视频道",东南卫视
-http://222.223.41.27:8888/hls/44/index.m3u8
+http://114.241.106.76:85/tsfile/live/43/1043_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
 http://81.69.15.31:8880/play/64.m3u8
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
@@ -730,15 +726,15 @@ http://81.69.15.31:8880/play/522.m3u8
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
 http://81.69.15.31:8880/play/628.m3u8
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
-http://14.153.167.43:4022/rtp/239.77.0.189:5146
+http://221.205.59.64:9003/hls/25/index.m3u8
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
 http://61.178.227.57:9901/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
-http://221.205.59.64:9003/hls/25/index.m3u8
+http://14.153.167.43:4022/rtp/239.77.0.189:5146
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
-http://154.12.36.187:656/index.php?token=2025&id=gsws
+http://183.189.218.177:888/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="甘肃卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/甘肃卫视.png" group-title="📡卫视频道",甘肃卫视
-https://t.freetv.fun/live/gan-su-wei-shi-1.m3u8
+http://183.190.162.220:888/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广西卫视.png" group-title="📡卫视频道",广西卫视
 http://81.69.15.31:8880/play/50.m3u8
 #EXTINF:-1 tvg-name="广西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广西卫视.png" group-title="📡卫视频道",广西卫视
@@ -752,9 +748,9 @@ http://81.69.15.31:8880/play/566.m3u8
 #EXTINF:-1 tvg-name="广西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广西卫视.png" group-title="📡卫视频道",广西卫视
 http://81.69.15.31:8880/play/612.m3u8
 #EXTINF:-1 tvg-name="广西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广西卫视.png" group-title="📡卫视频道",广西卫视
-http://222.223.41.27:8888/hls/46/index.m3u8
+http://36.158.75.239:8088/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广西卫视.png" group-title="📡卫视频道",广西卫视
-http://221.205.59.64:9003/hls/27/index.m3u8
+http://222.223.41.27:8888/hls/46/index.m3u8
 #EXTINF:-1 tvg-name="贵州卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/贵州卫视.png" group-title="📡卫视频道",贵州卫视
 http://81.69.15.31:8880/play/433.m3u8
 #EXTINF:-1 tvg-name="贵州卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/贵州卫视.png" group-title="📡卫视频道",贵州卫视
@@ -786,7 +782,7 @@ https://www.zijincao.cc/iptv/qiha/ysp.php?id=hnws2
 #EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/海南卫视.png" group-title="📡卫视频道",海南卫视
 http://221.205.59.64:9003/hls/38/index.m3u8
 #EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/海南卫视.png" group-title="📡卫视频道",海南卫视
-http://154.12.36.187:656/index.php?token=2025&id=hainws
+http://14.153.167.43:4022/rtp/239.253.43.35:5146
 #EXTINF:-1 tvg-name="河北卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北卫视.png" group-title="📡卫视频道",河北卫视
 http://81.69.15.31:8880/play/54.m3u8
 #EXTINF:-1 tvg-name="河北卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北卫视.png" group-title="📡卫视频道",河北卫视
@@ -816,9 +812,9 @@ http://81.69.15.31:8880/play/617.m3u8
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南卫视.png" group-title="📡卫视频道",河南卫视
 http://81.69.15.31:8880/play/1510.m3u8
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南卫视.png" group-title="📡卫视频道",河南卫视
-http://114.241.106.139:85/tsfile/live/34/1034_1.m3u8?key=txiptv
+http://114.241.106.76:85/tsfile/live/34/1034_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南卫视.png" group-title="📡卫视频道",河南卫视
-http://222.223.41.27:8888/hls/36/index.m3u8
+http://114.241.106.139:85/tsfile/live/34/1034_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林卫视.png" group-title="📡卫视频道",吉林卫视
 http://81.69.15.31:8880/play/43.m3u8
 #EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林卫视.png" group-title="📡卫视频道",吉林卫视
@@ -832,9 +828,9 @@ http://81.69.15.31:8880/play/559.m3u8
 #EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林卫视.png" group-title="📡卫视频道",吉林卫视
 http://81.69.15.31:8880/play/626.m3u8
 #EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林卫视.png" group-title="📡卫视频道",吉林卫视
-http://114.241.106.76:85/tsfile/live/47/1047_1.m3u8?key=txiptv
+http://36.158.75.239:8088/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林卫视.png" group-title="📡卫视频道",吉林卫视
-http://114.241.106.139:85/tsfile/live/47/1047_1.m3u8?key=txiptv
+http://114.241.106.76:85/tsfile/live/47/1047_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="江西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江西卫视.png" group-title="📡卫视频道",江西卫视
 http://81.69.15.31:8880/play/53.m3u8
 #EXTINF:-1 tvg-name="江西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江西卫视.png" group-title="📡卫视频道",江西卫视
@@ -850,7 +846,7 @@ http://81.69.15.31:8880/play/615.m3u8
 #EXTINF:-1 tvg-name="江西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江西卫视.png" group-title="📡卫视频道",江西卫视
 http://114.241.106.76:85/tsfile/live/37/1037_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="江西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江西卫视.png" group-title="📡卫视频道",江西卫视
-http://114.241.106.139:85/tsfile/live/37/1037_1.m3u8?key=txiptv
+http://221.205.59.64:9003/hls/36/index.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://81.69.15.31:8880/play/66.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
@@ -864,7 +860,7 @@ http://81.69.15.31:8880/play/520.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://81.69.15.31:8880/play/602.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
-http://60.212.134.243:85/tsfile/live/47/2022_1.m3u8?key=txiptv
+http://114.241.106.76:85/tsfile/live/31/1031_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://114.241.106.139:85/tsfile/live/31/1031_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
@@ -874,6 +870,8 @@ http://81.69.15.31:8880/play/624.m3u8
 #EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=nmgws
 #EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
+http://36.158.75.239:8088/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
 http://154.12.36.187:656/index.php?token=2025&id=nmgws
 #EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
 https://t.freetv.fun/live/nei-meng-gu-wei-shi-4.m3u8
@@ -881,24 +879,22 @@ https://t.freetv.fun/live/nei-meng-gu-wei-shi-4.m3u8
 https://t.freetv.fun/live/nei-meng-gu-wei-shi.m3u8
 #EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
 https://t.freetv.fun/live/nei-meng-gu-wei-shi-1.m3u8
-#EXTINF:-1 tvg-name="内蒙古卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/内蒙古卫视.png" group-title="📡卫视频道",内蒙古卫视
-https://t.freetv.fun/live/nei-meng-gu-wei-shi-3.m3u8
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
 http://81.69.15.31:8880/play/563.m3u8
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
 http://81.69.15.31:8880/play/625.m3u8
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
-http://221.205.59.64:9003/hls/40/index.m3u8
+http://36.158.75.239:8088/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
-http://14.153.167.43:4022/rtp/239.77.1.28:5146
+https://www.zijincao.cc/iptv/qiha/ysp.php?id=nxws
+#EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
+http://221.205.59.64:9003/hls/40/index.m3u8
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
 http://14.153.167.43:4022/rtp/239.77.1.246:5146
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
 http://14.153.167.43:4022/rtp/239.77.0.49:5146
 #EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
-http://154.12.36.187:656/index.php?token=2025&id=nxws
-#EXTINF:-1 tvg-name="宁夏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宁夏卫视.png" group-title="📡卫视频道",宁夏卫视
-http://183.189.218.177:888/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0
+http://14.153.167.43:4022/rtp/239.77.1.28:5146
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
 http://81.69.15.31:8880/play/72.m3u8
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
@@ -910,11 +906,11 @@ http://81.69.15.31:8880/play/621.m3u8
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=qhws
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
-http://154.12.36.187:656/index.php?token=2025&id=qhws
-#EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
 http://14.153.167.43:4022/rtp/239.253.43.125:5146
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
-http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub
+http://154.12.36.187:656/index.php?token=2025&id=qhws
+#EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/青海卫视.png" group-title="📡卫视频道",青海卫视
+http://ott.mobaibox.com/PLTV/3/224/3221227554/index.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
 http://81.69.15.31:8880/play/48.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
@@ -928,9 +924,9 @@ http://81.69.15.31:8880/play/524.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
 http://81.69.15.31:8880/play/609.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
-http://60.212.134.243:85/tsfile/live/34/2009_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
 http://222.223.41.27:8888/hls/34/index.m3u8
+#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山东卫视.png" group-title="📡卫视频道",山东卫视
+http://110.72.78.203:8181/tsfile/live/0131_2.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
 http://81.69.15.31:8880/play/435.m3u8
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
@@ -940,13 +936,13 @@ http://81.69.15.31:8880/play/560.m3u8
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
 http://81.69.15.31:8880/play/610.m3u8
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
+http://125.43.255.200:9901/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=shanxiws2
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
 http://221.205.59.64:9003/hls/19/index.m3u8
 #EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
-http://125.43.255.200:9901/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="山西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/山西卫视.png" group-title="📡卫视频道",山西卫视
-http://119.39.9.8:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=0&authid=0
+http://183.189.218.177:888/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
 http://81.69.15.31:8880/play/70.m3u8
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
@@ -958,7 +954,7 @@ http://81.69.15.31:8880/play/623.m3u8
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=shanxiws
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
-http://183.62.8.58:50085/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
+http://36.158.75.239:8088/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
 http://154.12.36.187:656/index.php?token=2025&id=shanxws
 #EXTINF:-1 tvg-name="陕西卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西卫视.png" group-title="📡卫视频道",陕西卫视
@@ -976,9 +972,9 @@ http://81.69.15.31:8880/play/567.m3u8
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/四川卫视.png" group-title="📡卫视频道",四川卫视
 http://81.69.15.31:8880/play/618.m3u8
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/四川卫视.png" group-title="📡卫视频道",四川卫视
-http://117.85.57.55:60001/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
+http://110.72.78.203:8181/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/四川卫视.png" group-title="📡卫视频道",四川卫视
-http://222.223.41.27:8888/hls/37/index.m3u8
+http://110.72.55.189:8181/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://81.69.15.31:8880/play/58.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/深圳卫视.png" group-title="📡卫视频道",深圳卫视
@@ -1000,17 +996,17 @@ http://81.69.15.31:8880/play/36.m3u8
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 http://81.69.15.31:8880/play/1621.m3u8
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
-http://154.12.36.187:656/index.php?token=2025&id=ssws
-#EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 http://14.153.167.43:4022/rtp/239.253.43.113:5146
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
-http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub
+http://154.12.36.187:656/index.php?token=2025&id=ssws
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 https://t.freetv.fun/live/san-sha-wei-shi.m3u8
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 https://t.freetv.fun/live/san-sha-wei-shi-1.m3u8
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 https://t.freetv.fun/live/san-sha-wei-shi-4.m3u8
+#EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/三沙卫视.png" group-title="📡卫视频道",三沙卫视
+https://t.freetv.fun/live/san-sha-wei-shi-6.m3u8
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
 http://81.69.15.31:8880/play/45.m3u8
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
@@ -1022,41 +1018,41 @@ http://81.69.15.31:8880/play/472.m3u8
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
 http://81.69.15.31:8880/play/604.m3u8
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
-http://114.241.106.139:85/tsfile/live/30/1030_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
 http://114.241.106.76:85/tsfile/live/30/1030_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
-http://120.198.84.146:9901/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
+http://114.241.106.139:85/tsfile/live/30/1030_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津卫视.png" group-title="📡卫视频道",天津卫视
+http://117.85.57.55:60001/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
 http://81.69.15.31:8880/play/65.m3u8
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
 http://81.69.15.31:8880/play/629.m3u8
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
-https://iptv.catvod.com/catvod?id=%E8%A5%BF%E8%97%8F%E5%8D%AB%E8%A7%86&line=1
-#EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=xzws
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
-http://122.224.58.42:85/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0
+http://107.150.60.122/live/xzws.m3u8
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
-http://154.12.36.187:656/index.php?token=2025&id=xzws
+http://113.234.201.199:9003/hls/52/index.m3u8
+#EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
+http://14.153.167.43:4022/rtp/239.77.1.26:5146
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
 http://14.153.167.43:4022/rtp/239.77.0.46:5146
 #EXTINF:-1 tvg-name="西藏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/西藏卫视.png" group-title="📡卫视频道",西藏卫视
-http://14.153.167.43:4022/rtp/239.77.1.26:5146
+http://183.189.218.177:888/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 http://81.69.15.31:8880/play/627.m3u8
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=xjws
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
-http://122.224.58.42:85/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
+http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
-http://154.12.36.187:656/index.php?token=2025&id=xjws
+http://36.158.75.239:8088/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 http://14.153.167.43:4022/rtp/239.253.43.202:5146
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
-http://14.153.167.43:4022/rtp/239.77.0.47:5146
-#EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 http://14.153.167.43:4022/rtp/239.77.1.25:5146
+#EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
+http://14.153.167.43:4022/rtp/239.77.0.47:5146
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 http://183.189.218.177:888/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
@@ -1068,15 +1064,13 @@ http://81.69.15.31:8880/play/528.m3u8
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
 http://81.69.15.31:8880/play/622.m3u8
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
-http://183.129.255.66:8480/hls/40/index.m3u8
+https://www.zijincao.cc/iptv/qiha/ysp.php?id=ynws
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
 http://125.43.255.200:9901/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
-http://154.12.36.187:656/index.php?token=2025&id=ynws
+http://113.234.201.199:9003/hls/45/index.m3u8
 #EXTINF:-1 tvg-name="云南卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南卫视.png" group-title="📡卫视频道",云南卫视
-http://14.153.167.43:4022/rtp/239.253.43.100:5146
-#EXTINF:-1 tvg-name="南京信息" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京信息.png" group-title="☘️江苏频道",南京信息
-http://154.12.36.187:656/index.php?token=2025&id=njxwzhpd
+http://59.39.89.130:60901/tsfile/live/0125_18.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="南京信息" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京信息.png" group-title="☘️江苏频道",南京信息
 http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8
 #EXTINF:-1 tvg-name="南京信息" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京信息.png" group-title="☘️江苏频道",南京信息
@@ -1089,8 +1083,6 @@ https://mgtv.ottiptv.cc/migu/838109047.m3u8?migutoken=d3d943815e6d6e9e9493a9b4b1
 http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=202509190801346040f34e796a43e3821e1db9273c556a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=de89fe41d47757280f2c68af5d15033a&ddCalcu=ad3ee3810985f01ed451fda48767c527f208
 #EXTINF:-1 tvg-name="南京信息" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京信息.png" group-title="☘️江苏频道",南京信息
 http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=20251023080141b90781bc871243ca9ccefdd19990364a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=147e2c56380633b791b7bb2fc8bdccc9&ddCalcu=91c4ec72ce8d20bc85c6f328b0b673b31b97
-#EXTINF:-1 tvg-name="南京十八" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京十八.png" group-title="☘️江苏频道",南京十八
-http://154.12.36.187:656/index.php?token=2025&id=nj18pd
 #EXTINF:-1 tvg-name="南京十八" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京十八.png" group-title="☘️江苏频道",南京十八
 https://mgtv.ottiptv.cc/migu/838151753.m3u8?migutoken=e1c3c9e2e67541d90ea94c4c917f96ecf43c6c0ae7c616929d8676e7c14bc5587ba870ce22575333640bfff61b05d4d468f6564c6251023f1ad20957cfe3b2c12e71b4662f83dce5d920a86c29
 #EXTINF:-1 tvg-name="南京十八" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京十八.png" group-title="☘️江苏频道",南京十八
@@ -1105,8 +1097,6 @@ http://ott.mobaibox.com/PLTV/3/224/3221227719/index.m3u8
 http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8
 #EXTINF:-1 tvg-name="南京少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京少儿.png" group-title="☘️江苏频道",南京少儿
 http://ott.mobaibox.com/PLTV/4/224/3221227733/index.m3u8
-#EXTINF:-1 tvg-name="南京教科" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京教科.png" group-title="☘️江苏频道",南京教科
-http://154.12.36.187:656/index.php?token=2025&id=njjkpd
 #EXTINF:-1 tvg-name="南京教科" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京教科.png" group-title="☘️江苏频道",南京教科
 http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8
 #EXTINF:-1 tvg-name="南京教科" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/南京教科.png" group-title="☘️江苏频道",南京教科
@@ -1144,11 +1134,7 @@ http://www.frankgb.cn:4022/udp/239.49.8.117:8000
 #EXTINF:-1 tvg-name="江苏公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏公共.png" group-title="☘️江苏频道",江苏公共
 http://81.69.15.31:8880/play/124.m3u8
 #EXTINF:-1 tvg-name="江苏公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏公共.png" group-title="☘️江苏频道",江苏公共
-http://154.12.36.187:656/index.php?token=2025&id=ggxwpd
-#EXTINF:-1 tvg-name="江苏公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏公共.png" group-title="☘️江苏频道",江苏公共
 http://17752995.xyz:51111/626064693
-#EXTINF:-1 tvg-name="江苏城市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏城市.png" group-title="☘️江苏频道",江苏城市
-http://154.12.36.187:656/index.php?token=2025&id=jscspd
 #EXTINF:-1 tvg-name="江苏城市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏城市.png" group-title="☘️江苏频道",江苏城市
 http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=202509030900312c5ad926e30449e5b9405f27a3fde9a6&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=3712225a575d903704881b6443f50a06&ddCalcu=6307va1a02x52af2354a4567b51d89804307&sv=10004&ct=android
 #EXTINF:-1 tvg-name="江苏城市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏城市.png" group-title="☘️江苏频道",江苏城市
@@ -1300,9 +1286,9 @@ http://3739115337.cloudvdn.com/a.m3u8?domain=siyang-tv-hls.cm.jstv.com&player=nw
 #EXTINF:-1 tvg-name="泗阳资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/泗阳资讯.png" group-title="☘️江苏频道",泗阳资讯
 http://81.69.15.31:8880/play/1580.m3u8
 #EXTINF:-1 tvg-name="泗阳资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/泗阳资讯.png" group-title="☘️江苏频道",泗阳资讯
-http://siyang-tv-hls.cm.jstv.com/siyang-tv/siyangzx.m3u8?zjiangsd
-#EXTINF:-1 tvg-name="泗阳资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/泗阳资讯.png" group-title="☘️江苏频道",泗阳资讯
 http://siyang-tv-hls.cm.jstv.com/siyang-tv/siyangzx.m3u8
+#EXTINF:-1 tvg-name="泗阳资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/泗阳资讯.png" group-title="☘️江苏频道",泗阳资讯
+http://siyang-tv-hls.cm.jstv.com/siyang-tv/siyangzx.m3u8?zjiangsd
 #EXTINF:-1 tvg-name="涟水电视台综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/涟水电视台综合.png" group-title="☘️江苏频道",涟水电视台综合
 https://lianshui-tv-hls.cm.jstv.com:443/lianshui-tv/lsxw.m3u8
 #EXTINF:-1 tvg-name="涟水电视台综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/涟水电视台综合.png" group-title="☘️江苏频道",涟水电视台综合
@@ -1372,17 +1358,17 @@ http://81.69.15.31:8880/play/1567.m3u8
 #EXTINF:-1 tvg-name="苏州生活资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州生活资讯.png" group-title="☘️江苏频道",苏州生活资讯
 http://live-auth.51kandianshi.com/szgd/csztv3.m3u8
 #EXTINF:-1 tvg-name="苏州生活资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州生活资讯.png" group-title="☘️江苏频道",苏州生活资讯
-https://live-auth.51kandianshi.com/szgd/csztv5.m3u8
-#EXTINF:-1 tvg-name="苏州生活资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州生活资讯.png" group-title="☘️江苏频道",苏州生活资讯
 http://live-auth.51kandianshi.com/szgd/csztv5.m3u8
+#EXTINF:-1 tvg-name="苏州生活资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州生活资讯.png" group-title="☘️江苏频道",苏州生活资讯
+https://live-auth.51kandianshi.com/szgd/csztv5.m3u8
 #EXTINF:-1 tvg-name="苏州生活资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州生活资讯.png" group-title="☘️江苏频道",苏州生活资讯
 https://t.freetv.fun/live/su-zhou-sheng-huo-zi-xun.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 http://81.69.15.31:8880/play/1566.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
-https://live-auth.51kandianshi.com/szgd/csztv4.m3u8
-#EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 http://live-auth.51kandianshi.com/szgd/csztv4.m3u8
+#EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
+https://live-auth.51kandianshi.com/szgd/csztv4.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 https://t.freetv.fun/live/su-zhou-dian-ying-yu-le-xin-xi-1.flv
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
@@ -1390,9 +1376,9 @@ https://t.freetv.fun/live/su-zhou-yu-le.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 http://81.69.15.31:8880/play/1564.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
-https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
-#EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 http://live-auth.51kandianshi.com/szgd/csztv2.m3u8
+#EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
+https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 https://t.freetv.fun/live/su-zhou-she-hui-jing-ji.m3u8
 #EXTINF:-1 tvg-name="连云港新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/连云港新闻综合.png" group-title="☘️江苏频道",连云港新闻综合
@@ -1412,49 +1398,49 @@ http://81.69.15.31:8880/play/569.m3u8
 #EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
 http://81.69.15.31:8880/play/751.m3u8
 #EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
-http://120.198.84.146:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
 http://14.153.167.43:4022/rtp/239.77.0.114:5146
-#EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
-http://183.62.8.58:50085/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
 http://cdn.163189.xyz/163189/gdzj
 #EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
+http://120.198.84.146:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
 http://14.153.167.43:4022/rtp/239.77.0.1:5146
 #EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
-http://120.238.94.82:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+https://tv123.vvvv.ee/live.php?ch=c0a05ae5455
+#EXTINF:-1 tvg-name="广东珠江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东珠江.png" group-title="☘️广东频道",广东珠江
+https://tv123.vvvv.ee/live.php?ch=42dd78d8911
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 http://81.69.15.31:8880/play/650.m3u8
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 http://81.69.15.31:8880/play/752.m3u8
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
-http://120.198.84.146:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 http://14.153.167.43:4022/rtp/239.77.0.168:5146
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
-http://183.62.8.58:50085/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 http://14.153.167.43:4022/rtp/239.77.0.112:5146
+#EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
+http://183.237.95.108:9901/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 https://tv123.vvvv.ee/live.php?ch=60fedec3456
 #EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
 https://tv123.cc.cd/live.php/?ch=60fedec3456
+#EXTINF:-1 tvg-name="广东体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东体育.png" group-title="☘️广东频道",广东体育
+https://t.freetv.fun/live/yan-dong-ti-yu-3.m3u8
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
 http://81.69.15.31:8880/play/570.m3u8
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
-http://120.198.84.146:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
-http://120.238.94.82:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
+http://183.237.95.108:9901/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
 http://14.153.167.43:4022/rtp/239.77.0.173:5146
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
-http://38.75.136.137:98/gslb/dsdqpub/gdxw.m3u8?auth=testpub
+http://120.198.84.146:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
 https://t.freetv.fun/live/yan-dong-xin-wen.m3u8
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
 https://t.freetv.fun/live/yan-dong-xin-wen-4.m3u8
 #EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
 https://t.freetv.fun/live/yan-dong-xin-wen-6.m3u8
+#EXTINF:-1 tvg-name="广东新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东新闻.png" group-title="☘️广东频道",广东新闻
+https://t.freetv.fun/live/yan-dong-xin-wen-10.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="☘️广东频道",广东卫视
 http://81.69.15.31:8880/play/113.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="☘️广东频道",广东卫视
@@ -1474,6 +1460,8 @@ https://tv123.cc.cd/live.php/?ch=51789581909
 #EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
 http://120.198.84.146:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
+http://14.153.167.43:4022/rtp/239.77.0.225:5146
+#EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
 https://t.freetv.fun/live/yan-dong-min-sheng.m3u8
 #EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
 https://t.freetv.fun/live/yan-dong-min-sheng-3.m3u8
@@ -1485,16 +1473,10 @@ https://t.freetv.fun/live/yan-dong-min-sheng-1.m3u8
 https://t.freetv.fun/live/yan-dong-min-sheng-2.m3u8
 #EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
 https://t.freetv.fun/live/yan-dong-min-sheng-5.m3u8
-#EXTINF:-1 tvg-name="广东民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东民生.png" group-title="☘️广东频道",广东民生
-https://t.freetv.fun/live/yan-dong-min-sheng-7.m3u8
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
 http://81.69.15.31:8880/play/108.m3u8
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
 http://120.198.84.146:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
-http://183.237.95.108:9901/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
-http://222.128.55.152:9080/live/dwq.m3u8
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
 http://14.153.167.43:4022/rtp/239.77.0.215:5146
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
@@ -1503,6 +1485,10 @@ http://154.12.36.187:656/index.php?token=2025&id=dwqws
 https://t.freetv.fun/live/da-wan-qu-wei-shi.m3u8
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
 https://t.freetv.fun/live/da-wan-qu-wei-shi-2.m3u8
+#EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
+https://t.freetv.fun/live/da-wan-qu-wei-shi-6.m3u8
+#EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
+https://t.freetv.fun/live/da-wan-qu-wei-shi-7.m3u8
 #EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
 http://81.69.15.31:8880/play/572.m3u8
 #EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
@@ -1516,9 +1502,9 @@ http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab47
 #EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
 http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487
 #EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
-https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=aae0358e06f64d4db4d663321a3fa964&txTime=190def4db74
-#EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
 http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
+#EXTINF:-1 tvg-name="广州综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州综合.png" group-title="☘️广东频道",广州综合
+http://14.153.167.43:4022/rtp/239.253.43.71:5146
 #EXTINF:-1 tvg-name="广州影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州影视.png" group-title="☘️广东频道",广州影视
 http://81.69.15.31:8880/play/571.m3u8
 #EXTINF:-1 tvg-name="广州影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广州影视.png" group-title="☘️广东频道",广州影视
@@ -1537,6 +1523,8 @@ https://t.freetv.fun/live/yan-zhou-jing-sai-2.m3u8
 https://t.freetv.fun/live/yan-zhou-jing-sai-1.m3u8
 #EXTINF:-1 tvg-name="江门综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江门综合.png" group-title="☘️广东频道",江门综合
 http://14.153.167.43:4022/rtp/239.77.0.201:5146
+#EXTINF:-1 tvg-name="佛山综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/佛山综合.png" group-title="☘️广东频道",佛山综合
+http://14.153.167.43:4022/rtp/239.253.43.57:5146
 #EXTINF:-1 tvg-name="佛山综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/佛山综合.png" group-title="☘️广东频道",佛山综合
 https://t.freetv.fun/live/fo-shan-zong-he.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/深圳卫视.png" group-title="☘️广东频道",深圳卫视
@@ -1558,6 +1546,8 @@ https://tv123.vvvv.ee/live.php?ch=eb58a438906
 #EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
 http://81.69.15.31:8880/play/532.m3u8
 #EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
+http://14.153.167.43:4022/rtp/239.253.43.45:5146
+#EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
 https://t.freetv.fun/live/shan-tou-zong-he-gao-qing.m3u8
 #EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
 https://t.freetv.fun/live/shan-tou-zong-he-gao-qing-1.m3u8
@@ -1569,8 +1559,6 @@ https://t.freetv.fun/live/shan-tou-zong-he-gao-qing-5.m3u8
 https://t.freetv.fun/live/shan-tou-zong-he-gao-qing-7.m3u8
 #EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
 https://t.freetv.fun/live/shan-tou-zong-he-gao-qing-8.m3u8
-#EXTINF:-1 tvg-name="汕头综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头综合.png" group-title="☘️广东频道",汕头综合
-https://t.freetv.fun/live/shan-tou-zong-he-gao-qing-10.m3u8
 #EXTINF:-1 tvg-name="汕头经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头经济.png" group-title="☘️广东频道",汕头经济
 http://81.69.15.31:8880/play/533.m3u8
 #EXTINF:-1 tvg-name="汕头经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/汕头经济.png" group-title="☘️广东频道",汕头经济
@@ -1580,11 +1568,11 @@ https://t.freetv.fun/live/shan-tou-jing-ji.m3u8
 #EXTINF:-1 tvg-name="茂名综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/茂名综合.png" group-title="☘️广东频道",茂名综合
 http://14.153.167.43:4022/rtp/239.77.0.206:5146
 #EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
+http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
+#EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
 http://ali-m-l.cztv.com/channels/lantian/channel02/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
 https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
-#EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
-http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
 http://154.12.36.187:656/index.php?token=2025&id=zjqj
 #EXTINF:-1 tvg-name="浙江钱江" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江钱江.png" group-title="☘️浙江频道",浙江钱江
@@ -1632,9 +1620,9 @@ http://ls.qingting.fm/live/1099.m3u8
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
 http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
-http://154.12.36.187:656/index.php?token=2025&id=zjjjsh
-#EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
 https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
+#EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
+http://154.12.36.187:656/index.php?token=2025&id=zjjjsh
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
 http://ali-xwl.cztv.com/live/channel031080Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济生活.png" group-title="☘️浙江频道",浙江经济生活
@@ -1652,11 +1640,11 @@ https://t.freetv.fun/live/zhe-jiang-jiao-yu.m3u8
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
 http://ali-m-l.cztv.com/channels/lantian/channel06/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
-https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?
+http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
 http://ali-m-l.cztv.com/channels/lantian/channel06/720p.m3u8
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
-http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
+https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
 https://t.freetv.fun/live/zhe-jiang-min-sheng-2.m3u8
 #EXTINF:-1 tvg-name="浙江民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生.png" group-title="☘️浙江频道",浙江民生
@@ -1670,29 +1658,29 @@ http://81.69.15.31:8880/play/1545.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
 https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
-http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8
+http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
 https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
+http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8
+#EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
 http://183.129.255.66:8480/hls/25/index.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
-http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8
-#EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
-http://154.12.36.187:656/index.php?token=2025&id=zjxw
-#EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
 http://ali-xwl.cztv.com/live/channel071080Plxw.m3u8
+#EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江新闻.png" group-title="☘️浙江频道",浙江新闻
+https://t.freetv.fun/live/zhe-jiang-xin-wen-3.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 http://81.69.15.31:8880/play/1546.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
+#EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
+https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 http://183.129.255.66:8480/hls/23/index.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 http://154.12.36.187:656/index.php?token=2025&id=zjse
-#EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
-https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
 https://t.freetv.fun/live/zhe-jiang-shao-er-1.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江少儿.png" group-title="☘️浙江频道",浙江少儿
@@ -1708,11 +1696,11 @@ http://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江教科" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江教科.png" group-title="☘️浙江频道",浙江教科
 https://t.freetv.fun/live/zhe-jiang-jiao-ke.m3u8
 #EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
-http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
-#EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
 https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
 http://ali-m-l.cztv.com/channels/lantian/channel03/720p.m3u8
+#EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
+http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
 https://t.freetv.fun/live/zhe-jiang-jing-ji.m3u8
 #EXTINF:-1 tvg-name="浙江经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江经济.png" group-title="☘️浙江频道",浙江经济
@@ -1727,14 +1715,14 @@ http://81.69.15.31:8880/play/1547.m3u8
 https://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8
 #EXTINF:-1 tvg-name="之江纪录" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/之江纪录.png" group-title="☘️浙江频道",之江纪录
 https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
-#EXTINF:-1 tvg-name="之江纪录" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/之江纪录.png" group-title="☘️浙江频道",之江纪录
-http://154.12.36.187:656/index.php?token=2025&id=zjzjjl
+#EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
+https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8?
+#EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
+http://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
 https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
 http://ali-m-l.cztv.com/channels/lantian/channel010/720p.m3u8
-#EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
-https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
 http://154.12.36.187:656/index.php?token=2025&id=zjgj
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
@@ -1743,8 +1731,6 @@ https://t.freetv.fun/live/zhe-jiang-guo-ji.m3u8
 https://t.freetv.fun/live/zhe-jiang-guo-ji-9.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
 https://t.freetv.fun/live/zhe-jiang-guo-ji-4.m3u8
-#EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江国际.png" group-title="☘️浙江频道",浙江国际
-https://ali-xwl.cztv.com/live/channel101080Plxw.m3u8
 #EXTINF:-1 tvg-name="嘉兴新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/嘉兴新闻综合.png" group-title="☘️浙江频道",嘉兴新闻综合
 http://tvfile.jyrmt.cn:80/nmip-media/channellive/channel104452/playlist.m3u8
 #EXTINF:-1 tvg-name="嘉兴新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/嘉兴新闻综合.png" group-title="☘️浙江频道",嘉兴新闻综合
@@ -1764,8 +1750,6 @@ http://ali-m-l.cztv.com/channels/lantian/channel003/720p.m3u8
 #EXTINF:-1 tvg-name="浙江留学" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江留学.png" group-title="☘️浙江频道",浙江留学
 http://ali-vl.cztv.com/channels/lantian/channel009/360p.m3u8
 #EXTINF:-1 tvg-name="浙江民生休闲" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生休闲.png" group-title="☘️浙江频道",浙江民生休闲
-http://154.12.36.187:656/index.php?token=2025&id=zjmsxx
-#EXTINF:-1 tvg-name="浙江民生休闲" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生休闲.png" group-title="☘️浙江频道",浙江民生休闲
 https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江民生休闲" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生休闲.png" group-title="☘️浙江频道",浙江民生休闲
 https://t.freetv.fun/live/zhe-jiang-min-sheng-2.m3u8
@@ -1779,12 +1763,12 @@ https://t.freetv.fun/live/zhe-jiang-min-sheng-xiu-xian-2.m3u8
 https://t.freetv.fun/live/zhe-jiang-min-sheng-xiu-xian.m3u8
 #EXTINF:-1 tvg-name="浙江民生休闲" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生休闲.png" group-title="☘️浙江频道",浙江民生休闲
 https://t.freetv.fun/live/zhe-jiang-min-sheng-xiu-xian-1.m3u8
+#EXTINF:-1 tvg-name="浙江民生休闲" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江民生休闲.png" group-title="☘️浙江频道",浙江民生休闲
+http://ali-xwl.cztv.com/live/channel061080Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江数码时代" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江数码时代.png" group-title="☘️浙江频道",浙江数码时代
 http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8
 #EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江教科影视.png" group-title="☘️浙江频道",浙江教科影视
 http://ali-m-l.cztv.com/channels/lantian/channel04/1080p.m3u8
-#EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江教科影视.png" group-title="☘️浙江频道",浙江教科影视
-https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江教科影视.png" group-title="☘️浙江频道",浙江教科影视
 http://154.12.36.187:656/index.php?token=2025&id=zjjkys
 #EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/浙江教科影视.png" group-title="☘️浙江频道",浙江教科影视
@@ -1852,8 +1836,6 @@ http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8
 #EXTINF:-1 tvg-name="绍兴电视台公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴电视台公共.png" group-title="☘️浙江频道",绍兴电视台公共
 http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1 tvg-name="绍兴新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴新闻综合.png" group-title="☘️浙江频道",绍兴新闻综合
-http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8?zzhed
-#EXTINF:-1 tvg-name="绍兴新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴新闻综合.png" group-title="☘️浙江频道",绍兴新闻综合
 https://t.freetv.fun/live/shao-xing-xin-wen-zong-he-1-1.m3u8
 #EXTINF:-1 tvg-name="绍兴新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴新闻综合.png" group-title="☘️浙江频道",绍兴新闻综合
 https://t.freetv.fun/live/shao-xing-xin-wen-zong-he-2.m3u8
@@ -1869,10 +1851,6 @@ https://t.freetv.fun/live/shao-xing-xin-wen-1.m3u8
 https://t.freetv.fun/live/shao-xing-wen-hua-ying-yuan-2.m3u8
 #EXTINF:-1 tvg-name="绍兴文化影视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴文化影视.png" group-title="☘️浙江频道",绍兴文化影视
 https://t.freetv.fun/live/shao-xing-wen-hua-ying-shi-1.m3u8
-#EXTINF:-1 tvg-name="绍兴公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴公共.png" group-title="☘️浙江频道",绍兴公共
-http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8
-#EXTINF:-1 tvg-name="绍兴公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴公共.png" group-title="☘️浙江频道",绍兴公共
-http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8?zzhed
 #EXTINF:-1 tvg-name="绍兴公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴公共.png" group-title="☘️浙江频道",绍兴公共
 https://t.freetv.fun/live/shao-xing-gong-gong-2.m3u8
 #EXTINF:-1 tvg-name="绍兴公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/绍兴公共.png" group-title="☘️浙江频道",绍兴公共
@@ -1984,7 +1962,7 @@ http://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8
 #EXTINF:-1 tvg-name="上虞文化影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/上虞文化影院.png" group-title="☘️浙江频道",上虞文化影院
 http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8
 #EXTINF:-1 tvg-name="北京卡酷少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京卡酷少儿.png" group-title="☘️北京频道",北京卡酷少儿
-http://154.12.36.187:656/index.php?token=2025&id=kkse
+http://36.158.75.239:8088/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="北京卡酷少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京卡酷少儿.png" group-title="☘️北京频道",北京卡酷少儿
 http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225730/index.m3u8?servicetype=1
 #EXTINF:-1 tvg-name="北京卡酷少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京卡酷少儿.png" group-title="☘️北京频道",北京卡酷少儿
@@ -1998,9 +1976,9 @@ http://81.69.15.31:8880/play/1802.m3u8
 #EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
 https://satellitepull.cnr.cn/live/wxbjxwgb/playlist.m3u8
 #EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
-http://154.12.36.187:656/index.php?token=2025&id=bjxw
-#EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
 http://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv9_1/index.m3u8?adapt=0&BR=audio
+#EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
+http://154.12.36.187:656/index.php?token=2025&id=bjxw
 #EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
 http://k.061899.xyz/m.php?id=bjxw
 #EXTINF:-1 tvg-name="北京新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京新闻.png" group-title="☘️北京频道",北京新闻
@@ -2008,21 +1986,25 @@ https://ls.qingting.fm/live/339/64k.m3u8
 #EXTINF:-1 tvg-name="北京生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京生活.png" group-title="☘️北京频道",北京生活
 http://81.69.15.31:8880/play/1807.m3u8
 #EXTINF:-1 tvg-name="北京生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京生活.png" group-title="☘️北京频道",北京生活
-http://154.12.36.187:656/index.php?token=2025&id=bjsh
+http://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv7_1/index.m3u8?adapt=0&BR=audio
 #EXTINF:-1 tvg-name="北京生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京生活.png" group-title="☘️北京频道",北京生活
 https://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv7_1/index.m3u8?adapt=0&BR=audio
 #EXTINF:-1 tvg-name="北京生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京生活.png" group-title="☘️北京频道",北京生活
-http://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv7_1/index.m3u8?adapt=0&BR=audio
+http://154.12.36.187:656/index.php?token=2025&id=bjsh
 #EXTINF:-1 tvg-name="北京生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京生活.png" group-title="☘️北京频道",北京生活
 http://k.061899.xyz/m.php?id=bjsh
 #EXTINF:-1 tvg-name="北京科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京科教.png" group-title="☘️北京频道",北京科教
 http://81.69.15.31:8880/play/1804.m3u8
+#EXTINF:-1 tvg-name="北京科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京科教.png" group-title="☘️北京频道",北京科教
+http://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv3_1/index.m3u8?adapt=0&BR=audio
 #EXTINF:-1 tvg-name="北京科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京科教.png" group-title="☘️北京频道",北京科教
 http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=btv3&P2PChannelID=pd://cctv_p2p_hdbtv3
 #EXTINF:-1 tvg-name="北京科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京科教.png" group-title="☘️北京频道",北京科教
 http://k.061899.xyz/m.php?id=bjjs
 #EXTINF:-1 tvg-name="北京财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京财经.png" group-title="☘️北京频道",北京财经
 http://81.69.15.31:8880/play/1806.m3u8
+#EXTINF:-1 tvg-name="北京财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京财经.png" group-title="☘️北京频道",北京财经
+http://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv5_1/index.m3u8?adapt=0&BR=audio
 #EXTINF:-1 tvg-name="北京财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京财经.png" group-title="☘️北京频道",北京财经
 http://154.12.36.187:656/index.php?token=2025&id=bjcj
 #EXTINF:-1 tvg-name="北京财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京财经.png" group-title="☘️北京频道",北京财经
@@ -2034,8 +2016,6 @@ http://183.129.255.66:8480/hls/50/index.m3u8
 #EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
 http://rihou.cc:555/tv/[Pd]重温经典
 #EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
-http://116.77.33.98:44330/tsfile/live/1015_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
 https://tv123.vvvv.ee/live.php?ch=cd4286fd454
 #EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
 https://tv123.cc.cd/live.php/?ch=cd4286fd454
@@ -2045,6 +2025,8 @@ https://cdn.jdshipin.com/cwjd.php
 http://php.jdshipin.com:8880/TVOD/iptv.php?id=cwjd
 #EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
 https://tv123.vvvv.ee/live.php?ch=6c791f801218
+#EXTINF:-1 tvg-name="重温经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/重温经典.png" group-title="☘️北京频道",重温经典
+https://tv123.vvvv.ee/live.php?ch=d9ebf49c1272
 #EXTINF:-1 tvg-name="北京纪实科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京纪实科教.png" group-title="☘️北京频道",北京纪实科教
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227408/index.m3u8
 #EXTINF:-1 tvg-name="北京纪实科教" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/北京纪实科教.png" group-title="☘️北京频道",北京纪实科教
@@ -2090,6 +2072,8 @@ https://t.freetv.fun/live/shang-hai-du-shi.m3u8
 #EXTINF:-1 tvg-name="上海都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/上海都市.png" group-title="☘️上海频道",上海都市
 https://t.freetv.fun/live/shang-hai-du-shi-1.m3u8
 #EXTINF:-1 tvg-name="东方财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方财经.png" group-title="☘️上海频道",东方财经
+http://36.158.75.239:8088/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="东方财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方财经.png" group-title="☘️上海频道",东方财经
 http://154.12.36.187:656/index.php?token=2025&id=dfcj
 #EXTINF:-1 tvg-name="东方财经" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东方财经.png" group-title="☘️上海频道",东方财经
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226583/index.m3u8
@@ -2132,6 +2116,8 @@ http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225711/index.m3u8?service
 #EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/新闻综合.png" group-title="☘️上海频道",新闻综合
 https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
 #EXTINF:-1 tvg-name="欢笑剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/欢笑剧场.png" group-title="☘️上海频道",欢笑剧场
+http://36.158.75.239:8088/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="欢笑剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/欢笑剧场.png" group-title="☘️上海频道",欢笑剧场
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226704/index.m3u8
 #EXTINF:-1 tvg-name="法治天地" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/法治天地.png" group-title="☘️上海频道",法治天地
 http://81.69.15.31:8880/play/413.m3u8
@@ -2139,6 +2125,8 @@ http://81.69.15.31:8880/play/413.m3u8
 http://154.12.36.187:656/index.php?token=2025&id=fztd
 #EXTINF:-1 tvg-name="法治天地" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/法治天地.png" group-title="☘️上海频道",法治天地
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226655/index.m3u8
+#EXTINF:-1 tvg-name="生活时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/生活时尚.png" group-title="☘️上海频道",生活时尚
+http://36.158.75.239:8088/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="生活时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/生活时尚.png" group-title="☘️上海频道",生活时尚
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226570/index.m3u8
 #EXTINF:-1 tvg-name="生活时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/生活时尚.png" group-title="☘️上海频道",生活时尚
@@ -2160,9 +2148,9 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226144/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/都市剧场.png" group-title="☘️上海频道",都市剧场
 https://satellitepull.cnr.cn/live/wxcqxwgb/playlist.m3u8
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/都市剧场.png" group-title="☘️上海频道",都市剧场
-https://shcm-stream-cf1.stream.264788.xyz/cms001/ch00000090990000001203/index.m3u8?streamid=fd36352c039198fe0978687774e97e59&streamkey=0WsC3jqv5pZMcRRCygo4VTlOTvi9bTCwlnIuuJUBjnBWTwcjoCuCI96qfPqPDVNZ0aqEUXrCtmdYiA55XouMxl7kXeqYtnnZLSPxmTgKz4J1lElEFPNAHdBzm&token=1775754833-0c24e6f296307991-0-4b1ed6441088c73ad4569aca7aa649a5
+http://36.158.75.239:8088/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/都市剧场.png" group-title="☘️上海频道",都市剧场
-http://183.237.95.108:9901/tsfile/live/1069_1.m3u8?key=txiptv&playlive=1&authid=0
+https://shcm-stream-cf1.stream.264788.xyz/cms001/ch00000090990000001203/index.m3u8?streamid=fd36352c039198fe0978687774e97e59&streamkey=0WsC3jqv5pZMcRRCygo4VTlOTvi9bTCwlnIuuJUBjnBWTwcjoCuCI96qfPqPDVNZ0aqEUXrCtmdYiA55XouMxl7kXeqYtnnZLSPxmTgKz4J1lElEFPNAHdBzm&token=1775754833-0c24e6f296307991-0-4b1ed6441088c73ad4569aca7aa649a5
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/都市剧场.png" group-title="☘️上海频道",都市剧场
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226694/index.m3u8
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/都市剧场.png" group-title="☘️上海频道",都市剧场
@@ -2192,6 +2180,8 @@ http://hwottcdn.ln.chinamobile.com/PLTV/11/224/3221226761/index.m3u8#http://hwot
 #EXTINF:-1 tvg-name="辽宁经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁经济.png" group-title="☘️辽宁频道",辽宁经济
 http://81.69.15.31:8880/play/641.m3u8
 #EXTINF:-1 tvg-name="辽宁经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁经济.png" group-title="☘️辽宁频道",辽宁经济
+http://113.234.201.199:9003/hls/57/index.m3u8
+#EXTINF:-1 tvg-name="辽宁经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁经济.png" group-title="☘️辽宁频道",辽宁经济
 http://hwottcdn.ln.chinamobile.com/PLTV/11/224/3221226735/index.m3u8#http://hwottcdn.ln.chinamobile.com/PLTV/11/224/3221227322/index.m3u8
 #EXTINF:-1 tvg-name="辽宁都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁都市.png" group-title="☘️辽宁频道",辽宁都市
 http://81.69.15.31:8880/play/634.m3u8
@@ -2199,6 +2189,8 @@ http://81.69.15.31:8880/play/634.m3u8
 http://hwottcdn.ln.chinamobile.com/PLTV/11/224/3221226760/index.m3u8#http://hwottcdn.ln.chinamobile.com/PLTV/11/224/3221227355/index.m3u8
 #EXTINF:-1 tvg-name="辽宁都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁都市.png" group-title="☘️辽宁频道",辽宁都市
 https://ls.qingting.fm/live/1099/64k.m3u8
+#EXTINF:-1 tvg-name="湖南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南都市.png" group-title="☘️湖南频道",湖南都市
+http://36.158.75.239:8088/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南都市.png" group-title="☘️湖南频道",湖南都市
 http://154.12.36.187:656/index.php?token=2025&id=hunds
 #EXTINF:-1 tvg-name="湖南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南都市.png" group-title="☘️湖南频道",湖南都市
@@ -2211,6 +2203,8 @@ https://t.freetv.fun/live/hu-nan-du-shi-2.m3u8
 https://t.freetv.fun/live/hu-nan-du-shi-3.m3u8
 #EXTINF:-1 tvg-name="湖南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南都市.png" group-title="☘️湖南频道",湖南都市
 https://t.freetv.fun/live/hu-nan-du-shi-4.m3u8
+#EXTINF:-1 tvg-name="湖南经视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南经视.png" group-title="☘️湖南频道",湖南经视
+http://36.158.75.239:8088/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南经视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南经视.png" group-title="☘️湖南频道",湖南经视
 http://154.12.36.187:656/index.php?token=2025&id=hunjs
 #EXTINF:-1 tvg-name="湖南经视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南经视.png" group-title="☘️湖南频道",湖南经视
@@ -2226,6 +2220,8 @@ https://t.freetv.fun/live/hu-nan-jing-shi-4.m3u8
 #EXTINF:-1 tvg-name="湖南经视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南经视.png" group-title="☘️湖南频道",湖南经视
 https://t.freetv.fun/live/hu-nan-jing-shi-5.m3u8
 #EXTINF:-1 tvg-name="湖南电视剧" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
+http://36.158.75.239:8088/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="湖南电视剧" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
 http://154.12.36.187:656/index.php?token=2025&id=hndsj
 #EXTINF:-1 tvg-name="湖南电视剧" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
 https://t.freetv.fun/live/hu-nan-dian-shi-ju.m3u8
@@ -2240,17 +2236,23 @@ http://154.12.36.187:656/index.php?token=2025&id=hndy
 #EXTINF:-1 tvg-name="湖南电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南电影.png" group-title="☘️湖南频道",湖南电影
 https://t.freetv.fun/live/hu-nan-dian-ying.m3u8
 #EXTINF:-1 tvg-name="湖南爱晚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
+http://36.158.75.239:8088/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="湖南爱晚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
 http://154.12.36.187:656/index.php?token=2025&id=hungg
 #EXTINF:-1 tvg-name="湖南爱晚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
 https://t.freetv.fun/live/hu-nan-gong-gong.m3u8
 #EXTINF:-1 tvg-name="湖南爱晚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
 https://t.freetv.fun/live/hu-nan-gong-gong-1.m3u8
 #EXTINF:-1 tvg-name="湖南教育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南教育.png" group-title="☘️湖南频道",湖南教育
+http://36.158.75.239:8088/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="湖南教育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南教育.png" group-title="☘️湖南频道",湖南教育
 https://t.freetv.fun/live/hu-nan-jiao-yu.m3u8
 #EXTINF:-1 tvg-name="湖南教育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南教育.png" group-title="☘️湖南频道",湖南教育
 https://t.freetv.fun/live/hu-nan-jiao-yu-1.m3u8
 #EXTINF:-1 tvg-name="湖南教育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南教育.png" group-title="☘️湖南频道",湖南教育
 https://t.freetv.fun/live/hu-nan-jiao-yu-2.m3u8
+#EXTINF:-1 tvg-name="湖南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
+http://36.158.75.239:8088/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
 http://154.12.36.187:656/index.php?token=2025&id=hunyl
 #EXTINF:-1 tvg-name="湖南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
@@ -2265,8 +2267,6 @@ https://t.freetv.fun/live/hu-nan-yu-le-3.m3u8
 https://t.freetv.fun/live/hu-nan-yu-le-4.m3u8
 #EXTINF:-1 tvg-name="湖南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
 https://t.freetv.fun/live/hu-nan-yu-le-5.m3u8
-#EXTINF:-1 tvg-name="湖南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
-https://t.freetv.fun/live/hu-nan-yu-le-6.m3u8
 #EXTINF:-1 tvg-name="湖南国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南国际.png" group-title="☘️湖南频道",湖南国际
 http://154.12.36.187:656/index.php?token=2025&id=hungj
 #EXTINF:-1 tvg-name="湖南国际" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖南国际.png" group-title="☘️湖南频道",湖南国际
@@ -2288,13 +2288,13 @@ https://t.freetv.fun/live/hu-nan-gong-gong-1.m3u8
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://120.198.84.146:9901/tsfile/live/1065_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
-http://154.12.36.187:656/index.php?token=2025&id=jyjs
-#EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://14.153.167.43:4022/rtp/239.77.1.217:5146
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://14.153.167.43:4022/rtp/239.77.0.160:5146
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://183.237.95.108:9901/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
+http://154.12.36.187:656/index.php?token=2025&id=jyjs
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 https://t.freetv.fun/live/jin-ying-ji-shi.m3u8
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
@@ -2320,13 +2320,19 @@ http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226668/index.m3u8
 #EXTINF:-1 tvg-name="长沙新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙新闻综合.png" group-title="☘️湖南频道",长沙新闻综合
 http://ls.qingting.fm/live/4877.m3u8
 #EXTINF:-1 tvg-name="长沙新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙新闻.png" group-title="☘️湖南频道",长沙新闻
+http://36.158.75.239:8088/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="长沙新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙新闻.png" group-title="☘️湖南频道",长沙新闻
 http://154.12.36.187:656/index.php?token=2025&id=csxw
+#EXTINF:-1 tvg-name="长沙政法" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙政法.png" group-title="☘️湖南频道",长沙政法
+http://36.158.75.239:8088/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="长沙政法" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙政法.png" group-title="☘️湖南频道",长沙政法
 http://154.12.36.187:656/index.php?token=2025&id=cszf
 #EXTINF:-1 tvg-name="长沙女性" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长沙女性.png" group-title="☘️湖南频道",长沙女性
 http://154.12.36.187:656/index.php?token=2025&id=csnx
 #EXTINF:-1 tvg-name="益阳公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/益阳公共.png" group-title="☘️湖南频道",益阳公共
 http://175.11.73.113:9999/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="娄底综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/娄底综合.png" group-title="☘️湖南频道",娄底综合
+http://36.158.75.239:8088/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖北综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖北综合.png" group-title="☘️湖北频道",湖北综合
 https://t.freetv.fun/live/hu-bei-zong-he-1.m3u8
 #EXTINF:-1 tvg-name="湖北综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/湖北综合.png" group-title="☘️湖北频道",湖北综合
@@ -2494,9 +2500,9 @@ https://t.freetv.fun/live/tian-jin-wei-shi-16.m3u8
 #EXTINF:-1 tvg-name="乐至综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/乐至综合.png" group-title="☘️四川频道",乐至综合
 http://175.155.106.72:89/live1/live1.m3u8?zsicd;http://rmlive.lzxrmtzx.com/live1/live1.m3u8?zsicd
 #EXTINF:-1 tvg-name="乐至综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/乐至综合.png" group-title="☘️四川频道",乐至综合
-http://175.155.106.72:89/live1/live1.m3u8?zsicd
-#EXTINF:-1 tvg-name="乐至综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/乐至综合.png" group-title="☘️四川频道",乐至综合
 http://175.155.106.72:89/live1/live1.m3u8
+#EXTINF:-1 tvg-name="乐至综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/乐至综合.png" group-title="☘️四川频道",乐至综合
+http://175.155.106.72:89/live1/live1.m3u8?zsicd
 #EXTINF:-1 tvg-name="井研综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/井研综合.png" group-title="☘️四川频道",井研综合
 http://tvfile.jyrmt.cn/nmip-media/channellive/channel104452/playlist.m3u8
 #EXTINF:-1 tvg-name="什邡新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/什邡新闻.png" group-title="☘️四川频道",什邡新闻
@@ -2598,9 +2604,9 @@ http://17752995.xyz:51111/956909289
 #EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
 http://81.69.15.31:8880/play/131.m3u8
 #EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
-http://154.12.36.187:656/index.php?token=2025&id=sxdsqcpd
-#EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
 http://154.12.36.187:656/index.php?token=2025&id=dsqc
+#EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
+http://154.12.36.187:656/index.php?token=2025&id=sxdsqcpd
 #EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
 https://mgtv.ottiptv.cc/migu/956909358.m3u8?migutoken=c3931ea9d3d7ede24a9d13084dadcc55f7f21b114c6c584ca7defd6492ba46b7286dbd751d0f853f83e998e4b0349c62cf4bc570ac83667c4f6bd49a9411edc68e80c1d7f24da79a264d15912b
 #EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陕西都市青春.png" group-title="☘️陕西频道",陕西都市青春
@@ -2669,12 +2675,10 @@ http://satellitepull.cnr.cn/live/wx32fjdnjjgb/playlist.m3u8
 https://live.264788.xyz/channel/fujianzonghe?streamid=f614d92b7259456dde72c14924c6323a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 #EXTINF:-1 tvg-name="福建公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建公共.png" group-title="☘️福建频道",福建公共
 https://live.264788.xyz/channel/fujianxiangcungonggong?streamid=2987cc24bada6a8c25589409a6452d9e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
-#EXTINF:-1 tvg-name="福建公共" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建公共.png" group-title="☘️福建频道",福建公共
-https://live.264788.xyz/channel/fujianxiangcungonggong?streamid=1cf7fc3a8f6d160c33b43c2f9507a0cc&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
-#EXTINF:-1 tvg-name="福建旅游" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建旅游.png" group-title="☘️福建频道",福建旅游
-https://live.264788.xyz/channel/fujianlvyou?streamid=221239fcf3c7edb274f2f0760fe47f96&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 #EXTINF:-1 tvg-name="福建旅游" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建旅游.png" group-title="☘️福建频道",福建旅游
 https://live.264788.xyz/channel/fujianlvyou?streamid=8f26765ebf367079cef58c6b7752da1e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-name="福建旅游" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建旅游.png" group-title="☘️福建频道",福建旅游
+https://live.264788.xyz/channel/fujianlvyou?streamid=221239fcf3c7edb274f2f0760fe47f96&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 #EXTINF:-1 tvg-name="福建少儿" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/福建少儿.png" group-title="☘️福建频道",福建少儿
 http://php.jdshipin.com:8880/fujian.php?id=8
 #EXTINF:-1 tvg-name="海南新闻" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/海南新闻.png" group-title="☘️海南频道",海南新闻
@@ -2704,7 +2708,7 @@ http://81.69.15.31:8880/play/1518.m3u8
 #EXTINF:-1 tvg-name="梨园" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/梨园.png" group-title="☘️河南频道",梨园
 https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=41543190cdf375f1c73207222bb96542&wsTime=1769313549
 #EXTINF:-1 tvg-name="梨园" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/梨园.png" group-title="☘️河南频道",梨园
-http://154.12.36.187:656/index.php?token=2025&id=hnly
+http://113.234.201.199:9003/hls/62/index.m3u8
 #EXTINF:-1 tvg-name="梨园" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/梨园.png" group-title="☘️河南频道",梨园
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226561/index.m3u8
 #EXTINF:-1 tvg-name="梨园" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/梨园.png" group-title="☘️河南频道",梨园
@@ -2854,13 +2858,9 @@ https://t.freetv.fun/live/he-nan-du-shi.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
 http://81.69.15.31:8880/play/1512.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
-http://1.94.31.214/php/hntv.php?id=hnms
-#EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
 http://42.237.163.143:9901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
 http://125.43.255.200:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
-http://154.12.36.187:656/index.php?token=2025&id=hnms
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227268/index.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河南民生.png" group-title="☘️河南频道",河南民生
@@ -2946,8 +2946,6 @@ http://81.69.15.31:8880/play/1590.m3u8
 #EXTINF:-1 tvg-name="河北都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北都市.png" group-title="☘️河北频道",河北都市
 http://81.69.15.31:8880/play/1591.m3u8
 #EXTINF:-1 tvg-name="河北都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北都市.png" group-title="☘️河北频道",河北都市
-https://radio.pull.hebtv.com/live/hebnczx.m3u8
-#EXTINF:-1 tvg-name="河北都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北都市.png" group-title="☘️河北频道",河北都市
 https://tv1288.xyz/hbws.php?id=hbds
 #EXTINF:-1 tvg-name="河北都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/河北都市.png" group-title="☘️河北频道",河北都市
 https://tv1288.xyz/hbws.php?id=10516509​
@@ -2998,13 +2996,11 @@ http://110.153.180.106:55555/out_2/index.m3u8
 #EXTINF:-1 tvg-name="伊犁维吾尔" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁维吾尔.png" group-title="☘️新疆频道",伊犁维吾尔
 http://110.153.180.106:55555/out_2/index.m3u8?zxinjd
 #EXTINF:-1 tvg-name="伊犁哈萨克" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁哈萨克.png" group-title="☘️新疆频道",伊犁哈萨克
-http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
-#EXTINF:-1 tvg-name="伊犁哈萨克" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁哈萨克.png" group-title="☘️新疆频道",伊犁哈萨克
 http://110.153.180.106:55555/out_3/index.m3u8
+#EXTINF:-1 tvg-name="伊犁哈萨克" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁哈萨克.png" group-title="☘️新疆频道",伊犁哈萨克
+http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
 #EXTINF:-1 tvg-name="伊犁经济法制" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁经济法制.png" group-title="☘️新疆频道",伊犁经济法制
 http://110.153.180.106:55555/out_4/index.m3u8?zxinjd
-#EXTINF:-1 tvg-name="伊犁经济法制" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/伊犁经济法制.png" group-title="☘️新疆频道",伊犁经济法制
-http://110.153.180.106:55555/out_4/index.m3u8
 #EXTINF:-1 tvg-name="兵团八师石河子新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵团八师石河子新闻综合.png" group-title="☘️新疆频道",兵团八师石河子新闻综合
 http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd
 #EXTINF:-1 tvg-name="奎屯哈萨克语" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/奎屯哈萨克语.png" group-title="☘️新疆频道",奎屯哈萨克语
@@ -3128,9 +3124,9 @@ https://ls.qingting.fm/live/1841/64k.m3u8
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
 http://81.69.15.31:8880/play/644.m3u8
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
-https://srs.iyb983.cn/video/CYS/index.m3u8
-#EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
 https://srs.iyb983.cn:443/video/CYS/index.m3u8
+#EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
+https://srs.iyb983.cn/video/CYS/index.m3u8
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
 http://154.12.36.187:656/index.php?token=2025&id=ybws
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/延边卫视.png" group-title="☘️吉林频道",延边卫视
@@ -3146,9 +3142,9 @@ https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/7e8474e6daea44ccaa5aa2300191439e/i
 #EXTINF:-1 tvg-name="吉林生活" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林生活.png" group-title="☘️吉林频道",吉林生活
 https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/0a76740c72b74fabae611845aa21e06a/index.m3u8
 #EXTINF:-1 tvg-name="吉林乡村" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林乡村.png" group-title="☘️吉林频道",吉林乡村
-https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8
-#EXTINF:-1 tvg-name="吉林乡村" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林乡村.png" group-title="☘️吉林频道",吉林乡村
 https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/3ffc4824dce54b92be185555923ce382/index.m3u8
+#EXTINF:-1 tvg-name="吉林乡村" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/吉林乡村.png" group-title="☘️吉林频道",吉林乡村
+https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8
 #EXTINF:-1 tvg-name="长白朝语" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/长白朝语.png" group-title="☘️吉林频道",长白朝语
 http://hplayer1.juyun.tv:80/camera/11344136.m3u8
 #EXTINF:-1 tvg-name="靖宇综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/靖宇综合.png" group-title="☘️吉林频道",靖宇综合
@@ -3175,6 +3171,8 @@ https://zb-live.ynurl.com/yimen/3b75a2f9-7941-46b7-992d-a9796fbca5fe.m3u8
 https://zb-live.ynurl.com/tonghai/3bfe3a9e-48e6-4c1e-8770-1df66447cc6c.m3u8
 #EXTINF:-1 tvg-name="陇川综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/陇川综合.png" group-title="☘️云南频道",陇川综合
 https://zb-live.ynurl.com/longchuan/58f88df3-605e-4c57-865c-8e8f85241ca1.m3u8
+#EXTINF:-1 tvg-name="云南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南都市.png" group-title="☘️云南频道",云南都市
+https://hwapi.yntv.net/62hdvf/rjwt14.m3u8
 #EXTINF:-1 tvg-name="云南都市" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南都市.png" group-title="☘️云南频道",云南都市
 https://t.freetv.fun/live/yun-nan-du-shi.m3u8
 #EXTINF:-1 tvg-name="云南娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/云南娱乐.png" group-title="☘️云南频道",云南娱乐
@@ -3252,17 +3250,17 @@ http://81.69.15.31:8880/play/713.m3u8
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
 http://81.69.15.31:8880/play/745.m3u8
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-http://120.198.84.146:9901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
+https://mytv.cdn.loc.cc/o12.php?id=fct
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
 http://o11.163189.xyz/stream/tvb/fct/
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-https://mytv.cdn.loc.cc/o12.php?id=fct
+http://120.198.84.146:9901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-http://120.238.94.82:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-http://116.77.33.98:44330/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0
+http://183.62.8.58:50085/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
 https://tv123.vvvv.ee/live.php?ch=2007a774428
+#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/翡翠台.png" group-title="🌊港·澳·台",翡翠台
+https://tv123.vvvv.ee/live.php?ch=206616de429
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
 http://81.69.15.31:8880/play/715.m3u8
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
@@ -3270,23 +3268,23 @@ http://81.69.15.31:8880/play/749.m3u8
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
 http://120.198.84.146:9901/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
-http://o11.163189.xyz/stream/tvb/mzt/
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
-http://120.238.94.82:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
-https://mytv.cdn.loc.cc/o12.php?id=mzt
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
-http://183.237.95.108:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
 https://tv123.vvvv.ee/live.php?ch=53c61cd9437
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
+https://tv123.vvvv.ee/live.php?ch=25fef51d438
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
+https://tv123.vvvv.ee/live.php?ch=d0316159439
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
+https://tv123.cc.cd/live.php/?ch=53c61cd9437
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/明珠台.png" group-title="🌊港·澳·台",明珠台
+https://tv123.cc.cd/live.php/?ch=25fef51d438
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
 http://81.69.15.31:8880/play/740.m3u8
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
-https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk#http://cdn6.163189.xyz/163189/fhzw#http://vpn.clnas0001.top:9981/stream/channelid/2064247055?profile=pass
-#EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
 https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk#http://cdn6.163189.xyz/163189/fhzw
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
-http://rihou.cc:555/tv/[Pd]凤凰中文
+https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=2f797f6963d4df5f391f48edfa50ff59&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk#http://cdn6.163189.xyz/163189/fhzw#http://vpn.clnas0001.top:9981/stream/channelid/2064247055?profile=pass
+#EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
+http://120.198.84.146:9901/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
 https://tv123.vvvv.ee/live.php?ch=24055575448
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰中文.png" group-title="🌊港·澳·台",凤凰中文
@@ -3300,8 +3298,6 @@ http://81.69.15.31:8880/play/741.m3u8
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
 https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk#http://cdn6.163189.xyz/163189/fhzx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
-http://rihou.cc:555/tv/[Pd]凤凰资讯
-#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
 https://tv123.vvvv.ee/live.php?ch=0c1f24dd449
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
 https://tv123.cc.cd/live.php/?ch=0c1f24dd449
@@ -3311,14 +3307,14 @@ https://t.freetv.fun/live/feng-huang-zi-xun.m3u8
 http://php.jdshipin.com:8880/smt.php?id=phoenixinfo_hd
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
 http://r.jdshipin.com/0Rp07
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
+https://tv123.vvvv.ee/live.php?ch=a3b4245e1216
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 http://81.69.15.31:8880/play/742.m3u8
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 http://81.69.15.31:8880/play/743.m3u8
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 http://cdn6.163189.xyz/163189/fhhk
-#EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
-http://rihou.cc:555/tv/[Pd]凤凰香港
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 https://tv123.vvvv.ee/live.php?ch=71af2258450
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
@@ -3327,6 +3323,8 @@ https://tv123.vvvv.ee/live.php?ch=2d20ba23681
 https://tv123.cc.cd/live.php/?ch=71af2258450
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 https://tv123.cc.cd/live.php/?ch=2d20ba23681
+#EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
+https://t.freetv.fun/live/feng-huang-xiang-gang-1.php
 #EXTINF:-1 tvg-name="凤凰卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰卫视.png" group-title="🌊港·澳·台",凤凰卫视
 https://tv123.vvvv.ee/live.php?ch=7b3c52cc687
 #EXTINF:-1 tvg-name="凤凰卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/凤凰卫视.png" group-title="🌊港·澳·台",凤凰卫视
@@ -3602,8 +3600,6 @@ http://81.69.15.31:8880/play/651.m3u8
 #EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
 http://81.69.15.31:8880/play/652.m3u8
 #EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
-https://cdn15.163189.xyz/163189/9c893bb003e1c7de
-#EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
 https://tv123.vvvv.ee/live.php?ch=0c7d3085453
 #EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
 https://tv123.cc.cd/live.php/?ch=0c7d3085453
@@ -3613,16 +3609,14 @@ http://k.061899.xyz/m.php?id=wxty
 https://tv123.vvvv.ee/live.php?ch=8e765ed6453
 #EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
 https://tv123.cc.cd/live.php/?ch=8e765ed6453
-#EXTINF:-1 tvg-name="体育赛事" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/体育赛事.png" group-title="🏀体育频道",体育赛事
-http://183.237.95.108:9901/tsfile/live/1078_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="五星体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/五星体育.png" group-title="🏀体育频道",五星体育
+https://tv123.vvvv.ee/live.php?ch=47afd2c92012
 #EXTINF:-1 tvg-name="体育赛事" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/体育赛事.png" group-title="🏀体育频道",体育赛事
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226196/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="体育赛事" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/体育赛事.png" group-title="🏀体育频道",体育赛事
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226081/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/劲爆体育.png" group-title="🏀体育频道",劲爆体育
-http://120.238.94.82:9901/tsfile/live/1086_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/劲爆体育.png" group-title="🏀体育频道",劲爆体育
-http://183.237.95.108:9901/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&authid=0
+http://36.158.75.239:8088/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/劲爆体育.png" group-title="🏀体育频道",劲爆体育
 http://k.061899.xyz/m.php?id=jbty
 #EXTINF:-1 tvg-name="超级体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/超级体育.png" group-title="🏀体育频道",超级体育
@@ -3647,6 +3641,8 @@ https://t.freetv.fun/live/yan-zhou-jing-sai-1.m3u8
 http://81.69.15.31:8880/play/110.m3u8
 #EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁体育.png" group-title="🏀体育频道",辽宁体育
 http://81.69.15.31:8880/play/636.m3u8
+#EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁体育.png" group-title="🏀体育频道",辽宁体育
+http://113.234.201.199:9003/hls/56/index.m3u8
 #EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/辽宁体育.png" group-title="🏀体育频道",辽宁体育
 http://17752995.xyz:51111/962067526
 #EXTINF:-1 tvg-name="天津体育" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天津体育.png" group-title="🏀体育频道",天津体育
@@ -3696,8 +3692,6 @@ http://w.yao87.com:4022/rtp/239.76.254.52:9000
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="🏀体育频道",风云足球
 http://www.qfly9236.cn:8888/rtp/239.253.92.110:8061
 #EXTINF:-1 tvg-name="足球频道" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/足球频道.png" group-title="🏀体育频道",足球频道
-http://183.237.95.108:9901/tsfile/live/1073_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="足球频道" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/足球频道.png" group-title="🏀体育频道",足球频道
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226137/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="足球频道" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/足球频道.png" group-title="🏀体育频道",足球频道
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226134/1/index.m3u8?fmt=ts2hls
@@ -3708,13 +3702,13 @@ http://14.153.167.43:4022/rtp/239.253.43.98:5146
 #EXTINF:-1 tvg-name="天元围棋" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天元围棋.png" group-title="🏀体育频道",天元围棋
 http://live.lizanyang.top/tv/书画.png"
 #EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
+http://36.158.75.239:8088/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
+http://14.153.167.43:4022/rtp/239.77.0.145:5146
+#EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
 http://39.165.39.49:19901/tsfile/live/1115_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
 http://154.12.36.187:656/index.php?token=2025&id=klcd
-#EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
-http://183.237.95.108:9901/tsfile/live/1094_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
-http://14.153.167.43:4022/rtp/239.77.0.145:5146
 #EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226670/index.m3u8
 #EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/快乐垂钓.png" group-title="🏀体育频道",快乐垂钓
@@ -3779,8 +3773,6 @@ http://gslbserv.itv.cmvideo.cn:80/5000000011000265008/1.m3u8?channel-id=FifastbL
 http://gslbserv.itv.cmvideo.cn:80/5000000011000265008/1.m3u8?channel-id=FifastbLive&Contentid=3000000010000023434&livemode=1&stbId=toShengfen&mode=1
 #EXTINF:-1 tvg-name="宝宝动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宝宝动画.png" group-title="🪁动画频道",宝宝动画
 http://81.69.15.31:8880/play/437.m3u8
-#EXTINF:-1 tvg-name="宝宝动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/宝宝动画.png" group-title="🪁动画频道",宝宝动画
-http://222.214.208.34:59901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="少儿动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/少儿动画.png" group-title="🪁动画频道",少儿动画
 http://123.10.78.97:808/hls/76/index.m3u8
 #EXTINF:-1 tvg-name="卡酷动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/卡酷动画.png" group-title="🪁动画频道",卡酷动画
@@ -3834,13 +3826,13 @@ http://60.212.134.243:85/tsfile/live/49/2024_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰卡通.png" group-title="🪁动画频道",金鹰卡通
 http://42.237.163.143:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰卡通.png" group-title="🪁动画频道",金鹰卡通
-http://39.165.39.49:19901/tsfile/live/1156_1.m3u8?key=txiptv&playlive=0&authid=0
+http://36.158.75.239:8088/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰卡通.png" group-title="🪁动画频道",金鹰卡通
 http://125.43.255.200:9901/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰卡通.png" group-title="🪁动画频道",金鹰卡通
-http://154.12.36.187:656/index.php?token=2025&id=jykt
+http://39.165.39.49:19901/tsfile/live/1156_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/金鹰卡通.png" group-title="🪁动画频道",金鹰卡通
-http://183.129.255.66:8480/hls/49/index.m3u8
+http://14.153.167.43:4022/rtp/239.77.0.164:5146
 #EXTINF:-1 tvg-name="黑莓动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑莓动画.png" group-title="🪁动画频道",黑莓动画
 http://ott.mobaibox.com/PLTV/1/224/3221225555/1.m3u8
 #EXTINF:-1 tvg-name="黑莓动画" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/黑莓动画.png" group-title="🪁动画频道",黑莓动画
@@ -3912,6 +3904,8 @@ https://www.huya.com/30299353
 #EXTINF:-1 tvg-name="漫画解说" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/漫画解说.png" group-title="🪁动画频道",漫画解说
 https://www.goodiptv.club/douyu/5907076
 #EXTINF:-1 tvg-name="游戏风云" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/游戏风云.png" group-title="🎮游戏频道",游戏风云
+http://36.158.75.239:8088/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="游戏风云" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/游戏风云.png" group-title="🎮游戏频道",游戏风云
 http://154.12.36.187:656/index.php?token=2025&id=yxfy
 #EXTINF:-1 tvg-name="游戏风云" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/游戏风云.png" group-title="🎮游戏频道",游戏风云
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226548/index.m3u8
@@ -3921,8 +3915,6 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226193/1/index.m3u8?fmt=t
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226252/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="电竞天堂" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/电竞天堂.png" group-title="🎮游戏频道",电竞天堂
 http://81.69.15.31:8880/play/444.m3u8
-#EXTINF:-1 tvg-name="电竞天堂" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/电竞天堂.png" group-title="🎮游戏频道",电竞天堂
-http://222.214.208.34:59901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV15" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV15.png" group-title="🎵音乐频道",CCTV15
 http://81.69.15.31:8880/play/26.m3u8
 #EXTINF:-1 tvg-name="CCTV15" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV15.png" group-title="🎵音乐频道",CCTV15
@@ -3956,8 +3948,6 @@ http://81.69.15.31:8880/play/669.m3u8
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
 http://81.69.15.31:8880/play/724.m3u8
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
-http://o11.163189.xyz/stream/live/aec/
-#EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
 https://o11.163189.xyz/stream/live/aec/
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
 https://tv123.vvvv.ee/live.php?ch=2ba3afd7486
@@ -3967,6 +3957,8 @@ https://tv123.cc.cd/live.php/?ch=2ba3afd7486
 http://php.jdshipin.com/smt.php?id=AEC
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
 https://woshinibaba.tzh911.qzz.io/play-smt.php?id=AEC
+#EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/ASTROAEC.png" group-title="🇲🇾新马泰频道",Astro AEC
+https://tv123.vvvv.ee/live.php?ch=924673471264
 #EXTINF:-1 tvg-name="TV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/TV1.png" group-title="🇲🇾新马泰频道",TV1
 https://tv123.vvvv.ee/live.php?ch=50463857580
 #EXTINF:-1 tvg-name="TV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/TV1.png" group-title="🇲🇾新马泰频道",TV1
@@ -4103,6 +4095,10 @@ https://tv123.cc.cd/live.php/?ch=41ebc1d5554
 https://tv123.vvvv.ee/live.php?ch=4cbda2f9769
 #EXTINF:-1 tvg-name="Sportsnet Pacific" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETPACIFIC.png" group-title="🌎国际频道",Sportsnet Pacific
 https://tv123.cc.cd/live.php/?ch=4cbda2f9769
+#EXTINF:-1 tvg-name="Sportsnet Pacific" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETPACIFIC.png" group-title="🌎国际频道",Sportsnet Pacific
+https://tv123.vvvv.ee/live.php?ch=67f727bd769
+#EXTINF:-1 tvg-name="Sportsnet Pacific" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETPACIFIC.png" group-title="🌎国际频道",Sportsnet Pacific
+https://tv123.cc.cd/live.php/?ch=67f727bd769
 #EXTINF:-1 tvg-name="Sportsnet West" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETWEST.png" group-title="🌎国际频道",Sportsnet West
 https://tv123.vvvv.ee/live.php?ch=451bc23f428
 #EXTINF:-1 tvg-name="Sportsnet West" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETWEST.png" group-title="🌎国际频道",Sportsnet West
@@ -4127,6 +4123,10 @@ https://tv123.cc.cd/live.php/?ch=de9be0bd553
 https://tv123.vvvv.ee/live.php?ch=fb415750768
 #EXTINF:-1 tvg-name="Sportsnet Ontario" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETONTARIO.png" group-title="🌎国际频道",Sportsnet Ontario
 https://tv123.cc.cd/live.php/?ch=fb415750768
+#EXTINF:-1 tvg-name="Sportsnet Ontario" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETONTARIO.png" group-title="🌎国际频道",Sportsnet Ontario
+https://tv123.vvvv.ee/live.php?ch=3060ff3a768
+#EXTINF:-1 tvg-name="Sportsnet Ontario" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/SPORTSNETONTARIO.png" group-title="🌎国际频道",Sportsnet Ontario
+https://tv123.cc.cd/live.php/?ch=3060ff3a768
 #EXTINF:-1 tvg-name="TSN频道" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/TSN频道.png" group-title="🌎国际频道",TSN频道
 https://tv123.vvvv.ee/live.php?ch=728459a1109
 #EXTINF:-1 tvg-name="TSN频道" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/TSN频道.png" group-title="🌎国际频道",TSN频道
@@ -4284,8 +4284,6 @@ http://81.69.15.31:8880/play/76.m3u8
 #EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
 http://81.69.15.31:8880/play/145.m3u8
 #EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
-http://120.238.94.82:9901/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
 http://154.12.36.187:656/index.php?token=2025&id=chcjtyy
 #EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
 https://t.freetv.fun/live/chcjia-ting-ying-yuan-1.m3u8
@@ -4295,6 +4293,8 @@ https://t.freetv.fun/live/chcjia-ting-ying-yuan-2.m3u8
 https://t.freetv.fun/live/chcjia-ting-ying-yuan-4.m3u8
 #EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
 https://t.freetv.fun/live/chcjia-ting-ying-yuan-5.m3u8
+#EXTINF:-1 tvg-name="CHC家庭影院" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC家庭影院.png" group-title="🎬电影频道",CHC家庭影院
+https://t.freetv.fun/live/chcjia-ting-ying-yuan.m3u8
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
 http://81.69.15.31:8880/play/75.m3u8
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
@@ -4302,9 +4302,9 @@ http://81.69.15.31:8880/play/144.m3u8
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
 http://120.198.84.146:9901/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
-http://154.12.36.187:656/index.php?token=2025&id=chcdzdy
+http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
-http://120.238.94.82:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid=0
+http://154.12.36.187:656/index.php?token=2025&id=chcdzdy
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
 https://t.freetv.fun/live/chcdong-zuo-dian-ying-3.m3u8
 #EXTINF:-1 tvg-name="CHC动作电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CHC动作电影.png" group-title="🎬电影频道",CHC动作电影
@@ -4372,9 +4372,7 @@ http://81.69.15.31:8880/play/441.m3u8
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 http://81.69.15.31:8880/play/688.m3u8
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
-http://120.198.84.146:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
-http://183.237.95.108:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+http://222.214.208.34:59901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 https://yylunbo.ottiptv.cc/yy/1414812324
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
@@ -4383,12 +4381,12 @@ https://tv123.vvvv.ee/live.php?ch=64117a491287
 https://tv123.cc.cd/live.php/?ch=64117a491287
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 https://tv123.vvvv.ee/live.php?ch=2998471d1287
+#EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
+https://tv123.cc.cd/live.php/?ch=2998471d1287
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 http://81.69.15.31:8880/play/666.m3u8
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 http://81.69.15.31:8880/play/728.m3u8
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
-https://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 http://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
@@ -4399,6 +4397,8 @@ https://tv123.vvvv.ee/live.php?ch=c09899ae1270
 https://tv123.cc.cd/live.php/?ch=27b593091253
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 https://tv123.cc.cd/live.php/?ch=c09899ae1270
+#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
+https://tv123.vvvv.ee/live.php?ch=76c3f4c31253
 #EXTINF:-1 tvg-name="无线星河" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/无线星河.png" group-title="🎬电影频道",无线星河
 http://rihou.cc:555/tv/[Pd]无线星河
 #EXTINF:-1 tvg-name="星空卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/星空卫视.png" group-title="🎬电影频道",星空卫视
