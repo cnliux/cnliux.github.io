@@ -1,5 +1,5 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/cc.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
-#EXTINF:-1 tvg-name="2026-05-22 22:00:56" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/20260522220056.png" group-title="🕘️更新时间",2026-05-22 22:00:56
+#EXTINF:-1 tvg-name="2026-05-23 10:41:05" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/20260523104105.png" group-title="🕘️正在更新中，刷新获取最新结果",2026-05-23 10:41:05
 http://81.69.15.31:8880/play/1.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV1.png" group-title="📺央视频道",CCTV1
 http://81.69.15.31:8880/play/1.m3u8
@@ -80,7 +80,7 @@ http://81.69.15.31:8880/play/540.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5
 http://81.69.15.31:8880/play/590.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5
-http://42.237.163.143:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
+http://36.158.75.239:8088/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
 http://81.69.15.31:8880/play/10.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
@@ -94,7 +94,7 @@ http://81.69.15.31:8880/play/494.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
 http://81.69.15.31:8880/play/601.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
-http://42.237.163.143:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+http://1.94.31.214/php/ysp.php?id=cctv5p
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV5.png" group-title="📺央视频道",CCTV5+
 http://36.158.75.239:8088/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV6.png" group-title="📺央视频道",CCTV6
@@ -192,7 +192,7 @@ http://81.69.15.31:8880/play/546.m3u8
 #EXTINF:-1 tvg-name="CCTV11" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV11.png" group-title="📺央视频道",CCTV11
 http://81.69.15.31:8880/play/596.m3u8
 #EXTINF:-1 tvg-name="CCTV11" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV11.png" group-title="📺央视频道",CCTV11
-http://36.158.75.249:8088/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
+http://36.158.75.239:8088/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
 http://81.69.15.31:8880/play/22.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
@@ -208,7 +208,7 @@ http://81.69.15.31:8880/play/547.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
 http://81.69.15.31:8880/play/597.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV12.png" group-title="📺央视频道",CCTV12
-http://139.227.221.179:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=0&authid=0
+http://36.158.75.249:8088/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV13.png" group-title="📺央视频道",CCTV13
 http://81.69.15.31:8880/play/23.m3u8
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV13.png" group-title="📺央视频道",CCTV13
@@ -270,9 +270,9 @@ http://81.69.15.31:8880/play/551.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=cctv16
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
-http://221.205.59.64:9003/hls/17/index.m3u8
-#EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=cctv164k
+#EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV16.png" group-title="📺央视频道",CCTV16
+http://120.198.84.146:9901/tsfile/live/1087_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
 http://81.69.15.31:8880/play/30.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
@@ -288,23 +288,23 @@ http://81.69.15.31:8880/play/552.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
 http://36.158.75.249:8088/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV17.png" group-title="📺央视频道",CCTV17
-http://61.178.227.57:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
+http://120.198.84.146:9901/tsfile/live/1080_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 https://www.zijincao.cc/iptv/qiha/ysp.php?id=cetv1
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://120.198.84.146:9901/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://183.237.95.108:9901/tsfile/live/1102_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://14.153.167.120:4022/rtp/239.77.0.200:5146
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://14.153.167.120:4022/rtp/239.77.1.222:5146
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 http://154.12.36.187:656/index.php?token=2025&id=cetv1
 #EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
+http://120.238.94.82:9901/tsfile/live/1082_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
 https://t.freetv.fun/live/cetv1-1.m3u8
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-https://t.freetv.fun/live/cetv1-2.m3u8
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-https://t.freetv.fun/live/cetv1-3.m3u8
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-https://t.freetv.fun/live/cetv1-4.m3u8
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-https://t.freetv.fun/live/cetv1-5.m3u8
-#EXTINF:-1 tvg-name="CETV1" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV1.png" group-title="📺央视频道",CETV1
-https://t.freetv.fun/live/cetv1-6.m3u8
 #EXTINF:-1 tvg-name="CETV2" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV2.png" group-title="📺央视频道",CETV2
 http://154.12.36.187:656/index.php?token=2025&id=cetv2
 #EXTINF:-1 tvg-name="CETV2" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV2.png" group-title="📺央视频道",CETV2
@@ -326,6 +326,10 @@ http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227352/index.m3u8
 #EXTINF:-1 tvg-name="CETV3" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV3.png" group-title="📺央视频道",CETV3
 http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226226/index.m3u8
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
+http://14.153.167.120:4022/rtp/239.253.43.40:5146
+#EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
+http://14.153.167.120:4022/rtp/239.253.43.114:5146
+#EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 http://154.12.36.187:656/index.php?token=2025&id=cetv4
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 https://t.freetv.fun/live/cetv4.m3u8
@@ -337,10 +341,12 @@ https://t.freetv.fun/live/cetv4-5.m3u8
 https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html
 #EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227331/index.m3u8
-#EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
-http://[2409:8087:8:21::16]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226362/1.m3u8?
-#EXTINF:-1 tvg-name="CETV4" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CETV4.png" group-title="📺央视频道",CETV4
-http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001348/index.m3u8
+#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
+http://14.153.167.120:4022/rtp/239.253.43.13:5146
+#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
+http://14.153.167.120:4022/rtp/239.253.43.27:5146
+#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
+http://38.75.136.137:98/gslb/dsdqpub/ysjp.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
 http://w.yao87.com:4022/rtp/239.76.254.56:9000
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
@@ -352,7 +358,11 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225675/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="文化精品" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/文化精品.png" group-title="💰央视付费频道",文化精品
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226100/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
-http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
+http://14.153.167.120:4022/rtp/239.253.43.11:5146
+#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
+http://14.153.167.120:4022/rtp/239.253.43.21:5146
+#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
+http://183.237.95.108:9901/tsfile/live/1072_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
 https://epg.pw/stream/ca9c1cd4b97fb824cedd7fedfd0c7a950afdd7f00751cfbb7c2d89831d7746a5.m3u8
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
@@ -363,16 +373,14 @@ http://www.qfly9236.cn:8888/rtp/239.253.93.231:6409
 http://ott.mobaibox.com/PLTV/3/224/3221228683/index.m3u8
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226156/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226117/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/央视台球.png" group-title="💰央视付费频道",央视台球
-https://epg.pw/stream/25677ac2e8c1f7c3dd6359c43eb5f0f54efb3f5c11f9dda18d01b3e0308ed017.m3u8
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
 http://120.198.84.146:9901/tsfile/live/1081_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
-http://tonyk.56301232.xyz:3477/rtp/239.37.0.81:5540
+http://14.153.167.120:4022/rtp/239.253.43.29:5146
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
-http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
+http://14.153.167.120:4022/rtp/239.253.43.6:5146
+#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
+http://tonyk.56301232.xyz:3477/rtp/239.37.0.81:5540
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
 http://w.yao87.com:4022/rtp/239.76.254.51:9000
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
@@ -381,24 +389,22 @@ http://www.qfly9236.cn:8888/rtp/239.253.92.111:8060
 http://ott.mobaibox.com/PLTV/3/224/3221228665/index.m3u8
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226083/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云音乐.png" group-title="💰央视付费频道",风云音乐
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225698/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://81.69.15.31:8880/play/582.m3u8
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://81.69.15.31:8880/play/584.m3u8
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
 http://183.237.95.108:9901/tsfile/live/1070_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://w.yao87.com:4022/rtp/239.76.254.50:9000
+http://14.153.167.120:4022/rtp/239.253.43.16:5146
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-http://www.qfly9236.cn:8888/rtp/239.253.92.22:6073
+http://14.153.167.120:4022/rtp/239.253.43.26:5146
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-https://gd202.tv1288.xyz/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&down=1
+http://14.153.167.120:4022/rtp/239.253.43.28:5146
 #EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
-https://gd202.tv1288.xyz/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&down=1
+http://14.153.167.120:4022/rtp/239.253.43.15:5146
+#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/第一剧场.png" group-title="💰央视付费频道",第一剧场
+http://183.237.95.108:9901/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云剧场.png" group-title="💰央视付费频道",风云剧场
 http://81.69.15.31:8880/play/582.m3u8
 #EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云剧场.png" group-title="💰央视付费频道",风云剧场
@@ -418,17 +424,25 @@ http://ott.mobaibox.com/PLTV/3/224/3221228662/index.m3u8
 #EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
 http://81.69.15.31:8880/play/583.m3u8
 #EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
+http://120.198.84.146:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
+http://14.153.167.120:4022/rtp/239.253.43.5:5146
+#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
+http://14.153.167.120:4022/rtp/239.253.43.25:5146
+#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
+http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
 http://w.yao87.com:4022/rtp/239.76.254.53:9000
 #EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
 http://www.qfly9236.cn:8888/rtp/239.253.92.98:6120
 #EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
 https://gd202.tv1288.xyz/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&down=1
-#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
-http://ott.mobaibox.com/PLTV/3/224/3221228671/index.m3u8
-#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226097/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225765/1/index.m3u8?fmt=ts2hls
+#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
+http://14.153.167.120:4022/rtp/239.253.43.23:5146
+#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
+http://14.153.167.120:4022/rtp/239.253.43.8:5146
+#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
+http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://w.yao87.com:4022/rtp/239.76.254.55:9000
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
@@ -440,7 +454,9 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226104/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/女性时尚.png" group-title="💰央视付费频道",女性时尚
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225699/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
-http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+http://14.153.167.120:4022/rtp/239.253.43.22:5146
+#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
+http://14.153.167.120:4022/rtp/239.253.43.12:5146
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
 http://w.yao87.com:4022/rtp/239.76.254.62:9000
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
@@ -450,27 +466,31 @@ http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226114/1/index.m3u8?fmt=t
 #EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
 http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225674/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
+http://120.198.84.146:9901/tsfile/live/1086_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
+http://14.153.167.120:4022/rtp/239.253.43.14:5146
+#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
+http://14.153.167.120:4022/rtp/239.253.43.20:5146
+#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
+http://183.237.95.108:9901/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 https://t.freetv.fun/live/cctvfeng-yun-zu-qiu.m3u8
 #EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
 https://t.freetv.fun/live/cctv-feng-yun-zu-qiu.m3u8
-#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
-https://t.freetv.fun/live/cctv-feng-yun-zu-qiu-1.m3u8
-#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
-https://t.freetv.fun/live/cctv-feng-yun-zu-qiu-2.m3u8
-#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
-https://t.freetv.fun/live/cctv-feng-yun-zu-qiu-3.m3u8
-#EXTINF:-1 tvg-name="风云足球" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/风云足球.png" group-title="💰央视付费频道",风云足球
-http://w.yao87.com:4022/rtp/239.76.254.52:9000
 #EXTINF:-1 tvg-name="电视指南" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/电视指南.png" group-title="💰央视付费频道",电视指南
 http://ott.mobaibox.com/PLTV/3/224/3221228689/index.m3u8
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://81.69.15.31:8880/play/581.m3u8
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub
+http://120.198.84.146:9901/tsfile/live/1099_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
+http://14.153.167.120:4022/rtp/239.253.43.7:5146
+#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
+http://14.153.167.120:4022/rtp/239.253.43.24:5146
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 http://183.237.95.108:9901/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
@@ -479,10 +499,10 @@ http://w.yao87.com:4022/rtp/239.76.254.57:9000
 http://www.qfly9236.cn:8888/rtp/239.253.92.113:8066
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
 https://gd202.tv1288.xyz/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&down=1
-#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-http://ott.mobaibox.com/PLTV/3/224/3221228680/index.m3u8
-#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/世界地理.png" group-title="💰央视付费频道",世界地理
-http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226071/1/index.m3u8?fmt=ts2hls
+#EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
+http://14.153.167.120:4022/rtp/239.253.43.9:5146
+#EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
+http://14.153.167.120:4022/rtp/239.253.43.18:5146
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
 http://w.yao87.com:4022/rtp/239.76.254.59:9000
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/兵器科技.png" group-title="💰央视付费频道",兵器科技
@@ -524,7 +544,11 @@ http://81.69.15.31:8880/play/549.m3u8
 #EXTINF:-1 tvg-name="CCTV14" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/CCTV14.png" group-title="💰央视付费频道",CCTV14
 http://81.69.15.31:8880/play/599.m3u8
 #EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
+http://14.153.167.120:4022/rtp/239.77.1.2:5146
+#EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
 http://154.12.36.187:656/index.php?token=2025&id=zgtq
+#EXTINF:-1 tvg-name="中国天气" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/中国天气.png" group-title="💰央视付费频道",中国天气
+http://38.75.136.137:98/gslb/dsdqpub/zgqx.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://81.69.15.31:8880/play/51.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
@@ -538,9 +562,9 @@ http://81.69.15.31:8880/play/468.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://81.69.15.31:8880/play/606.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
-http://42.237.163.143:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
+http://222.223.41.27:8888/hls/29/index.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/江苏卫视.png" group-title="📡卫视频道",江苏卫视
-http://123.154.239.41:85/tsfile/live/1029_1.m3u8?key=txiptv&playlive=0&authid=0
+http://183.129.255.66:8480/hls/33/index.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://81.69.15.31:8880/play/113.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/广东卫视.png" group-title="📡卫视频道",广东卫视
@@ -1352,9 +1376,9 @@ https://t.freetv.fun/live/su-zhou-sheng-huo-zi-xun.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 http://81.69.15.31:8880/play/1566.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
-https://live-auth.51kandianshi.com/szgd/csztv4.m3u8
-#EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 http://live-auth.51kandianshi.com/szgd/csztv4.m3u8
+#EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
+https://live-auth.51kandianshi.com/szgd/csztv4.m3u8
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
 https://t.freetv.fun/live/su-zhou-dian-ying-yu-le-xin-xi-1.flv
 #EXTINF:-1 tvg-name="苏州电影娱乐" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州电影娱乐.png" group-title="☘️江苏频道",苏州电影娱乐
@@ -1362,9 +1386,9 @@ https://t.freetv.fun/live/su-zhou-yu-le.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 http://81.69.15.31:8880/play/1564.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
-https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
-#EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 http://live-auth.51kandianshi.com/szgd/csztv2.m3u8
+#EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
+https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
 #EXTINF:-1 tvg-name="苏州社会经济" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/苏州社会经济.png" group-title="☘️江苏频道",苏州社会经济
 https://t.freetv.fun/live/su-zhou-she-hui-jing-ji.m3u8
 #EXTINF:-1 tvg-name="连云港新闻综合" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/连云港新闻综合.png" group-title="☘️江苏频道",连云港新闻综合
@@ -4370,6 +4394,8 @@ http://81.69.15.31:8880/play/441.m3u8
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 http://81.69.15.31:8880/play/688.m3u8
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
+http://183.237.95.108:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 http://222.214.208.34:59901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 https://yylunbo.ottiptv.cc/yy/1414812324
@@ -4379,12 +4405,14 @@ https://tv123.vvvv.ee/live.php?ch=64117a491287
 https://tv123.cc.cd/live.php/?ch=64117a491287
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
 https://tv123.vvvv.ee/live.php?ch=2998471d1287
-#EXTINF:-1 tvg-name="经典电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/经典电影.png" group-title="🎬电影频道",经典电影
-https://tv123.cc.cd/live.php/?ch=2998471d1287
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 http://81.69.15.31:8880/play/666.m3u8
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 http://81.69.15.31:8880/play/728.m3u8
+#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
+http://o11.163189.xyz/stream/live/ccm/
+#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
+https://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 https://tv123.vvvv.ee/live.php?ch=27b593091253
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
@@ -4393,10 +4421,8 @@ https://tv123.vvvv.ee/live.php?ch=c09899ae1270
 https://tv123.cc.cd/live.php/?ch=27b593091253
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
 https://tv123.cc.cd/live.php/?ch=c09899ae1270
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
-https://tv123.vvvv.ee/live.php?ch=76c3f4c31253
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/天映经典.png" group-title="🎬电影频道",天映经典
-https://tv123.vvvv.ee/live.php?ch=df4ea2711270
+#EXTINF:-1 tvg-name="星空卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/星空卫视.png" group-title="🎬电影频道",星空卫视
+http://116.77.33.98:44330/tsfile/live/1012_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 tvg-name="星空卫视" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/星空卫视.png" group-title="🎬电影频道",星空卫视
 https://t.freetv.fun/live/xing-kong-wei-shi-1.m3u8
 #EXTINF:-1 tvg-name="东森电影" tvg-logo="https://gitproxy.click/https://github.com/taksssss/tv/blob/main/icon/东森电影.png" group-title="🎬电影频道",东森电影
