@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>MV音乐精选 - 热门优先 · 随机探索</title>
+    <title>MV音乐精选 · 智能排序</title>
     <style>
+        /* ---------- 全局重置 ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -19,53 +20,57 @@
             min-height: 100vh;
             padding: 0;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
+            width: 100%;
             max-width: 1600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 0;
-            padding: 8px 8px 0 8px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 8px 10px 0 10px;
             display: flex;
             flex-direction: column;
-            height: 100vh;
-            width: 100%;
-            box-shadow: none;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
         }
 
+        /* ---------- 头部 ---------- */
         .header {
             text-align: center;
-            margin-bottom: 6px;
             flex-shrink: 0;
+            padding-bottom: 4px;
         }
 
         h1 {
-            font-size: clamp(1.3rem, 4.5vw, 2rem);
+            font-size: clamp(1.2rem, 4vw, 2rem);
             background: linear-gradient(125deg, #4f7df3 0%, #b345d6 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 2px;
             line-height: 1.3;
+            letter-spacing: 0.5px;
         }
 
         .subtitle {
             color: #5a6874;
-            font-size: clamp(0.6rem, 2.8vw, 0.75rem);
-            line-height: 1.2;
+            font-size: clamp(0.55rem, 2.5vw, 0.7rem);
+            line-height: 1.3;
         }
 
+        /* ---------- 统计卡片 ---------- */
         .stats-card {
             background: #f0f3fa;
-            border-radius: 20px;
-            padding: 6px 12px;
-            margin-bottom: 8px;
+            border-radius: 18px;
+            padding: 6px 14px;
+            margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px 10px;
             flex-shrink: 0;
         }
 
@@ -78,73 +83,95 @@
 
         .stat-badge {
             background: white;
-            padding: 4px 12px;
+            padding: 3px 14px;
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 600;
             color: #4f7df3;
+            white-space: nowrap;
         }
 
         .orientation-badge {
             background: #e2e8f2;
-            padding: 4px 10px;
+            padding: 3px 12px;
             border-radius: 30px;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #2c3e50;
+            white-space: nowrap;
         }
 
         .search-info {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             background: #eef2ff;
-            padding: 4px 10px;
+            padding: 3px 12px;
             border-radius: 30px;
+            white-space: nowrap;
+            transition: background 0.2s;
         }
 
+        /* ---------- 排序栏 ---------- */
         .sort-bar {
             display: flex;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 8px;
             flex-shrink: 0;
             background: #f8fafc;
-            padding: 6px 12px;
+            padding: 4px 12px;
             border-radius: 40px;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-bottom: 6px;
         }
 
         .sort-buttons {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .sort-btn {
             background: white;
             border: 1px solid #cbd5e1;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 600;
             color: #334155;
             cursor: pointer;
-            transition: all 0.1s ease;
+            transition: all 0.15s ease;
+            user-select: none;
         }
 
-        .sort-btn.活跃 {
+        .sort-btn:hover {
+            background: #eef2ff;
+        }
+
+        .sort-btn.active {
             background: linear-gradient(110deg, #4f7df3 0%, #a158e0 100%);
             color: white;
             border-color: transparent;
+            box-shadow: 0 2px 8px rgba(79, 125, 243, 0.3);
         }
 
         .sort-btn.reset-rank {
             background: #f1f5f9;
             color: #475569;
         }
+        .sort-btn.reset-rank:hover {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
 
+        .sort-hint {
+            font-size: 0.6rem;
+            color: #6c7a8c;
+            white-space: nowrap;
+        }
+
+        /* ---------- 搜索栏 ---------- */
         .search-section {
-            margin-bottom: 8px;
             flex-shrink: 0;
+            margin-bottom: 6px;
         }
 
         .search-box {
@@ -155,22 +182,23 @@
 
         .search-input {
             flex: 1;
-            padding: 8px 14px;
+            padding: 8px 16px;
             border: 1.5px solid #e2e8f0;
             border-radius: 44px;
             font-size: 0.8rem;
             outline: none;
             background: white;
             min-width: 0;
+            transition: border 0.2s, box-shadow 0.2s;
         }
 
         .search-input:focus {
             border-color: #4f7df3;
-            box-shadow: 0 0 0 2px rgba(79, 125, 243, 0.2);
+            box-shadow: 0 0 0 3px rgba(79, 125, 243, 0.15);
         }
 
         .search-btn {
-            padding: 8px 16px;
+            padding: 8px 18px;
             background: linear-gradient(110deg, #4f7df3 0%, #a158e0 100%);
             color: white;
             border: none;
@@ -179,12 +207,20 @@
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
+            transition: opacity 0.15s;
+        }
+        .search-btn:hover {
+            opacity: 0.9;
         }
 
         .search-btn.reset {
             background: #6c7a8c;
         }
+        .search-btn.reset:hover {
+            background: #5a6874;
+        }
 
+        /* ---------- MV列表容器 ---------- */
         .mv-list-container {
             flex: 1;
             overflow-y: auto;
@@ -192,72 +228,84 @@
             border-radius: 16px;
             min-height: 0;
             -webkit-overflow-scrolling: touch;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
+            padding-right: 2px;
         }
 
+        .mv-list-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .mv-list-container::-webkit-scrollbar-track {
+            background: #eef2ff;
+            border-radius: 10px;
+        }
+        .mv-list-container::-webkit-scrollbar-thumb {
+            background: #b9c3e9;
+            border-radius: 10px;
+        }
+
+        /* ---------- MV列表：竖屏 ---------- */
         @media (orientation: portrait) {
             .mv-list {
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
                 padding-bottom: 8px;
             }
 
             .mv-item {
                 background: white;
                 border-radius: 20px;
-                padding: 14px 16px;
+                padding: 14px 18px;
                 display: flex;
                 align-items: center;
                 gap: 14px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
                 border: 1px solid #eef2ff;
                 cursor: pointer;
                 transition: all 0.1s ease;
             }
-
-            .mv-item:活跃 {
+            .mv-item:active {
                 background: #f5f7ff;
                 transform: scale(0.99);
             }
 
             .mv-number {
                 flex-shrink: 0;
-                min-width: 80px;
+                min-width: 76px;
                 background: linear-gradient(135deg, #4f7df3, #9b51e0);
                 padding: 10px 0;
                 border-radius: 36px;
                 text-align: center;
                 font-weight: 800;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 color: white;
                 letter-spacing: 0.5px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
             }
 
             .mv-name {
                 flex: 1;
                 font-weight: 700;
-                font-size: 1rem;
+                font-size: 0.98rem;
                 line-height: 1.4;
                 word-break: break-word;
-                white-space: normal;
                 color: #111827;
             }
 
             .mv-artist {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
                 font-weight: 600;
                 color: #4f7df3;
-                margin-left: 8px;
+                margin-left: 6px;
                 display: inline-block;
             }
 
             .play-icon {
-                font-size: 1.4rem;
-                opacity: 0.6;
+                font-size: 1.3rem;
+                opacity: 0.5;
                 flex-shrink: 0;
-                margin-left: 6px;
+                margin-left: 4px;
             }
 
             .hot-badge {
@@ -273,6 +321,7 @@
             }
         }
 
+        /* ---------- MV列表：横屏（网格） ---------- */
         @media (orientation: landscape) {
             .mv-list {
                 display: grid;
@@ -295,7 +344,6 @@
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
                 position: relative;
             }
-
             .mv-item:active {
                 background: #f0f3ff;
                 transform: scale(0.98);
@@ -368,19 +416,8 @@
             display: inline-block;
         }
 
-        .mv-list-container::-webkit-scrollbar {
-            width: 4px;
-        }
-        .mv-list-container::-webkit-scrollbar-track {
-            background: #eef2ff;
-            border-radius: 10px;
-        }
-        .mv-list-container::-webkit-scrollbar-thumb {
-            background: #b9c3e9;
-            border-radius: 10px;
-        }
-
-        .empty-state, .loading {
+        .empty-state,
+        .loading {
             text-align: center;
             padding: 48px 20px;
             background: #fef9e6;
@@ -394,39 +431,15 @@
         }
 
         @media (max-width: 480px) and (orientation: portrait) {
-            .container {
-                padding: 6px 6px 0 6px;
-            }
-            .mv-item {
-                padding: 12px 12px;
-                gap: 10px;
-            }
-            .mv-number {
-                min-width: 68px;
-                font-size: 0.8rem;
-                padding: 8px 0;
-            }
-            .mv-name {
-                font-size: 0.9rem;
-            }
-            .mv-artist {
-                font-size: 0.72rem;
-            }
-            .play-icon {
-                font-size: 1.2rem;
-            }
-            .search-input {
-                padding: 7px 12px;
-                font-size: 0.75rem;
-            }
-            .search-btn {
-                padding: 7px 12px;
-                font-size: 0.7rem;
-            }
-            .sort-btn {
-                padding: 3px 8px;
-                font-size: 0.65rem;
-            }
+            .container { padding: 6px 6px 0 6px; }
+            .mv-item { padding: 12px 12px; gap: 10px; }
+            .mv-number { min-width: 68px; font-size: 0.8rem; padding: 8px 0; }
+            .mv-name { font-size: 0.9rem; }
+            .mv-artist { font-size: 0.72rem; }
+            .play-icon { font-size: 1.2rem; }
+            .search-input { padding: 7px 12px; font-size: 0.75rem; }
+            .search-btn { padding: 7px 12px; font-size: 0.7rem; }
+            .sort-btn { padding: 3px 8px; font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -435,7 +448,7 @@
     <div class="container">
         <div class="header">
             <h1>🎵 MV音乐精选</h1>
-            <div class="subtitle">🎬 00001-01302 MV曲库 · 🎙️ 01302-01336 连载歌曲</div>
+            <div class="subtitle">🎬 00001-00035 连载歌曲 · 🎙️ 00036-01359 MV歌曲</div>
             <div class="subtitle" style="font-size:0.6rem;">🌐 数据源: cnliux.github.io/mv/ | ⚡ 智能排序(热度+搜索+随机)</div>
         </div>
 
@@ -474,11 +487,11 @@
             </div>
         </div>
     </div>
-   <script src="https://186317.xyz/tj/stats.js"></script>
+
+    <script src="https://186317.xyz/tj/stats.js"></script>
 
     <script>
         // ---------- 核心数据 ----------
-        // 多备用数据源
         var TXT_FILE_URLS = [
             'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
             'https://g.blfrp.cn/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
@@ -486,22 +499,20 @@
             'https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
             'https://cdn.jsdelivr.net/gh/cnliux/cnliux.github.io@main/mv/list.txt'
         ];
-        
-        var allMVList = [];           // 原始数据 { id, name, artist, fullName, ext, clickCount }
-        var filteredMVList = [];       // 当前过滤+排序后的列表
+
+        var allMVList = [];
+        var filteredMVList = [];
         var currentKeyword = '';
-        var currentSortMode = 'hot';   // 默认改为 'hot' (热门优先)
-        
-        // 持久化点击次数 (localStorage)
+        var currentSortMode = 'hot';
+
         var STORAGE_KEY = 'mv_click_counts_v2';
-        var clickMap = new Map();       // key: songKey (id+name+artist 组合保证唯一) 存储点击次数
-        
-        // ---------- 辅助函数 ----------
+        var clickMap = new Map();
+
+        // ---------- 点击计数辅助 ----------
         function getSongUniqueKey(item) {
             return item.id + '|' + item.name + '|' + (item.artist || '');
         }
-        
-        // 加载点击次数
+
         function loadClickCounts() {
             try {
                 var stored = localStorage.getItem(STORAGE_KEY);
@@ -511,18 +522,16 @@
                 } else {
                     clickMap = new Map();
                 }
-            } catch(e) { clickMap = new Map(); }
+            } catch (e) { clickMap = new Map(); }
         }
-        
-        // 保存点击次数
+
         function saveClickCounts() {
             try {
                 var obj = Object.fromEntries(clickMap);
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-            } catch(e) {}
+            } catch (e) {}
         }
-        
-        // 增加点击次数
+
         function incrementClickCount(item) {
             var key = getSongUniqueKey(item);
             var current = clickMap.get(key) || 0;
@@ -530,8 +539,7 @@
             saveClickCounts();
             updateClickCountInAllList();
         }
-        
-        // 将clickMap数据同步到allMVList
+
         function updateClickCountInAllList() {
             for (var i = 0; i < allMVList.length; i++) {
                 var mv = allMVList[i];
@@ -539,16 +547,15 @@
                 mv.clickCount = clickMap.get(key) || 0;
             }
         }
-        
-        // 重置所有点击记录
+
         function resetAllClickCounts() {
             clickMap.clear();
             saveClickCounts();
             updateClickCountInAllList();
             applyFilterAndSort();
         }
-        
-        // 计算搜索加权分数 (热门模式中使用)
+
+        // ---------- 搜索/排序辅助 ----------
         function getSearchBoost(item, keyword) {
             if (!keyword) return 0;
             var lowerKw = keyword.toLowerCase();
@@ -562,8 +569,7 @@
             else matchScore = 0;
             return matchScore;
         }
-        
-        // 热门得分算法 (点击次数 * (1 + 匹配因子*2) )
+
         function getHotScore(item, keyword) {
             var baseClicks = item.clickCount || 0;
             var boost = 0;
@@ -574,8 +580,7 @@
             }
             return baseClicks;
         }
-        
-        // 生成新的随机顺序 (基于传入的列表，不改变原数组)
+
         function shuffleArray(arr) {
             var shuffled = arr.slice();
             for (var i = shuffled.length - 1; i > 0; i--) {
@@ -586,8 +591,7 @@
             }
             return shuffled;
         }
-        
-        // 排序核心 (扩展支持随机)
+
         function sortMVList(list, keyword, sortMode) {
             if (sortMode === 'hot') {
                 var sorted = list.slice();
@@ -599,10 +603,8 @@
                 });
                 return sorted;
             } else if (sortMode === 'random') {
-                // 随机排序: 基于当前列表的副本直接打乱顺序
                 return shuffleArray(list);
             } else {
-                // 默认编号排序
                 var sortedDefault = list.slice();
                 sortedDefault.sort(function(a, b) {
                     return (parseInt(a.id) || 0) - (parseInt(b.id) || 0);
@@ -610,8 +612,7 @@
                 return sortedDefault;
             }
         }
-        
-        // 全局应用过滤 + 排序并渲染
+
         function applyFilterAndSort() {
             var workingList = allMVList.slice();
             if (currentKeyword && currentKeyword.trim() !== '') {
@@ -626,47 +627,96 @@
             filteredMVList = sortMVList(workingList, currentKeyword, currentSortMode);
             renderMVList();
         }
-        
-        // ----- 网络请求与解析 (强制 UTF-8 编码)-----
+
+        // ---------- 网络请求 (并行竞速 + 缓存) ----------
         async function fetchWithUTF8(url) {
             var response = await fetch(url);
             var buffer = await response.arrayBuffer();
             var bytes = new Uint8Array(buffer);
-            
-            // 检查并跳过 UTF-8 BOM (EF BB BF)
+
             var startOffset = 0;
             if (bytes.length >= 3 && bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF) {
                 startOffset = 3;
             }
-            
-            // 强制使用 UTF-8 解码
+
             var decoder = new TextDecoder('utf-8');
             var text = decoder.decode(buffer.slice(startOffset));
-            
             return text;
         }
-        
+
+        // ---------- 新的 fetchWithFallback：并行竞速 + 缓存 ----------
         async function fetchWithFallback(urls) {
-            for (var i = 0; i < urls.length; i++) {
-                var url = urls[i];
-                try {
-                    var text = await fetchWithUTF8(url);
-                    // 检查是否包含中文（UTF-8 正常显示）
-                    if (text && (text.match(/[\u4e00-\u9fa5]/) || text.length > 100)) {
-                        return text;
-                    }
-                    // 如果返回的内容看起来不正常，尝试下一个源
-                    if (text.indexOf('<!DOCTYPE') !== -1 || text.indexOf('<html') !== -1) {
-                        continue;
-                    }
-                    return text;
-                } catch(e) {
-                    console.log('尝试 ' + url + ' 失败:', e);
+            const CACHE_KEY = 'mv_mirror_winner';
+            let orderedUrls = [...urls];
+
+            try {
+                const cached = localStorage.getItem(CACHE_KEY);
+                if (cached && orderedUrls.includes(cached)) {
+                    orderedUrls = [cached, ...orderedUrls.filter(u => u !== cached)];
                 }
+            } catch (_) { /* ignore */ }
+
+            const fetchWithTimeout = (url, timeout = 5000) => {
+                return new Promise((resolve, reject) => {
+                    const controller = new AbortController();
+                    const timer = setTimeout(() => {
+                        controller.abort();
+                        reject(new Error(`请求超时: ${url}`));
+                    }, timeout);
+
+                    fetch(url, { signal: controller.signal })
+                        .then(response => {
+                            clearTimeout(timer);
+                            resolve(response);
+                        })
+                        .catch(err => {
+                            clearTimeout(timer);
+                            reject(err);
+                        });
+                });
+            };
+
+            const isValidContent = (text) => {
+                if (!text || text.length < 50) return false;
+                if (text.includes('<!DOCTYPE') || text.includes('<html')) return false;
+                return /\d+\./.test(text);
+            };
+
+            // 并行竞速
+            try {
+                const text = await Promise.any(
+                    orderedUrls.map(async (url) => {
+                        const response = await fetchWithTimeout(url);
+                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                        const text = await response.text();
+                        if (!isValidContent(text)) throw new Error('无效内容');
+                        try {
+                            localStorage.setItem(CACHE_KEY, url);
+                        } catch (_) {}
+                        return text;
+                    })
+                );
+                return text;
+            } catch (parallelError) {
+                console.warn('并行竞速全部失败，尝试顺序重试', parallelError);
+                for (const url of orderedUrls) {
+                    try {
+                        const response = await fetchWithTimeout(url, 8000);
+                        if (!response.ok) continue;
+                        const text = await response.text();
+                        if (isValidContent(text)) {
+                            try {
+                                localStorage.setItem(CACHE_KEY, url);
+                            } catch (_) {}
+                            return text;
+                        }
+                    } catch (_) { /* continue */ }
+                }
+                throw new Error('所有镜像地址均不可用，请检查网络或稍后重试');
             }
-            throw new Error('所有数据源都失败了');
         }
-        
+
+        // ---------- 解析 MV 文件名 ----------
         function parseMVFileName(filename) {
             var match = filename.match(/^(\d+)\.(.+?)\.(mp4|mp3|mkv|webm|flv|mov|avi)$/i);
             if (!match) return { valid: false };
@@ -705,8 +755,7 @@
                 clickCount: 0
             };
         }
-        
-        // 备用数据
+
         function getFallbackList() {
             var fallbackRaw = [
                 "00001.王杰-一场游戏一场梦.mp4", "00002.陈奕迅-十年.mp4", "00003.林俊杰-江南.mp4",
@@ -722,27 +771,27 @@
             }
             return result;
         }
-        
-        // ----- UI 渲染与高亮 -----
+
+        // ---------- UI 渲染 ----------
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/&/g, '&amp;')
-                      .replace(/</g, '&lt;')
-                      .replace(/>/g, '&gt;')
-                      .replace(/"/g, '&quot;')
-                      .replace(/'/g, '&#39;');
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
-        
+
         function escapeRegex(str) {
             return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
-        
+
         function highlightText(text, keyword) {
             if (!keyword || !text) return escapeHtml(text);
             var regex = new RegExp('(' + escapeRegex(keyword) + ')', 'gi');
             return escapeHtml(text).replace(regex, '<span class="highlight">$1</span>');
         }
-        
+
         function renderMVList() {
             var container = document.getElementById('mvList');
             if (!filteredMVList.length) {
@@ -750,7 +799,7 @@
                 updateStats();
                 return;
             }
-            
+
             var itemsHtml = '';
             for (var i = 0; i < filteredMVList.length; i++) {
                 var item = filteredMVList[i];
@@ -760,7 +809,7 @@
                 var artistHtml = displayArtist ? '<span class="mv-artist">- ' + displayArtist + '</span>' : '';
                 var clickCount = item.clickCount || 0;
                 var hotBadge = clickCount > 0 ? '<span class="hot-badge">🔥 ' + clickCount + '</span>' : '';
-                
+
                 itemsHtml += '<div class="mv-item" data-fullname="' + escapeHtml(item.fullName) + '" data-id="' + escapeHtml(item.id) + '" data-name="' + escapeHtml(item.name) + '" data-artist="' + escapeHtml(item.artist) + '" data-unique="' + escapeHtml(getSongUniqueKey(item)) + '">' +
                     '<div class="mv-number">' + displayId + '</div>' +
                     '<div class="mv-name">' + displayName + artistHtml + hotBadge + '</div>' +
@@ -768,23 +817,21 @@
                     '</div>';
             }
             container.innerHTML = itemsHtml;
-            
-            // 绑定点击事件
+
             var mvItems = document.querySelectorAll('.mv-item');
             for (var j = 0; j < mvItems.length; j++) {
                 mvItems[j].addEventListener('click', mvClickHandler);
             }
             updateStats();
         }
-        
+
         function mvClickHandler(e) {
             var target = e.currentTarget;
             var fullName = target.getAttribute('data-fullname') || '';
             var id = target.getAttribute('data-id') || '';
             var name = target.getAttribute('data-name') || '';
             var artist = target.getAttribute('data-artist') || '';
-            
-            // 查找 MV 对象
+
             var mvItem = null;
             for (var i = 0; i < allMVList.length; i++) {
                 if (allMVList[i].fullName === fullName && allMVList[i].id === id) {
@@ -799,7 +846,7 @@
             var artistText = artist ? ' - ' + artist : '';
             alert('🎬 播放MV\n\n📀 编号: ' + id + '\n🎤 歌曲: ' + name + artistText + '\n📁 文件: ' + fullName + '\n👍 感谢支持，热度 +1');
         }
-        
+
         function updateStats() {
             var totalSpan = document.getElementById('totalCount');
             var clickValues = Array.from(clickMap.values());
@@ -820,7 +867,7 @@
                 searchInfo.style.background = '#eef2ff';
             }
         }
-        
+
         function updateOrientationDisplay() {
             var isLandscape = window.matchMedia("(orientation: landscape)").matches;
             var display = document.getElementById('orientationDisplay');
@@ -834,18 +881,18 @@
                 display.style.color = '#495057';
             }
         }
-        
+
         function resetSearch() {
             document.getElementById('searchInput').value = '';
             currentKeyword = '';
             applyFilterAndSort();
         }
-        
+
         function searchMV(keyword) {
             currentKeyword = keyword.trim();
             applyFilterAndSort();
         }
-        
+
         function setSortMode(mode) {
             if (mode === currentSortMode) return;
             currentSortMode = mode;
@@ -858,8 +905,8 @@
             }
             applyFilterAndSort();
         }
-        
-        // 加载主数据 (强制 UTF-8)
+
+        // ---------- 加载主数据 ----------
         async function loadMVList() {
             var container = document.getElementById('mvList');
             container.innerHTML = '<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>';
@@ -874,17 +921,18 @@
                 }
                 if (parsed.length === 0) throw new Error('解析无有效条目');
                 allMVList = parsed;
-            } catch(e) {
+            } catch (e) {
                 console.warn("使用备用数据", e);
                 allMVList = getFallbackList();
             }
-            allMVList.sort(function(a, b) { return (parseInt(a.id) || 0) - (parseInt(b.id) || 0); });
+            allMVList.排序(function(a, b) { return (parseInt(a.id) || 0) - (parseInt(b.id) || 0); });
             loadClickCounts();
             updateClickCountInAllList();
             applyFilterAndSort();
             updateOrientationDisplay();
         }
-        
+
+        // ---------- 初始化事件 ----------
         function initSortButtons() {
             var defaultBtn = document.querySelector('.sort-btn[data-sort="default"]');
             var hotBtn = document.querySelector('.sort-btn[data-sort="hot"]');
@@ -901,7 +949,7 @@
                 });
             }
         }
-        
+
         function initSearchEvents() {
             var searchBtn = document.getElementById('searchBtn');
             var resetBtn = document.getElementById('resetBtn');
@@ -911,19 +959,19 @@
             searchInput.addEventListener('input', function(e) { searchMV(e.target.value); });
             searchInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') searchMV(searchInput.value); });
         }
-        
+
         function initOrientationListener() {
             window.addEventListener('resize', function() { updateOrientationDisplay(); renderMVList(); });
             window.addEventListener('orientationchange', function() { setTimeout(function() { updateOrientationDisplay(); renderMVList(); }, 50); });
         }
-        
+
         async function init() {
             await loadMVList();
             initSortButtons();
             initSearchEvents();
             initOrientationListener();
         }
-        
+
         init();
     </script>
 </body>
