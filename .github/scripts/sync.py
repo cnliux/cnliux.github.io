@@ -47,9 +47,6 @@ def fetch_stream_content(url, source_name):
 
 def extract_channel_info(extinf_line):
     """从EXTINF行提取频道信息，保留所有属性"""
-    # 提取所有属性
-    # 格式: #EXTINF:-1 tvg-name="xxx" group-title="xxx" tvg-logo="xxx",频道名
-    
     # 提取频道名（逗号后面的部分）
     channel_name = ''
     if ',' in extinf_line:
@@ -194,16 +191,21 @@ def process_txt_content(content, stream_contents):
     if not stream_contents:
         return content
     
-    # 移除所有原有的直播源内容
+    # 移除所有原有的直播源内容（检测 #genre# 标记）
     lines = content.splitlines()
     filtered_lines = []
     skip = False
     
     for line in lines:
-        if any(keyword in line for keyword in ['虎牙', '斗鱼', '#虎牙', '#斗鱼']):
+        # 检测已有的虎牙或斗鱼分类标记（格式：虎牙,#genre# 或 斗鱼,#genre#）
+        if re.match(r'^(虎牙|斗鱼),#genre#$', line.strip()):
             skip = True
             continue
-        if skip and line.strip() == '':
+        if skip and line.strip() and ',' in line and not line.endswith(',#genre#'):
+            # 跳过频道行（频道名,URL格式）
+            continue
+        if skip and not line.strip():
+            # 空行表示分组结束
             skip = False
             continue
         if not skip:
@@ -215,21 +217,18 @@ def process_txt_content(content, stream_contents):
     if not content.endswith('\n'):
         content += '\n'
     
-    # 添加所有直播源（纯文本格式：频道名,URL）
+    # 添加所有直播源（使用 #genre# 格式）
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            # 从M3U格式提取频道信息，转换为纯文本格式
+            # 从M3U格式提取频道信息
             channels = extract_channels_from_m3u(source_info['content'])
             
             if channels:
-                # 添加分类标题
-                content += f'\n# {source_info["name"]}直播源\n'
-                # 添加频道列表（频道名,URL）
-                channel_lines = []
+                # 添加分类标记（格式：虎牙,#genre#）
+                content += f'\n{source_info["name"]},#genre#\n'
+                # 添加频道列表（格式：频道名,URL）
                 for channel in channels:
-                    channel_lines.append(f'{channel["channel_name"]},{channel["url"]}')
-                content += '\n'.join(channel_lines)
-                content += '\n'
+                    content += f'{channel["channel_name"]},{channel["url"]}\n'
     
     return content
 
