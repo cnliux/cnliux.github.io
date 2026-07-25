@@ -13,8 +13,8 @@ BRANCH = 'main'
 
 # 文件映射：私有仓库文件 -> 公开仓库文件
 FILE_MAPPINGS = [
-    {'source': 'all.m3u', 'target': 'tv.m3u'},
-    {'source': 'all.txt', 'target': 'tv.txt'},
+    {'source': 'outputs/all.m3u', 'target': 'tv.m3u'},
+    {'source': 'outputs/all.txt', 'target': 'tv.txt'},
 ]
 # ===================
 
