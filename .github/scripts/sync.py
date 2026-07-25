@@ -17,12 +17,16 @@ STREAM_SOURCES = {
     'huya': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/huyayqk.m3u',
         'name': '虎牙',
-        'group_title': '虎牙'
+        'group_title': '虎牙',
+        'old_domain': 'live.ottiptv.cc',
+        'new_domain': 'live.metshop.top'
     },
     'douyu': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/douyuyqk.m3u',
         'name': '斗鱼',
-        'group_title': '斗鱼'
+        'group_title': '斗鱼',
+        'old_domain': 'live.ottiptv.cc',
+        'new_domain': 'live.metshop.top'
     }
 }
 
@@ -45,6 +49,13 @@ def fetch_stream_content(url, source_name):
         print(f'⚠️ 拉取{source_name}直播源失败: {e}')
         return None
 
+def replace_domain_in_content(content, old_domain, new_domain):
+    """替换内容中的域名"""
+    if not content:
+        return content
+    # 替换所有出现的旧域名为新域名
+    return content.replace(old_domain, new_domain)
+
 def extract_channel_info(extinf_line):
     """从EXTINF行提取频道信息，保留所有属性"""
     # 提取频道名（逗号后面的部分）
@@ -59,7 +70,7 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-name
     tvg_name = ''
-    tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
+    tvg_name_match = re.搜索(r'tvg-name="([^"]*)"', extinf_part)
     if tvg_name_match:
         tvg_name = tvg_name_match.group(1)
     else:
@@ -67,13 +78,13 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-logo
     tvg_logo = ''
-    tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
+    tvg_logo_match = re.搜索(r'tvg-logo="([^"]*)"', extinf_part)
     if tvg_logo_match:
         tvg_logo = tvg_logo_match.group(1)
     
     # 提取group-title（如果有的话）
     group_title = ''
-    group_match = re.search(r'group-title="([^"]*)"', extinf_part)
+    group_match = re.搜索(r'group-title="([^"]*)"', extinf_part)
     if group_match:
         group_title = group_match.group(1)
     
@@ -172,8 +183,15 @@ def process_m3u_content(content, stream_contents):
     # 添加所有直播源
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            # 从源内容中提取频道（保留所有属性）
-            channels = extract_channels_from_m3u(source_info['content'])
+            # 先替换域名
+            processed_content = replace_domain_in_content(
+                source_info['content'],
+                source_info['old_domain'],
+                source_info['new_domain']
+            )
+            
+            # 从处理后的内容中提取频道
+            channels = extract_channels_from_m3u(processed_content)
             
             if channels:
                 # 添加空行分隔
@@ -220,8 +238,15 @@ def process_txt_content(content, stream_contents):
     # 添加所有直播源（使用 #genre# 格式）
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            # 从M3U格式提取频道信息
-            channels = extract_channels_from_m3u(source_info['content'])
+            # 先替换域名
+            processed_content = replace_domain_in_content(
+                source_info['content'],
+                source_info['old_domain'],
+                source_info['new_domain']
+            )
+            
+            # 从处理后的内容中提取频道
+            channels = extract_channels_from_m3u(processed_content)
             
             if channels:
                 # 添加分类标记（格式：虎牙,#genre#）
@@ -282,7 +307,9 @@ if __name__ == '__main__':
         stream_contents[source_key] = {
             'content': content,
             'name': source_info['name'],
-            'group_title': source_info['group_title']
+            'group_title': source_info['group_title'],
+            'old_domain': source_info['old_domain'],
+            'new_domain': source_info['new_domain']
         }
     
     success_count = 0
@@ -320,6 +347,7 @@ if __name__ == '__main__':
     if success_count == total_count:
         print(f'✅ 全部 {total_count} 个文件同步成功！')
         print('🎯 虎牙和斗鱼直播源已作为独立分类添加到文件末尾')
+        print('🔄 已自动将域名替换为 live.metshop.top')
         exit(0)
     else:
         print(f'⚠️ 成功 {success_count}/{total_count} 个文件，请检查失败原因')
