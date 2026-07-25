@@ -8,22 +8,16 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    
     steps:
       - name: 签出公开仓库
         uses: actions/checkout@v4
-      
       - name: 设置Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
       - name: 安装依赖
-        run: |
-          pip install requests
-      
+        run: pip install requests
       - name: 同步文件
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          python .github/scripts/sync.py
+        run: python .github/scripts/sync.py
