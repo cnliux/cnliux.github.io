@@ -26,7 +26,7 @@ STREAM_SOURCES = {
         'name': '斗鱼',
         'group_title': '斗鱼',
         'old_domain': 'live.ottiptv.cc',
-        'new_domain': 'live.metshop.top'
+        'new_domain': 'allinone.netsite.cc'
     }
 }
 
