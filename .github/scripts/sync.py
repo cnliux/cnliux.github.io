@@ -70,7 +70,7 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-name
     tvg_name = ''
-    tvg_name_match = re.搜索(r'tvg-name="([^"]*)"', extinf_part)
+    tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
     if tvg_name_match:
         tvg_name = tvg_name_match.group(1)
     else:
@@ -78,13 +78,13 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-logo
     tvg_logo = ''
-    tvg_logo_match = re.搜索(r'tvg-logo="([^"]*)"', extinf_part)
+    tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
     if tvg_logo_match:
         tvg_logo = tvg_logo_match.group(1)
     
     # 提取group-title（如果有的话）
     group_title = ''
-    group_match = re.搜索(r'group-title="([^"]*)"', extinf_part)
+    group_match = re.search(r'group-title="([^"]*)"', extinf_part)
     if group_match:
         group_title = group_match.group(1)
     
