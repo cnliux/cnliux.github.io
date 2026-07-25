@@ -17,12 +17,12 @@ STREAM_SOURCES = {
     'huya': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/huyayqk.m3u',
         'name': '虎牙',
-        'genre_tag': '#genre#虎牙'
+        'group_title': '虎牙直播'
     },
     'douyu': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/douyuyqk.m3u',
         'name': '斗鱼',
-        'genre_tag': '#genre#斗鱼'
+        'group_title': '斗鱼直播'
     }
 }
 
@@ -34,35 +34,59 @@ FILE_MAPPINGS = [
 # ===================
 
 def fetch_stream_content(url, source_name):
-    """从远程URL拉取直播源，并清理格式"""
+    """从远程URL拉取直播源，并标准化格式"""
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         content = response.text
         
-        # 清理拉取的内容，移除可能存在的头部和分组标记
+        # 解析并标准化拉取的内容
         lines = content.splitlines()
         cleaned_lines = []
-        in_header = True
+        i = 0
         
-        for line in lines:
-            line = line.strip()
+        while i < len(lines):
+            line = lines[i].strip()
             if not line:
+                i += 1
                 continue
             
-            # 跳过可能的头部标记（除了必要的EXTM3U）
+            # 跳过M3U头部
             if line.startswith('#EXTM3U'):
+                i += 1
                 continue
+            
+            # 跳过#genre#标记
             if line.startswith('#genre#'):
+                i += 1
                 continue
+            
+            # 处理频道信息
             if line.startswith('#EXTINF:'):
-                in_header = False
-                cleaned_lines.append(line)
-            elif not in_header and not line.startswith('#'):
-                cleaned_lines.append(line)
-            elif line.startswith('#EXTVLCOPT') or line.startswith('#EXTGRP'):
-                # 保留一些重要的扩展标记
-                cleaned_lines.append(line)
+                # 提取频道名称和可能的group-title
+                channel_name = ''
+                group_title = ''
+                
+                # 尝试提取现有的group-title
+                if 'group-title=' in line:
+                    # 如果已有group-title，保留它
+                    cleaned_lines.append(line)
+                else:
+                    # 如果没有group-title，我们稍后会在处理时添加
+                    cleaned_lines.append(line)
+                
+                # 获取下一行的URL
+                i += 1
+                if i < len(lines):
+                    url_line = lines[i].strip()
+                    if url_line and not url_line.startswith('#'):
+                        cleaned_lines.append(url_line)
+                i += 1
+            else:
+                # 其他行（如注释等）
+                if not line.startswith('#'):
+                    cleaned_lines.append(line)
+                i += 1
         
         result = '\n'.join(cleaned_lines)
         print(f'✅ 成功拉取{source_name}直播源 (处理前: {len(content)} 字符, 处理后: {len(result)} 字符)')
@@ -71,24 +95,54 @@ def fetch_stream_content(url, source_name):
         print(f'⚠️ 拉取{source_name}直播源失败: {e}')
         return None
 
+def add_group_title_to_channel(line, group_title):
+    """为频道添加或替换group-title"""
+    if 'group-title=' in line:
+        # 替换现有的group-title
+        pattern = r'group-title="[^"]*"'
+        return re.sub(pattern, f'group-title="{group_title}"', line)
+    else:
+        # 添加group-title
+        # 在#EXTINF:后面插入group-title
+        parts = line.split(',', 1)
+        if len(parts) == 2:
+            # 在频道名称前插入group-title
+            inf_part = parts[0]
+            name_part = parts[1]
+            # 检查是否已有其他属性
+            if ' ' in inf_part and not inf_part.endswith(' '):
+                return f'{inf_part} group-title="{group_title}",{name_part}'
+            else:
+                return f'{inf_part} group-title="{group_title}",{name_part}'
+    return line
+
 def process_m3u_content(content, stream_contents):
-    """处理m3u格式内容，将多个直播源添加到末尾"""
+    """处理m3u格式内容，将多个直播源添加到末尾，使用group-title分类"""
     if not stream_contents:
         return content
     
-    # 移除所有原有的直播源内容
+    # 移除所有原有的直播源内容（通过检测已存在的group-title）
     lines = content.splitlines()
     filtered_lines = []
     skip = False
+    current_group = None
     
-    # 查找并移除所有已有的直播源部分
     for line in lines:
-        # 检测所有可能的分类标记
-        if '#genre#' in line and any(name in line for name in ['虎牙', '斗鱼']):
+        # 检测已有的直播源分组
+        if 'group-title="虎牙直播"' in line or 'group-title="斗鱼直播"' in line:
             skip = True
+            current_group = line
             continue
-        if skip and line.strip() == '':
+        if skip and line.strip() and not line.startswith('#'):
+            # 跳过URL
+            continue
+        if skip and line.startswith('#EXTINF:'):
+            # 跳过EXTINF行
+            continue
+        if skip and not line.strip():
+            # 空行表示分组结束
             skip = False
+            current_group = None
             continue
         if not skip:
             filtered_lines.append(line)
@@ -97,22 +151,45 @@ def process_m3u_content(content, stream_contents):
     
     # 确保内容以正确的M3U头部开始
     if not content.startswith('#EXTM3U'):
-        # 如果原内容没有头部，添加一个
         content = '#EXTM3U\n' + content
     
     # 确保末尾有换行
     if not content.endswith('\n'):
         content += '\n'
     
-    # 添加所有直播源，使用正确的分组标记
+    # 添加所有直播源
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            # 添加分组标记（应该在频道列表之前）
-            content += f'\n{source_info["genre_tag"]}\n'
-            # 添加频道内容
-            content += source_info['content']
-            if not source_info['content'].endswith('\n'):
-                content += '\n'
+            # 解析源内容，为每条频道添加或替换group-title
+            source_lines = source_info['content'].splitlines()
+            processed_lines = []
+            i = 0
+            
+            while i < len(source_lines):
+                line = source_lines[i].strip()
+                if not line:
+                    i += 1
+                    continue
+                
+                if line.startswith('#EXTINF:'):
+                    # 为这条频道添加group-title
+                    modified_line = add_group_title_to_channel(line, source_info['group_title'])
+                    processed_lines.append(modified_line)
+                    
+                    # 获取下一行的URL
+                    i += 1
+                    if i < len(source_lines):
+                        url_line = source_lines[i].strip()
+                        if url_line and not url_line.startswith('#'):
+                            processed_lines.append(url_line)
+                else:
+                    # 如果不是EXTINF行，直接添加
+                    processed_lines.append(line)
+                i += 1
+            
+            # 添加处理后的内容
+            if processed_lines:
+                content += '\n'.join(processed_lines) + '\n\n'
     
     return content
 
@@ -126,9 +203,8 @@ def process_txt_content(content, stream_contents):
     filtered_lines = []
     skip = False
     
-    # 查找并移除所有已有的直播源部分
     for line in lines:
-        if any(keyword in line for keyword in ['虎牙直播', '斗鱼直播', '#虎牙', '#斗鱼', '#genre#虎牙', '#genre#斗鱼']):
+        if any(keyword in line for keyword in ['虎牙直播', '斗鱼直播', '#虎牙', '#斗鱼']):
             skip = True
             continue
         if skip and line.strip() == '':
@@ -146,7 +222,7 @@ def process_txt_content(content, stream_contents):
     # 添加所有直播源
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            content += f'\n#{source_info["name"]}直播源\n'
+            content += f'\n# {source_info["name"]}直播源\n'
             content += source_info['content']
             if not source_info['content'].endswith('\n'):
                 content += '\n'
@@ -203,7 +279,7 @@ if __name__ == '__main__':
         stream_contents[source_key] = {
             'content': content,
             'name': source_info['name'],
-            'genre_tag': source_info['genre_tag']
+            'group_title': source_info['group_title']
         }
     
     success_count = 0
@@ -240,7 +316,7 @@ if __name__ == '__main__':
     
     if success_count == total_count:
         print(f'✅ 全部 {total_count} 个文件同步成功！')
-        print('🎯 虎牙和斗鱼直播源已作为独立节目列表添加到文件末尾')
+        print('🎯 虎牙和斗鱼直播源已作为独立分类添加到文件末尾')
         exit(0)
     else:
         print(f'⚠️ 成功 {success_count}/{total_count} 个文件，请检查失败原因')
