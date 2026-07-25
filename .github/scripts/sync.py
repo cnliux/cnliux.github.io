@@ -17,12 +17,12 @@ STREAM_SOURCES = {
     'huya': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/huyayqk.m3u',
         'name': '虎牙',
-        'group_title': '虎牙直播'
+        'group_title': '虎牙'
     },
     'douyu': {
         'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/douyuyqk.m3u',
         'name': '斗鱼',
-        'group_title': '斗鱼直播'
+        'group_title': '斗鱼'
     }
 }
 
@@ -45,8 +45,50 @@ def fetch_stream_content(url, source_name):
         print(f'⚠️ 拉取{source_name}直播源失败: {e}')
         return None
 
+def extract_channel_info(extinf_line):
+    """从EXTINF行提取频道信息，保留所有属性"""
+    # 提取所有属性
+    # 格式: #EXTINF:-1 tvg-name="xxx" group-title="xxx" tvg-logo="xxx",频道名
+    
+    # 提取频道名（逗号后面的部分）
+    channel_name = ''
+    if ',' in extinf_line:
+        parts = extinf_line.split(',', 1)
+        channel_name = parts[1].strip()
+        extinf_part = parts[0]
+    else:
+        extinf_part = extinf_line
+        channel_name = '未知频道'
+    
+    # 提取tvg-name
+    tvg_name = ''
+    tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
+    if tvg_name_match:
+        tvg_name = tvg_name_match.group(1)
+    else:
+        tvg_name = channel_name
+    
+    # 提取tvg-logo
+    tvg_logo = ''
+    tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
+    if tvg_logo_match:
+        tvg_logo = tvg_logo_match.group(1)
+    
+    # 提取group-title（如果有的话）
+    group_title = ''
+    group_match = re.search(r'group-title="([^"]*)"', extinf_part)
+    if group_match:
+        group_title = group_match.group(1)
+    
+    return {
+        'channel_name': channel_name,
+        'tvg_name': tvg_name,
+        'tvg_logo': tvg_logo,
+        'group_title': group_title
+    }
+
 def extract_channels_from_m3u(content):
-    """从M3U内容中提取频道信息，返回频道列表"""
+    """从M3U内容中提取频道信息，返回频道列表（包含完整属性）"""
     channels = []
     lines = content.splitlines()
     i = 0
@@ -57,52 +99,64 @@ def extract_channels_from_m3u(content):
             i += 1
             continue
         
-        # 跳过M3U头部和注释
+        # 跳过M3U头部和#genre#标记
         if line.startswith('#EXTM3U') or line.startswith('#genre#'):
             i += 1
             continue
         
         # 处理频道信息
         if line.startswith('#EXTINF:'):
-            # 提取频道名称
-            channel_name = ''
-            # 查找逗号后的频道名称
-            if ',' in line:
-                parts = line.split(',', 1)
-                if len(parts) == 2:
-                    channel_name = parts[1].strip()
+            # 提取频道信息
+            channel_info = extract_channel_info(line)
             
             # 获取下一行的URL
             i += 1
             if i < len(lines):
                 url_line = lines[i].strip()
                 if url_line and not url_line.startswith('#'):
-                    if channel_name:
-                        channels.append(f'{channel_name},{url_line}')
-                    else:
-                        # 如果没有频道名称，使用URL作为标识
-                        channels.append(url_line)
+                    channel_info['url'] = url_line
+                    channels.append(channel_info)
         i += 1
     
     return channels
+
+def format_m3u_channel(channel_info, new_group_title):
+    """格式化M3U频道行，保留所有属性，只修改group-title"""
+    # 构建EXTINF行，保留所有原有属性
+    extinf = f'#EXTINF:-1 tvg-name="{channel_info["tvg_name"]}" group-title="{new_group_title}"'
+    
+    # 如果有logo，保留
+    if channel_info.get('tvg_logo'):
+        extinf += f' tvg-logo="{channel_info["tvg_logo"]}"'
+    
+    # 添加频道名
+    extinf += f',{channel_info["channel_name"]}'
+    
+    return f'{extinf}\n{channel_info["url"]}'
 
 def process_m3u_content(content, stream_contents):
     """处理m3u格式内容，将多个直播源添加到末尾"""
     if not stream_contents:
         return content
     
-    # 移除所有原有的直播源内容
+    # 移除所有原有的直播源内容（通过检测group-title）
     lines = content.splitlines()
     filtered_lines = []
     skip = False
     
-    # 查找并移除所有已有的直播源部分
     for line in lines:
-        # 检测所有可能的分类标记
-        if '#genre#' in line and any(name in line for name in ['虎牙', '斗鱼']):
+        # 检测已有的虎牙或斗鱼分组
+        if 'group-title="虎牙"' in line or 'group-title="斗鱼"' in line:
             skip = True
             continue
-        if skip and line.strip() == '':
+        if skip and line.strip() and not line.startswith('#'):
+            # 跳过URL
+            continue
+        if skip and line.startswith('#EXTINF:'):
+            # 跳过EXTINF行
+            continue
+        if skip and not line.strip():
+            # 空行表示分组结束
             skip = False
             continue
         if not skip:
@@ -118,46 +172,20 @@ def process_m3u_content(content, stream_contents):
     if not content.endswith('\n'):
         content += '\n'
     
-    # 添加所有直播源（保持M3U格式）
+    # 添加所有直播源
     for source_key, source_info in stream_contents.items():
         if source_info['content']:
-            # 处理源内容，确保group-title正确
-            source_lines = source_info['content'].splitlines()
-            processed_lines = []
-            i = 0
+            # 从源内容中提取频道（保留所有属性）
+            channels = extract_channels_from_m3u(source_info['content'])
             
-            while i < len(source_lines):
-                line = source_lines[i].strip()
-                if not line:
-                    i += 1
-                    continue
+            if channels:
+                # 添加空行分隔
+                content += '\n'
                 
-                if line.startswith('#EXTINF:'):
-                    # 检查是否有group-title
-                    if 'group-title=' not in line:
-                        # 如果没有，添加group-title
-                        if ',' in line:
-                            parts = line.split(',', 1)
-                            line = f'{parts[0]} group-title="{source_info["group_title"]}",{parts[1]}'
-                        else:
-                            line = f'{line} group-title="{source_info["group_title"]}"'
-                    processed_lines.append(line)
-                    
-                    # 获取下一行的URL
-                    i += 1
-                    if i < len(source_lines):
-                        url_line = source_lines[i].strip()
-                        if url_line and not url_line.startswith('#'):
-                            processed_lines.append(url_line)
-                else:
-                    # 非EXTINF行直接添加
-                    if not line.startswith('#EXTM3U') and not line.startswith('#genre#'):
-                        processed_lines.append(line)
-                i += 1
-            
-            # 添加处理后的内容
-            if processed_lines:
-                content += '\n'.join(processed_lines) + '\n\n'
+                # 为每个频道生成标准M3U格式，替换group-title
+                for channel in channels:
+                    formatted = format_m3u_channel(channel, source_info['group_title'])
+                    content += formatted + '\n'
     
     return content
 
@@ -172,7 +200,7 @@ def process_txt_content(content, stream_contents):
     skip = False
     
     for line in lines:
-        if any(keyword in line for keyword in ['虎牙直播', '斗鱼直播', '#虎牙', '#斗鱼']):
+        if any(keyword in line for keyword in ['虎牙', '斗鱼', '#虎牙', '#斗鱼']):
             skip = True
             continue
         if skip and line.strip() == '':
@@ -196,8 +224,11 @@ def process_txt_content(content, stream_contents):
             if channels:
                 # 添加分类标题
                 content += f'\n# {source_info["name"]}直播源\n'
-                # 添加频道列表
-                content += '\n'.join(channels)
+                # 添加频道列表（频道名,URL）
+                channel_lines = []
+                for channel in channels:
+                    channel_lines.append(f'{channel["channel_name"]},{channel["url"]}')
+                content += '\n'.join(channel_lines)
                 content += '\n'
     
     return content
