@@ -2,7 +2,7 @@ import requests
 import base64
 import os
 import re
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
@@ -35,6 +35,18 @@ FILE_MAPPINGS = [
     {'source': 'outputs/all.txt', 'target': 'tv.txt'},
 ]
 # ===================
+
+def fetch_stream_content(url, source_name):
+    """从远程URL拉取直播源"""
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        content = response.text
+        print(f'✅ 成功拉取{source_name}直播源 (大小: {len(content)} 字符)')
+        return content
+    except Exception as e:
+        print(f'⚠️ 拉取{source_name}直播源失败: {e}')
+        return None
 
 def extract_domain_from_url(url):
     """从URL中提取域名"""
