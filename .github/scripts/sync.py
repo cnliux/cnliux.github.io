@@ -2,6 +2,7 @@ import requests
 import base64
 import os
 import re
+from urllib.parse import urlparse, urlunparse
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
@@ -12,20 +13,18 @@ TARGET_OWNER = 'cnliux'
 TARGET_REPO = 'cnliux.github.io'
 BRANCH = 'main'
 
-# 直播源URL配置
+# 直播源URL配置 - 只需要配置源URL和目标域名
 STREAM_SOURCES = {
     'huya': {
         'url': 'https://sub.ottiptv.cc/huyayqk.m3u',
         'name': '虎牙',
         'group_title': '虎牙',
-        'old_domain': 'sub.ottiptv.cc',
         'new_domain': 'live.metshop.top'
     },
     'douyu': {
         'url': 'https://sub.ottiptv.cc/douyuyqk.m3u',
         'name': '斗鱼',
         'group_title': '斗鱼',
-        'old_domain': 'sub.ottiptv.cc',
         'new_domain': 'live.metshop.top'
     }
 }
@@ -37,24 +36,34 @@ FILE_MAPPINGS = [
 ]
 # ===================
 
-def fetch_stream_content(url, source_name):
-    """从远程URL拉取直播源"""
-    try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        content = response.text
-        print(f'✅ 成功拉取{source_name}直播源 (大小: {len(content)} 字符)')
-        return content
-    except Exception as e:
-        print(f'⚠️ 拉取{source_name}直播源失败: {e}')
-        return None
+def extract_domain_from_url(url):
+    """从URL中提取域名"""
+    parsed = urlparse(url)
+    return parsed.netloc
 
-def replace_domain_in_content(content, old_domain, new_domain):
-    """替换内容中的域名"""
-    if not content:
+def replace_domain_in_urls(content, old_domain, new_domain):
+    """智能替换内容中的所有URL域名，保持路径不变"""
+    if not content or not old_domain:
         return content
-    # 替换所有出现的旧域名为新域名
-    return content.replace(old_domain, new_domain)
+    
+    # 使用正则表达式匹配完整的URL，只替换域名部分
+    # 匹配 http:// 或 https:// 开头的URL
+    url_pattern = r'(https?://)' + re.escape(old_domain) + r'([/?#][^\s<>"\'{}|\\^`\[\]]*)?'
+    
+    def replace_url(match):
+        protocol = match.group(1)  # http:// 或 https://
+        path = match.group(2) if match.group(2) else ''
+        return f'{protocol}{new_domain}{path}'
+    
+    # 替换所有匹配的URL
+    result = re.sub(url_pattern, replace_url, content)
+    
+    # 统计替换次数
+    count = content.count(old_domain)
+    if count > 0:
+        print(f'   🔄 替换了 {count} 处域名: {old_domain} -> {new_domain}')
+    
+    return result
 
 def extract_channel_info(extinf_line):
     """从EXTINF行提取频道信息，保留所有属性"""
@@ -182,9 +191,9 @@ def process_m3u_content(content, stream_contents):
     
     # 添加所有直播源
     for source_key, source_info in stream_contents.items():
-        if source_info['content']:
-            # 先替换域名
-            processed_content = replace_domain_in_content(
+        if source_info['content'] and source_info['old_domain']:
+            # 智能替换域名（保持路径不变）
+            processed_content = replace_domain_in_urls(
                 source_info['content'],
                 source_info['old_domain'],
                 source_info['new_domain']
@@ -237,9 +246,9 @@ def process_txt_content(content, stream_contents):
     
     # 添加所有直播源（使用 #genre# 格式）
     for source_key, source_info in stream_contents.items():
-        if source_info['content']:
-            # 先替换域名
-            processed_content = replace_domain_in_content(
+        if source_info['content'] and source_info['old_domain']:
+            # 智能替换域名（保持路径不变）
+            processed_content = replace_domain_in_urls(
                 source_info['content'],
                 source_info['old_domain'],
                 source_info['new_domain']
@@ -304,11 +313,15 @@ if __name__ == '__main__':
     
     for source_key, source_info in STREAM_SOURCES.items():
         content = fetch_stream_content(source_info['url'], source_info['name'])
+        # 从URL中动态提取旧域名
+        old_domain = extract_domain_from_url(source_info['url'])
+        print(f'🔍 从 {source_info["url"]} 提取域名: {old_domain}')
+        
         stream_contents[source_key] = {
             'content': content,
             'name': source_info['name'],
             'group_title': source_info['group_title'],
-            'old_domain': source_info['old_domain'],
+            'old_domain': old_domain,  # 动态提取
             'new_domain': source_info['new_domain']
         }
     
@@ -347,7 +360,16 @@ if __name__ == '__main__':
     if success_count == total_count:
         print(f'✅ 全部 {total_count} 个文件同步成功！')
         print('🎯 虎牙和斗鱼直播源已作为独立分类添加到文件末尾')
-        print('🔄 已自动将域名替换为 live.metshop.top')
+        # 动态显示替换的域名信息
+        domains_used = {}
+        for key, info in stream_contents.items():
+            if info['content'] and info['old_domain']:
+                domains_used[info['old_domain']] = info['new_domain']
+        
+        if domains_used:
+            print('🔄 域名替换:')
+            for old, new in domains_used.items():
+                print(f'   {old} -> {new}')
         exit(0)
     else:
         print(f'⚠️ 成功 {success_count}/{total_count} 个文件，请检查失败原因')
