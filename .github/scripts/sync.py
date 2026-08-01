@@ -15,18 +15,18 @@ BRANCH = 'main'
 # 直播源URL配置
 STREAM_SOURCES = {
     'huya': {
-        'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/huyayqk.m3u',
+        'url': 'https://sub.ottiptv.cc/huyayqk.m3u',
         'name': '虎牙',
         'group_title': '虎牙',
-        'old_domain': 'live.ottiptv.cc',
+        'old_domain': 'sub.ottiptv.cc',
         'new_domain': 'live.metshop.top'
     },
     'douyu': {
-        'url': 'https://fastly.jsdelivr.net/gh/mursor1985/LIVE@main/douyuyqk.m3u',
+        'url': 'https://sub.ottiptv.cc/douyuyqk.m3u',
         'name': '斗鱼',
         'group_title': '斗鱼',
-        'old_domain': 'live.ottiptv.cc',
-        'new_domain': 'allinone.netsite.cc'
+        'old_domain': 'sub.ottiptv.cc',
+        'new_domain': 'live.metshop.top'
     }
 }
 
@@ -70,7 +70,7 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-name
     tvg_name = ''
-    tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
+    tvg_name_match = re.搜索(r'tvg-name="([^"]*)"', extinf_part)
     if tvg_name_match:
         tvg_name = tvg_name_match.group(1)
     else:
@@ -78,13 +78,13 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-logo
     tvg_logo = ''
-    tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
+    tvg_logo_match = re.搜索(r'tvg-logo="([^"]*)"', extinf_part)
     if tvg_logo_match:
         tvg_logo = tvg_logo_match.group(1)
     
     # 提取group-title（如果有的话）
     group_title = ''
-    group_match = re.search(r'group-title="([^"]*)"', extinf_part)
+    group_match = re.搜索(r'group-title="([^"]*)"', extinf_part)
     if group_match:
         group_title = group_match.group(1)
     
