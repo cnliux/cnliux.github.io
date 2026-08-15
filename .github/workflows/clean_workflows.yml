@@ -9,7 +9,7 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     permissions:
-Actions: write
+      actions: write
 
     steps:
       - name: Checkout
@@ -19,6 +19,6 @@ Actions: write
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-仓库: ${{ github.repository }}
+          repository: ${{ github.repository }}
           retain_days: 14
           keep_minimum_runs: 1
