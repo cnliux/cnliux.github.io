@@ -2,15 +2,14 @@ name: Auto Delete Old Workflow Runs
 
 on:
   schedule:
-    - cron: '0 0 * * 0'   # 每周日凌晨0点执行（0=周日）
-  workflow_dispatch:       # 保留手动触发，方便随时测试
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     permissions:
 Actions: write
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,5 +19,5 @@ Actions: write
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 仓库: ${{ github.repository }}
-          retain_days: 0            # 删除所有旧记录
-          keep_minimum_runs: 1      # 每个工作流至少保留1条
+          retain_days: 0
+          keep_minimum_runs: 1
