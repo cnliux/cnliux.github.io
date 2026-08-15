@@ -20,6 +20,9 @@
     --text: #e6e8ee;
     --muted: #8b93a7;
     --accent: #3b82f6;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #eab308;
     --hover: #242936;
   }
   html, body { height: 100%; }
@@ -80,85 +83,38 @@
   }
   input[type="text"]:focus, input[type="search"]:focus { border-color: var(--accent); }
   #urlInput { flex: 1; min-width: 180px; }
-  .main {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  .player-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
+  .main { flex: 1; display: flex; overflow: hidden; }
+  .player-area { flex: 1; display: flex; flex-direction: column; min-width: 0; }
   .video-wrap {
-    flex: 1;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 0;
-    position: relative;
+    flex: 1; background: #000; display: flex; align-items: center; justify-content: center;
+    min-height: 0; position: relative;
   }
-  video {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    outline: none;
-  }
+  video { width: 100%; height: 100%; background: #000; outline: none; }
   #overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #ffd7d7;
-    background: rgba(0,0,0,0.72);
-    pointer-events: none;
-    visibility: hidden;
-    z-index: 2;
-    line-height: 1.7;
-    word-break: break-all;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    padding: 20px; text-align: center; font-size: 14px; color: #ffd7d7;
+    background: rgba(0,0,0,0.72); pointer-events: none; visibility: hidden; z-index: 2;
+    line-height: 1.7; word-break: break-all;
   }
   #overlay.show { visibility: visible; }
   #overlay .spinner {
-    width: 34px; height: 34px;
-    border: 3px solid rgba(255,255,255,0.2);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
+    width: 34px; height: 34px; border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
   #overlay .sub { font-size: 12px; color: var(--muted); }
   .status {
-    padding: 8px 16px;
-    font-size: 13px;
-    color: var(--muted);
-    background: var(--panel);
-    border-top: 1px solid var(--border);
-    min-height: 34px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    padding: 8px 16px; font-size: 13px; color: var(--muted); background: var(--panel);
+    border-top: 1px solid var(--border); min-height: 34px; display: flex; align-items: center; gap: 8px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
-  .status.playing .dot { background: #22c55e; }
-  .status.error .dot { background: #ef4444; }
+  .status.playing .dot { background: var(--green); }
+  .status.error .dot { background: var(--red); }
   .sidebar {
-    width: 320px;
-    flex-shrink: 0;
-    background: var(--panel);
-    border-left: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
+    width: 320px; flex-shrink: 0; background: var(--panel); border-left: 1px solid var(--border);
+    display: flex; flex-direction: column;
   }
   .sidebar .search-wrap { padding: 10px; border-bottom: 1px solid var(--border); }
   #search { width: 100%; }
@@ -167,18 +123,9 @@
   #channelList::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
   .cat { border-bottom: 1px solid var(--border); }
   .cat-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 9px 12px;
-    background: var(--panel2);
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-    user-select: none;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    display: flex; align-items: center; justify-content: space-between; padding: 9px 12px;
+    background: var(--panel2); cursor: pointer; font-size: 13px; font-weight: 600; user-select: none;
+    position: sticky; top: 0; z-index: 1;
   }
   .cat-head:hover { background: var(--hover); }
   .cat-head .count { font-size: 11px; color: var(--muted); font-weight: 400; }
@@ -186,15 +133,8 @@
   .cat.collapsed .arrow { transform: rotate(-90deg); }
   .cat.collapsed .ch-list { display: none; }
   .ch {
-    padding: 7px 12px 7px 18px;
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
+    padding: 7px 12px 7px 18px; cursor: pointer; font-size: 13px; display: flex; align-items: center;
+    gap: 8px; color: var(--text); white-space: nowrap; overflow: hidden;
   }
   .ch .logo { width: 20px; height: 20px; border-radius: 3px; object-fit: cover; flex-shrink: 0; background: var(--panel2); }
   .ch .name { overflow: hidden; text-overflow: ellipsis; }
@@ -202,9 +142,35 @@
   .ch.active { background: var(--accent); color: #fff; }
   .ch.active .name { color: #fff; }
   .empty { padding: 20px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  .debug-panel {
+    display: none; flex-direction: column; height: 36vh; min-height: 220px;
+    border-top: 1px solid var(--border); background: var(--panel);
+  }
+  .debug-panel.open { display: flex; }
+  .dbg-head {
+    display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+    border-bottom: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .dbg-head .dbg-title { font-size: 13px; font-weight: 600; }
+  .dbg-info { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .dbg-info b { color: var(--text); font-weight: 500; }
+  #dbgLog {
+    flex: 1; overflow-y: auto; padding: 8px 12px; font-family: Consolas, Menlo, monospace;
+    font-size: 12px; line-height: 1.7;
+  }
+  #dbgLog::-webkit-scrollbar { width: 8px; }
+  #dbgLog::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  #dbgLog .t { color: var(--muted); margin-right: 8px; }
+  #dbgLog .ok { color: var(--green); }
+  #dbgLog .err { color: var(--red); }
+  #dbgLog .warn { color: var(--yellow); }
+  #dbgLog .info { color: var(--accent); }
+
   @media (max-width: 820px) {
     .main { flex-direction: column; }
-    .sidebar { width: 100%; border-left: none; border-top: 1px solid var(--border); height: 220px; }
+    .sidebar { width: 100%; border-left: none; border-top: 1px solid var(--border); height: 200px; }
+    .debug-panel { height: 30vh; }
   }
 </style>
 </head>
@@ -228,7 +194,26 @@
         <span class="hint">或直接拖放文件到页面</span>
       </div>
       <button class="btn active" id="skipBtn">自动换台: 开</button>
+      <button class="btn" id="dbgBtn">调试工作台</button>
     </div>
+  </div>
+
+  <div class="debug-panel" id="debugPanel">
+    <div class="dbg-head">
+      <span class="dbg-title">调试工作台</span>
+      <button class="btn" id="dbgClear">清空日志</button>
+      <button class="btn" id="dbgTest">测试当前源</button>
+      <button class="btn" id="dbgCopy">复制日志</button>
+    </div>
+    <div class="dbg-info">
+      <span>协议: <b id="dProto"></b></span>
+      <span>主机: <b id="dHost"></b></span>
+      <span>模式: <b id="dMode"></b></span>
+      <span>传输顺序: <b id="dTransports"></b></span>
+      <span>当前方式: <b id="dCurrent">-</b></span>
+      <span>当前频道: <b id="dChannel">-</b></span>
+    </div>
+    <div id="dbgLog"></div>
   </div>
 
   <div class="main">
@@ -253,9 +238,10 @@
   var channels = [];
   var currentIndex = -1;
   var hls = null;
-  var netErr = 0;
-  var autoSkip = true;
   var transportIdx = 0;
+  var autoSkip = true;
+  var playingNow = false;
+  var watchdogTimer = null;
 
   var video = document.getElementById('video');
   var statusEl = document.getElementById('status');
@@ -273,43 +259,54 @@
   var modeFile = document.getElementById('modeFile');
   var urlRow = document.getElementById('urlRow');
   var fileRow = document.getElementById('fileRow');
+  var debugPanel = document.getElementById('debugPanel');
+  var dbgBtn = document.getElementById('dbgBtn');
+  var dbgLog = document.getElementById('dbgLog');
+  var dbgClear = document.getElementById('dbgClear');
+  var dbgTest = document.getElementById('dbgTest');
+  var dbgCopy = document.getElementById('dbgCopy');
+  var dProto = document.getElementById('dProto');
+  var dHost = document.getElementById('dHost');
+  var dMode = document.getElementById('dMode');
+  var dTransports = document.getElementById('dTransports');
+  var dCurrent = document.getElementById('dCurrent');
+  var dChannel = document.getElementById('dChannel');
 
-  function switchMode(mode) {
-    var isUrl = mode === 'url';
-    modeUrl.className = 'mode' + (isUrl ? ' active' : '');
-    modeFile.className = 'mode' + (isUrl ? '' : ' active');
-    urlRow.style.display = isUrl ? 'flex' : 'none';
-    fileRow.style.display = isUrl ? 'none' : 'flex';
+  // ===== 调试日志 =====
+  var logBuf = [];
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
-
-  function setStatus(msg, type) {
-    statusEl.className = 'status' + (type ? ' ' + type : '');
-    statusText.textContent = msg;
+  function log(msg, cls) {
+    var now = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+    logBuf.push('[' + now + '] ' + msg);
+    var d = document.createElement('div');
+    d.innerHTML = '<span class="t">' + now + '</span><span class="' + (cls || '') + '">' + escapeHtml(msg) + '</span>';
+    dbgLog.appendChild(d);
+    while (dbgLog.children.length > 500) dbgLog.removeChild(dbgLog.firstChild);
+    dbgLog.scrollTop = dbgLog.scrollHeight;
   }
+  function logOk(msg) { log(msg, 'ok'); }
+  function logErr(msg) { log(msg, 'err'); }
+  function logWarn(msg) { log(msg, 'warn'); }
+  function logInfo(msg) { log(msg, 'info'); }
 
-  function showOverlay(msg, sub) {
-    overlayText.textContent = msg || '';
-    overlaySub.textContent = sub || '';
-    overlay.className = 'show';
-  }
-
-  function hideOverlay() {
-    overlay.className = '';
-    overlayText.textContent = '';
-    overlaySub.textContent = '';
-  }
-
-  function getHls() {
-    return window.Hls || null;
-  }
-
-  // ===== 传输方式：本机代理 / 直连 / 公共CORS转发 =====
+  // ===== 环境信息 =====
   var PROXY_OK = location.protocol.indexOf('http') === 0 &&
     /^\[?::1\]?$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+  dProto.textContent = location.protocol;
+  dHost.textContent = location.hostname;
+  dMode.textContent = PROXY_OK ? '本机代理(可用)' : '网页模式(无本机代理)';
+  logInfo('页面协议=' + location.protocol + ' 主机=' + location.hostname +
+    ' 模式=' + (PROXY_OK ? '本机代理' : '网页模式'));
+  if (location.protocol === 'https:') {
+    logWarn('页面为 HTTPS，HTTP 直播源会被浏览器直接拦截(混合内容)，需靠公共转发');
+  }
 
+  // ===== 传输方式 =====
   var RELAYS = [
-    { label: '公共转发1', prefix: 'https://api.allorigins.win/raw?url=' },
-    { label: '公共转发2', prefix: 'https://corsproxy.io/?url=' }
+    { label: '公共转发1(allorigins)', prefix: 'https://api.allorigins.win/raw?url=' },
+    { label: '公共转发2(corsproxy)', prefix: 'https://corsproxy.io/?url=' }
   ];
 
   function resolveUrl(base, uri) {
@@ -371,6 +368,12 @@
     return list;
   }
   var transports = buildTransports();
+  dTransports.textContent = transports.map(function (t) { return t.label; }).join(' → ');
+  logInfo('传输顺序: ' + transports.map(function (t) { return t.label; }).join(' → '));
+
+  function curTransport() {
+    return transports[Math.min(transportIdx, transports.length - 1)];
+  }
 
   // ===== 解析 =====
   function parseM3u(text) {
@@ -466,6 +469,7 @@
     currentIndex = -1;
     render();
     setStatus('已加载 ' + sourceName + '，共 ' + channels.length + ' 个频道');
+    logOk('加载频道源: ' + sourceName + ' (' + channels.length + '个)');
     localStorage.setItem('iptv_cache_source', sourceName);
   }
 
@@ -546,11 +550,31 @@
   }
 
   // ===== 播放 =====
+  function clearWatchdog() {
+    if (watchdogTimer) { clearTimeout(watchdogTimer); watchdogTimer = null; }
+  }
+  function startWatchdog(ch, t) {
+    clearWatchdog();
+    watchdogTimer = setTimeout(function () {
+      watchdogTimer = null;
+      if (playingNow) return;
+      logWarn('[' + t.label + '] 超过10秒未开始播放(看门狗)，尝试下一方式');
+      escalate(ch);
+    }, 10000);
+  }
+  function escalate(ch) {
+    clearWatchdog();
+    transportIdx++;
+    doPlay(ch);
+  }
+
   function playChannel(index) {
     if (index < 0 || index >= channels.length) return;
     currentIndex = index;
     transportIdx = 0;
     var ch = channels[index];
+    dChannel.textContent = ch.name;
+    logInfo('选择频道: ' + ch.name);
     doPlay(ch);
     render();
   }
@@ -560,32 +584,42 @@
       onChannelFail(ch);
       return;
     }
-    var t = transports[transportIdx];
+    var t = curTransport();
     var src = t.src(ch.url);
+    playingNow = false;
+    dCurrent.textContent = t.label;
     setStatus('连接中 [' + t.label + ']: ' + ch.name);
     showOverlay('正在连接 [' + t.label + '] ...', ch.url);
+    logInfo('连接 [' + t.label + '] → ' + src);
 
     var HlsClass = getHls();
     if (!HlsClass) {
+      logErr('hls.js 未加载');
       setStatus('hls.js 加载失败', 'error');
       showOverlay('hls.js 未能加载，请检查 libs/hls.min.js 是否存在');
+      return;
+    }
+
+    if (location.protocol === 'https:' && /^http:\/\//i.test(ch.url) && t.label === '直连') {
+      logWarn('HTTPS页面 + HTTP直连 = 混合内容，浏览器将拦截，跳过直连');
+      escalate(ch);
       return;
     }
 
     if (video.canPlayType('application/vnd.apple.mpegurl') && !HlsClass.isSupported()) {
       hideOverlay();
       video.src = src;
-      video.play().catch(function () {});
+      video.play().catch(function (e) { logErr('原生播放失败: ' + e); });
       return;
     }
     if (!HlsClass.isSupported()) {
+      logErr('浏览器不支持 MSE/HLS');
       setStatus('浏览器不支持 HLS 播放', 'error');
       showOverlay('当前浏览器不支持 HLS 播放，请使用新版 Chrome/Edge');
       return;
     }
 
     if (hls) { hls.destroy(); hls = null; }
-    netErr = 0;
     var loaderCfg = t.loader ? t.loader(HlsClass) : null;
     hls = new Hls({
       maxBufferLength: 30,
@@ -598,32 +632,51 @@
     });
 
     hls.on(Hls.Events.ERROR, function (e, data) {
-      if (!data || !data.fatal) return;
+      if (!data) return;
+      var status = data.fatal ? '致命' : '非致命';
+      var det = data.details || '';
+      var xhrInfo = '';
+      if (data.networkDetails && data.networkDetails.status) {
+        xhrInfo = ' HTTP=' + data.networkDetails.status;
+      } else if (data.networkDetails && data.networkDetails.error) {
+        xhrInfo = ' ' + String(data.networkDetails.error);
+      }
+      if (data.fatal) {
+        logErr('HLS错误[' + t.label + '] fatal type=' + data.type + ' detail=' + det + xhrInfo);
+      } else {
+        logWarn('HLS提示[' + t.label + '] type=' + data.type + ' detail=' + det + xhrInfo);
+      }
+
       if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-        if (netErr < 2) {
-          netErr++;
-          if (hls) hls.startLoad();
-          return;
+        if (!playingNow) {
+          if (data.fatal) {
+            escalate(ch);
+          } else {
+            if (hls) hls.startLoad();
+            setTimeout(function () { if (!playingNow) escalate(ch); }, 2500);
+          }
+        } else if (data.fatal && hls) {
+          hls.startLoad();
         }
-        netErr = 0;
-        transportIdx++;
-        setStatus('[' + t.label + '] 连接失败，尝试下一方式');
-        doPlay(ch);
       } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
         if (hls) hls.recoverMediaError();
-      } else {
-        transportIdx++;
-        doPlay(ch);
+      } else if (data.fatal) {
+        escalate(ch);
       }
     });
+    hls.on(Hls.Events.MANIFEST_LOADING, function () { logInfo('[' + t.label + '] 请求播放列表...'); });
+    hls.on(Hls.Events.MANIFEST_PARSED, function () { logOk('[' + t.label + '] 播放列表解析成功'); });
 
     hls.loadSource(src);
     hls.attachMedia(video);
     video.play().catch(function () {});
+    startWatchdog(ch, t);
   }
 
   function onChannelFail(ch) {
+    clearWatchdog();
     setStatus('无法播放: ' + ch.name + '（已跳过）', 'error');
+    logErr('频道所有方式均失败: ' + ch.name);
     var msg = '该频道所有方式均失败，可能已失效或网络不通。';
     if (autoSkip) {
       msg += '2 秒后自动切换下一频道。';
@@ -638,12 +691,18 @@
   }
 
   video.addEventListener('playing', function () {
+    playingNow = true;
+    clearWatchdog();
     hideOverlay();
     var ch = channels[currentIndex];
-    if (ch) setStatus('播放中: ' + ch.name, 'playing');
+    if (ch) {
+      setStatus('播放中: ' + ch.name, 'playing');
+      logOk('播放成功 [' + curTransport().label + ']: ' + ch.name);
+    }
   });
   video.addEventListener('error', function () {
     if (!channels.length) return;
+    logErr('video元素错误');
     setStatus('播放出错', 'error');
     showOverlay('无法播放此源：可能已失效、被防盗链或网络不通。', '可尝试"自动换台"或切换其他线路');
   });
@@ -653,22 +712,27 @@
     url = url.trim();
     if (!url) return;
     setStatus('加载中: ' + url);
+    logInfo('加载订阅: ' + url);
     var text = null;
     var attempts = PROXY_OK
       ? ['/proxy?url=' + encodeURIComponent(url)]
       : [url, RELAYS[0].prefix + encodeURIComponent(url)];
     for (var i = 0; i < attempts.length; i++) {
       try {
+        logInfo('抓取订阅尝试: ' + attempts[i]);
         var resp = await fetch(attempts[i]);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         text = await resp.text();
+        logOk('订阅抓取成功: ' + attempts[i]);
         break;
       } catch (err) {
+        logErr('订阅抓取失败: ' + attempts[i] + ' → ' + err.message);
         text = null;
       }
     }
     if (text === null) {
-      setStatus('加载失败: ' + url + '（跨域或网络不通，可先下载后本地加载）', 'error');
+      setStatus('加载失败: ' + url, 'error');
+      showOverlay('加载失败：跨域或网络不通，可先下载后本地加载', '');
       return;
     }
     if (looksLikeChannelList(text)) {
@@ -677,6 +741,7 @@
         setChannels(list, url);
       } else {
         setStatus('解析失败，未找到有效频道', 'error');
+        logErr('订阅内容无法解析为频道列表');
       }
     } else {
       setChannels([{ name: url.split('/').pop() || '直播源', url: url, category: '默认', logo: '' }], url);
@@ -691,6 +756,14 @@
 
   modeUrl.addEventListener('click', function () { switchMode('url'); });
   modeFile.addEventListener('click', function () { switchMode('file'); });
+
+  function switchMode(mode) {
+    var isUrl = mode === 'url';
+    modeUrl.className = 'mode' + (isUrl ? ' active' : '');
+    modeFile.className = 'mode' + (isUrl ? '' : ' active');
+    urlRow.style.display = isUrl ? 'flex' : 'none';
+    fileRow.style.display = isUrl ? 'none' : 'flex';
+  }
 
   skipBtn.addEventListener('click', function () {
     autoSkip = !autoSkip;
@@ -716,6 +789,7 @@
       }
     } catch (err) {
       setStatus('读取文件失败: ' + err.message, 'error');
+      logErr('读取文件失败: ' + err.message);
     }
   });
 
@@ -742,13 +816,61 @@
 
   searchEl.addEventListener('input', render);
 
+  // ===== 调试工作台 =====
+  dbgBtn.addEventListener('click', function () {
+    debugPanel.classList.toggle('open');
+    dbgBtn.className = 'btn' + (debugPanel.classList.contains('open') ? ' active' : '');
+  });
+  dbgClear.addEventListener('click', function () {
+    dbgLog.innerHTML = '';
+    logBuf = [];
+    logInfo('日志已清空');
+  });
+  dbgCopy.addEventListener('click', function () {
+    var txt = logBuf.join('\n');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () { logOk('日志已复制到剪贴板'); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = txt;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); logOk('日志已复制到剪贴板'); } catch (e) { logErr('复制失败'); }
+      document.body.removeChild(ta);
+    }
+  });
+  dbgTest.addEventListener('click', async function () {
+    var ch = channels[currentIndex];
+    if (!ch) {
+      logErr('请先选择一个频道再测试');
+      return;
+    }
+    logInfo('=== 测试当前源: ' + ch.name + ' ===');
+    for (var i = 0; i < transports.length; i++) {
+      var t = transports[i];
+      var src = t.src(ch.url);
+      try {
+        var st = Date.now();
+        var resp = await fetch(src);
+        var ms = Date.now() - st;
+        var ct = resp.headers.get('content-type') || '';
+        var len = resp.headers.get('content-length') || '?';
+        var head = (await resp.text()).slice(0, 60).replace(/\s+/g, ' ');
+        logOk('[' + t.label + '] 成功 ' + resp.status + ' 用时' + ms + 'ms type=' + ct + ' len=' + len);
+        logInfo('  内容开头: ' + head);
+      } catch (err) {
+        logErr('[' + t.label + '] 失败 → ' + err.message + (err.name === 'TypeError' ? '（疑似CORS拦截或源不通）' : ''));
+      }
+    }
+    logInfo('=== 测试结束 ===');
+  });
+
   (function () {
     var src = localStorage.getItem('iptv_cache_source');
     if (src) {
       setStatus('提示: 上次加载 "' + src + '"，可重新加载。无法直连的源会自动通过公共转发播放');
     } else {
-      var mode = PROXY_OK ? '本机代理模式' : '网页直连模式';
-      setStatus('就绪（' + mode + '）: 加载频道文件或输入地址开始播放');
+      setStatus('就绪（' + (PROXY_OK ? '本机代理模式' : '网页直连模式') + '）: 加载频道文件或输入地址开始播放');
     }
   })();
 })();
