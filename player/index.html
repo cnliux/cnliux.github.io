@@ -277,6 +277,17 @@
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+  function fetchWithTimeout(url, ms) {
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, ms || 15000);
+    return fetch(url, { signal: ctrl.signal }).then(function (resp) {
+      clearTimeout(timer);
+      return resp;
+    }, function (err) {
+      clearTimeout(timer);
+      throw err;
+    });
+  }
   function log(msg, cls) {
     var now = new Date().toLocaleTimeString('zh-CN', { hour12: false });
     logBuf.push('[' + now + '] ' + msg);
@@ -306,7 +317,8 @@
   // ===== 传输方式 =====
   var RELAYS = [
     { label: '公共转发1(allorigins)', prefix: 'https://api.allorigins.win/raw?url=' },
-    { label: '公共转发2(corsproxy)', prefix: 'https://corsproxy.io/?url=' }
+    { label: '公共转发2(corsproxy)', prefix: 'https://corsproxy.io/?url=' },
+    { label: '公共转发3(codetabs)', prefix: 'https://api.codetabs.com/v1/proxy?quest=' }
   ];
 
   function resolveUrl(base, uri) {
@@ -713,26 +725,39 @@
     if (!url) return;
     setStatus('加载中: ' + url);
     logInfo('加载订阅: ' + url);
+    var attempts = [];
+    if (PROXY_OK) {
+      attempts.push('/proxy?url=' + encodeURIComponent(url));
+    } else {
+      attempts.push(url);
+      for (var ri = 0; ri < RELAYS.length; ri++) {
+        attempts.push(RELAYS[ri].prefix + encodeURIComponent(url));
+      }
+    }
     var text = null;
-    var attempts = PROXY_OK
-      ? ['/proxy?url=' + encodeURIComponent(url)]
-      : [url, RELAYS[0].prefix + encodeURIComponent(url)];
+    var lastErr = '';
     for (var i = 0; i < attempts.length; i++) {
       try {
-        logInfo('抓取订阅尝试: ' + attempts[i]);
-        var resp = await fetch(attempts[i]);
+        logInfo('抓取订阅(' + (i + 1) + '/' + attempts.length + '): ' + attempts[i]);
+        var resp = await fetchWithTimeout(attempts[i], 12000);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         text = await resp.text();
-        logOk('订阅抓取成功: ' + attempts[i]);
+        if (/<html|<!DOCTYPE/i.test(text.slice(0, 200))) {
+          throw new Error('返回的是HTML页面而非列表');
+        }
+        logOk('订阅抓取成功: ' + attempts[i] + ' (' + text.length + '字节)');
         break;
       } catch (err) {
-        logErr('订阅抓取失败: ' + attempts[i] + ' → ' + err.message);
+        lastErr = err.name === 'AbortError'
+          ? '超时(12秒无响应)'
+          : (err.message || err.name || String(err));
+        logErr('订阅抓取失败: ' + attempts[i] + ' → ' + lastErr);
         text = null;
       }
     }
     if (text === null) {
-      setStatus('加载失败: ' + url, 'error');
-      showOverlay('加载失败：跨域或网络不通，可先下载后本地加载', '');
+      setStatus('加载失败: ' + url + '（' + lastErr + '）', 'error');
+      showOverlay('加载失败：所有方式均超时或不通', '直连与 ' + RELAYS.length + ' 个公共转发均失败，请确认地址可访问，或先把列表文件放进本网站目录后加载');
       return;
     }
     if (looksLikeChannelList(text)) {
@@ -851,7 +876,7 @@
       var src = t.src(ch.url);
       try {
         var st = Date.now();
-        var resp = await fetch(src);
+        var resp = await fetchWithTimeout(src, 12000);
         var ms = Date.now() - st;
         var ct = resp.headers.get('content-type') || '';
         var len = resp.headers.get('content-length') || '?';
@@ -859,7 +884,10 @@
         logOk('[' + t.label + '] 成功 ' + resp.status + ' 用时' + ms + 'ms type=' + ct + ' len=' + len);
         logInfo('  内容开头: ' + head);
       } catch (err) {
-        logErr('[' + t.label + '] 失败 → ' + err.message + (err.name === 'TypeError' ? '（疑似CORS拦截或源不通）' : ''));
+        var why = err.name === 'AbortError'
+          ? '超时(12秒无响应)'
+          : (err.message || err.name || String(err));
+        logErr('[' + t.label + '] 失败 → ' + why + (err.name === 'TypeError' ? '（疑似CORS拦截或源不通）' : ''));
       }
     }
     logInfo('=== 测试结束 ===');
