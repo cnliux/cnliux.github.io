@@ -1,344 +1,823 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>留言板</title>
-<style>
-  :root {
-    --bg: #f6f8fa;
-    --card: #ffffff;
-    --text: #24292f;
-    --muted: #57606a;
-    --border: #d0d7de;
-    --accent: #0969da;
-    --accent-hover: #0550ae;
-    --danger: #cf222e;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --border: #30363d;
-      --accent: #58a6ff;
-      --accent-hover: #79c0ff;
-      --danger: #f85149;
-    }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-  }
-  .container { max-width: 720px; margin: 0 auto; padding: 24px 16px 60px; }
-  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-  h1 { font-size: 24px; font-weight: 700; }
-  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  #settings-btn {
-    background: none; border: 1px solid var(--border); color: var(--muted);
-    border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 14px;
-  }
-  #settings-btn:hover { color: var(--text); border-color: var(--muted); }
-  .panel {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 16px; margin-bottom: 24px;
-  }
-  .panel h2 { font-size: 16px; margin-bottom: 12px; }
-  .form-row { margin-bottom: 12px; }
-  .form-row label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
-  input[type="text"], textarea {
-    width: 100%; padding: 8px 12px; border: 1px solid var(--border);
-    border-radius: 6px; background: var(--bg); color: var(--text); font-size: 14px;
-    font-family: inherit;
-  }
-  input:focus, textarea:focus { outline: none; border-color: var(--accent); }
-  textarea { resize: vertical; min-height: 80px; }
-  .btn {
-    display: inline-block; border: 1px solid var(--border); border-radius: 6px;
-    padding: 8px 16px; cursor: pointer; font-size: 14px; background: var(--card);
-    color: var(--text); font-family: inherit;
-  }
-  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-  .btn:disabled { opacity: .5; cursor: not-allowed; }
-  .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
-  .msg-list { display: flex; flex-direction: column; gap: 12px; }
-  .msg {
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 14px 16px;
-  }
-  .msg-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-  .msg-name { font-weight: 600; font-size: 14px; }
-  .msg-time { color: var(--muted); font-size: 12px; }
-  .msg-body { font-size: 15px; word-break: break-word; white-space: pre-wrap; }
-  .msg-actions { margin-left: auto; }
-  .del-btn {
-    background: none; border: none; color: var(--muted); cursor: pointer;
-    font-size: 12px; padding: 2px 6px; border-radius: 4px;
-  }
-  .del-btn:hover { color: var(--danger); background: rgba(207,34,46,.1); }
-  .empty { text-align: center; color: var(--muted); padding: 40px 0; font-size: 14px; }
-  .loading { text-align: center; color: var(--muted); padding: 40px 0; font-size: 14px; }
-  .toast {
-    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-    background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: 6px;
-    font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 99;
-    max-width: 90vw; text-align: center;
-  }
-  .toast.show { opacity: 1; }
-  .modal-mask {
-    position: fixed; inset: 0; background: rgba(0,0,0,.5); display: none;
-    align-items: center; justify-content: center; z-index: 100; padding: 16px;
-  }
-  .modal-mask.show { display: flex; }
-  .modal {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    width: 100%; max-width: 460px; padding: 20px;
-  }
-  .modal h3 { font-size: 16px; margin-bottom: 12px; }
-  .modal p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
-  .status { font-size: 12px; color: var(--muted); margin-top: 8px; min-height: 16px; }
-  a { color: var(--accent); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板 - IPTV & TVBox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #37405f;
+            --secondary-color: #5c67f2;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header h1 i {
+            margin-right: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .banner {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .banner h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            border: none;
+            color: white;
+        }
+
+        .banner p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .login-box {
+            text-align: center;
+            padding: 10px 0 5px;
+        }
+
+        .login-box p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn-ghost {
+            background: #eee;
+            color: var(--dark-color);
+        }
+
+        .btn-ghost:hover {
+            background: #e2e2e2;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .user-info .uname {
+            font-weight: 600;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(92, 103, 242, 0.15);
+        }
+
+        .form-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status {
+            font-size: 13px;
+            color: #666;
+            min-height: 18px;
+        }
+
+        .status.error {
+            color: #d33;
+        }
+
+        .msg-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .msg {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 16px 20px;
+        }
+
+        .msg-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .msg-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 600;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .msg-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .msg-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .msg-time {
+            color: #999;
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        .del-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 13px;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
+
+        .del-btn:hover {
+            color: #d33;
+        }
+
+        .msg-body {
+            font-size: 15px;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+
+        .empty,
+        .loading {
+            text-align: center;
+            color: #999;
+            padding: 40px 0;
+        }
+
+        .loading i {
+            margin-right: 8px;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 25px 0;
+            margin-top: 50px;
+            border-radius: var(--border-radius);
+            flex-shrink: 0;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin: 3px 0;
+        }
+
+        .modal-mask {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 16px;
+        }
+
+        .modal-mask.show {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 440px;
+            padding: 24px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .modal h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .device-code {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 12px 0;
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            margin: 12px 0;
+            user-select: all;
+        }
+
+        .device-link {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .device-link a {
+            color: var(--secondary-color);
+        }
+
+        .poll-status {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .banner {
+                padding: 25px 15px;
+            }
+
+            .banner h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>留言板</h1>
-    <button id="settings-btn" title="设置 GitHub Token">设置</button>
-  </header>
-  <p class="sub">每条留言会以 Issue 的形式保存在本仓库，共 <span id="count">0</span> 条。</p>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-comments"></i> 留言板</h1>
+            <nav>
+                <ul>
+                    <li><a href="https://cnliux.github.io/"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="https://cnliux.github.io/guestbook/" class="active"><i class="fas fa-envelope"></i> 留言板</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="panel">
-    <h2>写下留言</h2>
-    <div class="form-row">
-      <label for="name">昵称</label>
-      <input type="text" id="name" placeholder="你的昵称（选填）" maxlength="30">
+    <div class="container">
+        <div class="banner">
+            <h2>欢迎留下你的足迹</h2>
+            <p>登录 GitHub 即可发表留言</p>
+        </div>
+
+        <div class="card" id="login-card">
+            <h2><i class="fas fa-sign-in-alt"></i> 登录后留言</h2>
+            <div class="login-box" id="login-box">
+                <p>使用 GitHub 账号一键登录，方便又安全</p>
+                <button class="btn" id="login-btn"><i class="fab fa-github"></i> 使用 GitHub 登录</button>
+            </div>
+            <div class="user-info" id="user-info" style="display:none;">
+                <img id="user-avatar" alt="avatar">
+                <span class="uname" id="user-name"></span>
+                <button class="btn btn-ghost" id="logout-btn"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+
+        <div class="card" id="post-card">
+            <h2><i class="fas fa-pen"></i> 写下留言</h2>
+            <div class="form-row">
+                <textarea id="content" placeholder="写下你想说的话…" maxlength="500"></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="btn" id="post-btn"><i class="fas fa-paper-plane"></i> 发布留言</button>
+                <div class="status" id="post-status"></div>
+            </div>
+            <p class="hint"><i class="fas fa-info-circle"></i> 留言会以 Issue 的形式保存在 <a href="https://github.com/cnliux/cnliux.github.io/issues" target="_blank">cnliux/cnliux.github.io</a> 仓库中</p>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-list"></i> 全部留言 <span id="count" style="font-weight:normal;color:#999;"></span></h2>
+            <div class="msg-list" id="msg-list">
+                <div class="loading"><i class="fas fa-spinner fa-spin"></i>加载中…</div>
+            </div>
+        </div>
     </div>
-    <div class="form-row">
-      <label for="content">留言内容</label>
-      <textarea id="content" placeholder="写下你想说的话…" maxlength="500"></textarea>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 IPTV & TVBox Team. All rights reserved.</p>
+            <p>本站提供的所有内容仅供学习和研究使用，请勿用于商业用途。</p>
+        </div>
+    </footer>
+
+    <div class="modal-mask" id="login-modal">
+        <div class="modal">
+            <h3><i class="fab fa-github"></i> GitHub 登录</h3>
+            <p>请在打开的页面中输入以下代码，完成授权：</p>
+            <div class="device-code" id="device-code">------</div>
+            <div class="device-link">
+                打开 <a href="https://github.com/login/device" id="device-link" target="_blank">github.com/login/device</a> 输入上方代码
+            </div>
+            <div class="poll-status" id="poll-status"></div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="login-cancel">取消</button>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-primary" id="post-btn">发布留言</button>
-    <div class="status" id="post-status"></div>
-  </div>
 
-  <div class="msg-list" id="msg-list">
-    <div class="loading">加载中…</div>
-  </div>
-</div>
+    <script>
+        (function () {
+            var CLIENT_ID = 'Ov23lijmRDunxR7TaG05';
+            var REPO = 'cnliux/cnliux.github.io';
+            var API = 'https://api.github.com/repos/' + REPO;
+            var MARK = '[留言] ';
+            var token = localStorage.getItem('gb_token') || '';
+            var me = null;
+            var isMaintainer = false;
+            var pollTimer = null;
+            var deleting = {};
 
-<div class="modal-mask" id="modal-mask">
-  <div class="modal">
-    <h3>GitHub Token 设置</h3>
-    <p>发布留言需要 GitHub 个人访问令牌（需勾选 <code>repo</code> 或 <code>public_repo</code> 权限）。令牌仅保存在你的浏览器 localStorage 中，不会上传到服务器。请在 <a href="https://github.com/settings/tokens/new?scopes=repo&description=message-board" target="_blank">这里创建</a>。</p>
-    <div class="form-row">
-      <label for="token-input">Personal Access Token</label>
-      <input type="password" id="token-input" placeholder="ghp_...">
-    </div>
-    <div class="status" id="token-status"></div>
-    <div class="modal-actions">
-      <button class="btn" id="token-cancel">取消</button>
-      <button class="btn btn-primary" id="token-save">保存</button>
-    </div>
-  </div>
-</div>
+            var $ = function (id) { return document.getElementById(id); };
 
-<div class="toast" id="toast"></div>
+            function esc(s) {
+                return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            }
 
-<script>
-(function () {
-  var REPO = 'cnliux/cnliux.github.io';
-  var API = 'https://api.github.com/repos/' + REPO;
-  var MARK = '[留言] ';
-  var token = localStorage.getItem('gb_token') || '';
-  var deleting = {};
+            function gh(url, opts) {
+                opts = opts || {};
+                var headers = { 'Accept': 'application/vnd.github+json' };
+                if (token) headers['Authorization'] = 'token ' + token;
+                if (opts.body) headers['Content-Type'] = 'application/json';
+                return fetch(url, { method: opts.method || 'GET', headers: headers, body: opts.body })
+                    .then(function (res) {
+                        if (!res.ok) {
+                            return res.json().catch(function () { return {}; }).then(function (d) {
+                                var err = new Error(d.message || res.status);
+                                err.status = res.status;
+                                throw err;
+                            });
+                        }
+                        return res.status === 204 ? null : res.json();
+                    });
+            }
 
-  var $ = function (id) { return document.getElementById(id); };
-  var countEl = $('count');
-  var listEl = $('msg-list');
+            function showLogin() {
+                $('login-box').style.display = '';
+                $('user-info').style.display = 'none';
+            }
 
-  function esc(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
+            function showUser() {
+                $('login-box').style.display = 'none';
+                $('user-info').style.display = 'flex';
+                $('user-avatar').src = me.avatar_url;
+                $('user-name').textContent = me.login;
+            }
 
-  function toast(msg) {
-    var t = $('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    clearTimeout(t._timer);
-    t._timer = setTimeout(function () { t.classList.remove('show'); }, 2500);
-  }
+            function checkSetup() {
+                if (!CLIENT_ID || CLIENT_ID.indexOf('REPLACE') === 0) {
+                    $('post-status').innerHTML = '尚未配置登录，请站长填写 OAuth Client ID';
+                }
+            }
 
-  function gh(url, opts) {
-    opts = opts || {};
-    var headers = { 'Accept': 'application/vnd.github+json' };
-    if (token) headers['Authorization'] = 'token ' + token;
-    if (opts.body) headers['Content-Type'] = 'application/json';
-    return fetch(url, { method: opts.method || 'GET', headers: headers, body: opts.body })
-      .then(function (res) {
-        if (!res.ok) {
-          return res.json().catch(function () { return {}; }).then(function (d) {
-            var err = new Error((d.message || res.status) + (d.errors ? ' - ' + d.errors.map(function (e) { return e.message; }).join('; ') : ''));
-            err.status = res.status;
-            throw err;
-          });
-        }
-        return res.status === 204 ? null : res.json();
-      });
-  }
+            function initAuth() {
+                checkSetup();
+                if (!token) { showLogin(); return; }
+                gh('https://api.github.com/user').then(function (u) {
+                    me = u;
+                    showUser();
+                    return gh(API + '/collaborators/' + u.login).then(function () { isMaintainer = true; }, function () { isMaintainer = false; });
+                }).then(function () {
+                    load();
+                }).catch(function () {
+                    token = '';
+                    localStorage.removeItem('gb_token');
+                    showLogin();
+                });
+            }
 
-  function load() {
-    listEl.innerHTML = '<div class="loading">加载中…</div>';
-    gh(API + '/issues?state=all&per_page=100')
-      .then(function (issues) {
-        var msgs = (issues || []).filter(function (i) {
-          return !i.pull_request && i.title.indexOf(MARK) === 0;
-        });
-        countEl.textContent = msgs.length;
-        if (!msgs.length) {
-          listEl.innerHTML = '<div class="empty">还没有留言，来抢沙发吧～</div>';
-          return;
-        }
-        listEl.innerHTML = '';
-        msgs.forEach(function (i) { listEl.appendChild(renderMsg(i)); });
-      })
-      .catch(function (e) {
-        listEl.innerHTML = '<div class="empty">加载失败：' + esc(e.message) + '</div>';
-      });
-  }
+            function stopPolling() {
+                if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+            }
 
-  function parseBody(body) {
-    var name = '匿名';
-    if (body) {
-      var m = body.match(/昵称[：:]\s*(.+)/);
-      if (m && m[1]) name = m[1].trim();
-    }
-    return name;
-  }
+            function closeModal() {
+                stopPolling();
+                $('login-modal').classList.remove('show');
+                $('poll-status').textContent = '';
+            }
 
-  function formatTime(iso) {
-    var d = new Date(iso);
-    var p = function (n) { return n < 10 ? '0' + n : '' + n; };
-    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
-  }
+            function startPolling(clientId, deviceCode, interval) {
+                var iv = interval || 5;
+                stopPolling();
+                pollTimer = setInterval(function () {
+                    fetch('https://github.com/login/oauth/access_token', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            client_id: clientId,
+                            device_code: deviceCode,
+                            grant_type: 'urn:ietf:params:oauth:grant-type:device_code'
+                        })
+                    }).then(function (r) { return r.json(); }).then(function (d) {
+                        if (d.access_token) {
+                            token = d.access_token;
+                            localStorage.setItem('gb_token', token);
+                            stopPolling();
+                            closeModal();
+                            initAuth();
+                        } else if (d.error === 'authorization_pending') {
+                            $('poll-status').textContent = '等待授权…';
+                        } else if (d.error === 'slow_down') {
+                            iv += 5;
+                            $('poll-status').textContent = '等待授权…';
+                        } else if (d.error === 'expired_token') {
+                            $('poll-status').textContent = '代码已过期，请重新登录';
+                            stopPolling();
+                        } else if (d.error === 'access_denied') {
+                            $('poll-status').textContent = '你已取消授权';
+                            stopPolling();
+                        } else {
+                            $('poll-status').textContent = '登录失败：' + (d.error_description || d.error || '未知错误');
+                            stopPolling();
+                        }
+                    }).catch(function (e) {
+                        $('poll-status').textContent = '网络错误：' + e.message;
+                        stopPolling();
+                    });
+                }, iv * 1000);
+            }
 
-  function renderMsg(i) {
-    var div = document.createElement('div');
-    div.className = 'msg';
-    var content = i.title.slice(MARK.length);
-    var name = parseBody(i.body);
+            function login() {
+                if (!CLIENT_ID || CLIENT_ID.indexOf('REPLACE') === 0) {
+                    alert('留言板尚未配置 OAuth Client ID，请联系站长');
+                    return;
+                }
+                $('login-modal').classList.add('show');
+                $('poll-status').textContent = '正在获取授权码…';
+                $('device-code').textContent = '------';
+                fetch('https://github.com/login/device/code', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ client_id: CLIENT_ID })
+                }).then(function (r) { return r.json(); }).then(function (d) {
+                    if (d.error) {
+                        $('poll-status').textContent = '获取授权码失败：' + (d.error_description || d.error);
+                        return;
+                    }
+                    $('device-code').textContent = d.user_code;
+                    $('poll-status').textContent = '请在 15 分钟内完成授权，正在等待…';
+                    window.open(d.verification_uri, '_blank');
+                    startPolling(CLIENT_ID, d.device_code, d.interval);
+                }).catch(function (e) {
+                    $('poll-status').textContent = '网络错误：' + e.message;
+                });
+            }
 
-    var head = document.createElement('div');
-    head.className = 'msg-head';
-    var nameEl = document.createElement('span');
-    nameEl.className = 'msg-name';
-    nameEl.textContent = name;
-    var timeEl = document.createElement('span');
-    timeEl.className = 'msg-time';
-    timeEl.textContent = formatTime(i.created_at);
-    head.appendChild(nameEl);
-    head.appendChild(timeEl);
+            function load() {
+                var listEl = $('msg-list');
+                listEl.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i>加载中…</div>';
+                gh(API + '/issues?state=all&per_page=100')
+                    .then(function (issues) {
+                        var msgs = (issues || []).filter(function (i) {
+                            return !i.pull_request && i.title.indexOf(MARK) === 0;
+                        });
+                        $('count').textContent = '(' + msgs.length + ')';
+                        if (!msgs.length) {
+                            listEl.innerHTML = '<div class="empty">还没有留言，来抢沙发吧~</div>';
+                            return;
+                        }
+                        listEl.innerHTML = '';
+                        msgs.forEach(function (i) { listEl.appendChild(renderMsg(i)); });
+                    })
+                    .catch(function (e) {
+                        listEl.innerHTML = '<div class="empty">加载失败：' + esc(e.message) + '</div>';
+                    });
+            }
 
-    if (token) {
-      var actions = document.createElement('span');
-      actions.className = 'msg-actions';
-      var del = document.createElement('button');
-      del.className = 'del-btn';
-      del.textContent = '删除';
-      del.addEventListener('click', function () { removeMsg(i.number, del); });
-      actions.appendChild(del);
-      head.appendChild(actions);
-    }
+            function parseAuthor(body) {
+                var user = null;
+                var name = '';
+                if (body) {
+                    var um = body.match(/用户[：:]\s*(.+)/);
+                    if (um && um[1]) user = um[1].trim();
+                    var nm = body.match(/昵称[：:]\s*(.+)/);
+                    if (nm && nm[1]) name = nm[1].trim();
+                }
+                return { user: user, name: name };
+            }
 
-    var bodyEl = document.createElement('div');
-    bodyEl.className = 'msg-body';
-    bodyEl.textContent = content;
+            function formatTime(iso) {
+                var d = new Date(iso);
+                var p = function (n) { return n < 10 ? '0' + n : '' + n; };
+                return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+            }
 
-    div.appendChild(head);
-    div.appendChild(bodyEl);
-    return div;
-  }
+            function renderMsg(i) {
+                var a = parseAuthor(i.body);
+                var div = document.createElement('div');
+                div.className = 'msg';
+                var content = i.title.slice(MARK.length);
 
-  function removeMsg(number, btn) {
-    if (deleting[number]) return;
-    if (!confirm('确定删除这条留言吗？')) return;
-    deleting[number] = true;
-    btn.disabled = true;
-    gh(API + '/issues/' + number, { method: 'PATCH', body: JSON.stringify({ state: 'closed' }) })
-      .then(function () {
-        toast('已删除');
-        load();
-      })
-      .catch(function (e) {
-        delete deleting[number];
-        btn.disabled = false;
-        toast('删除失败：' + e.message);
-      });
-  }
+                var head = document.createElement('div');
+                head.className = 'msg-head';
+                var avatar = document.createElement('div');
+                avatar.className = 'msg-avatar';
+                if (a.user) {
+                    var img = document.createElement('img');
+                    img.src = 'https://github.com/' + encodeURIComponent(a.user) + '.png?size=64';
+                    img.alt = a.user;
+                    avatar.appendChild(img);
+                } else {
+                    avatar.textContent = (a.name || '匿').charAt(0);
+                }
+                head.appendChild(avatar);
 
-  function post() {
-    var status = $('post-status');
-    var name = $('name').value.trim();
-    var content = $('content').value.trim();
-    if (!content) { status.textContent = '请填写留言内容'; return; }
-    if (!token) {
-      status.textContent = '请先点击右上角「设置」填入 GitHub Token';
-      return;
-    }
-    if (content.indexOf(MARK) === 0) { status.textContent = '内容不能以 ' + MARK + ' 开头'; return; }
-    var btn = $('post-btn');
-    btn.disabled = true;
-    status.textContent = '发布中…';
-    gh(API + '/issues', {
-      method: 'POST',
-      body: JSON.stringify({
-        title: MARK + content,
-        body: '昵称：' + (name || '匿名')
-      })
-    }).then(function () {
-      status.textContent = '发布成功！';
-      $('content').value = '';
-      $('name').value = '';
-      btn.disabled = false;
-      load();
-      toast('留言已发布');
-    }).catch(function (e) {
-      status.textContent = '发布失败：' + e.message;
-      btn.disabled = false;
-    });
-  }
+                var nameEl = document.createElement('span');
+                nameEl.className = 'msg-name';
+                nameEl.textContent = a.user ? a.user : (a.name || '匿名');
+                head.appendChild(nameEl);
 
-  function openModal() {
-    $('token-input').value = token;
-    $('token-status').textContent = token ? '已保存令牌，将以 ' + (token.slice(0, 4)) + '… 调用接口' : '';
-    $('modal-mask').classList.add('show');
-  }
-  function closeModal() { $('modal-mask').classList.remove('show'); }
+                var timeEl = document.createElement('span');
+                timeEl.className = 'msg-time';
+                timeEl.textContent = formatTime(i.created_at);
+                head.appendChild(timeEl);
 
-  $('post-btn').addEventListener('click', post);
-  $('settings-btn').addEventListener('click', openModal);
-  $('token-cancel').addEventListener('click', closeModal);
-  $('token-save').addEventListener('click', function () {
-    var v = $('token-input').value.trim();
-    if (!v) { $('token-status').textContent = '请输入令牌'; return; }
-    token = v;
-    localStorage.setItem('gb_token', v);
-    $('token-status').textContent = '已保存';
-    closeModal();
-    load();
-  });
-  $('modal-mask').addEventListener('click', function (e) {
-    if (e.target === this) closeModal();
-  });
+                if (me && token && (a.user === me.login || isMaintainer)) {
+                    var del = document.createElement('button');
+                    del.className = 'del-btn';
+                    del.title = '删除留言';
+                    del.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                    del.addEventListener('click', function () { removeMsg(i.number, del); });
+                    head.appendChild(del);
+                }
 
-  load();
-})();
-</script>
+                var bodyEl = document.createElement('div');
+                bodyEl.className = 'msg-body';
+                bodyEl.textContent = content;
+
+                div.appendChild(head);
+                div.appendChild(bodyEl);
+                return div;
+            }
+
+            function removeMsg(number, btn) {
+                if (deleting[number]) return;
+                if (!confirm('确定删除这条留言吗？')) return;
+                deleting[number] = true;
+                btn.disabled = true;
+                gh(API + '/issues/' + number, { method: 'PATCH', body: JSON.stringify({ state: 'closed' }) })
+                    .then(function () {
+                        load();
+                    })
+                    .catch(function (e) {
+                        delete deleting[number];
+                        btn.disabled = false;
+                        alert('删除失败：' + e.message);
+                    });
+            }
+
+            function post() {
+                var status = $('post-status');
+                var content = $('content').value.trim();
+                if (!content) { status.textContent = '请填写留言内容'; return; }
+                if (!token || !me) { status.textContent = '请先登录 GitHub'; return; }
+                if (content.indexOf(MARK) === 0) { status.textContent = '内容不能以 ' + MARK + ' 开头'; return; }
+                var btn = $('post-btn');
+                btn.disabled = true;
+                status.textContent = '发布中…';
+                gh(API + '/issues', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        title: MARK + content,
+                        body: '用户：' + me.login
+                    })
+                }).then(function () {
+                    status.textContent = '发布成功！';
+                    $('content').value = '';
+                    btn.disabled = false;
+                    load();
+                }).catch(function (e) {
+                    status.textContent = '发布失败：' + e.message;
+                    btn.disabled = false;
+                });
+            }
+
+            $('login-btn').addEventListener('click', login);
+            $('login-cancel').addEventListener('click', closeModal);
+            $('login-modal').addEventListener('click', function (e) {
+                if (e.target === this) closeModal();
+            });
+            $('logout-btn').addEventListener('click', function () {
+                token = '';
+                me = null;
+                isMaintainer = false;
+                localStorage.removeItem('gb_token');
+                showLogin();
+                load();
+            });
+            $('post-btn').addEventListener('click', post);
+
+            initAuth();
+        })();
+    </script>
 </body>
 </html>
