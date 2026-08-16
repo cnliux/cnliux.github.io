@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留言板</title>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --card: #ffffff;
+    --text: #24292f;
+    --muted: #57606a;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --accent-hover: #0550ae;
+    --danger: #cf222e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --danger: #f85149;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 16px 60px; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  h1 { font-size: 24px; font-weight: 700; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  #settings-btn {
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 14px;
+  }
+  #settings-btn:hover { color: var(--text); border-color: var(--muted); }
+  .panel {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px; margin-bottom: 24px;
+  }
+  .panel h2 { font-size: 16px; margin-bottom: 12px; }
+  .form-row { margin-bottom: 12px; }
+  .form-row label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  input[type="text"], textarea {
+    width: 100%; padding: 8px 12px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--bg); color: var(--text); font-size: 14px;
+    font-family: inherit;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 80px; }
+  .btn {
+    display: inline-block; border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 16px; cursor: pointer; font-size: 14px; background: var(--card);
+    color: var(--text); font-family: inherit;
+  }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .msg-list { display: flex; flex-direction: column; gap: 12px; }
+  .msg {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .msg-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .msg-name { font-weight: 600; font-size: 14px; }
+  .msg-time { color: var(--muted); font-size: 12px; }
+  .msg-body { font-size: 15px; word-break: break-word; white-space: pre-wrap; }
+  .msg-actions { margin-left: auto; }
+  .del-btn {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 12px; padding: 2px 6px; border-radius: 4px;
+  }
+  .del-btn:hover { color: var(--danger); background: rgba(207,34,46,.1); }
+  .empty { text-align: center; color: var(--muted); padding: 40px 0; font-size: 14px; }
+  .loading { text-align: center; color: var(--muted); padding: 40px 0; font-size: 14px; }
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: 6px;
+    font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 99;
+    max-width: 90vw; text-align: center;
+  }
+  .toast.show { opacity: 1; }
+  .modal-mask {
+    position: fixed; inset: 0; background: rgba(0,0,0,.5); display: none;
+    align-items: center; justify-content: center; z-index: 100; padding: 16px;
+  }
+  .modal-mask.show { display: flex; }
+  .modal {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    width: 100%; max-width: 460px; padding: 20px;
+  }
+  .modal h3 { font-size: 16px; margin-bottom: 12px; }
+  .modal p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .status { font-size: 12px; color: var(--muted); margin-top: 8px; min-height: 16px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>留言板</h1>
+    <button id="settings-btn" title="设置 GitHub Token">设置</button>
+  </header>
+  <p class="sub">每条留言会以 Issue 的形式保存在本仓库，共 <span id="count">0</span> 条。</p>
+
+  <div class="panel">
+    <h2>写下留言</h2>
+    <div class="form-row">
+      <label for="name">昵称</label>
+      <input type="text" id="name" placeholder="你的昵称（选填）" maxlength="30">
+    </div>
+    <div class="form-row">
+      <label for="content">留言内容</label>
+      <textarea id="content" placeholder="写下你想说的话…" maxlength="500"></textarea>
+    </div>
+    <button class="btn btn-primary" id="post-btn">发布留言</button>
+    <div class="status" id="post-status"></div>
+  </div>
+
+  <div class="msg-list" id="msg-list">
+    <div class="loading">加载中…</div>
+  </div>
+</div>
+
+<div class="modal-mask" id="modal-mask">
+  <div class="modal">
+    <h3>GitHub Token 设置</h3>
+    <p>发布留言需要 GitHub 个人访问令牌（需勾选 <code>repo</code> 或 <code>public_repo</code> 权限）。令牌仅保存在你的浏览器 localStorage 中，不会上传到服务器。请在 <a href="https://github.com/settings/tokens/new?scopes=repo&description=message-board" target="_blank">这里创建</a>。</p>
+    <div class="form-row">
+      <label for="token-input">Personal Access Token</label>
+      <input type="password" id="token-input" placeholder="ghp_...">
+    </div>
+    <div class="status" id="token-status"></div>
+    <div class="modal-actions">
+      <button class="btn" id="token-cancel">取消</button>
+      <button class="btn btn-primary" id="token-save">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  var REPO = 'cnliux/cnliux.github.io';
+  var API = 'https://api.github.com/repos/' + REPO;
+  var MARK = '[留言] ';
+  var token = localStorage.getItem('gb_token') || '';
+  var deleting = {};
+
+  var $ = function (id) { return document.getElementById(id); };
+  var countEl = $('count');
+  var listEl = $('msg-list');
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function toast(msg) {
+    var t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function () { t.classList.remove('show'); }, 2500);
+  }
+
+  function gh(url, opts) {
+    opts = opts || {};
+    var headers = { 'Accept': 'application/vnd.github+json' };
+    if (token) headers['Authorization'] = 'token ' + token;
+    if (opts.body) headers['Content-Type'] = 'application/json';
+    return fetch(url, { method: opts.method || 'GET', headers: headers, body: opts.body })
+      .then(function (res) {
+        if (!res.ok) {
+          return res.json().catch(function () { return {}; }).then(function (d) {
+            var err = new Error((d.message || res.status) + (d.errors ? ' - ' + d.errors.map(function (e) { return e.message; }).join('; ') : ''));
+            err.status = res.status;
+            throw err;
+          });
+        }
+        return res.status === 204 ? null : res.json();
+      });
+  }
+
+  function load() {
+    listEl.innerHTML = '<div class="loading">加载中…</div>';
+    gh(API + '/issues?state=all&per_page=100')
+      .then(function (issues) {
+        var msgs = (issues || []).filter(function (i) {
+          return !i.pull_request && i.title.indexOf(MARK) === 0;
+        });
+        countEl.textContent = msgs.length;
+        if (!msgs.length) {
+          listEl.innerHTML = '<div class="empty">还没有留言，来抢沙发吧～</div>';
+          return;
+        }
+        listEl.innerHTML = '';
+        msgs.forEach(function (i) { listEl.appendChild(renderMsg(i)); });
+      })
+      .catch(function (e) {
+        listEl.innerHTML = '<div class="empty">加载失败：' + esc(e.message) + '</div>';
+      });
+  }
+
+  function parseBody(body) {
+    var name = '匿名';
+    if (body) {
+      var m = body.match(/昵称[：:]\s*(.+)/);
+      if (m && m[1]) name = m[1].trim();
+    }
+    return name;
+  }
+
+  function formatTime(iso) {
+    var d = new Date(iso);
+    var p = function (n) { return n < 10 ? '0' + n : '' + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  function renderMsg(i) {
+    var div = document.createElement('div');
+    div.className = 'msg';
+    var content = i.title.slice(MARK.length);
+    var name = parseBody(i.body);
+
+    var head = document.createElement('div');
+    head.className = 'msg-head';
+    var nameEl = document.createElement('span');
+    nameEl.className = 'msg-name';
+    nameEl.textContent = name;
+    var timeEl = document.createElement('span');
+    timeEl.className = 'msg-time';
+    timeEl.textContent = formatTime(i.created_at);
+    head.appendChild(nameEl);
+    head.appendChild(timeEl);
+
+    if (token) {
+      var actions = document.createElement('span');
+      actions.className = 'msg-actions';
+      var del = document.createElement('button');
+      del.className = 'del-btn';
+      del.textContent = '删除';
+      del.addEventListener('click', function () { removeMsg(i.number, del); });
+      actions.appendChild(del);
+      head.appendChild(actions);
+    }
+
+    var bodyEl = document.createElement('div');
+    bodyEl.className = 'msg-body';
+    bodyEl.textContent = content;
+
+    div.appendChild(head);
+    div.appendChild(bodyEl);
+    return div;
+  }
+
+  function removeMsg(number, btn) {
+    if (deleting[number]) return;
+    if (!confirm('确定删除这条留言吗？')) return;
+    deleting[number] = true;
+    btn.disabled = true;
+    gh(API + '/issues/' + number, { method: 'PATCH', body: JSON.stringify({ state: 'closed' }) })
+      .then(function () {
+        toast('已删除');
+        load();
+      })
+      .catch(function (e) {
+        delete deleting[number];
+        btn.disabled = false;
+        toast('删除失败：' + e.message);
+      });
+  }
+
+  function post() {
+    var status = $('post-status');
+    var name = $('name').value.trim();
+    var content = $('content').value.trim();
+    if (!content) { status.textContent = '请填写留言内容'; return; }
+    if (!token) {
+      status.textContent = '请先点击右上角「设置」填入 GitHub Token';
+      return;
+    }
+    if (content.indexOf(MARK) === 0) { status.textContent = '内容不能以 ' + MARK + ' 开头'; return; }
+    var btn = $('post-btn');
+    btn.disabled = true;
+    status.textContent = '发布中…';
+    gh(API + '/issues', {
+      method: 'POST',
+      body: JSON.stringify({
+        title: MARK + content,
+        body: '昵称：' + (name || '匿名')
+      })
+    }).then(function () {
+      status.textContent = '发布成功！';
+      $('content').value = '';
+      $('name').value = '';
+      btn.disabled = false;
+      load();
+      toast('留言已发布');
+    }).catch(function (e) {
+      status.textContent = '发布失败：' + e.message;
+      btn.disabled = false;
+    });
+  }
+
+  function openModal() {
+    $('token-input').value = token;
+    $('token-status').textContent = token ? '已保存令牌，将以 ' + (token.slice(0, 4)) + '… 调用接口' : '';
+    $('modal-mask').classList.add('show');
+  }
+  function closeModal() { $('modal-mask').classList.remove('show'); }
+
+  $('post-btn').addEventListener('click', post);
+  $('settings-btn').addEventListener('click', openModal);
+  $('token-cancel').addEventListener('click', closeModal);
+  $('token-save').addEventListener('click', function () {
+    var v = $('token-input').value.trim();
+    if (!v) { $('token-status').textContent = '请输入令牌'; return; }
+    token = v;
+    localStorage.setItem('gb_token', v);
+    $('token-status').textContent = '已保存';
+    closeModal();
+    load();
+  });
+  $('modal-mask').addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
+  });
+
+  load();
+})();
+</script>
+</body>
+</html>
