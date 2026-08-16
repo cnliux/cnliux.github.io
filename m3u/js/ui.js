@@ -1,1065 +1,1545 @@
 class UIHandler {
     constructor(core) {
         this.core = core;
+        this.viewMode = 'table'; // 'table' | 'grid'
+        this._searchTimer = null;
+        this._toastTimer = null;
+        this._lazyObserver = null;
+        this._initialsCache = new Map();
+        this._pinyinReady = false;
+        this._refreshTimer = null;
+        this._testing = false;
+        this._hlsLoading = null;
+        this._groupChart = null;
         this.elements = {
+            // 标签页
+            tabs: document.querySelectorAll('.tab'),
+            tabContents: document.querySelectorAll('.tab-content'),
+            settingsPanel: document.getElementById('settingsPanel'),
+            settingsOverlay: document.getElementById('settingsOverlay'),
+            settingsBtn: document.getElementById('settingsBtn'),
+
+            // 文件输入
             dropArea: document.getElementById('dropArea'),
             fileInput: document.getElementById('fileInput'),
             selectFilesBtn: document.getElementById('selectFilesBtn'),
             fileList: document.getElementById('fileList'),
+            textInput: document.getElementById('textInput'),
+            parseTextBtn: document.getElementById('parseTextBtn'),
+            urlInput: document.getElementById('urlInput'),
+            importUrlBtn: document.getElementById('importUrlBtn'),
+            deduplicate: document.getElementById('deduplicate'),
+            appendToExisting: document.getElementById('appendToExisting'),
+
+            // 频道列表
+            channelSearch: document.getElementById('channelSearch'),
+            channelList: document.getElementById('channelList'),
+            channelTableView: document.getElementById('channelTableView'),
+            channelGrid: document.getElementById('channelGrid'),
+            selectAll: document.getElementById('selectAll'),
+            groupFilter: document.getElementById('groupFilter'),
+            statusFilter: document.getElementById('statusFilter'),
+            favOnly: document.getElementById('favOnly'),
+            viewToggleBtn: document.getElementById('viewToggleBtn'),
+            deleteSelectedBtn: document.getElementById('deleteSelectedBtn'),
+            testAllBtn: document.getElementById('testAllBtn'),
+            oneClickTestBtn: document.getElementById('oneClickTestBtn'),
+            batchGroupBtn: document.getElementById('batchGroupBtn'),
+            batchRenameBtn: document.getElementById('batchRenameBtn'),
+
+            // 输出设置
             outputFormat: document.getElementById('outputFormat'),
             fieldOrder: document.getElementById('fieldOrder'),
             customOrderContainer: document.getElementById('customOrderContainer'),
             customOrderFields: document.getElementById('customOrderFields'),
+            fieldCheckboxes: document.querySelectorAll('input[name="fields"]'),
+
+            // 输出结果
             outputText: document.getElementById('outputText'),
             copyBtn: document.getElementById('copyBtn'),
-            downloadBtn: document.getElementById('downloadBtn'),
-            convertBtn: document.getElementById('convertBtn'),
             clearBtn: document.getElementById('clearBtn'),
-            channelSearch: document.getElementById('channelSearch'),
-            channelList: document.getElementById('channelList'),
-            deleteSelectedBtn: document.getElementById('deleteSelectedBtn'),
-            testAllBtn: document.getElementById('testAllBtn'),
+            convertBtn: document.getElementById('convertBtn'),
+            downloadBtn: document.getElementById('downloadBtn'),
+
+            // 数据分析
             totalChannels: document.getElementById('totalChannels'),
             groupCount: document.getElementById('groupCount'),
             groupChart: document.getElementById('groupChart'),
+            reportContainer: document.getElementById('reportContainer'),
+            snapshotBtn: document.getElementById('snapshotBtn'),
+            diffBtn: document.getElementById('diffBtn'),
+            diffResult: document.getElementById('diffResult'),
+
+            // 历史记录
             historyList: document.getElementById('historyList'),
-            settingsBtn: document.getElementById('settingsBtn'),
-            settingsPanel: document.getElementById('settingsPanel'),
-            settingsOverlay: document.getElementById('settingsOverlay'),
-            closeSettings: document.getElementById('closeSettings'),
+            clearAllHistory: document.getElementById('clearAllHistory'),
+            clearAllHistoryBtn: document.getElementById('clearAllHistoryBtn'),
+
+            // 设置
             themePref: document.getElementById('themePref'),
             saveHistory: document.getElementById('saveHistory'),
             autoConvert: document.getElementById('autoConvert'),
             showNotifications: document.getElementById('showNotifications'),
             recommendCount: document.getElementById('recommendCount'),
-            clearAllHistory: document.getElementById('clearAllHistory'),
-            toast: document.getElementById('toast'),
-            tabs: document.querySelectorAll('.tab'),
-            tabContents: document.querySelectorAll('.tab-content'),
-            deduplicate: document.getElementById('deduplicate'),
-            textInput: document.getElementById('textInput'),
-            parseTextBtn: document.getElementById('parseTextBtn'),
-            autoClearHistory: document.getElementById('autoClearHistory')
+            corsProxy: document.getElementById('corsProxy'),
+            autoClearHistory: document.getElementById('autoClearHistory'),
+            mergeMode: document.getElementById('mergeMode'),
+            autoRefresh: document.getElementById('autoRefresh'),
+            autoRefreshMin: document.getElementById('autoRefreshMin'),
+            concurrency: document.getElementById('concurrency'),
+            timeout: document.getElementById('timeout'),
+            exportSettingsBtn: document.getElementById('exportSettingsBtn'),
+            importSettingsBtn: document.getElementById('importSettingsBtn'),
+            importSettingsInput: document.getElementById('importSettingsInput'),
+            closeSettings: document.getElementById('closeSettings'),
+
+            // 其他
+            toast: document.getElementById('toast')
         };
     }
 
-    // 初始化事件监听
+    // 初始化事件监听 ================================================
     initEventListeners() {
-        // 拖放区域事件
+        // 标签页切换
+        this.elements.tabs.forEach(tab => {
+            tab.addEventListener('click', () => this.switchTab(tab.dataset.tab));
+        });
+
+        // 设置面板开关
+        this.elements.settingsBtn.addEventListener('click', () => this.openSettings());
+        this.elements.closeSettings.addEventListener('click', () => this.closeSettings());
+        this.elements.settingsOverlay.addEventListener('click', () => this.closeSettings());
+
+        // 文件拖放与选择
         this.elements.dropArea.addEventListener('dragover', (e) => {
             e.preventDefault();
-            this.elements.dropArea.classList.add('highlight');
+            e.stopPropagation();
+            this.elements.dropArea.classList.add('dragover');
         });
-
         this.elements.dropArea.addEventListener('dragleave', () => {
-            this.elements.dropArea.classList.remove('highlight');
+            this.elements.dropArea.classList.remove('dragover');
         });
-
         this.elements.dropArea.addEventListener('drop', (e) => {
             e.preventDefault();
-            this.elements.dropArea.classList.remove('highlight');
-            if (e.dataTransfer.files.length > 0) {
-                this.handleFiles(e.dataTransfer.files);
+            e.stopPropagation();
+            this.elements.dropArea.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files).filter(f =>
+                f.name.match(/\.(m3u|m3u8|txt|csv|json|epg|xmltv|diyp|xml)$/i)
+            );
+            if (files.length) {
+                this.elements.fileInput.files = files;
+                this.renderFileList();
+                this.parseAllFiles();
             }
         });
-
-        // 选择文件按钮
-        this.elements.selectFilesBtn.addEventListener('click', () => {
-            this.elements.fileInput.click();
-        });
-
+        this.elements.selectFilesBtn.addEventListener('click', () => this.elements.fileInput.click());
         this.elements.fileInput.addEventListener('change', () => {
-            if (this.elements.fileInput.files.length > 0) {
-                this.handleFiles(this.elements.fileInput.files);
-            }
+            this.renderFileList();
+            this.parseAllFiles();
         });
 
-        // 字段顺序选择
-        this.elements.fieldOrder.addEventListener('change', () => {
-            if (this.elements.fieldOrder.value === 'custom') {
-                this.elements.customOrderContainer.classList.remove('hidden');
-                this.renderCustomOrderFields();
-            } else {
-                this.elements.customOrderContainer.classList.add('hidden');
-            }
+        // 解析文本
+        this.elements.parseTextBtn.addEventListener('click', () => this.parseText());
+
+        // 导入网址
+        this.elements.importUrlBtn.addEventListener('click', () => this.importUrls());
+
+        // 频道搜索（防抖）
+        this.elements.channelSearch.addEventListener('input', Utils.debounce(() => {
+            this.renderChannelList();
+        }, 200));
+
+        // 全选
+        this.elements.selectAll.addEventListener('change', () => {
+            const checked = this.elements.selectAll.checked;
+            document.querySelectorAll('.channel-checkbox').forEach(cb => {
+                cb.checked = checked;
+            });
         });
 
-        // 复制按钮
+        // 筛选与视图
+        this.elements.groupFilter.addEventListener('change', () => this.renderChannelList());
+        this.elements.statusFilter.addEventListener('change', () => this.renderChannelList());
+        this.elements.favOnly.addEventListener('change', () => this.renderChannelList());
+        this.elements.viewToggleBtn.addEventListener('click', () => this.toggleView());
+
+        // 批量操作
+        this.elements.batchGroupBtn.addEventListener('click', () => this.openBatchModal());
+        this.elements.batchRenameBtn.addEventListener('click', () => this.openBatchModal());
+        this.elements.deleteSelectedBtn.addEventListener('click', () => this.deleteSelectedChannels());
+        this.elements.testAllBtn.addEventListener('click', () => this.testAllUrls());
+        this.elements.oneClickTestBtn.addEventListener('click', () => this.testAllUrls(true));
+
+        // 输出
+        this.elements.convertBtn.addEventListener('click', () => this.convertChannels());
         this.elements.copyBtn.addEventListener('click', () => {
             Utils.copyToClipboard(this.elements.outputText.value);
             this.showToast('已复制到剪贴板', 'success');
         });
+        this.elements.downloadBtn.addEventListener('click', () => this.downloadResult());
+        this.elements.clearBtn.addEventListener('click', () => this.clearAll());
 
-        // 下载按钮
-        this.elements.downloadBtn.addEventListener('click', () => {
-            this.downloadResult();
+        // 字段顺序
+        this.elements.fieldOrder.addEventListener('change', () => {
+            this.elements.customOrderContainer.classList.toggle('hidden', this.elements.fieldOrder.value !== 'custom');
+        });
+        this.elements.fieldCheckboxes.forEach(cb => {
+            cb.addEventListener('change', () => this.renderCustomOrderFields());
         });
 
-        // 转换按钮
-        this.elements.convertBtn.addEventListener('click', () => {
-            this.convertChannels();
-        });
+        // 数据分析
+        this.elements.snapshotBtn.addEventListener('click', () => this.saveSnapshot());
+        this.elements.diffBtn.addEventListener('click', () => this.renderDiff());
 
-        // 清空按钮
-        this.elements.clearBtn.addEventListener('click', () => {
-            this.clearAll();
-        });
+        // 历史记录
+        this.elements.clearAllHistory.addEventListener('click', () => this.clearAllHistory());
+        this.elements.clearAllHistoryBtn.addEventListener('click', () => this.clearAllHistory());
 
-        // 频道搜索
-        this.elements.channelSearch.addEventListener('input', () => {
-            this.renderChannelList();
-        });
-
-        // 删除选中按钮
-        this.elements.deleteSelectedBtn.addEventListener('click', () => {
-            this.deleteSelectedChannels();
-        });
-
-        // 测试所有URL按钮
-        this.elements.testAllBtn.addEventListener('click', () => {
-            this.testAllUrls();
-        });
-
-        // 标签页切换
-        this.elements.tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                this.switchTab(tab.getAttribute('data-tab'));
+        // 设置项
+        const settingsListeners = {
+            themePref: () => {
+                this.core.settings.theme = this.elements.themePref.value;
+                this.applyTheme();
+            },
+            saveHistory: () => { this.core.settings.saveHistory = this.elements.saveHistory.checked; },
+            autoConvert: () => { this.core.settings.autoConvert = this.elements.autoConvert.checked; },
+            showNotifications: () => { this.core.settings.showNotifications = this.elements.showNotifications.checked; },
+            recommendCount: () => { this.core.settings.recommendCount = parseInt(this.elements.recommendCount.value, 10) || 3; },
+            corsProxy: () => { this.core.settings.corsProxy = this.elements.corsProxy.value; },
+            autoClearHistory: () => { this.core.settings.autoClearHistory = this.elements.autoClearHistory.checked; },
+            mergeMode: () => {
+                this.core.settings.mergeMode = this.elements.mergeMode.value;
+            },
+            autoRefresh: () => {
+                this.core.settings.autoRefresh = this.elements.autoRefresh.checked;
+                this.scheduleAutoRefresh();
+            },
+            autoRefreshMin: () => {
+                this.core.settings.autoRefreshMin = parseInt(this.elements.autoRefreshMin.value, 10) || 30;
+                this.scheduleAutoRefresh();
+            },
+            concurrency: () => {
+                this.core.settings.concurrency = parseInt(this.elements.concurrency.value, 10) || 5;
+            },
+            timeout: () => {
+                this.core.settings.timeout = parseInt(this.elements.timeout.value, 10) || 10;
+            }
+        };
+        Object.keys(settingsListeners).forEach(id => {
+            const el = this.elements[id];
+            if (!el) return;
+            const evt = el.tagName === 'INPUT' && el.type === 'checkbox' ? 'change' : 'input';
+            el.addEventListener(evt, () => {
+                settingsListeners[id]();
+                this.core.saveSettings();
             });
         });
 
-        // 设置按钮
-        this.elements.settingsBtn.addEventListener('click', () => {
-            this.elements.settingsPanel.classList.add('open');
-            this.elements.settingsOverlay.classList.add('open');
-            this.applySettings();
+        // 设置导入导出
+        this.elements.exportSettingsBtn.addEventListener('click', () => this.exportSettingsFile());
+        this.elements.importSettingsBtn.addEventListener('click', () => this.elements.importSettingsInput.click());
+        this.elements.importSettingsInput.addEventListener('change', () => {
+            if (this.elements.importSettingsInput.files.length) {
+                this.importSettingsFile(this.elements.importSettingsInput.files[0]);
+            }
         });
 
-        // 关闭设置
-        this.elements.closeSettings.addEventListener('click', () => {
-            this.elements.settingsPanel.classList.remove('open');
-            this.elements.settingsOverlay.classList.remove('open');
-        });
-
-        this.elements.settingsOverlay.addEventListener('click', () => {
-            this.elements.settingsPanel.classList.remove('open');
-            this.elements.settingsOverlay.classList.remove('open');
-        });
-
-        // 设置表单
-        this.elements.themePref.addEventListener('change', () => {
-            this.core.settings.theme = this.elements.themePref.value;
-            this.core.saveSettings();
-            this.applyTheme();
-        });
-
-        this.elements.saveHistory.addEventListener('change', () => {
-            this.core.settings.saveHistory = this.elements.saveHistory.checked;
-            this.core.saveSettings();
-        });
-
-        this.elements.autoConvert.addEventListener('change', () => {
-            this.core.settings.autoConvert = this.elements.autoConvert.checked;
-            this.core.saveSettings();
-        });
-
-        this.elements.showNotifications.addEventListener('change', () => {
-            this.core.settings.showNotifications = this.elements.showNotifications.checked;
-            this.core.saveSettings();
-        });
-
-        this.elements.recommendCount.addEventListener('change', () => {
-            this.core.settings.recommendCount = parseInt(this.elements.recommendCount.value);
-            this.core.saveSettings();
-        });
-
-        this.elements.autoClearHistory.addEventListener('change', () => {
-            this.core.settings.autoClearHistory = this.elements.autoClearHistory.checked;
-            this.core.saveSettings();
-        });
-
-        // 清除历史记录
-        this.elements.clearAllHistory.addEventListener('click', () => {
-            this.core.clearHistory();
-            this.renderHistory();
-            this.showToast('历史记录已清除', 'success');
-        });
-
-        // 解析文本按钮
-        this.elements.parseTextBtn.addEventListener('click', () => {
-            this.parseText();
-        });
-
-        // 应用初始设置
-        this.applySettings();
-    }
-
-    // 应用设置到UI
-    applySettings() {
-        this.elements.themePref.value = this.core.settings.theme;
-        this.elements.saveHistory.checked = this.core.settings.saveHistory;
-        this.elements.autoConvert.checked = this.core.settings.autoConvert;
-        this.elements.showNotifications.checked = this.core.settings.showNotifications;
-        this.elements.recommendCount.value = this.core.settings.recommendCount;
-        this.elements.autoClearHistory.checked = this.core.settings.autoClearHistory;
-        
-        this.applyTheme();
-    }
-
-    // 应用主题
-    applyTheme() {
-        if (this.core.settings.theme === 'auto') {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.body.classList.toggle('dark-mode', prefersDark);
-        } else {
-            document.body.classList.toggle('dark-mode', this.core.settings.theme === 'dark');
+        // 主题跟随系统
+        const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+        if (mq) {
+            const onThemeChange = () => { if (this.core.settings.theme === 'auto') this.applyTheme(); };
+            if (mq.addEventListener) mq.addEventListener('change', onThemeChange);
+            else if (mq.addListener) mq.addListener(onThemeChange);
         }
-    }
 
-    // 处理文件
-    handleFiles(files) {
-        const currentFiles = Array.from(files);
-        this.renderFileList(currentFiles);
-
-        if (this.core.settings.autoConvert) {
-            this.parseAllFiles(currentFiles);
-        }
-    }
-
-    // 渲染文件列表
-    renderFileList(files) {
-        this.elements.fileList.innerHTML = '';
-        
-        if (files.length === 0) {
-            this.elements.fileList.innerHTML = '<p class="text-muted">没有选择文件</p>';
-            return;
-        }
-        
-        const list = document.createElement('ul');
-        list.className = 'file-list';
-        
-        files.forEach((file, index) => {
-            const item = document.createElement('li');
-            item.className = 'flex flex-between';
-            
-            const fileInfo = document.createElement('div');
-            fileInfo.textContent = `${file.name} (${Utils.formatFileSize(file.size)})`;
-            
-            const removeBtn = document.createElement('button');
-            removeBtn.className = 'btn btn-danger';
-            removeBtn.textContent = '移除';
-            removeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                files.splice(index, 1);
-                this.renderFileList(files);
-            });
-            
-            item.appendChild(fileInfo);
-            item.appendChild(removeBtn);
-            list.appendChild(item);
-        });
-        
-        this.elements.fileList.appendChild(list);
-        
-        if (!this.core.settings.autoConvert) {
-            const parseBtn = document.createElement('button');
-            parseBtn.className = 'btn btn-secondary mt-10';
-            parseBtn.textContent = '解析文件';
-            parseBtn.addEventListener('click', () => this.parseAllFiles(files));
-            this.elements.fileList.appendChild(parseBtn);
-        }
-    }
-
-    // 解析所有文件
-    parseAllFiles(files) {
-        if (files.length === 0) {
-            this.showToast('没有选择文件', 'warning');
-            return;
-        }
-        
-        this.showToast('开始解析文件...', 'success');
-        
-        let parsedChannels = [];
-        let filesProcessed = 0;
-        
-        files.forEach(file => {
-            const reader = new FileReader();
-            
-            reader.onload = (e) => {
-                const content = e.target.result;
-                const extension = file.name.split('.').pop().toLowerCase();
-                
-                try {
-                    const fileChannels = this.core.parseFileContent(content, extension);
-                    parsedChannels = parsedChannels.concat(fileChannels);
-                    filesProcessed++;
-                    
-                    if (filesProcessed === files.length) {
-                        this.core.channels = this.elements.deduplicate.checked ? 
-                            this.core.deduplicateChannels(parsedChannels) : parsedChannels;
-                        this.renderChannelList();
-                        this.updateStats();
-                        
-                        if (this.core.settings.autoConvert) {
-                            this.convertChannels();
-                        }
-                        
-                        this.showToast(`成功解析 ${filesProcessed} 个文件，共 ${this.core.channels.length} 个频道`, 'success');
-                    }
-                } catch (error) {
-                    filesProcessed++;
-                    this.showToast(`解析文件 ${file.name} 时出错: ${error.message}`, 'error');
-                }
-            };
-            
-            reader.onerror = () => {
-                filesProcessed++;
-                this.showToast(`读取文件 ${file.name} 时出错`, 'error');
-            };
-            
-            reader.readAsText(file);
-        });
-    }
-
-    // 解析文本
-    parseText() {
-        const text = this.elements.textInput.value.trim();
-        if (!text) {
-            this.showToast('请输入文本内容', 'warning');
-            return;
-        }
-        
-        // 尝试判断文本格式
-        let extension;
-        
-        if (text.startsWith('#EXTM3U') || text.includes('#EXTINF')) {
-            extension = 'm3u';
-        } else if (text.includes('.m3u8')) {
-            extension = 'm3u8';
-        } else if (text.includes(',#genre#')) {
-            extension = 'txt';
-        } else if (text.includes('http') && text.includes(',')) {
-            extension = 'txt';
-        } else if (text.includes('name,') || text.includes('url,') || text.includes('group,') || text.includes('logo,')) {
-            extension = 'csv';
-        } else if (text.trim().startsWith('{') || text.trim().startsWith('[')) {
-            extension = 'json';
-        } else {
-            extension = 'txt';
-        }
-        
-        try {
-            const parsedChannels = this.core.parseFileContent(text, extension);
-            this.core.channels = this.elements.deduplicate.checked ? 
-                this.core.deduplicateChannels(parsedChannels) : parsedChannels;
-            this.renderChannelList();
-            this.updateStats();
-            
-            if (this.core.settings.autoConvert) {
+        // 键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            const target = e.target;
+            const isInput = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT');
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
                 this.convertChannels();
-            }
-            
-            this.showToast(`成功解析文本，共 ${this.core.channels.length} 个频道`, 'success');
-        } catch (error) {
-            this.showToast(`解析文本时出错: ${error.message}`, 'error');
-        }
-    }
-
-    // 截断过长的文本
-    truncateText(text, maxLength) {
-        if (!text) return '';
-        if (text.length <= maxLength) return text;
-        return text.substring(0, maxLength) + '...';
-    }
-
-    // 渲染频道列表
-    renderChannelList() {
-        this.elements.channelList.innerHTML = '';
-        
-        if (this.core.channels.length === 0) {
-            this.elements.channelList.innerHTML = '<tr><td colspan="6" class="text-center text-muted">没有频道数据</td></tr>';
-            return;
-        }
-        
-        const searchTerm = this.elements.channelSearch.value.toLowerCase();
-        const filteredChannels = searchTerm 
-            ? this.core.channels.filter(c => 
-                c.name.toLowerCase().includes(searchTerm) || 
-                c.url.toLowerCase().includes(searchTerm) ||
-                (c.logo && c.logo.toLowerCase().includes(searchTerm)) ||
-                (c.group && c.group.toLowerCase().includes(searchTerm))
-            )
-            : this.core.channels;
-        
-        if (filteredChannels.length === 0) {
-            this.elements.channelList.innerHTML = '<tr><td colspan="6" class="text-center text-muted">没有匹配的频道</td></tr>';
-            return;
-        }
-
-        // 创建表头
-        const headerRow = document.createElement('tr');
-
-        // 全选列
-        const selectAllCell = document.createElement('th');
-        selectAllCell.style.width = '30px';
-        const selectAllCheckbox = document.createElement('input');
-        selectAllCheckbox.type = 'checkbox';
-        selectAllCheckbox.id = 'selectAll';
-        selectAllCheckbox.addEventListener('change', (e) => {
-            const checkboxes = document.querySelectorAll('.channel-checkbox');
-            checkboxes.forEach(cb => {
-                cb.checked = e.target.checked;
-            });
-        });
-        selectAllCell.appendChild(selectAllCheckbox);
-        headerRow.appendChild(selectAllCell);
-
-        // 其他表头列
-        ['名称', 'URL', 'Logo', '分组', '状态', '操作'].forEach(text => {
-            const th = document.createElement('th');
-            th.textContent = text;
-            headerRow.appendChild(th);
-        });
-
-        this.elements.channelList.appendChild(headerRow);
-
-        // 创建频道行
-        filteredChannels.forEach((channel, index) => {
-            const row = document.createElement('tr');
-            
-            // 名称列
-            const nameCell = document.createElement('td');
-            const nameCheckbox = document.createElement('input');
-            nameCheckbox.type = 'checkbox';
-            nameCheckbox.className = 'form-check-input channel-checkbox'; // 添加统一类名
-            nameCheckbox.dataset.index = index;
-            nameCell.appendChild(nameCheckbox);
-            
-            // 截断名称并显示省略号
-            const truncatedName = this.truncateText(channel.name || '未命名', 30);
-            nameCell.appendChild(document.createTextNode(' ' + truncatedName));
-            row.appendChild(nameCell);
-            
-            // URL列
-            const urlCell = document.createElement('td');
-            if (channel.url) {
-                const urlLink = document.createElement('a');
-                urlLink.href = channel.url;
-                urlLink.textContent = channel.url.length > 30 ? channel.url.substring(0, 30) + '...' : channel.url;
-                urlLink.target = '_blank';
-                urlLink.rel = 'noopener noreferrer';
-                urlCell.appendChild(urlLink);
-            }
-            row.appendChild(urlCell);
-            
-            // Logo列
-            const logoCell = document.createElement('td');
-            if (channel.logo) {
-                const logoImg = document.createElement('img');
-                logoImg.src = channel.logo;
-                logoImg.className = 'channel-logo';
-                logoImg.alt = channel.name + ' logo';
-                logoImg.onerror = () => {
-                    logoImg.style.display = 'none';
-                };
-                logoCell.appendChild(logoImg);
-            }
-            row.appendChild(logoCell);
-            
-            // 分组列
-            const groupCell = document.createElement('td');
-            groupCell.textContent = channel.group || '未分组';
-            row.appendChild(groupCell);
-            
-            // 状态列
-            const statusCell = document.createElement('td');
-            if (channel.status === 'success') {
-                statusCell.innerHTML = '<span class="status-indicator status-success"></span>可用';
-            } else if (channel.status === 'error') {
-                statusCell.innerHTML = '<span class="status-indicator status-error"></span>不可用';
-            } else if (channel.status === 'testing') {
-                statusCell.innerHTML = '<span class="status-indicator status-warning"></span>测试中...';
-            } else {
-                statusCell.innerHTML = '<span class="status-indicator status-warning"></span>未测试';
-            }
-            row.appendChild(statusCell);
-            
-            // 操作列
-            const actionCell = document.createElement('td');
-            actionCell.className = 'flex flex-wrap';
-            
-            const testBtn = document.createElement('button');
-            testBtn.className = 'btn btn-secondary btn-sm';
-            testBtn.textContent = '测试';
-            testBtn.addEventListener('click', () => this.testUrl(index));
-            actionCell.appendChild(testBtn);
-            
-            actionCell.appendChild(document.createTextNode(' '));
-            
-            const editBtn = document.createElement('button');
-            editBtn.className = 'btn btn-secondary btn-sm';
-            editBtn.textContent = '编辑';
-            editBtn.addEventListener('click', () => this.editChannel(index));
-            actionCell.appendChild(editBtn);
-            
-            actionCell.appendChild(document.createTextNode(' '));
-            
-            const deleteBtn = document.createElement('button');
-            deleteBtn.className = 'btn btn-danger btn-sm';
-            deleteBtn.textContent = '删除';
-            deleteBtn.addEventListener('click', () => this.deleteChannel(index));
-            actionCell.appendChild(deleteBtn);
-            
-            row.appendChild(actionCell);
-            
-            this.elements.channelList.appendChild(row);
-        });
-    }
-
-    // 测试URL
-    testUrl(index) {
-        const channel = this.core.channels[index];
-        if (!channel || !channel.url) return;
-        
-        // 标记为测试中
-        channel.status = 'testing';
-        this.renderChannelList();
-        
-        // 使用fetch测试URL
-        fetch(channel.url, {
-            method: 'HEAD',
-            mode: 'no-cors',
-            cache: 'no-cache'
-        })
-        .then(() => {
-            channel.status = 'success';
-            this.showToast(`${channel.name} 可用`, 'success');
-        })
-        .catch(() => {
-            // 如果HEAD请求失败，尝试GET请求
-            fetch(channel.url, {
-                method: 'GET',
-                mode: 'no-cors',
-                cache: 'no-cache'
-            })
-            .then(() => {
-                channel.status = 'success';
-                this.showToast(`${channel.name} 可用`, 'success');
-            })
-            .catch(() => {
-                channel.status = 'error';
-                this.showToast(`${channel.name} 不可用`, 'error');
-            });
-        })
-        .finally(() => {
-            this.renderChannelList();
-        });
-    }
-
-    // 测试所有URL
-    testAllUrls() {
-        if (this.core.channels.length === 0) {
-            this.showToast('没有频道可测试', 'warning');
-            return;
-        }
-        
-        this.showToast('开始测试所有URL...', 'success');
-        
-        let testedCount = 0;
-        const total = this.core.channels.length;
-        
-        this.core.channels.forEach((channel, index) => {
-            setTimeout(() => {
-                this.testUrl(index);
-                testedCount++;
-                
-                if (testedCount === total) {
-                    this.showToast('所有URL测试完成', 'success');
-                }
-            }, index * 1000); // 间隔1秒，避免请求过于频繁
-        });
-    }
-
-    // 编辑频道
-    editChannel(index) {
-        const channel = this.core.channels[index];
-        if (!channel) return;
-        
-        // 创建一个简单的模态对话框
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.style.position = 'fixed';
-        modal.style.top = '0';
-        modal.style.left = '0';
-        modal.style.width = '100%';
-        modal.style.height = '100%';
-        modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
-        modal.style.display = 'flex';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.zIndex = '1000';
-        
-        const modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-        modalContent.style.backgroundColor = 'var(--bg-color)';
-        modalContent.style.padding = '20px';
-        modalContent.style.borderRadius = '5px';
-        modalContent.style.width = '80%';
-        modalContent.style.maxWidth = '500px';
-        
-        modalContent.innerHTML = `
-            <h3>编辑频道</h3>
-            <div class="form-group">
-                <label for="edit-name" class="form-label">名称</label>
-                <input type="text" id="edit-name" class="form-control" value="${channel.name || ''}">
-            </div>
-            <div class="form-group">
-                <label for="edit-url" class="form-label">URL</label>
-                <input type="text" id="edit-url" class="form-control" value="${channel.url || ''}">
-            </div>
-            <div class="form-group">
-                <label for="edit-logo" class="form-label">Logo URL</label>
-                <input type="text" id="edit-logo" class="form-control" value="${channel.logo || ''}">
-            </div>
-            <div class="form-group">
-                <label for="edit-group" class="form-label">分组</label>
-                <input type="text" id="edit-group" class="form-control" value="${channel.group || ''}">
-            </div>
-            <div class="flex flex-between mt-20">
-                <button id="cancel-edit" class="btn btn-danger">取消</button>
-                <button id="save-edit" class="btn btn-primary">保存</button>
-            </div>
-        `;
-        
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // 保存编辑
-        document.getElementById('save-edit').addEventListener('click', () => {
-            this.core.channels[index] = {
-                name: document.getElementById('edit-name').value.trim(),
-                url: document.getElementById('edit-url').value.trim(),
-                logo: document.getElementById('edit-logo').value.trim(),
-                group: document.getElementById('edit-group').value.trim(),
-                status: channel.status
-            };
-            
-            document.body.removeChild(modal);
-            this.renderChannelList();
-            this.updateStats();
-            this.showToast('频道已更新', 'success');
-        });
-        
-        // 取消编辑
-        document.getElementById('cancel-edit').addEventListener('click', () => {
-            document.body.removeChild(modal);
-        });
-        
-        // 点击外部关闭
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                document.body.removeChild(modal);
+            } else if (e.ctrlKey && e.shiftKey && e.key === 'C' && !isInput) {
+                e.preventDefault();
+                Utils.copyToClipboard(this.elements.outputText.value);
+                this.showToast('已复制', 'success');
+            } else if (e.ctrlKey && e.shiftKey && e.key === 'D' && !isInput) {
+                e.preventDefault();
+                this.downloadResult();
+            } else if (e.ctrlKey && e.shiftKey && e.key === 'T' && !isInput) {
+                e.preventDefault();
+                this.testAllUrls(true);
+            } else if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.remove());
+                if (this.elements.settingsPanel.classList.contains('open')) this.closeSettings();
             }
         });
     }
 
-    // 删除频道
-    deleteChannel(index) {
-        if (confirm('确定要删除这个频道吗？')) {
-            this.core.channels.splice(index, 1);
-            this.renderChannelList();
-            this.updateStats();
-            this.showToast('频道已删除', 'success');
-        }
-    }
-
-    // 删除选中频道
-    deleteSelectedChannels() {
-        const checkboxes = document.querySelectorAll('#channelList input[type="checkbox"]:checked');
-        if (checkboxes.length === 0) {
-            this.showToast('没有选中任何频道', 'warning');
-            return;
-        }
-        
-        if (confirm(`确定要删除选中的 ${checkboxes.length} 个频道吗？`)) {
-            // 从后往前删除，避免索引问题
-            const indices = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
-            
-            indices.forEach(index => {
-                this.core.channels.splice(index, 1);
-            });
-            
-            this.renderChannelList();
-            this.updateStats();
-            this.showToast(`已删除 ${indices.length} 个频道`, 'success');
-        }
-    }
-
-    // 渲染自定义顺序字段
-    renderCustomOrderFields() {
-        this.elements.customOrderFields.innerHTML = '';
-        
-        const fields = ['name', 'url', 'logo', 'group'];
-        
-        fields.forEach(field => {
-            const chip = document.createElement('span');
-            chip.className = 'chip';
-            chip.textContent = {
-                'name': '名称',
-                'url': 'URL',
-                'logo': 'Logo',
-                'group': '分组'
-            }[field];
-            chip.dataset.field = field;
-            chip.draggable = true;
-            
-            chip.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', field);
-                chip.classList.add('dragging');
-            });
-            
-            chip.addEventListener('dragend', () => {
-                chip.classList.remove('dragging');
-            });
-            
-            this.elements.customOrderFields.appendChild(chip);
+    // 标签页与设置面板 ==============================================
+    switchTab(tabName) {
+        this.elements.tabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.tab === tabName);
         });
-        
-        // 设置拖放区域
-        this.elements.customOrderFields.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            const dragging = document.querySelector('.chip.dragging');
-            const afterElement = this.getDragAfterElement(this.elements.customOrderFields, e.clientY);
-            
-            if (afterElement == null) {
-                this.elements.customOrderFields.appendChild(dragging);
-            } else {
-                this.elements.customOrderFields.insertBefore(dragging, afterElement);
-            }
+        this.elements.tabContents.forEach(content => {
+            content.classList.toggle('active', content.id === tabName);
         });
+        if (tabName === 'analytics') {
+            this.updateChart();
+            this.renderReport();
+            this.renderDiff();
+        }
+        if (tabName === 'history') this.renderHistory();
     }
 
-    // 获取拖放后的元素
-    getDragAfterElement(container, y) {
-        const draggableElements = [...container.querySelectorAll('.chip:not(.dragging)')];
-        
-        return draggableElements.reduce((closest, child) => {
-            const box = child.getBoundingClientRect();
-            const offset = y - box.top - box.height / 2;
-            
-            if (offset < 0 && offset > closest.offset) {
-                return { offset: offset, element: child };
-            } else {
-                return closest;
+    openSettings() {
+        this.elements.settingsPanel.classList.add('open');
+        this.elements.settingsOverlay.classList.add('show');
+    }
+
+    closeSettings() {
+        this.elements.settingsPanel.classList.remove('open');
+        this.elements.settingsOverlay.classList.remove('show');
+    }
+
+    // 设置应用与主题 ================================================
+    applySettings() {
+        if (this.elements.themePref) this.elements.themePref.value = this.core.settings.theme || 'black';
+        if (this.elements.saveHistory) this.elements.saveHistory.checked = !!this.core.settings.saveHistory;
+        if (this.elements.autoConvert) this.elements.autoConvert.checked = !!this.core.settings.autoConvert;
+        if (this.elements.showNotifications) this.elements.showNotifications.checked = !!this.core.settings.showNotifications;
+        if (this.elements.recommendCount) this.elements.recommendCount.value = this.core.settings.recommendCount || 3;
+        if (this.elements.corsProxy) this.elements.corsProxy.value = this.core.settings.corsProxy || '';
+        if (this.elements.autoClearHistory) this.elements.autoClearHistory.checked = !!this.core.settings.autoClearHistory;
+        if (this.elements.mergeMode) this.elements.mergeMode.value = this.core.settings.mergeMode || 'merge';
+        if (this.elements.autoRefresh) this.elements.autoRefresh.checked = !!this.core.settings.autoRefresh;
+        if (this.elements.autoRefreshMin) this.elements.autoRefreshMin.value = this.core.settings.autoRefreshMin || 30;
+        if (this.elements.concurrency) this.elements.concurrency.value = this.core.settings.concurrency || 5;
+        if (this.elements.timeout) this.elements.timeout.value = this.core.settings.timeout || 10;
+        this.applyTheme();
+        this.scheduleAutoRefresh();
+    }
+
+    applyTheme() {
+        const theme = this.core.settings.theme || 'black';
+        const body = document.body;
+        if (theme === 'auto') {
+            body.classList.remove('light-mode', 'white-mode', 'black-mode', 'dark-mode');
+        } else {
+            body.classList.remove('light-mode', 'white-mode', 'black-mode', 'dark-mode');
+            const map = { 'light': 'light-mode', 'dark': 'dark-mode', 'white': 'white-mode', 'black': 'black-mode' };
+            body.classList.add(map[theme] || 'black-mode');
+        }
+    }
+
+    scheduleAutoRefresh() {
+        if (this._refreshTimer) {
+            clearInterval(this._refreshTimer);
+            this._refreshTimer = null;
+        }
+        if (!this.core.settings.autoRefresh) return;
+        const min = parseInt(this.core.settings.autoRefreshMin, 10) || 30;
+        this._refreshTimer = setInterval(() => {
+            if (this.elements.urlInput.value.trim()) {
+                this.importUrls({ silent: true });
             }
-        }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }, min * 60 * 1000);
     }
 
-    // 转换频道
-    convertChannels() {
-        if (this.core.channels.length === 0) {
-            this.showToast('没有频道数据', 'warning');
-            return;
-        }
-        
-        const format = this.elements.outputFormat.value;
-        const fieldOrder = this.getFieldOrder();
-        let result;
-        
-        try {
-            switch (format) {
-                case 'm3u':
-                    result = this.core.convertToM3U(fieldOrder);
-                    break;
-                case 'txt':
-                    result = this.core.convertToTXT(fieldOrder);
-                    break;
-                case 'csv':
-                    result = this.core.convertToCSV(fieldOrder);
-                    break;
-                case 'json':
-                    result = this.core.convertToJSON(fieldOrder);
-                    break;
-                case 'excel':
-                    this.core.convertToExcel(fieldOrder);
-                    this.showToast('Excel文件已生成', 'success');
-                    return;
-                case 'xml':
-                    result = this.core.convertToXML(fieldOrder);
-                    break;
-                default:
-                    result = '不支持的输出格式';
-            }
-            
-            this.elements.outputText.value = result;
-            this.core.addHistoryRecord(result, format);
-            this.showToast('转换完成', 'success');
-        } catch (error) {
-            this.showToast(`转换时出错: ${error.message}`, 'error');
-        }
-    }
-
-    // 获取字段顺序
-    getFieldOrder() {
-        const orderType = this.elements.fieldOrder.value;
-        
-        switch (orderType) {
-            case 'default':
-                return ['name', 'url', 'logo', 'group'];
-            case 'groupFirst':
-                return ['group', 'name', 'url', 'logo'];
-            case 'urlFirst':
-                return ['url', 'name', 'logo', 'group'];
-            case 'logoFirst':
-                return ['logo', 'name', 'url', 'group'];
-            case 'custom':
-                return this.getCustomFieldOrder();
-            default:
-                return ['name', 'url', 'logo', 'group'];
-        }
-    }
-
-    // 获取自定义字段顺序
-    getCustomFieldOrder() {
-        const fields = [];
-        const chips = this.elements.customOrderFields.querySelectorAll('.chip');
-        
-        chips.forEach(chip => {
-            const field = chip.dataset.field;
-            const checkbox = document.getElementById(`field-${field}`);
-            
-            if (checkbox && checkbox.checked) {
-                fields.push(field);
-            }
-        });
-        
-        return fields.length > 0 ? fields : ['name', 'url', 'logo', 'group'];
-    }
-
-    // 下载结果
-    downloadResult() {
-        if (!this.elements.outputText.value) {
-            this.showToast('没有内容可下载', 'warning');
-            return;
-        }
-        
-        const format = this.elements.outputFormat.value;
-        let mimeType, extension;
-        
-        switch (format) {
-            case 'm3u':
-                mimeType = 'audio/x-mpegurl';
-                extension = 'm3u';
-                break;
-            case 'txt':
-                mimeType = 'text/plain';
-                extension = 'txt';
-                break;
-            case 'csv':
-                mimeType = 'text/csv';
-                extension = 'csv';
-                break;
-            case 'json':
-                mimeType = 'application/json';
-                extension = 'json';
-                break;
-            case 'xml':
-                mimeType = 'application/xml';
-                extension = 'xml';
-                break;
-            default:
-                mimeType = 'text/plain';
-                extension = 'txt';
-        }
-        
-        const blob = new Blob([this.elements.outputText.value], { type: mimeType });
+    exportSettingsFile() {
+        const blob = new Blob([JSON.stringify(this.core.settings, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `频道列表.${extension}`;
+        a.download = '频道工具设置.json';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        
-        this.showToast('文件已下载', 'success');
+        this.showToast('设置已导出', 'success');
     }
 
-    // 清空所有
-    clearAll() {
-        this.elements.outputText.value = '';
-        this.core.channels = [];
-        this.renderChannelList();
-        this.updateStats();
-        this.showToast('已清空', 'success');
+    importSettingsFile(file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+            try {
+                const data = JSON.parse(reader.result);
+                Object.assign(this.core.settings, data);
+                this.core.saveSettings();
+                this.applySettings();
+                this.showToast('设置已导入', 'success');
+            } catch (e) {
+                this.showToast('设置文件无效', 'error');
+            }
+        };
+        reader.readAsText(file);
     }
 
-    // 切换标签页
-    switchTab(tabId) {
-        // 更新标签页状态
-        this.elements.tabs.forEach(tab => {
-            tab.classList.toggle('active', tab.getAttribute('data-tab') === tabId);
-        });
-        
-        // 更新内容区域
-        this.elements.tabContents.forEach(content => {
-            content.classList.toggle('active', content.id === tabId);
-        });
-        
-        // 如果切换到分析标签页，更新图表
-        if (tabId === 'analytics') {
-            this.updateChart();
+    // 文件与文本解析 ================================================
+    handleFiles(files) {
+        const validFiles = Array.from(files).filter(f =>
+            f.name.match(/\.(m3u|m3u8|txt|csv|json|epg|xmltv|diyp|xml)$/i)
+        );
+        if (validFiles.length === 0) {
+            this.showToast('请选择支持的文件格式（m3u/m3u8/txt/csv/json/epg）', 'warning');
+            return;
         }
-        
-        // 如果切换到历史标签页，更新历史记录
-        if (tabId === 'history') {
-            this.renderHistory();
+        this.elements.fileInput.files = validFiles;
+        this.renderFileList();
+        this.parseAllFiles();
+    }
+
+    renderFileList() {
+        const files = this.elements.fileInput.files;
+        const fileList = this.elements.fileList;
+
+        if (!files || files.length === 0) {
+            fileList.innerHTML = '<p class="text-muted">没有选择文件</p>';
+            return;
         }
-    }
 
-    // 初始化图表
-    initChart() {
-        // 留空，将在更新数据时初始化
-    }
+        const fileListHtml = Array.from(files).map((file, index) => `
+            <div class="file-item">
+                <div>
+                    <div class="file-name">${Utils.escapeHtml(file.name)}</div>
+                    <div class="file-size text-muted">${Utils.formatFileSize(file.size)}</div>
+                </div>
+                <div class="flex">
+                    <button class="btn btn-secondary btn-sm" data-action="parse" data-index="${index}">解析</button>
+                    <button class="btn btn-danger btn-sm" data-action="remove" data-index="${index}">移除</button>
+                </div>
+            </div>
+        `).join('');
 
-    // 更新图表
-    updateChart() {
-        // 按组标题统计
-        const groupCounts = {};
-        this.core.channels.forEach(channel => {
-            const group = channel.group || '未分组';
-            groupCounts[group] = (groupCounts[group] || 0) + 1;
+        fileList.innerHTML = fileListHtml;
+
+        fileList.querySelectorAll('[data-action="parse"]').forEach(btn => {
+            btn.addEventListener('click', () => this.parseAllFiles());
         });
-        
-        const groups = Object.keys(groupCounts);
-        const counts = Object.values(groupCounts);
-        
-        // 更新统计数字
-        this.elements.totalChannels.textContent = this.core.channels.length;
-        this.elements.groupCount.textContent = groups.length;
-        
-        // 更新图表
-        const ctx = this.elements.groupChart.getContext('2d');
-        
-        // 如果已有图表实例，先销毁
-        if (this.elements.groupChart.chart) {
-            this.elements.groupChart.chart.destroy();
+        fileList.querySelectorAll('[data-action="remove"]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const index = parseInt(e.target.dataset.index, 10);
+                const dt = new DataTransfer();
+                Array.from(this.elements.fileInput.files).forEach((f, i) => {
+                    if (i !== index) dt.items.add(f);
+                });
+                this.elements.fileInput.files = dt.files;
+                this.renderFileList();
+            });
+        });
+    }
+
+    parseAllFiles() {
+        const files = this.elements.fileInput.files;
+        if (!files || files.length === 0) {
+            this.showToast('没有选择文件', 'warning');
+            return;
         }
-        
-        this.elements.groupChart.chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: groups,
-                datasets: [ {
-                    label: '频道数量',
-                    data: counts,
-                    backgroundColor: groups.map((_, i) => {
-                        const hue = (i * 30) % 360;
-                        return `hsl(${hue}, 70%, 60%)`;
-                    }),
-                    borderColor: groups.map((_, i) => {
-                        const hue = (i * 30) % 360;
-                        return `hsl(${hue}, 70%, 40%)`;
-                    }),
-                    borderWidth: 1
-                } ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            precision: 0
-                        }
+
+        const fileErrors = [];
+        const parsePromises = Array.from(files).map(file => {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const extension = file.name.split('.').pop().toLowerCase();
+                        const channels = this.core.parseFileContent(e.target.result, extension);
+                        resolve({ file: file.name, channels, count: channels.length });
+                    } catch (err) {
+                        fileErrors.push(`${file.name}: ${err.message}`);
+                        resolve({ file: file.name, channels: [], count: 0 });
                     }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
+                };
+                reader.onerror = () => {
+                    fileErrors.push(`${file.name}: 读取失败`);
+                    resolve({ file: file.name, channels: [], count: 0 });
+                };
+                reader.readAsText(file);
+            });
+        });
+
+        Promise.all(parsePromises).then(results => {
+            let total = 0;
+            let parsedChannels = [];
+            results.forEach(r => {
+                if (r.count > 0) {
+                    this.showToast(`解析 ${r.file} 成功：${r.count} 个频道`, 'success');
                 }
+                total += r.count;
+                parsedChannels = parsedChannels.concat(r.channels);
+            });
+
+            this.setChannels(parsedChannels);
+            if (fileErrors.length) {
+                fileErrors.forEach(msg => this.showToast(`解析失败 ${msg}`, 'error'));
+            } else if (total === 0) {
+                this.showToast('没有解析到任何频道', 'warning');
             }
         });
     }
 
-    // 渲染历史记录
-    renderHistory() {
-        this.elements.historyList.innerHTML = '';
-        
-        if (this.core.history.length === 0) {
-            this.elements.historyList.innerHTML = '<p class="text-muted text-center">没有历史记录</p>';
+    parseText() {
+        const text = this.elements.textInput.value.trim();
+        if (!text) {
+            this.showToast('请输入要解析的文本', 'warning');
             return;
         }
-        
-        // 按时间倒序排列
-        const sortedHistory = [...this.core.history].reverse();
-        
-        sortedHistory.forEach((record, index) => {
-            const historyItem = document.createElement('div');
-            historyItem.className = 'history-item';
-            historyItem.style.cursor = 'pointer';
-            historyItem.style.padding = '10px';
-            historyItem.style.borderBottom = '1px solid var(--border-color)';
-            
-            const date = new Date(record.timestamp);
-            const timeString = date.toLocaleString();
-            
-            const formatBadge = document.createElement('span');
-            formatBadge.className = 'badge';
-            formatBadge.textContent = record.format.toUpperCase();
-            
-            const timeSpan = document.createElement('span');
-            timeSpan.className = 'text-muted';
-            timeSpan.textContent = ' ' + timeString;
-            
-            const previewText = document.createElement('p');
-            previewText.className = 'text-muted';
-            previewText.style.marginTop = '5px';
-            previewText.textContent = record.data.substring(0, 100) + (record.data.length > 100 ? '...' : '');
-            
-            historyItem.appendChild(formatBadge);
-            historyItem.appendChild(timeSpan);
-            historyItem.appendChild(previewText);
-            
-            historyItem.addEventListener('click', () => {
-                this.elements.outputText.value = record.data;
-                this.elements.outputFormat.value = record.format;
-                this.showToast('历史记录已加载', 'success');
-                this.switchTab('converter');
-            });
-            
-            this.elements.historyList.appendChild(historyItem);
+        try {
+            const format = this.core.detectFormat(text);
+            const channels = this.core.parseFileContent(text, format);
+            this.setChannels(channels);
+            if (channels.length === 0) {
+                this.showToast('没有解析到任何频道', 'warning');
+            }
+        } catch (e) {
+            this.showToast(`解析失败: ${e.message}`, 'error');
+        }
+    }
+
+    // 网址导入（多源合并 + 定时刷新）
+    async importUrls(opts = {}) {
+        const text = this.elements.urlInput.value.trim();
+        if (!text) {
+            if (!opts.silent) this.showToast('请输入网址', 'warning');
+            return;
+        }
+        const urls = text.split('\n').map(u => u.trim()).filter(u => u.length > 0);
+        const proxy = (this.core.settings.corsProxy || '').trim();
+        const resolveUrl = (url) => proxy ? proxy + url : url;
+        const btn = this.elements.importUrlBtn;
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = '导入中...';
+
+        const knownExts = ['m3u', 'm3u8', 'txt', 'csv', 'json', 'epg', 'xmltv', 'diyp'];
+        let parsedChannels = [];
+        let successCount = 0;
+        let failCount = 0;
+
+        try {
+            for (const url of urls) {
+                try {
+                    const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+                    const timer = setTimeout(() => ctrl && ctrl.abort(), 20000);
+                    const response = await fetch(resolveUrl(url), {
+                        cache: 'no-cache',
+                        signal: ctrl ? ctrl.signal : undefined
+                    });
+                    clearTimeout(timer);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    const content = await response.text();
+                    const urlPath = url.split('?')[0].toLowerCase();
+                    const extMatch = urlPath.match(/\.([a-z0-9]+)$/);
+                    const extension = (extMatch && knownExts.includes(extMatch[1])) ? extMatch[1] : this.core.detectFormat(content);
+                    const channels = this.core.parseFileContent(content, extension);
+                    parsedChannels = parsedChannels.concat(channels);
+                    successCount++;
+                } catch (e) {
+                    failCount++;
+                    const hint = e instanceof TypeError ? '（可能是跨域限制，可在设置中配置CORS代理）' : '';
+                    if (!opts.silent) this.showToast(`导入失败 ${url}: ${e.message}${hint}`, 'error');
+                }
+            }
+
+            if (parsedChannels.length === 0 && successCount === 0) {
+                this.showToast('全部导入失败，请检查网址或CORS代理设置', 'error');
+                return;
+            }
+
+            this.setChannels(parsedChannels);
+            if (!opts.silent) {
+                this.showToast(`导入完成：成功 ${successCount} 个来源，失败 ${failCount} 个，共 ${this.core.channels.length} 个频道`, 'success');
+            }
+        } finally {
+            btn.disabled = false;
+            btn.textContent = originalText;
+        }
+    }
+
+    // 设置当前频道列表（支持合并/去重策略）
+    setChannels(parsedChannels) {
+        if (this.elements.appendToExisting && this.elements.appendToExisting.checked) {
+            this.core.channels = this.core.mergeChannels(
+                this.core.channels,
+                parsedChannels,
+                this.core.settings.mergeMode || 'merge'
+            );
+        } else if (this.elements.deduplicate && this.elements.deduplicate.checked) {
+            this.core.channels = this.core.deduplicateChannels(parsedChannels);
+        } else {
+            this.core.channels = parsedChannels;
+        }
+        this.renderChannelList();
+        this.updateStats();
+        if (this.core.settings.autoConvert) this.convertChannels();
+        this.scheduleAutoRefresh();
+    }
+
+    // 频道列表渲染 ==================================================
+    async renderChannelList() {
+        if (this.elements.selectAll) this.elements.selectAll.checked = false;
+        const indices = await this.getVisibleIndices();
+        this.renderGroupFilter();
+
+        if (this.viewMode === 'grid') {
+            this.renderGridCards(indices);
+        } else {
+            this.renderTableRows(indices);
+        }
+    }
+
+    // 分组下拉（选项集合变化时才重建，避免失焦）
+    renderGroupFilter() {
+        const select = this.elements.groupFilter;
+        if (!select) return;
+        const groups = [...new Set(this.core.channels.map(c => c.group || '未分组'))];
+        const current = select.value;
+        const html = ['<option value="">全部分组</option>']
+            .concat(groups.map(g => `<option value="${Utils.escapeHtml(g)}">${Utils.escapeHtml(g)}</option>`))
+            .join('');
+        if (select.innerHTML !== html) {
+            select.innerHTML = html;
+            if (groups.includes(current)) select.value = current;
+            else select.value = '';
+        }
+    }
+
+    // 可见频道索引（分组/状态/收藏/拼音搜索筛选）
+    async getVisibleIndices() {
+        const q = (this.elements.channelSearch.value || '').trim().toLowerCase();
+        const group = this.elements.groupFilter.value;
+        const status = this.elements.statusFilter.value;
+        const favOnly = this.elements.favOnly && this.elements.favOnly.checked;
+        const list = this.core.channels;
+        const indices = [];
+
+        for (let i = 0; i < list.length; i++) {
+            const c = list[i];
+            if (group && (c.group || '未分组') !== group) continue;
+            if (status) {
+                if (status === 'untested') { if (c.status) continue; }
+                else if (c.status !== status) continue;
+            }
+            if (favOnly && !c.favorite) continue;
+            if (q) {
+                const syncMatch =
+                    (c.name || '').toLowerCase().includes(q) ||
+                    (c.url || '').toLowerCase().includes(q) ||
+                    (c.logo || '').toLowerCase().includes(q) ||
+                    (c.group || '').toLowerCase().includes(q);
+                if (!syncMatch) {
+                    if (!/[\u4e00-\u9fff]/.test(c.name || '')) continue;
+                    const initials = await this.getChannelInitials(c);
+                    if (!initials || !initials.includes(q)) continue;
+                }
+            }
+            indices.push(i);
+        }
+
+        // 收藏频道置顶
+        indices.sort((a, b) => ((list[b].favorite ? 1 : 0) - (list[a].favorite ? 1 : 0)) || (a - b));
+        return indices;
+    }
+
+    // 拼音首字母（懒加载 pinyin-pro，降级为子串匹配）
+    loadPinyinLib() {
+        if (this._pinyinReady || window.pinyinPro) {
+            this._pinyinReady = true;
+            return Promise.resolve();
+        }
+        return this.loadScript('https://cdn.jsdelivr.net/npm/pinyin-pro@3/dist/index.min.js', 'pinyinPro')
+            .then(() => { this._pinyinReady = !!window.pinyinPro; });
+    }
+
+    getChannelInitials(channel) {
+        const name = channel.name || '';
+        if (!/[\u4e00-\u9fff]/.test(name)) return Promise.resolve('');
+        if (this._initialsCache.has(name)) return Promise.resolve(this._initialsCache.get(name));
+        return this.loadPinyinLib().then(() => {
+            if (!window.pinyinPro) return '';
+            try {
+                const arr = window.pinyinPro.pinyin(name, { pattern: 'first', toneType: 'none', type: 'array' });
+                const s = arr.join('').toLowerCase();
+                this._initialsCache.set(name, s);
+                return s;
+            } catch (e) {
+                return '';
+            }
         });
     }
 
-    // 更新统计信息
-    updateStats() {
-        this.elements.totalChannels.textContent = this.core.channels.length;
-        const groups = new Set(this.core.channels.map(c => c.group || '未分组'));
-        this.elements.groupCount.textContent = groups.size;
+    // 表格视图（分块渲染，避免大数据量卡顿）
+    renderTableRows(indices) {
+        const tbody = this.elements.channelList;
+        tbody.innerHTML = '';
+
+        if (indices.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="7" class="text-center text-muted">没有匹配的频道</td></tr>';
+            return;
+        }
+
+        const chunkSize = 300;
+        const renderChunk = (start) => {
+            const frag = document.createDocumentFragment();
+            const end = Math.min(start + chunkSize, indices.length);
+            for (let i = start; i < end; i++) {
+                frag.appendChild(this.createChannelRow(indices[i]));
+            }
+            tbody.appendChild(frag);
+            if (end < indices.length) requestAnimationFrame(() => renderChunk(end));
+        };
+        renderChunk(0);
     }
 
-    // 显示通知
-    showToast(message, type) {
-        if (!this.core.settings.showNotifications) return;
-        
-        const toast = this.elements.toast;
-        toast.textContent = message;
-        toast.className = 'toast';
-        
-        // 添加类型类
-        if (type) {
-            toast.classList.add(type);
+    // 网格视图
+    renderGridCards(indices) {
+        const grid = this.elements.channelGrid;
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        if (indices.length === 0) {
+            grid.innerHTML = '<p class="text-muted text-center">没有匹配的频道</p>';
+            return;
         }
-        
-        // 显示
-        setTimeout(() => {
-            toast.classList.add('show');
-        }, 10);
-        
-        // 3秒后隐藏
-        setTimeout(() => {
-            toast.classList.remove('show');
+
+        const frag = document.createDocumentFragment();
+        indices.forEach(index => {
+            frag.appendChild(this.createChannelCard(index));
+        });
+        grid.appendChild(frag);
+    }
+
+    toggleView() {
+        this.viewMode = this.viewMode === 'table' ? 'grid' : 'table';
+        if (this.elements.channelTableView) this.elements.channelTableView.classList.toggle('hidden', this.viewMode === 'grid');
+        if (this.elements.channelGrid) this.elements.channelGrid.classList.toggle('hidden', this.viewMode !== 'grid');
+        this.elements.viewToggleBtn.textContent = this.viewMode === 'table' ? '网格视图' : '表格视图';
+        this.renderChannelList();
+    }
+
+    createChannelRow(index) {
+        const channel = this.core.channels[index];
+        const row = document.createElement('tr');
+        row.dataset.index = index;
+
+        const checkCell = document.createElement('td');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'form-check-input channel-checkbox';
+        checkbox.dataset.index = index;
+        checkCell.appendChild(checkbox);
+        row.appendChild(checkCell);
+
+        const nameCell = document.createElement('td');
+        nameCell.className = 'channel-name';
+        nameCell.textContent = this.truncateText(channel.name || '未命名', 40);
+        if (channel.favorite) {
+            nameCell.appendChild(document.createTextNode(' '));
+            const star = document.createElement('span');
+            star.className = 'fav-badge';
+            star.textContent = '★';
+            nameCell.appendChild(star);
+        }
+        row.appendChild(nameCell);
+
+        const urlCell = document.createElement('td');
+        if (channel.url) {
+            const a = document.createElement('a');
+            a.href = channel.url;
+            a.className = 'channel-url';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = channel.url.length > 35 ? channel.url.substring(0, 35) + '...' : channel.url;
+            urlCell.appendChild(a);
+        }
+        row.appendChild(urlCell);
+
+        const logoCell = document.createElement('td');
+        logoCell.appendChild(this.renderLogo(channel));
+        row.appendChild(logoCell);
+
+        const groupCell = document.createElement('td');
+        groupCell.textContent = channel.group || '未分组';
+        row.appendChild(groupCell);
+
+        const statusCell = document.createElement('td');
+        statusCell.className = 'channel-status';
+        statusCell.innerHTML = this.getStatusHtml(channel);
+        row.appendChild(statusCell);
+
+        const actionCell = document.createElement('td');
+        this.appendActionButtons(actionCell, index);
+        row.appendChild(actionCell);
+
+        return row;
+    }
+
+    createChannelCard(index) {
+        const channel = this.core.channels[index];
+        const card = document.createElement('div');
+        card.className = 'channel-card';
+        card.dataset.index = index;
+
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'form-check-input channel-checkbox card-checkbox';
+        cb.dataset.index = index;
+        card.appendChild(cb);
+
+        const head = document.createElement('div');
+        head.className = 'channel-card-head';
+        head.appendChild(this.renderLogo(channel));
+        const name = document.createElement('div');
+        name.className = 'channel-card-name';
+        name.textContent = this.truncateText(channel.name || '未命名', 18);
+        head.appendChild(name);
+        card.appendChild(head);
+
+        const meta = document.createElement('div');
+        meta.className = 'channel-card-meta';
+        meta.textContent = channel.group || '未分组';
+        card.appendChild(meta);
+
+        const status = document.createElement('div');
+        status.className = 'channel-card-status channel-status';
+        status.innerHTML = this.getStatusHtml(channel);
+        card.appendChild(status);
+
+        const actions = document.createElement('div');
+        actions.className = 'channel-card-actions';
+        this.appendActionButtons(actions, index);
+        card.appendChild(actions);
+
+        return card;
+    }
+
+    appendActionButtons(container, index) {
+        const channel = this.core.channels[index];
+        const makeBtn = (text, cls, title, fn) => {
+            const b = document.createElement('button');
+            b.className = `btn ${cls} btn-sm`;
+            b.textContent = text;
+            b.title = title;
+            b.addEventListener('click', (e) => { e.stopPropagation(); fn(); });
+            container.appendChild(b);
+            container.appendChild(document.createTextNode(' '));
+            return b;
+        };
+        makeBtn(channel.favorite ? '★' : '☆', 'btn-secondary', '收藏/取消收藏', () => this.toggleFavorite(index));
+        makeBtn('预览', 'btn-secondary', '播放预览', () => this.previewChannel(index));
+        makeBtn('测试', 'btn-secondary', '测试可用性', () => this.testUrl(index));
+        makeBtn('编辑', 'btn-secondary', '编辑', () => this.editChannel(index));
+        makeBtn('删除', 'btn-danger', '删除', () => this.deleteChannel(index));
+    }
+
+    renderLogo(channel) {
+        if (!channel.logo) return this.createLogoPlaceholder(channel.name);
+        const img = document.createElement('img');
+        img.className = 'channel-logo';
+        img.alt = (channel.name || '') + ' logo';
+        img.referrerPolicy = 'no-referrer';
+        img.onerror = () => {
+            img.replaceWith(this.createLogoPlaceholder(channel.name));
+        };
+        if (typeof IntersectionObserver !== 'undefined') {
+            img.dataset.src = channel.logo;
+            this.getLazyObserver().observe(img);
+        } else {
+            img.src = channel.logo;
+        }
+        return img;
+    }
+
+    getLazyObserver() {
+        if (this._lazyObserver) return this._lazyObserver;
+        this._lazyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    this._lazyObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: '100px' });
+        return this._lazyObserver;
+    }
+
+    createLogoPlaceholder(name) {
+        const div = document.createElement('div');
+        div.className = 'logo-placeholder';
+        div.textContent = (name || '频道').substring(0, 2);
+        div.title = name || '';
+        return div;
+    }
+
+    getStatusHtml(channel) {
+        const s = channel ? channel.status : '';
+        const latency = channel && channel.latency ? ` ${channel.latency}ms` : '';
+        if (s === 'success') return `<span class="status-indicator status-success"></span>可用${latency}`;
+        if (s === 'error') return '<span class="status-indicator status-error"></span>不可用';
+        if (s === 'testing') return '<span class="status-indicator status-warning"></span>测试中...';
+        return '<span class="status-indicator status-warning"></span>未测试';
+    }
+
+    updateChannelRowStatus(index) {
+        const channel = this.core.channels[index];
+        if (!channel) return;
+        const html = this.getStatusHtml(channel);
+        document.querySelectorAll(`[data-index="${index}"] .channel-status`).forEach(el => {
+            el.innerHTML = html;
+        });
+    }
+
+    truncateText(text, maxLen) {
+        if (!text) return '';
+        return text.length > maxLen ? text.substring(0, maxLen) + '...' : text;
+    }
+
+    // 频道操作 ======================================================
+    toggleFavorite(index) {
+        const channel = this.core.channels[index];
+        if (!channel) return;
+        channel.favorite = !channel.favorite;
+        this.renderChannelList();
+    }
+
+    previewChannel(index) {
+        const channel = this.core.channels[index];
+        if (!channel || !channel.url) return;
+        const isM3u8 = /\.m3u8(\?|$)/i.test(channel.url);
+
+        // CORS代理：解决流服务器未返回 Access-Control-Allow-Origin 导致的跨域拦截
+        const proxy = (this.core.settings.corsProxy || '').trim();
+        const streamUrl = proxy ? proxy + channel.url : channel.url;
+
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content preview-modal">
+                <h3>预览：${Utils.escapeHtml(channel.name || '')}</h3>
+                <video id="preview-video" class="preview-video" controls autoplay></video>
+                <div class="flex flex-between mt-20">
+                    <button id="preview-close" class="btn btn-danger">关闭</button>
+                </div>
+            </div>`;
+        document.body.appendChild(modal);
+
+        const video = modal.querySelector('#preview-video');
+        const playHls = (src) => {
+            if (window.Hls && window.Hls.isSupported()) {
+                const hls = new window.Hls();
+                hls.loadSource(src);
+                hls.attachMedia(video);
+                hls.on(window.Hls.Events.ERROR, (e, data) => {
+                    if (data && data.fatal) this.showToast('播放失败，流可能不可用', 'error');
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = src;
+            } else {
+                video.src = src;
+            }
+        };
+
+        if (isM3u8) {
+            if (window.Hls && window.Hls.isSupported()) playHls(streamUrl);
+            else {
+                this.loadHlsModule().then(() => playHls(streamUrl));
+            }
+        } else {
+            video.src = streamUrl;
+        }
+
+        modal.querySelector('#preview-close').addEventListener('click', () => modal.remove());
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    }
+
+    loadScript(src, globalName) {
+        if (globalName && window[globalName]) return Promise.resolve();
+        return new Promise((resolve) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = () => resolve();
+            s.onerror = () => resolve();
+            document.head.appendChild(s);
+        });
+    }
+
+    // 优先加载本地 hls.js（ES模块），失败或无法使用再回退CDN的UMD版
+    loadHlsModule() {
+        if (window.Hls && window.Hls.isSupported()) return Promise.resolve();
+        if (this._hlsLoading) return this._hlsLoading;
+        this._hlsLoading = import('js/hls.js')
+            .then(m => {
+                const Hls = (m && m.default) || m;
+                if (Hls && Hls.isSupported) {
+                    window.Hls = Hls;
+                } else {
+                    return this.loadScript('https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js', 'Hls');
+                }
+            })
+            .catch(() => this.loadScript('https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js', 'Hls'));
+        return this._hlsLoading;
+    }
+
+    // 并发池测试：限制并发 + 超时 + 测速（ignoreFilter=true 时测试全部频道）
+    async testAllUrls(ignoreFilter = false) {
+        if (this._testing) {
+            this.showToast('正在测试中，请稍候', 'warning');
+            return;
+        }
+        const indices = ignoreFilter
+            ? this.core.channels.map((c, i) => i)
+            : await this.getVisibleIndices();
+        if (indices.length === 0) {
+            this.showToast('没有可测试的频道', 'warning');
+            return;
+        }
+        const concurrency = Math.min(Math.max(parseInt(this.core.settings.concurrency, 10) || 5, 1), 20);
+        const timeout = parseInt(this.core.settings.timeout, 10) || 10;
+        const opts = { silent: true };
+        this._testing = true;
+        this.showToast(`开始${ignoreFilter ? '一键测试全部' : '测试筛选结果'}：${indices.length} 个URL（并发 ${concurrency}）...`, 'success');
+
+        let cursor = 0;
+        let ok = 0;
+        let fail = 0;
+
+        const worker = async () => {
+            while (cursor < indices.length) {
+                const idx = indices[cursor++];
+                await this.testUrl(idx, timeout, opts);
+                const c = this.core.channels[idx];
+                if (c && c.status === 'success') ok++;
+                else if (c && c.status === 'error') fail++;
+            }
+        };
+
+        const workers = [];
+        for (let i = 0; i < concurrency; i++) workers.push(worker());
+        await Promise.all(workers);
+
+        this._testing = false;
+        this.showToast(`测试完成：可用 ${ok} 个，不可用 ${fail} 个`, 'success');
+        this.renderReport();
+        this.renderChannelList();
+    }
+
+    testUrl(index, timeoutSec = 10, opts = {}) {
+        const channel = this.core.channels[index];
+        if (!channel || !channel.url) return Promise.resolve();
+
+        channel.status = 'testing';
+        channel.latency = null;
+        this.updateChannelRowStatus(index);
+
+        const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const timer = setTimeout(() => ctrl && ctrl.abort(), (timeoutSec || 10) * 1000);
+        const start = performance.now();
+
+        const doFetch = (method) =>
+            fetch(channel.url, {
+                method,
+                mode: 'no-cors',
+                cache: 'no-cache',
+                signal: ctrl ? ctrl.signal : undefined
+            });
+
+        return doFetch('HEAD')
+            .then(() => this.setChannelStatus(index, 'success', performance.now() - start, opts))
+            .catch(() => doFetch('GET')
+                .then(() => this.setChannelStatus(index, 'success', performance.now() - start, opts))
+                .catch(() => this.setChannelStatus(index, 'error', null, opts))
+            )
+            .finally(() => clearTimeout(timer));
+    }
+
+    setChannelStatus(index, status, latency, opts = {}) {
+        const channel = this.core.channels[index];
+        if (!channel) return;
+        channel.status = status;
+        if (latency != null) channel.latency = Math.round(latency);
+        this.updateChannelRowStatus(index);
+        if (opts.silent) return;
+        if (status === 'success') {
+            this.showToast(`${channel.name} 可用${channel.latency ? ' (' + channel.latency + 'ms)' : ''}`, 'success');
+        } else {
+            this.showToast(`${channel.name} 不可用`, 'error');
+        }
+    }
+
+    editChannel(index) {
+        const channel = this.core.channels[index];
+        if (!channel) return;
+
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h3>编辑频道</h3>
+                <div class="form-group">
+                    <label class="form-label">频道名称</label>
+                    <input type="text" id="edit-name" class="form-control" value="${Utils.escapeHtml(channel.name || '')}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">URL</label>
+                    <input type="text" id="edit-url" class="form-control" value="${Utils.escapeHtml(channel.url || '')}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Logo URL</label>
+                    <input type="text" id="edit-logo" class="form-control" value="${Utils.escapeHtml(channel.logo || '')}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">分组</label>
+                    <input type="text" id="edit-group" class="form-control" value="${Utils.escapeHtml(channel.group || '')}">
+                </div>
+                <div class="flex flex-between mt-20">
+                    <button id="edit-cancel" class="btn btn-danger">取消</button>
+                    <button id="edit-save" class="btn btn-primary">保存</button>
+                </div>
+            </div>`;
+        document.body.appendChild(modal);
+
+        const saveBtn = modal.querySelector('#edit-save');
+        saveBtn.addEventListener('click', () => {
+            channel.name = modal.querySelector('#edit-name').value.trim() || channel.name;
+            channel.url = modal.querySelector('#edit-url').value.trim();
+            channel.logo = modal.querySelector('#edit-logo').value.trim();
+            channel.group = modal.querySelector('#edit-group').value.trim();
+            modal.remove();
+            this.renderChannelList();
+            this.updateStats();
+            this.showToast('频道已更新', 'success');
+        });
+        modal.querySelector('#edit-cancel').addEventListener('click', () => modal.remove());
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    }
+
+    deleteChannel(index) {
+        const channel = this.core.channels[index];
+        if (!channel) return;
+        if (!confirm(`确定删除频道「${channel.name}」吗？`)) return;
+        this.core.channels.splice(index, 1);
+        this.renderChannelList();
+        this.updateStats();
+        this.showToast('频道已删除', 'success');
+    }
+
+    deleteSelectedChannels() {
+        const indices = this.getCheckedIndices();
+        if (indices.length === 0) {
+            this.showToast('请先选择要删除的频道', 'warning');
+            return;
+        }
+        if (!confirm(`确定删除选中的 ${indices.length} 个频道吗？`)) return;
+        indices.sort((a, b) => b - a).forEach(i => this.core.channels.splice(i, 1));
+        this.renderChannelList();
+        this.updateStats();
+        this.showToast(`已删除 ${indices.length} 个频道`, 'success');
+    }
+
+    getCheckedIndices() {
+        return Array.from(document.querySelectorAll('.channel-checkbox:checked'))
+            .map(cb => parseInt(cb.dataset.index, 10))
+            .filter(idx => !isNaN(idx));
+    }
+
+    // 批量改分组 / 批量重命名
+    openBatchModal() {
+        const indices = this.getCheckedIndices();
+        if (indices.length === 0) {
+            this.showToast('请先勾选要操作的频道', 'warning');
+            return;
+        }
+
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h3>批量操作（已选 ${indices.length} 个）</h3>
+                <div class="form-group">
+                    <label class="form-label">批量移动分组（留空则不改）</label>
+                    <input type="text" id="batch-group" class="form-control" placeholder="输入目标分组名">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">批量重命名（正则查找并替换，留空则不改）</label>
+                    <input type="text" id="batch-regex" class="form-control" placeholder="查找（正则，如：CCTV-1）">
+                    <input type="text" id="batch-replace" class="form-control mt-10" placeholder="替换为（如：CCTV-2）">
+                </div>
+                <div class="flex flex-between mt-20">
+                    <button id="batch-cancel" class="btn btn-danger">取消</button>
+                    <button id="batch-apply" class="btn btn-primary">应用</button>
+                </div>
+            </div>`;
+        document.body.appendChild(modal);
+
+        modal.querySelector('#batch-cancel').addEventListener('click', () => modal.remove());
+        modal.querySelector('#batch-apply').addEventListener('click', () => {
+            const group = modal.querySelector('#batch-group').value.trim();
+            const regex = modal.querySelector('#batch-regex').value;
+            const replace = modal.querySelector('#batch-replace').value;
+            let regexError = false;
+            indices.forEach(i => {
+                const c = this.core.channels[i];
+                if (!c) return;
+                if (group) c.group = group;
+                if (regex) {
+                    try {
+                        c.name = c.name.replace(new RegExp(regex, 'g'), replace);
+                    } catch (e) {
+                        regexError = true;
+                    }
+                }
+            });
+            modal.remove();
+            if (regexError) this.showToast('正则表达式无效', 'error');
+            else {
+                this.renderChannelList();
+                this.updateStats();
+                this.showToast('批量操作完成', 'success');
+            }
+        });
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    }
+
+    // 转换与导出 ====================================================
+    convertChannels() {
+        const format = this.elements.outputFormat.value;
+        const fieldOrder = this.getFieldOrder();
+        let result;
+        try {
+            result = this.convertList(this.core.channels, format, fieldOrder);
+        } catch (e) {
+            this.showToast(`转换失败: ${e.message}`, 'error');
+            return;
+        }
+        if (result) {
+            this.elements.outputText.value = result;
+            this.core.addHistoryRecord(result, format);
+            this.showToast('转换完成', 'success');
+        } else {
+            this.showToast('没有可转换的频道', 'warning');
+        }
+    }
+
+    // 按当前筛选结果导出
+    async exportFiltered(status) {
+        const indices = await this.getVisibleIndices();
+        let list = indices.map(i => this.core.channels[i]);
+        if (status) list = list.filter(c => c.status === status);
+        if (list.length === 0) {
+            this.showToast('没有符合条件的频道', 'warning');
+            return;
+        }
+        const format = this.elements.outputFormat.value;
+        const fieldOrder = this.getFieldOrder();
+        let result;
+        try {
+            result = this.convertList(list, format, fieldOrder);
+        } catch (e) {
+            this.showToast(`导出失败: ${e.message}`, 'error');
+            return;
+        }
+        if (result) {
+            this.elements.outputText.value = result;
+            this.core.addHistoryRecord(result, format);
+            this.showToast(`已导出 ${list.length} 个频道`, 'success');
+            this.switchTab('converter');
+        }
+    }
+
+    convertList(list, format, fieldOrder) {
+        if (!list || list.length === 0) return '';
+        switch (format) {
+            case 'm3u': return this.core.convertToM3U(fieldOrder, list);
+            case 'txt': return this.core.convertToTXT(fieldOrder, list);
+            case 'csv': return this.core.convertToCSV(fieldOrder, list);
+            case 'json': return this.core.convertToJSON(fieldOrder, list);
+            case 'xml': return this.core.convertToXML(fieldOrder, list);
+            case 'excel':
+                return this.core.convertToExcel(fieldOrder, list);
+            default:
+                return this.core.convertToM3U(fieldOrder, list);
+        }
+    }
+
+    getFieldOrder() {
+        const type = this.elements.fieldOrder.value;
+        if (type === 'default') return ['name', 'url', 'logo', 'group'];
+        if (type === 'groupFirst') return ['group', 'name', 'url', 'logo'];
+        if (type === 'urlFirst') return ['url', 'name', 'logo', 'group'];
+        if (type === 'logoFirst') return ['logo', 'name', 'url', 'group'];
+        if (type === 'custom') return this.getCustomFieldOrder();
+        return ['name', 'url', 'logo', 'group'];
+    }
+
+    getCustomFieldOrder() {
+        const checkedFields = Array.from(this.elements.fieldCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+        const sortedFields = Array.from(this.elements.customOrderFields.querySelectorAll('.sortable-item'))
+            .map(el => el.dataset.field);
+        // 勾选字段按拖拽顺序排列，未出现在拖拽列表中的补充在后
+        const finalOrder = sortedFields
+            .filter(f => checkedFields.includes(f))
+            .concat(checkedFields.filter(f => !sortedFields.includes(f)));
+        return finalOrder.length ? finalOrder : ['name', 'url', 'logo', 'group'];
+    }
+
+    renderCustomOrderFields() {
+        const container = this.elements.customOrderFields;
+        const fields = [
+            { key: 'name', label: '名称' },
+            { key: 'url', label: 'URL' },
+            { key: 'logo', label: 'Logo' },
+            { key: 'group', label: '分组' }
+        ];
+        container.innerHTML = fields.map(field => `
+            <div class="sortable-item" draggable="true" data-field="${field.key}">
+                <span class="drag-handle">≡</span> ${field.label}
+            </div>
+        `).join('');
+
+        let dragItem = null;
+        container.querySelectorAll('.sortable-item').forEach(item => {
+            item.addEventListener('dragstart', () => { dragItem = item; item.classList.add('dragging'); });
+            item.addEventListener('dragend', () => { dragItem = null; item.classList.remove('dragging'); });
+        });
+        container.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const afterElement = this.getDragAfterElement(container, e.clientY);
+            if (afterElement == null) container.appendChild(dragItem);
+            else container.insertBefore(dragItem, afterElement);
+        });
+    }
+
+    getDragAfterElement(container, y) {
+        const els = [...container.querySelectorAll('.sortable-item:not(.dragging)')];
+        return els.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            }
+            return closest;
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    downloadResult() {
+        const content = this.elements.outputText.value;
+        if (!content) {
+            this.showToast('没有可下载的内容', 'warning');
+            return;
+        }
+        const format = this.elements.outputFormat.value;
+        const mimeTypes = {
+            'm3u': 'audio/x-mpegurl',
+            'txt': 'text/plain',
+            'csv': 'text/csv',
+            'json': 'application/json',
+            'xml': 'application/xml',
+            'excel': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        };
+        const mime = mimeTypes[format] || 'text/plain';
+        const blob = new Blob([content], { type: mime + ';charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `channel_list.${format === 'excel' ? 'xlsx' : format}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        this.showToast('下载已开始', 'success');
+    }
+
+    clearAll() {
+        this.elements.outputText.value = '';
+        this.showToast('已清空', 'success');
+    }
+
+    // 数据分析 ======================================================
+    updateStats() {
+        const channels = this.core.channels;
+        if (this.elements.totalChannels) this.elements.totalChannels.textContent = channels.length;
+        if (this.elements.groupCount) {
+            const groups = new Set(channels.map(c => c.group || '未分组'));
+            this.elements.groupCount.textContent = groups.size;
+        }
+    }
+
+    updateChart() {
+        if (typeof Chart === 'undefined' || !this.elements.groupChart) return;
+        if (this._groupChart) this._groupChart.destroy();
+
+        const groups = this.core.groupChannels();
+        const labels = Object.keys(groups);
+        if (labels.length === 0) {
+            this.elements.groupChart.style.display = 'none';
+            return;
+        }
+        this.elements.groupChart.style.display = '';
+        const data = labels.map(g => groups[g].length);
+
+        this._groupChart = new Chart(this.elements.groupChart, {
+            type: 'pie',
+            data: {
+                labels,
+                datasets: [{ data, backgroundColor: this.generateColors(labels.length) }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'right' } }
+            }
+        });
+    }
+
+    generateColors(n) {
+        const colors = [];
+        for (let i = 0; i < n; i++) {
+            colors.push(`hsl(${(i * 137.5) % 360}, 70%, 55%)`);
+        }
+        return colors;
+    }
+
+    // 分组可用率报告
+    renderReport() {
+        const container = this.elements.reportContainer;
+        if (!container) return;
+        const stats = this.core.getStats();
+        if (stats.length === 0) {
+            container.innerHTML = '<p class="text-muted text-center">暂无数据，导入频道后点击「测试所有URL」生成报告</p>';
+            return;
+        }
+        let html = '<table class="table report-table"><thead><tr>' +
+            '<th>分组</th><th>总数</th><th>可用</th><th>不可用</th><th>未测试</th><th>可用率</th>' +
+            '</tr></thead><tbody>';
+        stats.forEach(s => {
+            html += `<tr><td>${Utils.escapeHtml(s.group)}</td><td>${s.total}</td>` +
+                `<td class="text-ok">${s.ok}</td><td class="text-fail">${s.fail}</td><td>${s.untested}</td>` +
+                `<td>${s.okRate}%</td></tr>`;
+        });
+        html += '</tbody></table>';
+        html += '<div class="flex flex-wrap mt-10">';
+        html += '<button class="btn btn-secondary btn-sm" data-export-status="">导出当前筛选</button> ';
+        html += '<button class="btn btn-success btn-sm" data-export-status="success">导出可用</button> ';
+        html += '<button class="btn btn-danger btn-sm" data-export-status="error">导出不可用</button>';
+        html += '</div>';
+        container.innerHTML = html;
+
+        container.querySelectorAll('[data-export-status]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const status = btn.getAttribute('data-export-status');
+                this.exportFiltered(status === '' ? null : status);
+            });
+        });
+    }
+
+    // 快照与差异对比
+    saveSnapshot() {
+        this.core._snapshot = this.core.channels.map(c => ({ ...c }));
+        try {
+            localStorage.setItem('channelConverterSnapshot', JSON.stringify(this.core._snapshot));
+        } catch (e) { /* 存储失败忽略 */ }
+        this.showToast('已保存当前列表为基准', 'success');
+    }
+
+    loadSnapshot() {
+        try {
+            const s = localStorage.getItem('channelConverterSnapshot');
+            return s ? JSON.parse(s) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    renderDiff() {
+        const container = this.elements.diffResult;
+        if (!container) return;
+        const base = this.loadSnapshot() || this.core._snapshot;
+        if (!base || base.length === 0) {
+            container.innerHTML = '<p class="text-muted text-center">请先点击「保存当前为基准」，再导入/更新列表后对比</p>';
+            return;
+        }
+        const { added, removed } = this.core.diffChannels(base, this.core.channels);
+        let html = `<div class="diff-summary">新增 <span class="text-ok">${added.length}</span> 个，移除 <span class="text-fail">${removed.length}</span> 个</div>`;
+        if (added.length) {
+            html += '<h4 class="mt-10">新增频道</h4><ul class="diff-list diff-added">' +
+                added.slice(0, 50).map(c => `<li>${Utils.escapeHtml(c.name)} (${Utils.escapeHtml(c.group || '未分组')})</li>`).join('') +
+                (added.length > 50 ? `<li class="text-muted">...等 ${added.length} 个</li>` : '') + '</ul>';
+        }
+        if (removed.length) {
+            html += '<h4 class="mt-10">移除频道</h4><ul class="diff-list diff-removed">' +
+                removed.slice(0, 50).map(c => `<li>${Utils.escapeHtml(c.name)} (${Utils.escapeHtml(c.group || '未分组')})</li>`).join('') +
+                (removed.length > 50 ? `<li class="text-muted">...等 ${removed.length} 个</li>` : '') + '</ul>';
+        }
+        container.innerHTML = html;
+    }
+
+    // 历史记录 ======================================================
+    renderHistory() {
+        const history = this.core.getHistory();
+        const list = this.elements.historyList;
+        if (!list) return;
+
+        if (history.length === 0) {
+            list.innerHTML = '<p class="text-muted text-center">没有历史记录</p>';
+            return;
+        }
+
+        list.innerHTML = history.map((record, index) => `
+            <div class="history-item">
+                <div class="flex flex-between">
+                    <span class="history-format">${Utils.escapeHtml(record.format.toUpperCase())}</span>
+                    <span class="text-muted">${Utils.escapeHtml(record.time)}</span>
+                </div>
+                <div class="history-size text-muted">${Utils.formatFileSize(record.size)}</div>
+                <div class="flex mt-10">
+                    <button class="btn btn-secondary btn-sm" data-action="restore" data-index="${index}">恢复</button>
+                    <button class="btn btn-danger btn-sm" data-action="delete" data-index="${index}">删除</button>
+                </div>
+            </div>
+        `).join('');
+
+        list.querySelectorAll('[data-action="restore"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const index = parseInt(btn.dataset.index, 10);
+                const record = history[index];
+                if (record) {
+                    this.elements.outputText.value = record.content;
+                    this.elements.outputFormat.value = record.format === 'excel' ? 'm3u' : record.format;
+                    this.showToast('已恢复历史记录', 'success');
+                }
+            });
+        });
+        list.querySelectorAll('[data-action="delete"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const index = parseInt(btn.dataset.index, 10);
+                this.core.deleteHistoryRecord(index);
+                this.renderHistory();
+            });
+        });
+    }
+
+    clearAllHistory() {
+        if (!confirm('确定清除所有历史记录吗？')) return;
+        this.core.clearHistory();
+        this.renderHistory();
+        this.showToast('历史记录已清除', 'success');
+    }
+
+    // 提示 ==========================================================
+    showToast(message, type = 'info') {
+        if (!this.elements.toast) return;
+        this.elements.toast.textContent = message;
+        this.elements.toast.className = 'toast show';
+        if (type !== 'info') this.elements.toast.classList.add(type);
+        if (this._toastTimer) clearTimeout(this._toastTimer);
+        this._toastTimer = setTimeout(() => {
+            this.elements.toast.classList.remove('show');
         }, 3000);
     }
 }

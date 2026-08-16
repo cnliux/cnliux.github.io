@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="多功能频道列表转换工具，支持M3U、TXT、CSV、JSON等多种格式">
+    <meta name="theme-color" content="#0a0a0a">
     <title>多功能频道列表转换工具</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
-<body>
+<body class="black-mode">
     <div class="container">
         <h1>多功能频道列表转换工具</h1>
         <p class="text-muted">支持M3U、TXT、CSV、JSON等多种格式的频道列表转换</p>
@@ -41,22 +43,47 @@
                     <textarea id="textInput" class="form-control" rows="5" placeholder="粘贴频道列表文本..."></textarea>
                 </div>
                 <button id="parseTextBtn" class="btn btn-secondary mt-10">解析文本</button>
+                <div class="form-group mt-10">
+                    <label for="urlInput" class="form-label">或从网址导入</label>
+                    <textarea id="urlInput" class="form-control" rows="2" placeholder="每行一个网址，支持 M3U / TXT / CSV / JSON 列表"></textarea>
+                </div>
+                <button id="importUrlBtn" class="btn btn-secondary mt-10">导入网址</button>
                 <div class="form-check mt-10">
                     <input type="checkbox" id="deduplicate" class="form-check-input" checked>
                     <label for="deduplicate" class="form-check-label">自动去重</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="appendToExisting" class="form-check-input">
+                    <label for="appendToExisting" class="form-check-label">合并到当前列表（多源合并）</label>
                 </div>
             </div>
 
             <!-- 频道列表 -->
             <div class="card">
                 <h3>频道列表</h3>
-                <div class="form-group">
-                    <input type="text" id="channelSearch" class="form-control" placeholder="搜索频道...">
+                <div class="flex flex-wrap filter-bar">
+                    <input type="text" id="channelSearch" class="form-control filter-search" placeholder="搜索频道（支持拼音首字母）...">
+                    <select id="groupFilter" class="form-control filter-select">
+                        <option value="">全部分组</option>
+                    </select>
+                    <select id="statusFilter" class="form-control filter-select">
+                        <option value="">全部状态</option>
+                        <option value="success">可用</option>
+                        <option value="error">不可用</option>
+                        <option value="testing">测试中</option>
+                        <option value="untested">未测试</option>
+                    </select>
+                    <label class="form-check form-check-inline">
+                        <input type="checkbox" id="favOnly" class="form-check-input">
+                        <span class="form-check-label">仅收藏</span>
+                    </label>
+                    <button id="viewToggleBtn" class="btn btn-secondary">网格视图</button>
                 </div>
-                <div style="overflow-x: auto;">
+                <div id="channelTableView" style="overflow-x: auto;">
                     <table class="table">
                         <thead>
                             <tr>
+                                <th style="width: 30px;"><input type="checkbox" id="selectAll" title="全选"></th>
                                 <th>名称</th>
                                 <th>URL</th>
                                 <th>Logo</th>
@@ -67,14 +94,18 @@
                         </thead>
                         <tbody id="channelList">
                             <tr>
-                                <td colspan="6" class="text-center text-muted">没有频道数据</td>
+                                <td colspan="7" class="text-center text-muted">没有频道数据</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="flex flex-between mt-10">
+                <div id="channelGrid" class="channel-grid hidden"></div>
+                <div class="flex flex-wrap mt-10">
                     <button id="deleteSelectedBtn" class="btn btn-danger">删除选中</button>
-                    <button id="testAllBtn" class="btn btn-warning">测试所有URL</button>
+                    <button id="batchGroupBtn" class="btn btn-secondary">批量改分组</button>
+                    <button id="batchRenameBtn" class="btn btn-secondary">批量重命名</button>
+                    <button id="testAllBtn" class="btn btn-warning">测试当前筛选</button>
+                    <button id="oneClickTestBtn" class="btn btn-primary">一键全部测试</button>
                 </div>
             </div>
 
@@ -98,7 +129,7 @@
                         <option value="default">默认 (名称, URL, Logo, 分组)</option>
                         <option value="groupFirst">分组优先 (分组, 名称, URL, Logo)</option>
                         <option value="urlFirst">URL优先 (URL, 名称, Logo, 分组)</option>
-                        <option value="logoFirst">Logo优先 (Logo, 名称, URL, 分组)</option>
+                        <option value="logoFirst" selected>Logo优先 (Logo, 名称, URL, 分组)</option>
                         <option value="custom">自定义顺序</option>
                     </select>
                 </div>
@@ -162,6 +193,23 @@
                 <h3>分组分布</h3>
                 <canvas id="groupChart"></canvas>
             </div>
+
+            <div class="card">
+                <h3>分组可用率报告</h3>
+                <div id="reportContainer">
+                    <p class="text-muted text-center">暂无数据，导入频道后点击「一键全部测试」生成报告</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>列表差异对比</h3>
+                <p class="text-muted">保存当前列表为基准，导入/更新列表后可对比新增与移除的频道</p>
+                <div class="flex flex-wrap mt-10">
+                    <button id="snapshotBtn" class="btn btn-secondary">保存当前为基准</button>
+                    <button id="diffBtn" class="btn btn-secondary">对比当前列表</button>
+                </div>
+                <div id="diffResult" class="mt-10"></div>
+            </div>
         </div>
 
         <!-- 历史记录 -->
@@ -186,6 +234,8 @@
             <option value="auto">跟随系统</option>
             <option value="light">浅色模式</option>
             <option value="dark">暗黑模式</option>
+            <option value="white">纯白主题（黑白）</option>
+            <option value="black">纯黑主题（黑白）</option>
         </select>
     </div>
     <div class="form-check">
@@ -204,9 +254,46 @@
         <label for="recommendCount" class="form-label">推荐频道数量</label>
         <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
     </div>
+    <div class="form-group">
+        <label for="corsProxy" class="form-label">CORS代理前缀（可选）</label>
+        <input type="text" id="corsProxy" class="form-control" placeholder="例如 https://corsproxy.io/?url=">
+        <p class="text-muted mt-10 form-hint">用于绕过跨域限制：网址导入与 m3u8 预览播放都会套用此前缀。预览播放请用会改写分片地址的代理（如 corsproxy.io），否则只有清单能加载、分片仍会被拦截。</p>
+    </div>
     <div class="form-check">
         <input type="checkbox" id="autoClearHistory" class="form-check-input">
         <label for="autoClearHistory" class="form-check-label">自动清除历史记录</label>
+    </div>
+    <div class="form-group">
+        <label for="mergeMode" class="form-label">多源合并策略</label>
+        <select id="mergeMode" class="form-control">
+            <option value="merge">合并（按URL去重，保留现有）</option>
+            <option value="replace">替换（新来源覆盖现有）</option>
+            <option value="append">追加（不合并去重）</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="concurrency" class="form-label">并发测试数（1-20）</label>
+        <input type="number" id="concurrency" class="form-control" min="1" max="20" value="5">
+    </div>
+    <div class="form-group">
+        <label for="timeout" class="form-label">测试超时（秒）</label>
+        <input type="number" id="timeout" class="form-control" min="1" max="60" value="10">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="autoRefresh" class="form-check-input">
+        <label for="autoRefresh" class="form-check-label">定时自动刷新网址导入</label>
+    </div>
+    <div class="form-group">
+        <label for="autoRefreshMin" class="form-label">自动刷新间隔（分钟）</label>
+        <input type="number" id="autoRefreshMin" class="form-control" min="5" max="1440" value="30">
+    </div>
+    <div class="form-group">
+        <label class="form-label">设置备份</label>
+        <div class="flex flex-wrap">
+            <button id="exportSettingsBtn" class="btn btn-secondary">导出设置</button>
+            <button id="importSettingsBtn" class="btn btn-secondary">导入设置</button>
+            <input type="file" id="importSettingsInput" accept=".json" style="display: none;">
+        </div>
     </div>
     <div class="mt-20">
         <button id="clearAllHistoryBtn" class="btn btn-danger">清除所有历史记录</button>
@@ -242,8 +329,12 @@
             converter.loadHistory();
             ui.renderHistory();
 
-            // 初始化图表
-            ui.initChart();
+            // 注册Service Worker（PWA离线支持）
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js').catch(() => {});
+                });
+            }
         });
     </script>
 </body>

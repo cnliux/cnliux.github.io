@@ -20,12 +20,48 @@ class Utils {
     }
 
     static copyToClipboard(text) {
+        // 优先使用现代剪贴板API
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text)
+                .then(() => true)
+                .catch(() => Utils.copyWithFallback(text));
+        }
+        return Utils.copyWithFallback(text);
+    }
+
+    static copyWithFallback(text) {
         const textarea = document.createElement('textarea');
         textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
         document.body.appendChild(textarea);
         textarea.select();
-        document.execCommand('copy');
+        let success = false;
+        try {
+            success = document.execCommand('copy');
+        } catch (e) {
+            success = false;
+        }
         document.body.removeChild(textarea);
-        return true;
+        return success;
+    }
+
+    static escapeHtml(unsafe) {
+        if (unsafe == null) return '';
+        return String(unsafe).replace(/[&<>"']/g, c => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        }[c]));
+    }
+
+    static debounce(fn, delay) {
+        let timer = null;
+        return function (...args) {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => fn.apply(this, args), delay);
+        };
     }
 }
