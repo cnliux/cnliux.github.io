@@ -3,7 +3,7 @@ class ChannelConverter {
         this.channels = [];
         this.history = [];
         this.settings = {
-            theme: 'black',
+            theme: 'dark',
             saveHistory: true,
             autoConvert: false,
             showNotifications: true,
@@ -607,7 +607,7 @@ class ChannelConverter {
 
     loadSettings() {
         const defaults = {
-            theme: 'black',
+            theme: 'dark',
             saveHistory: true,
             autoConvert: false,
             showNotifications: true,

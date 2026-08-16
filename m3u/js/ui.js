@@ -304,7 +304,7 @@ class UIHandler {
 
     // 设置应用与主题 ================================================
     applySettings() {
-        if (this.elements.themePref) this.elements.themePref.value = this.core.settings.theme || 'black';
+        if (this.elements.themePref) this.elements.themePref.value = this.core.settings.theme || 'dark';
         if (this.elements.saveHistory) this.elements.saveHistory.checked = !!this.core.settings.saveHistory;
         if (this.elements.autoConvert) this.elements.autoConvert.checked = !!this.core.settings.autoConvert;
         if (this.elements.showNotifications) this.elements.showNotifications.checked = !!this.core.settings.showNotifications;
@@ -321,14 +321,14 @@ class UIHandler {
     }
 
     applyTheme() {
-        const theme = this.core.settings.theme || 'black';
+        const theme = this.core.settings.theme || 'dark';
         const body = document.body;
         if (theme === 'auto') {
             body.classList.remove('light-mode', 'white-mode', 'black-mode', 'dark-mode');
         } else {
             body.classList.remove('light-mode', 'white-mode', 'black-mode', 'dark-mode');
             const map = { 'light': 'light-mode', 'dark': 'dark-mode', 'white': 'white-mode', 'black': 'black-mode' };
-            body.classList.add(map[theme] || 'black-mode');
+            body.classList.add(map[theme] || 'dark-mode');
         }
     }
 
