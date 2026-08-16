@@ -3,309 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="多功能频道列表转换工具，支持M3U、TXT、CSV、JSON等多种格式">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="多功能频道列表转换工具，支持M3U、TXT、CSV、JSON、XML、Excel等多种格式">
+    <meta name="theme-color" content="#101216">
     <title>多功能频道列表转换工具</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f8cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='1 4 1 10 7 10'/%3E%3Cpath d='M3.51 15a9 9 0 1 0 2.13-9.36L1 10'/%3E%3C/svg%3E">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body class="dark-mode">
-    <div class="container">
-        <h1>多功能频道列表转换工具</h1>
-        <p class="text-muted">支持M3U、TXT、CSV、JSON等多种格式的频道列表转换</p>
+    <div class="app-shell">
 
-        <!-- 标签页 -->
-        <div class="tabs">
-            <div class="tab active" data-tab="converter">转换工具</div>
-            <div class="tab" data-tab="analytics">数据分析</div>
-            <div class="tab" data-tab="history">历史记录</div>
-            <div class="tab" id="settingsBtn" data-tab="settings">设置</div>
-        </div>
-
-        <!-- 转换工具 -->
-        <div id="converter" class="tab-content active">
-            <!-- 文件输入 -->
-            <div class="card">
-                <h3>文件输入</h3>
-                <div id="dropArea" class="drop-area">
-                    <p>拖放文件到此处或</p>
-                    <button id="selectFilesBtn" class="btn btn-primary">选择文件</button>
-                    <input type="file" id="fileInput" multiple style="display: none;">
+        <!-- 顶部导航 -->
+        <header class="app-header">
+            <div class="app-header-inner">
+                <div class="brand">
+                    <span class="brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                    </span>
+                    <span class="brand-text">
+                        <span class="brand-title">频道转换工具</span>
+                        <span class="brand-sub">Channel List Converter</span>
+                    </span>
                 </div>
-                <div id="fileList" class="mt-20">
-                    <p class="text-muted">没有选择文件</p>
-                </div>
-                <div class="form-group mt-10">
-                    <label for="textInput" class="form-label">或粘贴文本</label>
-                    <textarea id="textInput" class="form-control" rows="5" placeholder="粘贴频道列表文本..."></textarea>
-                </div>
-                <button id="parseTextBtn" class="btn btn-secondary mt-10">解析文本</button>
-                <div class="form-group mt-10">
-                    <label for="urlInput" class="form-label">或从网址导入</label>
-                    <textarea id="urlInput" class="form-control" rows="2" placeholder="每行一个网址，支持 M3U / TXT / CSV / JSON 列表"></textarea>
-                </div>
-                <button id="importUrlBtn" class="btn btn-secondary mt-10">导入网址</button>
-                <div class="form-check mt-10">
-                    <input type="checkbox" id="deduplicate" class="form-check-input" checked>
-                    <label for="deduplicate" class="form-check-label">自动去重</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" id="appendToExisting" class="form-check-input">
-                    <label for="appendToExisting" class="form-check-label">合并到当前列表（多源合并）</label>
-                </div>
+                <nav class="app-nav" role="tablist" aria-label="功能导航">
+                    <button class="tab active" data-tab="converter" role="tab" aria-selected="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><polyline points="21 3 21 8 16 8"></polyline><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><polyline points="8 16 3 16 3 21"></polyline></svg>
+                        转换工具
+                    </button>
+                    <button class="tab" data-tab="analytics" role="tab" aria-selected="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                        数据分析
+                    </button>
+                    <button class="tab" data-tab="history" role="tab" aria-selected="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        历史记录
+                    </button>
+                    <button class="tab" id="settingsBtn" data-tab="settings" role="tab" aria-selected="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        设置
+                    </button>
+                </nav>
             </div>
+        </header>
 
-            <!-- 频道列表 -->
-            <div class="card">
-                <h3>频道列表</h3>
-                <div class="flex flex-wrap filter-bar">
-                    <input type="text" id="channelSearch" class="form-control filter-search" placeholder="搜索频道（支持拼音首字母）...">
-                    <select id="groupFilter" class="form-control filter-select">
-                        <option value="">全部分组</option>
-                    </select>
-                    <select id="statusFilter" class="form-control filter-select">
-                        <option value="">全部状态</option>
-                        <option value="success">可用</option>
-                        <option value="error">不可用</option>
-                        <option value="testing">测试中</option>
-                        <option value="untested">未测试</option>
-                    </select>
-                    <label class="form-check form-check-inline">
-                        <input type="checkbox" id="favOnly" class="form-check-input">
-                        <span class="form-check-label">仅收藏</span>
-                    </label>
-                    <button id="viewToggleBtn" class="btn btn-secondary">网格视图</button>
-                </div>
-                <div id="channelTableView" style="overflow-x: auto;">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th style="width: 30px;"><input type="checkbox" id="selectAll" title="全选"></th>
-                                <th>名称</th>
-                                <th>URL</th>
-                                <th>Logo</th>
-                                <th>分组</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody id="channelList">
-                            <tr>
-                                <td colspan="7" class="text-center text-muted">没有频道数据</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="channelGrid" class="channel-grid hidden"></div>
-                <div class="flex flex-wrap mt-10">
-                    <button id="deleteSelectedBtn" class="btn btn-danger">删除选中</button>
-                    <button id="batchGroupBtn" class="btn btn-secondary">批量改分组</button>
-                    <button id="batchRenameBtn" class="btn btn-secondary">批量重命名</button>
-                    <button id="testAllBtn" class="btn btn-warning">测试当前筛选</button>
-                    <button id="oneClickTestBtn" class="btn btn-primary">一键全部测试</button>
-                </div>
-            </div>
+        <main class="container">
 
-            <!-- 输出设置 -->
-            <div class="card">
-                <h3>输出设置</h3>
-                <div class="form-group">
-                    <label for="outputFormat" class="form-label">输出格式</label>
-                    <select id="outputFormat" class="form-control">
-                        <option value="m3u">M3U</option>
-                        <option value="txt">TXT</option>
-                        <option value="csv">CSV</option>
-                        <option value="json">JSON</option>
-                        <option value="excel">Excel</option>
-                        <option value="xml">XML</option>
-                    </select>
+            <!-- ============ 转换工具 ============ -->
+            <section id="converter" class="tab-content active" role="tabpanel">
+                <div class="toolbar-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>导入频道列表 → 测试可用性 → 转换并导出，全程一键完成</span>
                 </div>
-                <div class="form-group">
-                    <label for="fieldOrder" class="form-label">字段顺序</label>
-                    <select id="fieldOrder" class="form-control">
-                        <option value="default">默认 (名称, URL, Logo, 分组)</option>
-                        <option value="groupFirst">分组优先 (分组, 名称, URL, Logo)</option>
-                        <option value="urlFirst">URL优先 (URL, 名称, Logo, 分组)</option>
-                        <option value="logoFirst" selected>Logo优先 (Logo, 名称, URL, 分组)</option>
-                        <option value="custom">自定义顺序</option>
-                    </select>
-                </div>
-                <div id="customOrderContainer" class="hidden mt-10">
-                    <label class="form-label">选择并拖动字段排序</label>
-                    <div id="customOrderFields" class="sortable-fields"></div>
-                    <div class="mt-10">
-                        <label class="form-label">可用字段</label>
-                        <div class="form-check">
-                            <input type="checkbox" id="field-name" name="fields" value="name" class="form-check-input" checked>
-                            <label for="field-name" class="form-check-label">名称</label>
+
+                <div class="converter-layout">
+
+                    <!-- 文件输入 -->
+                    <section class="card input-card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span>
+                            文件输入
+                        </h3>
+                        <div id="dropArea" class="drop-area" role="button" tabindex="0">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            <p>拖放文件到此处，或点击</p>
+                            <button id="selectFilesBtn" class="btn btn-primary">选择文件</button>
+                            <input type="file" id="fileInput" multiple style="display: none;">
+                            <p class="text-muted text-sm">支持 M3U / M3U8 / TXT / CSV / JSON / EPG / XMLTV / DIYP</p>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="field-url" name="fields" value="url" class="form-check-input" checked>
-                            <label for="field-url" class="form-check-label">URL</label>
+                        <div id="fileList" class="mt-10">
+                            <p class="text-muted text-center">没有选择文件</p>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="field-logo" name="fields" value="logo" class="form-check-input" checked>
-                            <label for="field-logo" class="form-check-label">Logo</label>
+
+                        <div class="form-group mt-10">
+                            <label for="textInput" class="form-label">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                或粘贴文本
+                            </label>
+                            <textarea id="textInput" class="form-control" rows="5" placeholder="粘贴频道列表文本..."></textarea>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="field-group" name="fields" value="group" class="form-check-input" checked>
-                            <label for="field-group" class="form-check-label">分组</label>
+                        <button id="parseTextBtn" class="btn btn-secondary mt-10">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg>
+                            解析文本
+                        </button>
+
+                        <div class="form-group mt-10">
+                            <label for="urlInput" class="form-label">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                或从网址导入
+                            </label>
+                            <textarea id="urlInput" class="form-control" rows="2" placeholder="每行一个网址，支持 M3U / TXT / CSV / JSON 列表"></textarea>
                         </div>
+                        <button id="importUrlBtn" class="btn btn-secondary mt-10">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            导入网址
+                        </button>
+
+                        <div class="option-row mt-10">
+                            <label class="form-check">
+                                <input type="checkbox" id="deduplicate" class="form-check-input" checked>
+                                <span class="form-check-label">自动去重</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" id="appendToExisting" class="form-check-input">
+                                <span class="form-check-label">合并到当前列表（多源合并）</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- 频道列表 -->
+                    <section class="card list-card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></span>
+                            频道列表
+                        </h3>
+
+                        <div class="filter-bar">
+                            <div class="filter-search-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                <input type="text" id="channelSearch" class="form-control" placeholder="搜索频道（支持拼音首字母）...">
+                            </div>
+                            <select id="groupFilter" class="form-control filter-select">
+                                <option value="">全部分组</option>
+                            </select>
+                            <select id="statusFilter" class="form-control filter-select">
+                                <option value="">全部状态</option>
+                                <option value="success">可用</option>
+                                <option value="error">不可用</option>
+                                <option value="testing">测试中</option>
+                                <option value="untested">未测试</option>
+                            </select>
+                            <label class="form-check form-check-inline">
+                                <input type="checkbox" id="favOnly" class="form-check-input">
+                                <span class="form-check-label">仅收藏</span>
+                            </label>
+                            <button id="viewToggleBtn" class="btn btn-secondary btn-icon-label">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                网格视图
+                            </button>
+                        </div>
+
+                        <div id="channelTableView" class="table-wrap">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30px;"><input type="checkbox" id="selectAll" title="全选"></th>
+                                        <th>名称</th>
+                                        <th>URL</th>
+                                        <th>Logo</th>
+                                        <th>分组</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="channelList">
+                                    <tr>
+                                        <td colspan="7" class="text-center text-muted">没有频道数据</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="channelGrid" class="channel-grid hidden"></div>
+
+                        <div class="action-row mt-10">
+                            <button id="deleteSelectedBtn" class="btn btn-danger">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                删除选中
+                            </button>
+                            <button id="batchGroupBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                批量改分组
+                            </button>
+                            <button id="batchRenameBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                批量重命名
+                            </button>
+                            <button id="testAllBtn" class="btn btn-warning">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                测试当前筛选
+                            </button>
+                            <button id="oneClickTestBtn" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                一键全部测试
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 输出设置 -->
+                    <section class="card output-settings-card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"></path><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="21" x2="22" y2="21"></line></svg></span>
+                            输出设置
+                        </h3>
+                        <div class="form-group">
+                            <label for="outputFormat" class="form-label">输出格式</label>
+                            <select id="outputFormat" class="form-control">
+                                <option value="m3u">M3U</option>
+                                <option value="txt">TXT</option>
+                                <option value="csv">CSV</option>
+                                <option value="json">JSON</option>
+                                <option value="excel">Excel</option>
+                                <option value="xml">XML</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldOrder" class="form-label">字段顺序</label>
+                            <select id="fieldOrder" class="form-control">
+                                <option value="default">默认 (名称, URL, Logo, 分组)</option>
+                                <option value="groupFirst">分组优先 (分组, 名称, URL, Logo)</option>
+                                <option value="urlFirst">URL优先 (URL, 名称, Logo, 分组)</option>
+                                <option value="logoFirst" selected>Logo优先 (Logo, 名称, URL, 分组)</option>
+                                <option value="custom">自定义顺序</option>
+                            </select>
+                        </div>
+                        <div id="customOrderContainer" class="hidden mt-10">
+                            <label class="form-label">选择并拖动字段排序</label>
+                            <div id="customOrderFields" class="sortable-fields"></div>
+                            <div class="mt-10">
+                                <label class="form-label">可用字段</label>
+                                <div class="option-row">
+                                    <label class="form-check">
+                                        <input type="checkbox" id="field-name" name="fields" value="name" class="form-check-input" checked>
+                                        <span class="form-check-label">名称</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input type="checkbox" id="field-url" name="fields" value="url" class="form-check-input" checked>
+                                        <span class="form-check-label">URL</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input type="checkbox" id="field-logo" name="fields" value="logo" class="form-check-input" checked>
+                                        <span class="form-check-label">Logo</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input type="checkbox" id="field-group" name="fields" value="group" class="form-check-input" checked>
+                                        <span class="form-check-label">分组</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 输出结果 -->
+                    <section class="card output-result-card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
+                            输出结果
+                        </h3>
+                        <textarea id="outputText" class="form-control mono" rows="10" placeholder="转换结果将显示在这里..."></textarea>
+                        <div class="action-row mt-10">
+                            <button id="copyBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                复制
+                            </button>
+                            <button id="clearBtn" class="btn btn-danger">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                清空
+                            </button>
+                            <button id="convertBtn" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                转换
+                            </button>
+                            <button id="downloadBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                下载
+                            </button>
+                        </div>
+                        <p class="text-muted text-sm mt-10">快捷键：Ctrl+Enter 转换 · Ctrl+Shift+C 复制 · Ctrl+Shift+D 下载 · Ctrl+Shift+T 全部测试</p>
+                    </section>
+                </div>
+            </section>
+
+            <!-- ============ 数据分析 ============ -->
+            <section id="analytics" class="tab-content" role="tabpanel">
+                <div class="card-grid">
+
+                    <section class="card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg></span>
+                            频道统计
+                        </h3>
+                        <div class="stat-grid">
+                            <div class="stat-box">
+                                <span class="stat-label">总频道数</span>
+                                <span class="stat-value" id="totalChannels">0</span>
+                                <span class="stat-hint">Channels</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">分组数量</span>
+                                <span class="stat-value" id="groupCount">0</span>
+                                <span class="stat-hint">Groups</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg></span>
+                            分组分布
+                        </h3>
+                        <div class="chart-box">
+                            <canvas id="groupChart"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                            分组可用率报告
+                        </h3>
+                        <div id="reportContainer">
+                            <p class="text-muted text-center">暂无数据，导入频道后点击「一键全部测试」生成报告</p>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M21 8v13H3V8"></path><path d="M12 8v6"></path><path d="M9 11h6"></path></svg></span>
+                            列表差异对比
+                        </h3>
+                        <p class="text-muted text-sm">保存当前列表为基准，导入/更新列表后可对比新增与移除的频道</p>
+                        <div class="action-row mt-10">
+                            <button id="snapshotBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v5h5"></path><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"></path><path d="M12 7v5l4 2"></path></svg>
+                                保存当前为基准
+                            </button>
+                            <button id="diffBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                对比当前列表
+                            </button>
+                        </div>
+                        <div id="diffResult" class="mt-10"></div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- ============ 历史记录 ============ -->
+            <section id="history" class="tab-content" role="tabpanel">
+                <section class="card">
+                    <div class="card-head-row">
+                        <h3 class="card-title">
+                            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                            转换历史
+                        </h3>
+                        <button id="clearAllHistory" class="btn btn-danger btn-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                            清除所有历史记录
+                        </button>
                     </div>
-                </div>
-            </div>
-
-            <!-- 输出结果 -->
-            <div class="card">
-                <h3>输出结果</h3>
-                <textarea id="outputText" class="form-control" rows="10" placeholder="转换结果将显示在这里..."></textarea>
-                <div class="flex flex-between mt-10">
-                    <button id="copyBtn" class="btn btn-secondary">复制到剪贴板</button>
-                    <div>
-                        <button id="clearBtn" class="btn btn-danger">清空</button>
-                        <button id="convertBtn" class="btn btn-primary">转换</button>
-                        <button id="downloadBtn" class="btn btn-secondary">下载</button>
+                    <div id="historyList">
+                        <p class="text-muted text-center">没有历史记录</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                </section>
+            </section>
 
-        <!-- 数据分析 -->
-        <div id="analytics" class="tab-content">
-            <div class="card">
-                <h3>频道统计</h3>
-                <div class="flex flex-between">
-                    <div>
-                        <p class="text-muted">总频道数</p>
-                        <h2 id="totalChannels">0</h2>
-                    </div>
-                    <div>
-                        <p class="text-muted">分组数量</p>
-                        <h2 id="groupCount">0</h2>
-                    </div>
-                </div>
-            </div>
+        </main>
 
-            <div class="card">
-                <h3>分组分布</h3>
-                <canvas id="groupChart"></canvas>
-            </div>
-
-            <div class="card">
-                <h3>分组可用率报告</h3>
-                <div id="reportContainer">
-                    <p class="text-muted text-center">暂无数据，导入频道后点击「一键全部测试」生成报告</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>列表差异对比</h3>
-                <p class="text-muted">保存当前列表为基准，导入/更新列表后可对比新增与移除的频道</p>
-                <div class="flex flex-wrap mt-10">
-                    <button id="snapshotBtn" class="btn btn-secondary">保存当前为基准</button>
-                    <button id="diffBtn" class="btn btn-secondary">对比当前列表</button>
-                </div>
-                <div id="diffResult" class="mt-10"></div>
-            </div>
-        </div>
-
-        <!-- 历史记录 -->
-<div id="history" class="tab-content">
-    <div class="card">
-        <div class="flex flex-between">
-            <h3>转换历史</h3>
-            <button id="clearAllHistory" class="btn btn-danger">清除所有历史记录</button>
-        </div>
-        <div id="historyList">
-            <p class="text-muted text-center">没有历史记录</p>
-        </div>
+        <footer class="app-footer">
+            <p>多功能频道列表转换工具 · 本地运行 · 数据不离开浏览器</p>
+        </footer>
     </div>
-</div>
 
     <!-- 设置面板 -->
-<div id="settingsPanel" class="settings-panel">
-    <h3>设置</h3>
-    <div class="form-group">
-        <label for="themePref" class="form-label">主题偏好</label>
-        <select id="themePref" class="form-control">
-            <option value="auto">跟随系统</option>
-            <option value="light">浅色模式</option>
-            <option value="dark">暗黑模式</option>
-            <option value="white">纯白主题（黑白）</option>
-            <option value="black">纯黑主题（黑白）</option>
-        </select>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="saveHistory" class="form-check-input" checked>
-        <label for="saveHistory" class="form-check-label">保存历史记录</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="autoConvert" class="form-check-input">
-        <label for="autoConvert" class="form-check-label">自动转换</label>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="showNotifications" class="form-check-input" checked>
-        <label for="showNotifications" class="form-check-label">显示通知</label>
-    </div>
-    <div class="form-group">
-        <label for="recommendCount" class="form-label">推荐频道数量</label>
-        <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
-    </div>
-    <div class="form-group">
-        <label for="corsProxy" class="form-label">CORS代理前缀（可选）</label>
-        <input type="text" id="corsProxy" class="form-control" placeholder="例如 https://corsproxy.io/?url=">
-        <p class="text-muted mt-10 form-hint">用于绕过跨域限制：网址导入与 m3u8 预览播放都会套用此前缀。预览播放请用会改写分片地址的代理（如 corsproxy.io），否则只有清单能加载、分片仍会被拦截。</p>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="autoClearHistory" class="form-check-input">
-        <label for="autoClearHistory" class="form-check-label">自动清除历史记录</label>
-    </div>
-    <div class="form-group">
-        <label for="mergeMode" class="form-label">多源合并策略</label>
-        <select id="mergeMode" class="form-control">
-            <option value="merge">合并（按URL去重，保留现有）</option>
-            <option value="replace">替换（新来源覆盖现有）</option>
-            <option value="append">追加（不合并去重）</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="concurrency" class="form-label">并发测试数（1-20）</label>
-        <input type="number" id="concurrency" class="form-control" min="1" max="20" value="5">
-    </div>
-    <div class="form-group">
-        <label for="timeout" class="form-label">测试超时（秒）</label>
-        <input type="number" id="timeout" class="form-control" min="1" max="60" value="10">
-    </div>
-    <div class="form-check">
-        <input type="checkbox" id="autoRefresh" class="form-check-input">
-        <label for="autoRefresh" class="form-check-label">定时自动刷新网址导入</label>
-    </div>
-    <div class="form-group">
-        <label for="autoRefreshMin" class="form-label">自动刷新间隔（分钟）</label>
-        <input type="number" id="autoRefreshMin" class="form-control" min="5" max="1440" value="30">
-    </div>
-    <div class="form-group">
-        <label class="form-label">设置备份</label>
-        <div class="flex flex-wrap">
-            <button id="exportSettingsBtn" class="btn btn-secondary">导出设置</button>
-            <button id="importSettingsBtn" class="btn btn-secondary">导入设置</button>
-            <input type="file" id="importSettingsInput" accept=".json" style="display: none;">
+    <aside id="settingsPanel" class="settings-panel" aria-label="设置">
+        <div class="settings-head">
+            <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                设置
+            </h3>
+            <button id="closeSettings" class="btn-icon-btn" aria-label="关闭设置">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
-    </div>
-    <div class="mt-20">
-        <button id="clearAllHistoryBtn" class="btn btn-danger">清除所有历史记录</button>
-    </div>
-    <div class="mt-20">
-        <button id="closeSettings" class="btn btn-primary">关闭设置</button>
-    </div>
-</div>
 
+        <div class="settings-body">
+            <section class="settings-group">
+                <h4 class="settings-group-title">外观</h4>
+                <div class="form-group">
+                    <label for="themePref" class="form-label">主题偏好</label>
+                    <select id="themePref" class="form-control">
+                        <option value="auto">跟随系统</option>
+                        <option value="light">浅色模式</option>
+                        <option value="dark">暗黑模式</option>
+                        <option value="white">纯白主题（黑白）</option>
+                        <option value="black">纯黑主题（黑白）</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="settings-group">
+                <h4 class="settings-group-title">通用</h4>
+                <label class="form-check">
+                    <input type="checkbox" id="saveHistory" class="form-check-input" checked>
+                    <span class="form-check-label">保存历史记录</span>
+                </label>
+                <label class="form-check">
+                    <input type="checkbox" id="autoConvert" class="form-check-input">
+                    <span class="form-check-label">导入后自动转换</span>
+                </label>
+                <label class="form-check">
+                    <input type="checkbox" id="showNotifications" class="form-check-input" checked>
+                    <span class="form-check-label">显示通知</span>
+                </label>
+                <label class="form-check">
+                    <input type="checkbox" id="autoClearHistory" class="form-check-input">
+                    <span class="form-check-label">自动清除历史记录</span>
+                </label>
+                <div class="form-group">
+                    <label for="recommendCount" class="form-label">推荐频道数量</label>
+                    <input type="number" id="recommendCount" class="form-control" min="1" max="10" value="3">
+                </div>
+            </section>
+
+            <section class="settings-group">
+                <h4 class="settings-group-title">网络</h4>
+                <div class="form-group">
+                    <label for="corsProxy" class="form-label">CORS代理前缀（可选）</label>
+                    <input type="text" id="corsProxy" class="form-control mono" placeholder="例如 https://corsproxy.io/?url=">
+                    <p class="text-muted text-sm form-hint">网址导入与 m3u8 预览都会套用此前缀。预览请用会改写分片地址的代理（如 corsproxy.io）。</p>
+                </div>
+            </section>
+
+            <section class="settings-group">
+                <h4 class="settings-group-title">测试</h4>
+                <div class="form-group">
+                    <label for="concurrency" class="form-label">并发测试数（1-20）</label>
+                    <input type="number" id="concurrency" class="form-control" min="1" max="20" value="5">
+                </div>
+                <div class="form-group">
+                    <label for="timeout" class="form-label">测试超时（秒）</label>
+                    <input type="number" id="timeout" class="form-control" min="1" max="60" value="10">
+                </div>
+            </section>
+
+            <section class="settings-group">
+                <h4 class="settings-group-title">多源合并与更新</h4>
+                <div class="form-group">
+                    <label for="mergeMode" class="form-label">多源合并策略</label>
+                    <select id="mergeMode" class="form-control">
+                        <option value="merge">合并（按URL去重，保留现有）</option>
+                        <option value="replace">替换（新来源覆盖现有）</option>
+                        <option value="append">追加（不合并去重）</option>
+                    </select>
+                </div>
+                <label class="form-check">
+                    <input type="checkbox" id="autoRefresh" class="form-check-input">
+                    <span class="form-check-label">定时自动刷新网址导入</span>
+                </label>
+                <div class="form-group">
+                    <label for="autoRefreshMin" class="form-label">自动刷新间隔（分钟）</label>
+                    <input type="number" id="autoRefreshMin" class="form-control" min="5" max="1440" value="30">
+                </div>
+            </section>
+
+            <section class="settings-group">
+                <h4 class="settings-group-title">数据</h4>
+                <div class="form-group">
+                    <label class="form-label">设置备份</label>
+                    <div class="action-row">
+                        <button id="exportSettingsBtn" class="btn btn-secondary btn-sm">导出设置</button>
+                        <button id="importSettingsBtn" class="btn btn-secondary btn-sm">导入设置</button>
+                        <input type="file" id="importSettingsInput" accept=".json" style="display: none;">
+                    </div>
+                </div>
+                <button id="clearAllHistoryBtn" class="btn btn-danger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                    清除所有历史记录
+                </button>
+            </section>
+        </div>
+    </aside>
     <div id="settingsOverlay" class="settings-overlay"></div>
 
-    <div id="toast" class="toast"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <!-- 引入模块 -->
     <script src="js/core.js"></script>
