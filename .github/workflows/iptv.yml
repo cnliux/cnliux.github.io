@@ -3,8 +3,7 @@ name: 从私有仓库同步文件
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 22 * * *'  # UTC 22:10 = 上海时间次日早晨6:00
-    - cron: '0 10 * * *'  # UTC 10:00 = 上海时间下午6:00
+    - cron: '0 */3 * * *'  # 每3小时执行一次
 
 jobs:
   sync:
