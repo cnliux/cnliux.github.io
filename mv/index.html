@@ -525,14 +525,13 @@
             'use strict';
 
             // ============================================================
-            // 1. CDN 镜像配置（国内可用代理优先）
+            // 1. CDN 镜像配置（移除证书过期的 ghproxy.net）
             // ============================================================
             const TXT_FILE_URLS = [
                 // 🔥 国内高速代理（优先使用）
                 'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
                 'https://g.blfrp.cn/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
                 'https://cdn.gh-proxy.org/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
-                'https://ghproxy.net/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
                 // CDN 镜像
                 'https://cdn.jsdelivr.net/gh/cnliux/cnliux.github.io@main/mv/list.txt',
                 // 直连源（国内访问不稳定，作为最后备选）
@@ -548,7 +547,6 @@
             let currentKeyword = '';
             let currentSortMode = 'hot';
             let clickMap = new Map();
-            let isInitialized = false;
 
             // ---------- DOM 引用 ----------
             const $ = (id) => document.getElementById(id);
@@ -822,7 +820,7 @@
             }
 
             // ============================================================
-            // 7. 数据加载引擎 (国内镜像优先 + 智能缓存)
+            // 7. 数据加载引擎
             // ============================================================
             async function fetchWithFallback(urls) {
                 // 优先使用缓存的成功镜像
@@ -860,7 +858,7 @@
                     return /\d+\..+\.(mp4|mp3|mkv|webm|flv|mov|avi)/i.test(text);
                 };
 
-                // 阶段1: 并行竞速（优先使用国内镜像）
+                // 阶段1: 并行竞速
                 try {
                     const text = await Promise.any(
                         orderedUrls.map(async url => {
@@ -873,7 +871,7 @@
                     );
                     return text;
                 } catch (_) {
-                    // 阶段2: 顺序重试 (更宽松的超时)
+                    // 阶段2: 顺序重试
                     for (const url of orderedUrls) {
                         try {
                             const response = await fetchWithTimeout(url, 12000);
@@ -922,9 +920,9 @@
 
                 return {
                     valid: true,
-                    id,
+                    id: id,
                     name: songName,
-                    artist,
+                    artist: artist,
                     fullName: filename,
                     ext: match[3],
                     clickCount: 0
@@ -953,13 +951,14 @@
                     const lines = text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#') && !l.startsWith(
                     '//'));
                     if (!lines.length) throw new Error('无数据');
-                    const parsed = lines.map(f => parseMVFileName(f)).筛选(item => item.valid && item.id && item.name);
+                    const parsed = lines.map(f => parseMVFileName(f)).filter(item => item.valid && item.id && item.name);
                     if (!parsed.length) throw new Error('解析无有效条目');
                     allMVList = parsed;
                 } catch (e) {
                     console.warn('⚠️ 使用备用数据', e);
                     allMVList = getFallbackList();
                 }
+                // ✅ 修复：使用 sort 而不是 排序
                 allMVList.排序((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
                 loadClickCounts();
                 updateClickCountsInList();
@@ -1002,13 +1001,22 @@
             async function init() {
                 await loadMVList();
                 initEvents();
-                isInitialized = true;
                 console.log('✅ MV音乐精选已初始化，共', allMVList.length, '首歌曲');
             }
 
+            // 暴露调试接口
             window.__mvApp = { allMVList, filteredMVList, clickMap, applyFilterAndSort, resetAllClickCounts };
 
-            init();
+            // 捕获未处理的 Promise 错误，避免白屏
+            init().catch(err => {
+                console.error('❌ 初始化失败:', err);
+                mvListEl.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">⚠️</div>
+                        <div>加载失败，请刷新重试</div>
+                        <div style="font-size:0.75rem; margin-top:6px; color:#999;">${err.message || '网络异常'}</div>
+                    </div>`;
+            });
         })();
     </script>
 </body>
