@@ -477,7 +477,7 @@
         <div class="header">
             <h1>🎵 MV音乐精选</h1>
             <div class="subtitle">🎬 00001-00035 连载 · 🎙️ 00036-01359 MV歌曲</div>
-            <div class="subtitle" style="font-size:0.6rem;">🌐 数据源: cnliux.github.io/mv/ · ⚡ 智能排序(热度+搜索+随机)</div>
+            <div class="subtitle" style="font-size:0.6rem;">🌐 智能镜像切换 · ⚡ 自动选择最快可用节点</div>
         </div>
 
         <!-- 统计卡片 -->
@@ -525,21 +525,21 @@
             'use strict';
 
             // ============================================================
-            // 1. CDN 镜像配置（移除证书过期的 ghproxy.net）
+            // 1. 镜像源列表（程序会自动检测并切换到可用的）
             // ============================================================
-            const TXT_FILE_URLS = [
-                // 🔥 国内高速代理（优先使用）
-                'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
-                'https://g.blfrp.cn/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
-                'https://cdn.gh-proxy.org/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt',
+            const MIRROR_SOURCES = [
+                // 国内代理（按稳定性排序）
+                { name: 'ghfast.top', url: 'https://ghfast.top/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt' },
+                { name: 'g.blfrp.cn', url: 'https://g.blfrp.cn/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt' },
+                { name: 'cdn.gh-proxy.org', url: 'https://cdn.gh-proxy.org/https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt' },
                 // CDN 镜像
-                'https://cdn.jsdelivr.net/gh/cnliux/cnliux.github.io@main/mv/list.txt',
-                // 直连源（国内访问不稳定，作为最后备选）
-                'https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt'
+                { name: 'jsdelivr', url: 'https://cdn.jsdelivr.net/gh/cnliux/cnliux.github.io@main/mv/list.txt' },
+                // 直连（最后尝试）
+                { name: 'GitHub Raw', url: 'https://raw.githubusercontent.com/cnliux/cnliux.github.io/main/mv/list.txt' }
             ];
 
             const STORAGE_KEY = 'mv_click_counts_v3';
-            const CACHE_KEY = 'mv_mirror_winner';
+            const CACHE_KEY = 'mv_active_mirror';
 
             // ---------- 状态 ----------
             let allMVList = [];
@@ -547,6 +547,7 @@
             let currentKeyword = '';
             let currentSortMode = 'hot';
             let clickMap = new Map();
+            let activeMirror = null; // 当前使用的镜像
 
             // ---------- DOM 引用 ----------
             const $ = (id) => document.getElementById(id);
@@ -765,7 +766,8 @@
             // ---------- 统计 & UI 更新 ----------
             function updateStats() {
                 const totalClicks = Array.from(clickMap.values()).reduce((sum, v) => sum + v, 0);
-                totalCountEl.innerHTML = `🎵 共 ${allMVList.length} 首MV · 🔥 总点击: ${totalClicks}`;
+                const mirrorInfo = activeMirror ? ` · 📡 ${activeMirror}` : '';
+                totalCountEl.innerHTML = `🎵 共 ${allMVList.length} 首MV · 🔥 总点击: ${totalClicks}${mirrorInfo}`;
 
                 const kw = currentKeyword.trim();
                 const modeMap = { hot: '🔥热门优先', random: '🎲随机模式', default: '📌编号排序' };
@@ -820,37 +822,31 @@
             }
 
             // ============================================================
-            // 7. 数据加载引擎
+            // 7. 🚀 核心：自动切换镜像加载器
             // ============================================================
-            async function fetchWithFallback(urls) {
-                // 优先使用缓存的成功镜像
-                let orderedUrls = [...urls];
+            async function loadFromMirrorWithAutoSwitch() {
+                // 检查缓存的有效镜像
+                let cachedMirror = null;
                 try {
                     const cached = localStorage.getItem(CACHE_KEY);
-                    if (cached && orderedUrls.includes(cached)) {
-                        orderedUrls = [cached, ...orderedUrls.filter(u => u !== cached)];
+                    if (cached) {
+                        const parsed = JSON.parse(cached);
+                        // 缓存有效期 30 分钟
+                        if (Date.now() - parsed.timestamp < 30 * 60 * 1000) {
+                            cachedMirror = parsed.name;
+                        }
                     }
                 } catch (_) { /* ignore */ }
 
-                const fetchWithTimeout = (url, timeout = 10000) => {
-                    return new Promise((resolve, reject) => {
-                        const controller = new AbortController();
-                        const timer = setTimeout(() => {
-                            controller.abort();
-                            reject(new Error(`Timeout: ${url}`));
-                        }, timeout);
-                        fetch(url, { signal: controller.signal })
-                            .then(res => {
-                                clearTimeout(timer);
-                                if (!res.ok) reject(new Error(`HTTP ${res.status}`));
-                                resolve(res);
-                            })
-                            .catch(err => {
-                                clearTimeout(timer);
-                                reject(err);
-                            });
-                    });
-                };
+                // 构建测试列表：缓存镜像优先
+                let testOrder = [...MIRROR_SOURCES];
+                if (cachedMirror) {
+                    const cachedIndex = testOrder.findIndex(m => m.name === cachedMirror);
+                    if (cachedIndex > 0) {
+                        const [item] = testOrder.splice(cachedIndex, 1);
+                        testOrder.unshift(item);
+                    }
+                }
 
                 const isValidContent = (text) => {
                     if (!text || text.length < 50) return false;
@@ -858,32 +854,41 @@
                     return /\d+\..+\.(mp4|mp3|mkv|webm|flv|mov|avi)/i.test(text);
                 };
 
-                // 阶段1: 并行竞速
-                try {
-                    const text = await Promise.any(
-                        orderedUrls.map(async url => {
-                            const response = await fetchWithTimeout(url);
-                            const text = await response.text();
-                            if (!isValidContent(text)) throw new Error('Invalid content');
-                            try { localStorage.setItem(CACHE_KEY, url); } catch (_) {}
-                            return text;
-                        })
-                    );
-                    return text;
-                } catch (_) {
-                    // 阶段2: 顺序重试
-                    for (const url of orderedUrls) {
+                // 逐个测试镜像（顺序执行，找到第一个可用的立即返回）
+                for (const mirror of testOrder) {
+                    try {
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+                        const response = await fetch(mirror.url, { signal: controller.signal });
+                        clearTimeout(timeoutId);
+
+                        if (!response.ok) continue;
+
+                        const text = await response.text();
+                        if (!isValidContent(text)) continue;
+
+                        // ✅ 找到可用镜像！
+                        activeMirror = mirror.name;
+                        // 缓存成功的镜像
                         try {
-                            const response = await fetchWithTimeout(url, 12000);
-                            const text = await response.text();
-                            if (isValidContent(text)) {
-                                try { localStorage.setItem(CACHE_KEY, url); } catch (_) {}
-                                return text;
-                            }
-                        } catch (_) { /* continue */ }
+                            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                                name: mirror.name,
+                                timestamp: Date.now()
+                            }));
+                        } catch (_) { /* ignore */ }
+
+                        console.log(`✅ 使用镜像: ${mirror.name}`);
+                        return text;
+
+                    } catch (e) {
+                        console.warn(`⚠️ 镜像 ${mirror.name} 不可用:`, e.message);
+                        continue;
                     }
-                    throw new Error('所有镜像地址均不可用，请检查网络或稍后重试');
                 }
+
+                // 所有镜像都失败
+                throw new Error('所有镜像源均不可用，请检查网络连接');
             }
 
             // ============================================================
@@ -945,9 +950,10 @@
             // 9. 主加载流程
             // ============================================================
             async function loadMVList() {
-                mvListEl.innerHTML = `<div class="loading"><div class="icon">🎬</div><div>加载MV列表中...</div></div>`;
+                mvListEl.innerHTML = `<div class="loading"><div class="icon">🔍</div><div>正在检测可用镜像...</div></div>`;
+
                 try {
-                    const text = await fetchWithFallback(TXT_FILE_URLS);
+                    const text = await loadFromMirrorWithAutoSwitch();
                     const lines = text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#') && !l.startsWith(
                     '//'));
                     if (!lines.length) throw new Error('无数据');
@@ -957,9 +963,10 @@
                 } catch (e) {
                     console.warn('⚠️ 使用备用数据', e);
                     allMVList = getFallbackList();
+                    activeMirror = '本地备用';
                 }
-                // ✅ 修复：使用 sort 而不是 排序
-                allMVList.排序((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
+
+                allMVList.sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
                 loadClickCounts();
                 updateClickCountsInList();
                 applyFilterAndSort();
@@ -1001,13 +1008,13 @@
             async function init() {
                 await loadMVList();
                 initEvents();
-                console.log('✅ MV音乐精选已初始化，共', allMVList.length, '首歌曲');
+                console.log(`✅ MV音乐精选已初始化，共 ${allMVList.length} 首歌曲，使用镜像: ${activeMirror || '未知'}`);
             }
 
             // 暴露调试接口
-            window.__mvApp = { allMVList, filteredMVList, clickMap, applyFilterAndSort, resetAllClickCounts };
+            window.__mvApp = { allMVList, filteredMVList, clickMap, applyFilterAndSort, resetAllClickCounts, activeMirror };
 
-            // 捕获未处理的 Promise 错误，避免白屏
+            // 捕获未处理的 Promise 错误
             init().catch(err => {
                 console.error('❌ 初始化失败:', err);
                 mvListEl.innerHTML = `
@@ -1015,6 +1022,7 @@
                         <div class="icon">⚠️</div>
                         <div>加载失败，请刷新重试</div>
                         <div style="font-size:0.75rem; margin-top:6px; color:#999;">${err.message || '网络异常'}</div>
+                        <button onclick="location.reload()" style="margin-top:12px; padding:8px 24px; border-radius:40px; border:none; background:#4f7df3; color:white; font-weight:600; cursor:pointer;">🔄 刷新重试</button>
                     </div>`;
             });
         })();
