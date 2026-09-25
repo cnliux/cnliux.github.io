@@ -27,7 +27,7 @@ function getClient() {
     });
 }
 
-// 递归收集音频文件
+// 递归收集音频和视频文件
 async function getAudioFilesRecursively(client, path, depth = 0) {
     // 防御：最多递归 8 层，避免小雅目录太深卡死
     if (depth > 8) return [];
@@ -39,7 +39,8 @@ async function getAudioFilesRecursively(client, path, depth = 0) {
         return [];
     }
     for (const it of items) {
-        if (it.type === "file" && it.mime && it.mime.startsWith("audio")) {
+        // 同时接受 audio 和 video 类型的文件
+        if (it.type === "file" && it.mime && (it.mime.startsWith("audio") || it.mime.startsWith("video"))) {
             result.push(it);
         } else if (it.type === "directory") {
             result = result.concat(
@@ -104,14 +105,14 @@ async function getTopListDetail(topListItem) {
 module.exports = {
     platform: "WebDAV",
     作者: "猫头猫（递归增强版）",
-    description: "支持多层目录递归扫描的 WebDAV 插件，使用前先配置用户变量",
+    description: "支持多层目录递归扫描、兼容音频与视频的 WebDAV 插件，使用前先配置用户变量",
     userVariables: [
         { key: "url", name: "WebDAV地址" },
         { key: "username", name: "用户名" },
         { key: "password", name: "密码", type: "password" },
         { key: "searchPath", name: "存放歌曲的路径（多个用英文逗号分隔）" },
     ],
-    version: "0.1.0",
+    version: "0.2.0",
     supportedSearchType: ["music"],
     srcUrl: "",
     cacheControl: "no-cache",
