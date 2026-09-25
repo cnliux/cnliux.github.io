@@ -5,7 +5,7 @@ const axios = require("axios");
 
 let cachedData = {};
 
-// 规范化 URL 和路径
+// 规范化 URL：确保结尾是 /dav，且不带多余斜杠
 function normalizeUrl(url) {
     if (!url) return "";
     url = url.replace(/\/+$/, "");
@@ -15,6 +15,7 @@ function normalizeUrl(url) {
     return url;
 }
 
+// 规范化路径：统一成以 / 开头、不以 / 结尾
 function normalizePath(path) {
     if (!path) return "/";
     path = path.replace(/\/+$/, "");
@@ -51,7 +52,7 @@ function getClient() {
     };
 }
 
-// 用 axios 发 PROPFIND，返回解析后的文件列表
+// 发 PROPFIND 请求并解析响应
 async function propfind(client, path) {
     path = normalizePath(path);
     const fullUrl = client.baseUrl + path;
@@ -68,7 +69,13 @@ async function propfind(client, path) {
                 password: client.password,
             },
             timeout: 15000,
+            // 关键：让 axios 不要因为非 2xx 状态码抛异常，我们自己处理
+            validateStatus: () => true,
         });
+        if (res.status !== 207 && res.status !== 200) {
+            console.log("PROPFIND non-207:", fullUrl, res.status);
+            return [];
+        }
         return parsePropfindResponse(res.data, path);
     } catch (e) {
         console.log("PROPFIND error:", fullUrl, e?.message);
@@ -76,35 +83,48 @@ async function propfind(client, path) {
     }
 }
 
-// 手动解析 WebDAV XML 响应
+// 手动解析 WebDAV XML 响应，并去掉 /dav 前缀
 function parsePropfindResponse(xml, basePath) {
     if (typeof xml !== "string") return [];
     const results = [];
-    // 用正则提取每个 <D:response> 块
     const responseRegex = /<D:response>([\s\S]*?)<\/D:response>/g;
     let match;
     while ((match = responseRegex.exec(xml)) !== null) {
         const block = match[1];
         const hrefMatch = block.match(/<D:href>(.*?)<\/D:href>/);
         if (!hrefMatch) continue;
+
         let href = decodeURIComponent(hrefMatch[1]);
+
+        // 关键修正：去掉 Alist 返回的 /dav 前缀，只保留相对 WebDAV 根的路径
+        if (href.startsWith("/dav")) {
+            href = href.slice(4); // 去掉 "/dav"
+        }
+        // 统一成以 / 开头、不以 / 结尾
+        href = href.replace(/\/+$/, "");
+        if (!href.startsWith("/")) {
+            href = "/" + href;
+        }
+        if (!href) href = "/";
+
         // 跳过目录自身
-        const normalizedHref = normalizePath(href);
         const normalizedBase = normalizePath(basePath);
-        if (normalizedHref === normalizedBase || normalizedHref === normalizedBase + "/") {
+        if (href === normalizedBase) {
             continue;
         }
-        // 判断是文件还是目录
+
         const isCollection = /<D:resourcetype>\s*<D:collection/.test(block);
         const displayNameMatch = block.match(/<D:displayname>(.*?)<\/D:displayname>/);
         const mimeMatch = block.match(/<D:getcontenttype>(.*?)<\/D:getcontenttype>/);
+
         const displayName = displayNameMatch
             ? displayNameMatch[1]
             : href.split("/").filter(Boolean).pop() || "";
         const mime = mimeMatch ? mimeMatch[1] : "";
+
         results.push({
             type: isCollection ? "directory" : "file",
-            filename: normalizedHref,
+            filename: href,
             basename: displayName,
             mime: mime,
             href: href,
@@ -185,15 +205,15 @@ async function getTopListDetail(topListItem) {
 
 module.exports = {
     platform: "WebDAV",
-    作者: "猫头猫（axios 重写版）",
-    description: "支持多层递归、兼容音视频、绕开 webdav 库兼容性问题的 WebDAV 插件",
+    作者: "猫头猫（axios 修正版）",
+    description: "支持多层递归、兼容音视频、修正 /dav 前缀问题的 WebDAV 插件",
     userVariables: [
         { key: "url", name: "WebDAV地址" },
         { key: "username", name: "用户名" },
         { key: "password", name: "密码", type: "password" },
         { key: "searchPath", name: "存放歌曲的路径（多个用英文逗号分隔）" },
     ],
-    version: "0.3.0",
+    version: "0.4.0",
     supportedSearchType: ["music"],
     srcUrl: "",
     cacheControl: "no-cache",
@@ -207,7 +227,7 @@ module.exports = {
     getMediaSource(musicItem) {
         const client = getClient();
         if (!client) return { url: "" };
-        // 直接用 baseUrl + 文件路径拼下载链接
+        // 下载链接：baseUrl 已经带 /dav，musicItem.id 是相对路径
         return {
             url: client.baseUrl + musicItem.id,
         };
