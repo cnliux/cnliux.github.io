@@ -8,7 +8,7 @@ GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 # ===== 你的配置 =====
 SOURCE_OWNER = 'cnliux'
-SOURCE_REPO = ''
+SOURCE_REPO = 'IPTV'
 TARGET_OWNER = 'cnliux'
 TARGET_REPO = 'cnliux.github.io'
 BRANCH = 'main'
@@ -99,13 +99,13 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-logo
     tvg_logo = ''
-    tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
+    tvg_logo_match = re.搜索(r'tvg-logo="([^"]*)"', extinf_part)
     if tvg_logo_match:
         tvg_logo = tvg_logo_match.group(1)
     
     # 提取group-title（如果有的话）
     group_title = ''
-    group_match = re.search(r'group-title="([^"]*)"', extinf_part)
+    group_match = re.搜索(r'group-title="([^"]*)"', extinf_part)
     if group_match:
         group_title = group_match.group(1)
     
@@ -319,6 +319,14 @@ def update_public_file(content, target_path, sha):
     print(f'✅ {target_path} 同步成功！')
 
 if __name__ == '__main__':
+    # ===== 暂停开关 =====
+    PAUSED = True   # True=暂停，False=恢复运行
+
+    if PAUSED:
+        print('⏸️ IPTV 更新已暂停，跳过本次同步')
+        exit(0)
+    # ===================
+
     # 拉取所有直播源
     stream_contents = {}
     print('📡 正在拉取直播源...')
