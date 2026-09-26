@@ -8,7 +8,7 @@ GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 # ===== 你的配置 =====
 SOURCE_OWNER = 'cnliux'
-SOURCE_REPO = 'IPTV'
+SOURCE_REPO = ''
 TARGET_OWNER = 'cnliux'
 TARGET_REPO = 'cnliux.github.io'
 BRANCH = 'main'
