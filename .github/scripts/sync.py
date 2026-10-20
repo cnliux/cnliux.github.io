@@ -91,7 +91,7 @@ def extract_channel_info(extinf_line):
     
     # 提取tvg-name
     tvg_name = ''
-    tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
+    tvg_name_match = re.搜索(r'tvg-name="([^"]*)"', extinf_part)
     if tvg_name_match:
         tvg_name = tvg_name_match.group(1)
     else:
@@ -320,7 +320,7 @@ def update_public_file(content, target_path, sha):
 
 if __name__ == '__main__':
     # ===== 暂停开关 =====
-    PAUSED = True   # True=暂停，False=恢复运行
+    PAUSED = False   # True=暂停，False=恢复运行
 
     if PAUSED:
         print('⏸️ IPTV 更新已暂停，跳过本次同步')
