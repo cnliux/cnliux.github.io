@@ -53,17 +53,18 @@ def fetch_stream_content(url, source_name):
 def replace_all_domains_in_content(content, new_domain):
     """
     把内容中所有 URL 行的域名统一替换成 new_domain，路径/参数保持不变。
-    - 只处理非 '#' 开头的行（即真正的 URL 行），避免误换 tvg-logo / tvg-url 等元数据。
+    - 只处理非 '#' 开头的行（即真正的 URL 行），
+      #EXTINF 行里的 tvg-logo / tvg-url / group-title 等属性全部原样保留，不会被替换。
     - 不依赖旧域名，源文件里出现什么域名都能换。
+    - 端口丢弃，统一为 new_domain（默认 http/https 原协议保留）。
     """
     if not content:
         return content
 
-    # 匹配完整 URL：协议 + 域名(含端口) + 后续路径/参数
+    # 匹配完整 URL：协议 + 域名(不含端口) + 可选端口 + 后续路径/参数
     url_pattern = re.compile(
         r'(https?://)([^/\s:?#"\'<>]+)(:\d+)?([/?#][^\s<>"\'{}|\\^`\[\]]*)?'
     )
-
     replaced_domains = set()
 
     def _replace_in_line(line):
@@ -73,19 +74,18 @@ def replace_all_domains_in_content(content, new_domain):
             path = m.group(4) or ''
             if old_domain != new_domain:
                 replaced_domains.add(old_domain)
-            # 统一丢弃原端口，换成 new_domain
             return f'{protocol}{new_domain}{path}'
         return url_pattern.sub(_repl, line)
 
     out_lines = []
     for line in content.splitlines():
         stripped = line.strip()
+        # ★ 只替换非注释行（URL 行），logo 等元数据在 #EXTINF 行里，自动跳过
         if stripped and not stripped.startswith('#'):
             line = _replace_in_line(line)
         out_lines.append(line)
 
     result = '\n'.join(out_lines)
-    # 保留原文件末尾换行风格
     if content.endswith('\n') and not result.endswith('\n'):
         result += '\n'
 
@@ -99,7 +99,6 @@ def replace_all_domains_in_content(content, new_domain):
 
 def extract_channel_info(extinf_line):
     """从EXTINF行提取频道信息，保留所有属性"""
-    # 提取频道名（逗号后面的部分）
     if ',' in extinf_line:
         parts = extinf_line.split(',', 1)
         channel_name = parts[1].strip()
@@ -108,15 +107,12 @@ def extract_channel_info(extinf_line):
         extinf_part = extinf_line
         channel_name = '未知频道'
 
-    # 提取tvg-name
     tvg_name_match = re.search(r'tvg-name="([^"]*)"', extinf_part)
     tvg_name = tvg_name_match.group(1) if tvg_name_match else channel_name
 
-    # 提取tvg-logo
     tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', extinf_part)
     tvg_logo = tvg_logo_match.group(1) if tvg_logo_match else ''
 
-    # 提取group-title
     group_match = re.search(r'group-title="([^"]*)"', extinf_part)
     group_title = group_match.group(1) if group_match else ''
 
@@ -140,14 +136,12 @@ def extract_channels_from_m3u(content):
             i += 1
             continue
 
-        # 跳过M3U头部和#genre#标记
         if line.startswith('#EXTM3U') or line.startswith('#genre#'):
             i += 1
             continue
 
         if line.startswith('#EXTINF:'):
             channel_info = extract_channel_info(line)
-
             i += 1
             if i < len(lines):
                 url_line = lines[i].strip()
@@ -205,7 +199,7 @@ def process_m3u_content(content, stream_contents):
             continue
 
         print(f'📺 处理 {source_info["name"]} 源...')
-        # ★ 全量替换域名（不管原域名是什么）
+        # ★ 全量替换域名（URL 行），logo 等元数据不动
         processed_content = replace_all_domains_in_content(
             source_info['content'], source_info['new_domain']
         )
@@ -252,7 +246,7 @@ def process_txt_content(content, stream_contents):
             continue
 
         print(f'📺 处理 {source_info["name"]} 源...')
-        # ★ 全量替换域名
+        # ★ 全量替换域名（URL 行），logo 等元数据不动
         processed_content = replace_all_domains_in_content(
             source_info['content'], source_info['new_domain']
         )
@@ -362,10 +356,10 @@ if __name__ == '__main__':
 
     if success_count == total_count:
         print(f'✅ 全部 {total_count} 个文件同步成功！')
-        print('🎯 虎牙和斗鱼直播源已作为独立分类添加到文件末尾，域名已统一替换：')
+        print('🎯 虎牙和斗鱼直播源已作为独立分类添加到文件末尾，URL 域名已统一替换（logo 地址保留原样）：')
         for key, info in stream_contents.items():
             if info['content']:
-                print(f'   {info["name"]}: -> {info["new_domain"]}')
+                print(f'   {info["name"]}: URL 域名 -> {info["new_domain"]}（logo 不替换）')
         exit(0)
     else:
         print(f'⚠️ 成功 {success_count}/{total_count} 个文件，请检查失败原因')
